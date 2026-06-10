@@ -1,0 +1,41 @@
+# SAY-OS
+
+> The app that remembers everything about your beauty routine.
+
+SAY-OS is a voice-first salon and wellness management platform built in London, UK. It serves solo beauty professionals, salon and clinic owners, beauty educators, and individual clients.
+
+## For Solo Professionals
+Voice-first management: bookings, marketing, inventory, and client safety intelligence — all hands-free. Designed for professionals who work alone and can't stop mid-service to answer the phone.
+
+## For Salon & Clinic Owners
+Safety intelligence, client retention, talent marketplace, and GDPR Article 9 health data compliance. ICO registered (ZC121398). Manage teams with clinical-grade documentation.
+
+## For Beauty Educators
+Free institutional licence for colleges and NVQ providers. Students train on professional tools, not simulations. Graduates get 3 months of the Standard plan free via STUDENT6 code.
+
+## For Clients — Beauty Passport
+Free personal beauty profile: store formulas, allergies, skin type, and style preferences. Share with any salon anywhere in the world via QR code. Translated into 14 languages.
+
+## Skin Type Quiz
+Free Fitzpatrick skin type assessment at say-salon.com/skin-type. Determines UV sensitivity, treatment suitability, and pigmentation risk.
+
+## Key Features
+- Beauty Passport with QR sharing (14 languages)
+- Safety Profile with allergy tracking and patch test records
+- Skin Intelligence (Fitzpatrick typing, Barrier Load Index, Pigmentation Risk)
+- Event Prep Planner (holidays, weddings — treatment timing)
+- Skincare Routine Tracker with ingredient conflict detection
+- Voice-first booking and client management
+- Talent Marketplace (no agency fees)
+
+## Links
+- Website: https://say-salon.com
+- App: https://app.say-salon.com
+- Skin Type Quiz: https://say-salon.com/skin-type/
+- Instagram: https://instagram.com/say.salonai
+- Contact: contact@say-salon.com
+
+## Company
+Servicesforyou Ltd, London, UK
+ICO Registration: ZC121398
+DPO: privacy@say-salon.com

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAY-OS — Education Partnership Programme</title>
+<meta name="description" content="SAY-OS partners with beauty colleges and NVQ providers. Free institutional licence. 3 months of the Standard plan free for every graduate. 10 founding education partner spots.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:title" content="SAY-OS — Education Partnership Programme">
+<meta property="og:description" content="Free institutional licence for beauty colleges and NVQ providers. 3 months of the Standard plan free for every graduate. Real tools, not simulations.">
+<meta property="og:url" content="https://say-salon.com/education.html">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/education.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--velvet-black:#030a07;--velvet-deep:#061a12;--velvet-primary:#0f2e20;--velvet-light:#1a4d36;--gold-brushed:#e6c985;--gold-accent:#9e824c;--alabaster:#fdfbf7;--sage:#4a9e7f;--sage-dim:rgba(74,158,127,0.1);--sage-border:rgba(74,158,127,0.25)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--velvet-black);color:var(--alabaster);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(3,10,7,0.95),transparent);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:4px;color:var(--gold-brushed);text-transform:uppercase}
+.nav-cta{background:transparent;border:1px solid rgba(74,158,127,0.35);color:var(--sage);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;padding:9px 22px;border-radius:2px;cursor:pointer;transition:all 0.3s;text-decoration:none}
+.nav-cta:hover{background:var(--sage-dim)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 48px 80px;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(74,158,127,0.15),transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(15,46,32,0.3),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 60%,rgba(6,26,18,0.4),transparent 60%)}
+.hero-eyebrow{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--sage);text-transform:uppercase;margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease forwards 0.2s}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--sage);opacity:0.5}
+.hero h1{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,84px);font-weight:300;line-height:1.05;letter-spacing:-1px;margin-bottom:28px;opacity:0;animation:fadeUp 0.9s ease forwards 0.4s}
+.hero h1 em{font-style:italic;color:var(--gold-brushed)}
+.hero-sub{position:relative;font-size:17px;color:rgba(253,251,247,0.6);max-width:580px;margin:0 auto 40px;font-weight:300;line-height:1.9;opacity:0;animation:fadeUp 0.9s ease forwards 0.6s}
+
+.offer-pills{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(74,158,127,0.1);border:1px solid rgba(74,158,127,0.15);border-radius:14px;max-width:780px;width:100%;margin:0 auto 40px;overflow:hidden;opacity:0;animation:fadeUp 0.9s ease forwards 0.7s}
+.offer-pill{background:var(--velvet-deep);padding:24px 20px;text-align:center}
+.pill-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--sage);text-transform:uppercase;margin-bottom:8px}
+.pill-val{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--gold-brushed);margin-bottom:8px}
+.pill-desc{font-size:13px;color:rgba(253,251,247,0.45);line-height:1.6}
+
+.hero-actions{position:relative;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.9s ease forwards 0.9s}
+.btn-sage{background:linear-gradient(135deg,var(--sage),#3a8a6a);color:var(--velvet-black);font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:16px 40px;border:none;border-radius:3px;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-sage:hover{transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(74,158,127,0.35)}
+.btn-ghost{color:rgba(253,251,247,0.6);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;padding:16px 0;background:none;border:none;cursor:pointer;transition:color 0.3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{color:var(--gold-brushed)}
+
+.section-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--sage);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(74,158,127,0.15);max-width:120px}
+.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.15;margin-bottom:48px}
+.section-heading em{font-style:italic;color:var(--gold-brushed)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* WHY */
+.why-section{padding:100px 48px;max-width:1100px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(74,158,127,0.12);border-radius:16px;overflow:hidden}
+.why-card{padding:40px;background:var(--velvet-deep);transition:background 0.3s;border-right:1px solid rgba(74,158,127,0.08);border-bottom:1px solid rgba(74,158,127,0.08)}
+.why-card:nth-child(2n){border-right:none}
+.why-card:nth-child(3),.why-card:nth-child(4){border-bottom:none}
+.why-card:hover{background:rgba(15,46,32,0.8)}
+.why-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(74,158,127,0.2);line-height:1;margin-bottom:16px}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--alabaster);margin-bottom:10px}
+.why-body{font-size:14px;color:rgba(253,251,247,0.5);line-height:1.8}
+
+/* LEARN */
+.learn-section{padding:100px 48px;background:var(--velvet-deep)}
+.learn-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.learn-item{background:var(--velvet-black);border:1px solid rgba(74,158,127,0.1);border-radius:14px;padding:24px;transition:all 0.3s}
+.learn-item:hover{border-color:rgba(74,158,127,0.25);transform:translateY(-3px)}
+.learn-icon{font-size:24px;margin-bottom:12px}
+.learn-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:6px}
+.learn-desc{font-size:13px;color:rgba(253,251,247,0.45);line-height:1.7}
+
+/* PARTNERS STRIP */
+.partners-section{background:rgba(74,158,127,0.04);border-top:1px solid rgba(74,158,127,0.08);border-bottom:1px solid rgba(74,158,127,0.08);padding:32px 48px}
+.partners-inner{max-width:1100px;margin:0 auto}
+.partners-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;color:rgba(253,251,247,0.25);text-align:center;text-transform:uppercase;margin-bottom:20px}
+.partners-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.partner-slot{background:rgba(74,158,127,0.06);border:1px solid rgba(74,158,127,0.12);border-radius:8px;padding:12px 24px;font-family:'DM Mono',monospace;font-size:11px;color:rgba(253,251,247,0.25);letter-spacing:0.5px}
+
+/* DUAL */
+.dual-section{padding:100px 48px;max-width:1100px;margin:0 auto}
+.dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dual-card{border-radius:20px;padding:48px;position:relative;overflow:hidden}
+.dual-card.institution{background:rgba(74,158,127,0.06);border:1px solid rgba(74,158,127,0.15)}
+.dual-card.graduate{background:rgba(230,201,133,0.05);border:1px solid rgba(230,201,133,0.12)}
+.dual-tag{display:inline-flex;align-items:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:2px;margin-bottom:20px}
+.dual-tag.institution{background:rgba(74,158,127,0.12);color:var(--sage);border:1px solid rgba(74,158,127,0.2)}
+.dual-tag.graduate{background:rgba(230,201,133,0.1);color:var(--gold-brushed);border:1px solid rgba(230,201,133,0.2)}
+.dual-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin-bottom:12px}
+.dual-price{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1;margin-bottom:28px}
+.dual-price.green{color:var(--sage)}
+.dual-price.gold{background:linear-gradient(135deg,var(--gold-brushed),var(--gold-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dual-list{list-style:none}
+.dual-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(253,251,247,0.05);font-size:14px;color:rgba(253,251,247,0.65);line-height:1.6}
+.dual-list li:last-child{border-bottom:none}
+.dual-list.green li::before{content:'✓';color:var(--sage);font-family:'DM Mono',monospace;font-size:11px;margin-top:2px;flex-shrink:0}
+.dual-list.gold li::before{content:'✓';color:var(--gold-accent);font-family:'DM Mono',monospace;font-size:11px;margin-top:2px;flex-shrink:0}
+
+/* STATS */
+.stats-strip{background:linear-gradient(135deg,var(--velvet-primary),var(--velvet-light));padding:60px 48px;border-top:1px solid rgba(230,201,133,0.1);border-bottom:1px solid rgba(230,201,133,0.1)}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;background:linear-gradient(135deg,var(--gold-brushed),var(--gold-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
+.stat-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(253,251,247,0.4);text-transform:uppercase}
+
+/* FORM */
+.form-section{padding:100px 48px}
+.form-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.form-card{background:var(--velvet-deep);border:1px solid rgba(74,158,127,0.12);border-radius:20px;padding:40px}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin-bottom:4px}
+.form-sub{font-size:13px;color:rgba(253,251,247,0.4);margin-bottom:28px;font-family:'DM Mono',monospace;letter-spacing:0.5px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(253,251,247,0.4);text-transform:uppercase;margin-bottom:6px}
+.form-group input,.form-group select{width:100%;background:rgba(253,251,247,0.04);border:1px solid rgba(253,251,247,0.1);border-radius:8px;padding:12px 16px;color:var(--alabaster);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.3s;appearance:none}
+.form-group input:focus,.form-group select:focus{border-color:rgba(74,158,127,0.4);background:rgba(74,158,127,0.05)}
+.form-group select option{background:var(--velvet-primary);color:var(--alabaster)}
+.form-group input::placeholder{color:rgba(253,251,247,0.2)}
+.form-submit{width:100%;background:linear-gradient(135deg,var(--sage),#3a8a6a);color:var(--velvet-black);font-family:'DM Sans',sans-serif;font-weight:600;font-size:15px;padding:15px;border:none;border-radius:8px;cursor:pointer;transition:all 0.3s;margin-top:8px;letter-spacing:0.3px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(74,158,127,0.3)}
+.form-privacy{text-align:center;font-size:11px;color:rgba(253,251,247,0.25);margin-top:12px;font-family:'DM Mono',monospace;letter-spacing:0.3px}
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success.visible{display:block}
+.success-icon{font-size:48px;margin-bottom:16px}
+.success-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--sage);margin-bottom:8px}
+.success-sub{font-size:14px;color:rgba(253,251,247,0.5);line-height:1.7}
+
+/* STUDENT */
+.student-section{padding:80px 48px;background:var(--velvet-deep)}
+.student-card{max-width:900px;margin:0 auto;text-align:center;background:rgba(230,201,133,0.04);border:1px solid rgba(230,201,133,0.1);border-radius:24px;padding:64px 48px}
+.student-tag{display:inline-flex;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;color:var(--gold-accent);text-transform:uppercase;background:rgba(230,201,133,0.08);border:1px solid rgba(230,201,133,0.12);border-radius:2px;padding:5px 14px;margin-bottom:24px}
+.student-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.2;margin-bottom:20px}
+.student-title em{font-style:italic;color:var(--gold-brushed)}
+.student-sub{font-size:15px;color:rgba(253,251,247,0.5);line-height:1.9;max-width:560px;margin:0 auto 40px}
+.student-steps{display:flex;gap:0;justify-content:center;border:1px solid rgba(230,201,133,0.1);border-radius:12px;overflow:hidden;max-width:560px;margin:0 auto}
+.student-step{flex:1;padding:20px 16px;text-align:center;background:var(--velvet-black);border-right:1px solid rgba(230,201,133,0.08)}
+.student-step:last-child{border-right:none}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;background:linear-gradient(135deg,var(--gold-brushed),var(--gold-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.step-l{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(253,251,247,0.4);text-transform:uppercase}
+
+/* FOUNDER */
+.founder-section{padding:100px 48px;background:var(--velvet-black)}
+.founder-inner{max-width:760px;margin:0 auto;text-align:center}
+.founder-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:300;font-style:italic;line-height:1.6;color:rgba(253,251,247,0.85);margin-bottom:32px;position:relative}
+.founder-quote::before{content:'\201C';font-size:120px;color:rgba(230,201,133,0.1);position:absolute;top:-40px;left:-20px;line-height:1;font-family:'Cormorant Garamond',serif}
+.founder-attr{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--gold-accent)}
+
+footer{background:var(--velvet-black);padding:48px;border-top:1px solid rgba(253,251,247,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:4px;color:var(--gold-brushed)}
+.footer-links{display:flex;gap:32px}
+.footer-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:rgba(253,251,247,0.3);text-decoration:none;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold-accent)}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:rgba(253,251,247,0.2)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  nav{padding:16px 24px}
+  .hero{padding:100px 24px 60px}
+  .offer-pills{grid-template-columns:1fr}
+  .why-grid,.dual-grid,.learn-inner,.form-inner{grid-template-columns:1fr}
+  .why-card{border-right:none !important;border-bottom:1px solid rgba(74,158,127,0.08) !important}
+  .why-card:last-child{border-bottom:none !important}
+  .learn-grid{grid-template-columns:1fr}
+  .student-steps{flex-direction:column;border-radius:12px}
+  .student-step{border-right:none;border-bottom:1px solid rgba(230,201,133,0.08)}
+  .student-step:last-child{border-bottom:none}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .why-section,.dual-section,.form-section,.founder-section{padding:60px 24px}
+  .learn-section,.student-section,.partners-section{padding:60px 24px}
+  footer{padding:32px 24px;flex-direction:column;align-items:flex-start}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "SAY-OS",
+      "legalName": "Servicesforyou Ltd",
+      "url": "https://say-salon.com",
+      "logo": "https://say-salon.com/og-image.png",
+      "description": "Voice-first salon and wellness management platform partnering with beauty colleges and NVQ providers.",
+      "foundingDate": "2025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@say-salon.com",
+        "contactType": "customer support"
+      },
+      "sameAs": [
+        "https://instagram.com/say.salonai",
+        "https://threads.net/@say.salonai"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SAY-OS for Education",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://app.say-salon.com",
+      "offers": {
+        "@type": "Offer",
+        "name": "Education Partner Licence",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "description": "Free institutional licence for beauty colleges. 3 months of the Standard plan free for every graduate."
+      },
+      "featureList": "Professional tools for students, Safety intelligence training, Beauty Passport creation, Graduate career pipeline, STUDENT6 discount code"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="/" style="text-decoration:none;display:flex;align-items:center;">
+  <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+</a></div>
+  <a href="#apply" class="nav-cta">Apply for Partnership</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-eyebrow">Education Partnership Programme</div>
+  <h1>
+    Give your graduates<br>the tools to
+    <em>hit the ground running.</em>
+  </h1>
+  <p class="hero-sub">
+    SAY-OS partners with beauty colleges, training academies, and NVQ providers. Your institution gets a free platform licence. Your graduates get 3 months of the Standard plan free when they start their career.
+  </p>
+  <div class="offer-pills">
+    <div class="offer-pill">
+      <div class="pill-label">For Your Institution</div>
+      <div class="pill-val">Free Licence</div>
+      <div class="pill-desc">Full platform access for teaching. No cost, no commitment.</div>
+    </div>
+    <div class="offer-pill">
+      <div class="pill-label">For Your Graduates</div>
+      <div class="pill-val">3 Months Standard Plan</div>
+      <div class="pill-desc">Voice, marketing, rebooking, reports — free from day one of their career.</div>
+    </div>
+    <div class="offer-pill">
+      <div class="pill-label">For Your Reputation</div>
+      <div class="pill-val">Partner Status</div>
+      <div class="pill-desc">SAY-OS Education Partner badge and co-marketing recognition.</div>
+    </div>
+  </div>
+  <div class="hero-actions">
+    <a href="#apply" class="btn-sage">Apply for Education Partnership</a>
+    <a href="#why" class="btn-ghost">Why partner with us →</a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="section-label">The Gap We're Closing</div>
+  <h2 class="section-heading reveal">
+    They graduate with skills.<br>They need <em>business tools too.</em>
+  </h2>
+  <div class="why-grid reveal">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-title">The business skills gap</div>
+      <div class="why-body">Most beauty graduates are technically excellent on day one. But booking management, client communication, pricing strategy, and social marketing — these aren't taught in most programmes. SAY-OS closes that gap practically, not theoretically.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-title">Real tools, not simulations</div>
+      <div class="why-body">Other training platforms simulate software. SAY-OS is the actual platform your graduates will use in their careers. Learning it in college means they arrive at their first job confident and capable — with zero learning curve.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-title">Graduate employability</div>
+      <div class="why-body">Salon owners hiring right now want technicians who understand how to run a modern business. Graduates from SAY-OS partner colleges arrive with a measurable competitive advantage. That's an outcome your programme can point to.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-title">Zero cost, zero complexity</div>
+      <div class="why-body">Nothing to budget. Nothing to procure. Nothing to maintain. We provide the licence, the curriculum support materials, and the onboarding. You provide the students. That is the entire arrangement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section class="learn-section" id="curriculum">
+  <div class="learn-inner">
+    <div class="reveal">
+      <div class="section-label">Curriculum Integration</div>
+      <h2 class="section-heading" style="margin-bottom:20px">
+        Practical skills<br>in <em>a single session.</em>
+      </h2>
+      <p style="font-size:15px;color:rgba(253,251,247,0.5);line-height:1.9;margin-bottom:28px">In one classroom session, students learn to manage a real beauty business. Voice bookings, no-show protection, social marketing, inventory, pricing, and analytics. Skills that serve them whether they go solo, join a salon, or eventually open their own business.</p>
+      <p style="font-size:13px;color:rgba(253,251,247,0.35);font-family:'DM Mono',monospace;line-height:1.7;margin-bottom:20px">We provide full curriculum support materials, lesson plans, and educator guides — all at no cost, ready to use in your next term.</p>
+      <div style="background:rgba(74,158,127,0.05);border:1px solid rgba(74,158,127,0.1);border-radius:12px;padding:20px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--sage);margin-bottom:12px;text-transform:uppercase">We Provide</div>
+        <ul style="list-style:none">
+          <li style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);flex-shrink:0">✓</span> Lesson plans and educator guides</li>
+          <li style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);flex-shrink:0">✓</span> Student onboarding packs</li>
+          <li style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);flex-shrink:0">✓</span> A dedicated onboarding session for your team</li>
+          <li style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);flex-shrink:0">✓</span> Ongoing support throughout the partnership</li>
+        </ul>
+      </div>
+    </div>
+    <div class="learn-grid reveal">
+      <div class="learn-item">
+        <div class="learn-icon">🎙️</div>
+        <div class="learn-title">Voice Booking</div>
+        <div class="learn-desc">Handle a full booking enquiry hands-free, from first message to confirmed slot.</div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">🚫</div>
+        <div class="learn-title">No-show Management</div>
+        <div class="learn-desc">Set up deposits and reminders that protect their time and income from day one.</div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">📱</div>
+        <div class="learn-title">Social Marketing</div>
+        <div class="learn-desc">Post to Instagram and TikTok by voice without leaving the platform.</div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">📦</div>
+        <div class="learn-title">Inventory Control</div>
+        <div class="learn-desc">Manage stock and supplier orders vocally, mid-service, with nothing written down.</div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">💰</div>
+        <div class="learn-title">Pricing Strategy</div>
+        <div class="learn-desc">Understand dynamic pricing and how to maximise revenue from every available slot.</div>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">📊</div>
+        <div class="learn-title">Business Analytics</div>
+        <div class="learn-desc">Read their own performance data and understand what it means for their business.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS STRIP -->
+<div class="partners-section">
+  <div class="partners-inner">
+    <div class="partners-label">Education Partners — Founding Cohort · 2026</div>
+    <div class="partners-row">
+      <div class="partner-slot">Your College Here</div>
+      <div class="partner-slot">Your Academy Here</div>
+      <div class="partner-slot">Your Institution Here</div>
+      <div class="partner-slot">+ 7 More Spots Available</div>
+    </div>
+  </div>
+</div>
+
+<!-- DUAL OFFER -->
+<section class="dual-section" id="offer">
+  <div class="section-label">The Partnership Offer</div>
+  <h2 class="section-heading reveal">
+    Everything included.<br><em>Nothing to pay.</em>
+  </h2>
+  <div class="dual-grid reveal">
+    <div class="dual-card institution">
+      <div class="dual-tag institution">For Your Institution</div>
+      <div class="dual-title">Free Institutional Licence</div>
+      <div class="dual-price green">£0</div>
+      <ul class="dual-list green">
+        <li>Full SAY-OS platform access for all students</li>
+        <li>Classroom and practical training use included</li>
+        <li>Curriculum support materials provided</li>
+        <li>Dedicated educator onboarding session</li>
+        <li>SAY-OS Education Partner badge and recognition</li>
+        <li>Co-marketing on our social channels</li>
+        <li>No contract. Cancel any time.</li>
+      </ul>
+    </div>
+    <div class="dual-card graduate">
+      <div class="dual-tag graduate">For Your Graduates</div>
+      <div class="dual-title">3 Months Standard Plan on Graduation</div>
+      <div class="dual-price gold">Free</div>
+      <ul class="dual-list gold">
+        <li>Standard plan features: voice, marketing, rebooking, reports</li>
+        <li>500 clients, unlimited bookings, staff management</li>
+        <li>No credit card required to activate</li>
+        <li>Graduate pricing applied after free period</li>
+        <li>Already trained — zero learning curve on launch day</li>
+        <li>Talent profile created to be discovered by salon owners</li>
+        <li>Activated automatically on graduation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-val">£0</div>
+      <div class="stat-label">Cost to your institution</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">3mo</div>
+      <div class="stat-label">Standard plan free per graduate</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">1</div>
+      <div class="stat-label">Session to teach it</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">10</div>
+      <div class="stat-label">Founding partner spots</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="form-section" id="apply">
+  <div class="form-inner">
+    <div class="reveal">
+      <div class="section-label">Apply to Partner</div>
+      <h2 class="section-heading" style="margin-bottom:20px">
+        10 founding<br><em>education partners.</em>
+      </h2>
+      <p style="font-size:15px;color:rgba(253,251,247,0.5);line-height:1.9;margin-bottom:28px">We're signing our first 10 education partners this term. Apply below and we'll be in touch within 48 hours to discuss your programme and set everything up.</p>
+      <div style="background:rgba(74,158,127,0.05);border:1px solid rgba(74,158,127,0.1);border-radius:12px;padding:24px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--sage);margin-bottom:14px;text-transform:uppercase">What Happens After You Apply</div>
+        <ul style="list-style:none">
+          <li style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid rgba(253,251,247,0.04);font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:12px;flex-shrink:0">01</span>We review your application within 48 hours</li>
+          <li style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid rgba(253,251,247,0.04);font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:12px;flex-shrink:0">02</span>Short call to discuss your programme and cohort</li>
+          <li style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid rgba(253,251,247,0.04);font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:12px;flex-shrink:0">03</span>Licence activated and educator guide sent</li>
+          <li style="display:flex;gap:10px;padding:7px 0;font-size:13px;color:rgba(253,251,247,0.55)"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:12px;flex-shrink:0">04</span>Students enrolled and ready within the week</li>
+        </ul>
+      </div>
+    </div>
+    <div class="form-card reveal">
+      <form id="eduForm">
+        <div class="form-title">Apply for Partnership</div>
+        <div class="form-sub">10 founding education partners · reviewed within 48hrs</div>
+        <div class="form-group"><label>Your Name & Role</label><input type="text" name="name" placeholder="e.g. Jane Smith, Head of Department" required></div>
+        <div class="form-group"><label>Institution Name</label><input type="text" name="company" placeholder="College or academy name" required></div>
+        <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@institution.ac.uk" required></div>
+        <div class="form-group">
+          <label>Institution Type</label>
+          <select name="job_title" required>
+            <option value="" disabled selected>Select institution type</option>
+            <option value="Further Education College">Further Education College</option>
+            <option value="Private Training Academy">Private Training Academy</option>
+            <option value="NVQ / SVQ Provider">NVQ / SVQ Provider</option>
+            <option value="Apprenticeship Provider">Apprenticeship Provider</option>
+            <option value="Independent Beauty School">Independent Beauty School</option>
+            <option value="Other Education Provider">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Beauty Students Per Year (approx)</label>
+          <select name="company_size">
+            <option value="under-25">Under 25</option>
+            <option value="25-50">25–50</option>
+            <option value="50-100">50–100</option>
+            <option value="100+">100+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Next Cohort Starts</label>
+          <input type="text" name="source" placeholder="e.g. September 2026">
+        </div>
+        <input type="hidden" name="requested_demo" value="true">
+        <button type="submit" class="form-submit">Apply for Education Partnership →</button>
+        <div class="form-privacy">No cost · No commitment · We'll be in touch within 48 hours</div>
+      </form>
+      <div class="form-success" id="eduSuccess">
+        <div class="success-icon">🎓</div>
+        <div class="success-title">Application received.</div>
+        <div class="success-sub">Thank you. We will review your application and be in touch within 48 hours to discuss your programme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT -->
+<section class="student-section">
+  <div class="student-card reveal">
+    <div class="student-tag">For Students & Graduates</div>
+    <h2 class="student-title">
+      Starting your career?<br>Your first 3 months of the Standard plan are <em>on us.</em>
+    </h2>
+    <p class="student-sub">Voice, marketing, rebooking, reports, 500 clients — the full Standard plan, free for 3 months after graduation. If your college is a SAY-OS Education Partner, it activates automatically. Not yet a partner? Ask your college to apply below.</p>
+    <div class="student-steps">
+      <div class="student-step">
+        <div class="step-n">01</div>
+        <div class="step-l">Graduate</div>
+      </div>
+      <div class="student-step">
+        <div class="step-n">02</div>
+        <div class="step-l">Activate Free Access</div>
+      </div>
+      <div class="student-step">
+        <div class="step-n">03</div>
+        <div class="step-l">Start Your Career</div>
+      </div>
+      <div class="student-step">
+        <div class="step-n">3mo</div>
+        <div class="step-l">Completely Free</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="founder-inner reveal">
+    <div class="founder-quote">
+      I spent 10 years watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. SAY-OS closes it.
+    </div>
+    <div class="founder-attr">— Founder, SAY-OS · Clinical background in physiotherapy and functional therapy</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">SAY-OS</div>
+  <div class="footer-links">
+    <a href="/">Solo Professionals</a>
+    <a href="/partners.html">Salon Owners</a>
+    <a href="mailto:education@say-salon.com">Education Enquiries</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+</footer>
+
+<script>
+// Scroll reveal — bulletproof
+const reveals = document.querySelectorAll('.reveal');
+function revealAll() { reveals.forEach(el => el.classList.add('visible')); }
+setTimeout(revealAll, 1500);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
+  });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+document.getElementById('eduForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Submitting...'; btn.disabled = true;
+  const data = {
+    name: form.name.value, email: form.email.value, company: form.company.value,
+    job_title: form.job_title.value, company_size: form.company_size.value,
+    source: 'landing-education', requested_demo: true
+  };
+  try {
+    await fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) { console.log('Webhook error', err); }
+  document.getElementById('eduForm').style.display = 'none';
+  document.getElementById('eduSuccess').classList.add('visible');
+});
+</script>
+</body>
+</html>

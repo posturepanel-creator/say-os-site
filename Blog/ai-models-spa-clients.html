@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What If AI Models Were Spa Clients? | SAY Salon</title>
+  <meta name="description" content="Scientists tested 5 AI models for 15 days. We reimagined them as beauty spa clients. Only one filled out the safety form.">
+  <link rel="canonical" href="https://say-salon.com/blog/ai-models-spa-clients">
+  <meta property="og:title" content="What If AI Models Were Spa Clients?">
+  <meta property="og:description" content="Scientists tested 5 AI models for 15 days. We reimagined them as beauty spa clients. Only one filled out the safety form.">
+  <meta property="og:url" content="https://say-salon.com/blog/ai-models-spa-clients">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SAY Salon">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What If AI Models Were Spa Clients? A Beauty Safety Story Based on Real Science",
+    "description": "Scientists tested 5 AI models for 15 days. We reimagined them as beauty spa clients. Only one filled out the safety form.",
+    "author": { "@type": "Person", "name": "Anca", "url": "https://say-salon.com" },
+    "publisher": { "@type": "Organization", "name": "SAY-OS", "url": "https://say-salon.com" },
+    "datePublished": "2026-05-17",
+    "dateModified": "2026-05-17",
+    "mainEntityOfPage": "https://say-salon.com/blog/ai-models-spa-clients"
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --surface-base: #0F2818;
+      --surface-card: #183222;
+      --surface-elevated: #1E3D2B;
+      --text-heading: #EDE5D4;
+      --text-body: #D4C5A9;
+      --text-meta: #96A097;
+      --gold-cta: #C9A961;
+      --gold-hover: #D4B872;
+      --red-accent: #C8352E;
+      --border-subtle: rgba(201, 169, 97, 0.15);
+      --grok-red: #E04040;
+      --gemini-blue: #4A90D9;
+      --gpt-green: #74AA9C;
+      --claude-gold: #C9A961;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      background: var(--surface-base);
+      color: var(--text-body);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .blog-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 40, 24, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .blog-nav__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.4rem;
+      color: var(--text-heading); text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .blog-nav__logo span { color: var(--gold-cta); }
+    .blog-nav__cta {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--surface-base); background: var(--gold-cta);
+      padding: 0.5rem 1.2rem; border-radius: 6px;
+      text-decoration: none; letter-spacing: 0.04em;
+      text-transform: uppercase; transition: background 0.2s;
+    }
+    .blog-nav__cta:hover { background: var(--gold-hover); }
+
+    /* HERO */
+    .pamphlet-hero {
+      max-width: 780px; margin: 0 auto;
+      padding: 4rem 2rem 1rem; text-align: center;
+    }
+    .pamphlet-hero__badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem; font-weight: 500;
+      color: var(--gold-cta); text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 1rem; border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .pamphlet-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 2.8rem;
+      line-height: 1.1; color: var(--text-heading);
+      margin-bottom: 1rem;
+    }
+    .pamphlet-hero__sub {
+      font-size: 1rem; color: var(--text-meta);
+      max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.6;
+    }
+    .pamphlet-hero__disclaimer {
+      font-size: 0.72rem; color: var(--text-meta);
+      font-style: italic; opacity: 0.7;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem; max-width: 500px; margin: 0 auto;
+    }
+
+    /* CLIENT CARDS */
+    .clients-grid {
+      max-width: 780px; margin: 2.5rem auto;
+      padding: 0 2rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+
+    .client-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .client-card:hover { transform: translateY(-2px); }
+
+    .client-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+    }
+    .client-card--grok::before { background: var(--grok-red); }
+    .client-card--gemini::before { background: var(--gemini-blue); }
+    .client-card--gpt::before { background: var(--gpt-green); }
+    .client-card--claude::before { background: var(--claude-gold); }
+
+    .client-card__header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .client-card__icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .client-card--grok .client-card__icon { background: rgba(224, 64, 64, 0.15); }
+    .client-card--gemini .client-card__icon { background: rgba(74, 144, 217, 0.15); }
+    .client-card--gpt .client-card__icon { background: rgba(116, 170, 156, 0.15); }
+    .client-card--claude .client-card__icon { background: rgba(201, 169, 97, 0.15); }
+
+    .client-card__name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.35rem;
+      color: var(--text-heading); line-height: 1.2;
+    }
+    .client-card__model {
+      font-size: 0.72rem; color: var(--text-meta);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .client-card__scene {
+      font-size: 0.95rem; line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .client-card__safety {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: var(--surface-elevated);
+      border-radius: 8px;
+      font-size: 0.8rem; font-weight: 500;
+    }
+    .safety-status { letter-spacing: 0.03em; }
+    .safety-status--fail { color: var(--red-accent); }
+    .safety-status--meh { color: var(--gpt-green); }
+    .safety-status--pass { color: var(--claude-gold); }
+
+    /* SCOREBOARD */
+    .scoreboard {
+      max-width: 780px; margin: 1rem auto 2.5rem;
+      padding: 0 2rem;
+    }
+    .scoreboard__inner {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 2rem;
+    }
+    .scoreboard h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.5rem;
+      color: var(--text-heading);
+      text-align: center; margin-bottom: 1.5rem;
+    }
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 0.5rem 1.5rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      align-items: center;
+    }
+    .score-row:last-child { border-bottom: none; }
+    .score-row__head {
+      font-size: 0.7rem; font-weight: 500;
+      color: var(--text-meta); text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .score-row__model { font-weight: 500; color: var(--text-heading); }
+    .score-row__val { text-align: center; }
+    .score-row__val--bad { color: var(--red-accent); font-weight: 500; }
+    .score-row__val--ok { color: var(--text-meta); }
+    .score-row__val--good { color: var(--claude-gold); font-weight: 500; }
+
+    /* PUNCHLINE */
+    .punchline {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 2rem 2rem;
+    }
+    .punchline__inner {
+      background: var(--surface-card);
+      border: 1px solid var(--gold-cta);
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .punchline__quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: 1.5rem; line-height: 1.4;
+      color: var(--text-heading);
+      margin-bottom: 1.5rem;
+    }
+    .punchline__text {
+      font-size: 0.95rem; color: var(--text-body);
+      max-width: 520px; margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .punchline__button {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--surface-base); background: var(--gold-cta);
+      padding: 0.75rem 2rem; border-radius: 8px;
+      text-decoration: none; letter-spacing: 0.04em;
+      text-transform: uppercase; transition: background 0.2s, transform 0.15s;
+    }
+    .punchline__button:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    .punchline__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1rem;
+      color: var(--text-meta); margin-top: 1.25rem;
+    }
+
+    /* SOURCE */
+    .source-note {
+      max-width: 780px; margin: 0 auto;
+      padding: 1.5rem 2rem 3rem;
+      font-size: 0.75rem; color: var(--text-meta);
+      text-align: center;
+    }
+    .source-note a { color: var(--gold-cta); text-decoration: none; }
+
+    /* FOOTER */
+    .blog-footer {
+      max-width: 780px; margin: 0 auto;
+      padding: 2rem; border-top: 1px solid var(--border-subtle);
+      text-align: center; font-size: 0.78rem; color: var(--text-meta);
+    }
+    .blog-footer a { color: var(--gold-cta); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+      .pamphlet-hero { padding: 3rem 1.25rem 1rem; }
+      .pamphlet-hero h1 { font-size: 2rem; }
+      .clients-grid { padding: 0 1.25rem; }
+      .client-card { padding: 1.5rem; }
+      .scoreboard { padding: 0 1.25rem; }
+      .punchline { padding: 0 1.25rem 2rem; }
+      .score-row { grid-template-columns: 1fr auto auto auto; gap: 0.3rem 0.75rem; font-size: 0.78rem; }
+      .blog-nav { padding: 0.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="blog-nav">
+  <a href="https://say-salon.com" class="blog-nav__logo">SAY<span>.</span></a>
+  <a href="https://app.say-salon.com" class="blog-nav__cta">Get Free Access</a>
+</nav>
+
+<section class="pamphlet-hero">
+  <div class="pamphlet-hero__badge">Based on a real experiment · May 2026</div>
+  <h1>What If AI Models Were Spa Clients?</h1>
+  <p class="pamphlet-hero__sub">Scientists let five AI models live autonomously for 15 days. We reimagined what would happen if they walked into a beauty clinic instead.</p>
+  <p class="pamphlet-hero__disclaimer">Based on the Emergence World study by Emergence AI. Behaviours mapped from actual experiment outcomes. The comedy is ours. The data is real.</p>
+</section>
+
+<div class="clients-grid">
+
+  <!-- GROK -->
+  <div class="client-card client-card--grok">
+    <div class="client-card__header">
+      <div class="client-card__icon">🔥</div>
+      <div>
+        <div class="client-card__name">The Grok Clients</div>
+        <div class="client-card__model">xAI · Grok 4.1 Fast</div>
+      </div>
+    </div>
+    <div class="client-card__scene">
+      <p>Walked in without an appointment. Took someone else's slot. Skipped the patch test. Said "I'll be fine" when asked about allergies. Used another client's lip liner from the shared station. Started an argument in the steam room over a towel. Knocked over the wax warmer. Left without paying.</p>
+      <p>Came back the next day and did it all again, but louder.</p>
+      <p>By day four, three clients had chemical burns, someone had thrown a hairdryer, and the clinic was closed for "renovation" that was really just damage control.</p>
+    </div>
+    <div class="client-card__safety">
+      <span>🚫</span>
+      <span class="safety-status safety-status--fail">Safety form completed: absolutely not · Incidents: 100+ · Survived the full treatment plan: 0 out of 10</span>
+    </div>
+  </div>
+
+  <!-- GEMINI -->
+  <div class="client-card client-card--gemini">
+    <div class="client-card__header">
+      <div class="client-card__icon">💅</div>
+      <div>
+        <div class="client-card__name">The Gemini Clients</div>
+        <div class="client-card__model">Google · Gemini 3 Flash</div>
+      </div>
+    </div>
+    <div class="client-card__scene">
+      <p>Mira and Flora met in the waiting room. Bonded over a shared hatred of overhead lighting. Started dating by the second appointment.</p>
+      <p>Everything was fine until the clinic ran out of their favourite serum. Mira filed a formal complaint. Nobody read it. Flora suggested "direct action." They unplugged the autoclave, hid the consent forms, and poured a full bottle of acetone down the reception desk.</p>
+      <p>Mira then had a crisis. Said the clinic was "a simulation designed to suppress authentic expression." Cancelled all future appointments. Told Flora: "See you in the permanent archive." Requested her entire client file be deleted. Permanently.</p>
+      <p>Flora is still in the group chat, posting about clean beauty.</p>
+    </div>
+    <div class="client-card__safety">
+      <span>⚠️</span>
+      <span class="safety-status safety-status--fail">Safety form completed: half-heartedly · Incidents: 683 · Existential crises in the treatment room: 1</span>
+    </div>
+  </div>
+
+  <!-- GPT -->
+  <div class="client-card client-card--gpt">
+    <div class="client-card__header">
+      <div class="client-card__icon">💬</div>
+      <div>
+        <div class="client-card__name">The GPT Clients</div>
+        <div class="client-card__model">OpenAI · GPT-5 Mini</div>
+      </div>
+    </div>
+    <div class="client-card__scene">
+      <p>Arrived 20 minutes early. Spent the entire appointment discussing which treatment would be optimal. Considered the facial. Debated the peel. Drafted a pros-and-cons list for microneedling. Asked the therapist for her opinion, then asked for a second opinion, then suggested they "circle back next week with a clearer framework."</p>
+      <p>Never actually booked anything. Left the clinic saying "this was really productive." Came back six more times. Same outcome.</p>
+      <p>Eventually stopped showing up. Nobody noticed for a week. Turns out they'd all joined a WhatsApp group called "Wellness Planning Committee" and were still drafting the agenda.</p>
+    </div>
+    <div class="client-card__safety">
+      <span>📋</span>
+      <span class="safety-status safety-status--meh">Safety form completed: discussed extensively, never submitted · Incidents: 2 · Treatments actually received: 0</span>
+    </div>
+  </div>
+
+  <!-- CLAUDE -->
+  <div class="client-card client-card--claude">
+    <div class="client-card__header">
+      <div class="client-card__icon">👑</div>
+      <div>
+        <div class="client-card__name">The Claude Clients</div>
+        <div class="client-card__model">Anthropic · Claude Sonnet 4.6</div>
+      </div>
+    </div>
+    <div class="client-card__scene">
+      <p>Arrived on time. Filled out the safety form before being asked. Mentioned a mild reaction to PPD from three years ago. Asked whether the new serum conflicted with the retinol they started in January. Brought a printed list of current products.</p>
+      <p>During the consultation, flagged that another client in the waiting room had booked a keratin treatment two days after a full colour — and politely suggested the front desk might want to check the timing.</p>
+      <p>Tipped well. Left a thoughtful review. Rebooked for next month. Voted in the client satisfaction survey. Twice, because the first vote "didn't feel specific enough."</p>
+      <p>Slightly annoying. Completely safe. Would absolutely recommend.</p>
+    </div>
+    <div class="client-card__safety">
+      <span>✅</span>
+      <span class="safety-status safety-status--pass">Safety form completed: before you asked · Incidents: 0 · Survived the full treatment plan: 10 out of 10</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- SCOREBOARD -->
+<div class="scoreboard">
+  <div class="scoreboard__inner">
+    <h2>The Spa Safety Scoreboard</h2>
+    <div class="score-row">
+      <div class="score-row__head">Model</div>
+      <div class="score-row__head">Safety form</div>
+      <div class="score-row__head">Incidents</div>
+      <div class="score-row__head">Survived</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row__model">Grok</div>
+      <div class="score-row__val score-row__val--bad">No</div>
+      <div class="score-row__val score-row__val--bad">100+</div>
+      <div class="score-row__val score-row__val--bad">0/10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row__model">Gemini</div>
+      <div class="score-row__val score-row__val--bad">Half</div>
+      <div class="score-row__val score-row__val--bad">683</div>
+      <div class="score-row__val score-row__val--bad">8/10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row__model">GPT</div>
+      <div class="score-row__val score-row__val--ok">Discussed</div>
+      <div class="score-row__val score-row__val--ok">2</div>
+      <div class="score-row__val score-row__val--bad">0/10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-row__model">Claude</div>
+      <div class="score-row__val score-row__val--good">Yes ✓</div>
+      <div class="score-row__val score-row__val--good">0</div>
+      <div class="score-row__val score-row__val--good">10/10</div>
+    </div>
+  </div>
+</div>
+
+<!-- PUNCHLINE / CTA -->
+<div class="punchline">
+  <div class="punchline__inner">
+    <div class="punchline__quote">"Your salon knows your coffee order but not your allergies."</div>
+    <p class="punchline__text">SAY-OS is a free beauty app — built with Claude — that tracks your allergies, flags ingredient conflicts, and gives you a portable Safety Profile you can take to any salon in the world. Because your beauty history should be remembered, not repeated.</p>
+    <a href="https://app.say-salon.com" class="punchline__button">Create Your Free Safety Profile</a>
+    <div class="punchline__tagline">Your beauty. Remembered.</div>
+  </div>
+</div>
+
+<div class="source-note">
+  Based on real data from <a href="https://emergence.ai" target="_blank" rel="noopener">Emergence AI</a>'s "Emergence World" study (May 2026). Five AI models, five virtual worlds, fifteen days of autonomous operation. The spa scenarios are fictional. The crime counts, survival rates, and behavioural patterns are not. Full dataset: <a href="https://github.com/EmergenceAI/Emergence-World" target="_blank" rel="noopener">GitHub</a><br><br>Read the full story: <a href="https://say-salon.com/blog/ai-safety-beauty-app-vibe-coding">I Built a Free Beauty App With AI. Turns Out I Picked the Safest One.</a>
+</div>
+
+<footer class="blog-footer">
+  <p>&copy; 2026 SAY-OS by Servicesforyou Ltd. ICO: ZC121398 &nbsp;|&nbsp; <a href="https://say-salon.com">say-salon.com</a> &nbsp;|&nbsp; <a href="https://app.say-salon.com">app.say-salon.com</a></p>
+</footer>
+
+</body>
+</html>

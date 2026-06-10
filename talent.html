@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAY-OS Talent — Get Discovered. Work on Your Terms.</title>
+<meta name="description" content="Create your talent profile on SAY-OS. Get discovered by salons looking to hire. Find freelance and part-time shifts that fit your schedule. Join the waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:title" content="SAY-OS Talent — Get Discovered. Work on Your Terms.">
+<meta property="og:description" content="Create your talent profile and get found by salons looking to hire. Freelance and part-time shifts that fit your schedule.">
+<meta property="og:url" content="https://say-salon.com/talent.html">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/talent.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --velvet-black: #030a07;
+  --velvet-deep: #061a12;
+  --velvet-primary: #0f2e20;
+  --velvet-light: #1a4d36;
+  --gold-brushed: #e6c985;
+  --gold-accent: #9e824c;
+  --gold-deep: #8c7335;
+  --alabaster: #fdfbf7;
+  --pearl: #ffffff;
+  --copper: #c47a3a;
+  --copper-light: #e8955a;
+  --radius-xl: 2.5rem;
+  --radius-2xl: 3.5rem;
+  --shadow-premium: 0 50px 100px -20px rgba(15,46,32,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
+  --shadow-gold: 0 20px 50px -10px rgba(230,201,133,0.2);
+  --shadow-copper: 0 20px 50px -10px rgba(196,122,58,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--velvet-black); color: var(--alabaster); font-family: 'DM Sans', sans-serif; line-height: 1.7; overflow-x: hidden; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 0.4;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(3,10,7,0.95), transparent);
+  backdrop-filter: blur(8px);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--gold-brushed); text-transform: uppercase; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: rgba(253,251,247,0.4); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold-accent); }
+.nav-cta {
+  background: transparent;
+  border: 1px solid rgba(196,122,58,0.4);
+  color: var(--copper-light);
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px;
+  padding: 9px 22px; border-radius: 2px; cursor: pointer; transition: all 0.3s; text-decoration: none !important;
+}
+.nav-cta:hover { background: rgba(196,122,58,0.1); border-color: var(--copper-light); color: var(--copper-light) !important; }
+
+/* HERO — diagonal split layout */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(26,77,54,0.3), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 100% 20%, rgba(196,122,58,0.08), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(15,46,32,0.4), transparent 60%);
+}
+
+/* Diagonal divider */
+.hero-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(230,201,133,0.15) 30%, rgba(230,201,133,0.15) 70%, transparent);
+  transform: rotate(3deg) translateX(-50%);
+  transform-origin: center;
+}
+
+.hero-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 60px 80px 48px;
+  z-index: 1;
+}
+
+.hero-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 140px 48px 80px 60px;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  color: var(--copper-light); text-transform: uppercase; margin-bottom: 28px;
+  animation: fadeUp 0.5s ease forwards 0.1s;
+}
+.hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--copper-light); opacity: 0.5; }
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 4.5vw, 66px);
+  font-weight: 300; line-height: 1.05; margin-bottom: 24px;
+  animation: fadeUp 0.5s ease forwards 0.2s;
+}
+.hero h1 strong {
+  font-weight: 700; font-style: italic;
+  background: linear-gradient(135deg, var(--gold-brushed), var(--copper-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 16px; color: rgba(253,251,247,0.55); max-width: 420px;
+  margin-bottom: 36px; font-weight: 300; line-height: 1.9;
+  animation: fadeUp 0.5s ease forwards 0.3s;
+}
+
+.hero-actions {
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  animation: fadeUp 0.5s ease forwards 0.4s;
+}
+
+.btn-copper {
+  background: linear-gradient(135deg, var(--copper-light), var(--copper));
+  color: var(--velvet-black); font-family: 'DM Sans', sans-serif;
+  font-weight: 600; font-size: 14px; padding: 15px 36px;
+  border: none; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+  text-decoration: none; display: inline-block;
+  box-shadow: var(--shadow-copper);
+}
+.btn-copper:hover { transform: translateY(-2px); box-shadow: 0 30px 60px -10px rgba(196,122,58,0.35); }
+
+.btn-ghost {
+  color: rgba(253,251,247,0.45); font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 1px; padding: 15px 0;
+  background: none; border: none; cursor: pointer; transition: color 0.3s;
+  text-decoration: none;
+}
+.btn-ghost:hover { color: var(--gold-brushed); }
+
+/* Profile card on right side */
+.hero-profile-stack {
+  animation: fadeUp 0.9s ease forwards 0.5s;
+  width: 100%; max-width: 380px;
+}
+
+.profile-card {
+  background: rgba(6,26,18,0.8);
+  border: 1px solid rgba(230,201,133,0.12);
+  border-radius: 20px; padding: 28px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s;
+  position: relative;
+}
+.profile-card:hover {
+  border-color: rgba(196,122,58,0.25);
+  transform: translateX(4px);
+}
+.profile-card.featured {
+  border-color: rgba(230,201,133,0.2);
+  background: rgba(15,46,32,0.6);
+}
+
+.profile-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.profile-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--velvet-light), var(--velvet-primary));
+  border: 1px solid rgba(230,201,133,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.profile-name { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+.profile-role { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--copper-light); }
+.profile-available {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 5px;
+  font-family: 'DM Mono', monospace; font-size: 9px;
+  letter-spacing: 1px; color: #4ade80;
+}
+.avail-dot { width: 5px; height: 5px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
+
+.profile-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.profile-tag {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.5px;
+  padding: 3px 9px; border-radius: 2px;
+  background: rgba(253,251,247,0.05); border: 1px solid rgba(253,251,247,0.08);
+  color: rgba(253,251,247,0.5);
+}
+
+.profile-footer { display: flex; justify-content: space-between; align-items: center; }
+.profile-rate { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold-brushed); }
+.profile-type { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(253,251,247,0.3); }
+
+.hero-launch-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,122,58,0.08);
+  border: 1px solid rgba(196,122,58,0.2);
+  border-radius: 100px; padding: 8px 18px;
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px;
+  color: var(--copper-light); margin-bottom: 20px;
+}
+.launch-dot { width: 6px; height: 6px; background: var(--copper-light); border-radius: 50%; animation: pulse 2s infinite; }
+
+/* SECTION COMMONS */
+.section-label {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  color: var(--copper-light); text-transform: uppercase; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: rgba(196,122,58,0.2); max-width: 100px; }
+.section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 48px); font-weight: 300; line-height: 1.15; margin-bottom: 48px; }
+.section-heading em { font-style: italic; color: var(--gold-brushed); }
+
+/* HOW IT WORKS */
+.how-section { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid rgba(230,201,133,0.08); border-radius: 20px; overflow: hidden; }
+.steps-grid > * { border-right: 1px solid rgba(230,201,133,0.06); }
+.steps-grid > *:last-child { border-right: none; }
+.step-card { background: var(--velvet-deep); padding: 40px 28px; position: relative; transition: background 0.3s; }
+.step-card:hover { background: rgba(15,46,32,0.9); }
+.step-card::after { content: '→'; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); font-family: 'DM Mono', monospace; font-size: 14px; color: rgba(230,201,133,0.2); z-index: 2; }
+.step-card:last-child::after { display: none; }
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: rgba(196,122,58,0.15); line-height: 1; margin-bottom: 16px; }
+.step-icon { font-size: 28px; margin-bottom: 14px; }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+.step-desc { font-size: 13px; color: rgba(253,251,247,0.5); line-height: 1.8; }
+
+/* WHO CAN JOIN */
+.who-section { background: var(--velvet-deep); padding: 100px 48px; }
+.who-inner { max-width: 1100px; margin: 0 auto; }
+.who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.who-card {
+  background: rgba(3,10,7,0.6); border: 1px solid rgba(253,251,247,0.06);
+  border-radius: 16px; padding: 32px 28px;
+  transition: all 0.4s; cursor: default; position: relative; overflow: hidden;
+}
+.who-card::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, rgba(196,122,58,0.4), transparent);
+  transform: scaleX(0); transition: transform 0.4s;
+}
+.who-card:hover::before { transform: scaleX(1); }
+.who-card:hover { border-color: rgba(196,122,58,0.15); transform: translateY(-3px); }
+.who-emoji { font-size: 32px; margin-bottom: 14px; }
+.who-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+.who-desc { font-size: 13px; color: rgba(253,251,247,0.45); line-height: 1.8; margin-bottom: 14px; }
+.who-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.who-tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 8px; border-radius: 2px; background: rgba(196,122,58,0.08); border: 1px solid rgba(196,122,58,0.15); color: var(--copper-light); }
+
+/* DUAL VALUE */
+.dual-section { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+.dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dual-card { border-radius: 20px; padding: 48px 40px; position: relative; overflow: hidden; }
+.dual-card.profile-side { background: linear-gradient(135deg, var(--velvet-primary), rgba(15,46,32,0.5)); border: 1px solid rgba(230,201,133,0.12); }
+.dual-card.shifts-side { background: linear-gradient(135deg, rgba(196,122,58,0.08), rgba(6,26,18,0.9)); border: 1px solid rgba(196,122,58,0.15); }
+.dual-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; pointer-events: none; }
+.dual-card.profile-side::before { background: radial-gradient(circle, rgba(230,201,133,0.05), transparent 70%); }
+.dual-card.shifts-side::before { background: radial-gradient(circle, rgba(196,122,58,0.06), transparent 70%); }
+
+.dual-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 20px;
+}
+.dual-tag.gold { background: rgba(230,201,133,0.08); border: 1px solid rgba(230,201,133,0.15); color: var(--gold-accent); }
+.dual-tag.copper { background: rgba(196,122,58,0.1); border: 1px solid rgba(196,122,58,0.2); color: var(--copper-light); }
+
+.dual-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; margin-bottom: 14px; line-height: 1.2; }
+.dual-body { font-size: 14px; color: rgba(253,251,247,0.5); line-height: 1.9; margin-bottom: 24px; }
+.dual-list { list-style: none; }
+.dual-list li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(253,251,247,0.05); font-size: 13px; color: rgba(253,251,247,0.6); line-height: 1.6; }
+.dual-list li::before { content: '→'; font-family: 'DM Mono', monospace; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+.dual-list.gold li::before { color: var(--gold-accent); }
+.dual-list.copper li::before { color: var(--copper-light); }
+
+/* SAMPLE SHIFTS */
+.shifts-section { background: var(--velvet-deep); padding: 100px 48px; }
+.shifts-inner { max-width: 1100px; margin: 0 auto; }
+.shifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.shift-card {
+  background: rgba(3,10,7,0.7); border: 1px solid rgba(253,251,247,0.07);
+  border-radius: 16px; padding: 28px 24px; transition: all 0.4s;
+}
+.shift-card:hover { border-color: rgba(196,122,58,0.2); transform: translateY(-3px); box-shadow: var(--shadow-copper); }
+.shift-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.shift-salon { font-size: 14px; font-weight: 500; }
+.shift-location { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(253,251,247,0.3); margin-top: 3px; }
+.shift-type { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; padding: 3px 9px; border-radius: 2px; background: rgba(196,122,58,0.1); border: 1px solid rgba(196,122,58,0.2); color: var(--copper-light); }
+.shift-role { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+.shift-details { font-size: 12px; color: rgba(253,251,247,0.4); line-height: 1.7; margin-bottom: 16px; }
+.shift-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(253,251,247,0.05); }
+.shift-pay { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold-brushed); }
+.shift-pay-label { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(253,251,247,0.25); }
+.shift-days { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.5px; color: rgba(253,251,247,0.35); }
+.coming-soon-overlay {
+  position: absolute; inset: 0; background: rgba(3,10,7,0.6);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 16px; backdrop-filter: blur(3px);
+}
+.coming-soon-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--copper-light); border: 1px solid rgba(196,122,58,0.3); padding: 6px 16px; border-radius: 2px; }
+.shift-card-wrap { position: relative; }
+
+/* WAITLIST FORM */
+.form-section { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+.form-outer {
+  background: linear-gradient(135deg, var(--velvet-primary), var(--velvet-deep));
+  border: 1px solid rgba(196,122,58,0.15);
+  border-radius: var(--radius-2xl); padding: 72px 64px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.form-outer::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(196,122,58,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.form-left { position: relative; }
+.launch-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,122,58,0.08); border: 1px solid rgba(196,122,58,0.2);
+  color: var(--copper-light); font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px; padding: 5px 14px; border-radius: 2px; margin-bottom: 24px;
+}
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; line-height: 1.15; margin-bottom: 20px; }
+.form-title em { font-style: italic; color: var(--gold-brushed); }
+.form-body { font-size: 15px; color: rgba(253,251,247,0.5); line-height: 1.9; margin-bottom: 32px; }
+.form-perks { list-style: none; }
+.form-perks li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(253,251,247,0.05); font-size: 13px; color: rgba(253,251,247,0.6); }
+.form-perks li::before { content: '→'; color: var(--copper-light); font-family: 'DM Mono', monospace; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+
+.form-card { background: rgba(3,10,7,0.7); border: 1px solid rgba(196,122,58,0.12); border-radius: 20px; padding: 44px; position: relative; }
+.form-card-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; margin-bottom: 4px; }
+.form-card-sub { font-size: 11px; color: rgba(253,251,247,0.3); margin-bottom: 28px; font-family: 'DM Mono', monospace; letter-spacing: 0.5px; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: rgba(253,251,247,0.35); text-transform: uppercase; margin-bottom: 6px; }
+.form-group input, .form-group select {
+  width: 100%; background: rgba(253,251,247,0.04); border: 1px solid rgba(253,251,247,0.08);
+  border-radius: 8px; padding: 11px 14px; color: var(--alabaster);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; appearance: none;
+}
+.form-group input:focus, .form-group select:focus { border-color: rgba(196,122,58,0.4); background: rgba(196,122,58,0.03); }
+.form-group select option { background: var(--velvet-primary); color: var(--alabaster); }
+.form-group input::placeholder { color: rgba(253,251,247,0.2); }
+
+/* Checkbox group */
+.checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.checkbox-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.checkbox-item input[type="checkbox"] { width: 15px; height: 15px; border-radius: 3px; accent-color: var(--copper); cursor: pointer; flex-shrink: 0; }
+.checkbox-item span { font-size: 12px; color: rgba(253,251,247,0.6); }
+
+.form-submit {
+  width: 100%; background: linear-gradient(135deg, var(--copper-light), var(--copper));
+  color: var(--velvet-black); font-family: 'DM Sans', sans-serif;
+  font-weight: 600; font-size: 14px; padding: 15px; border: none;
+  border-radius: 8px; cursor: pointer; transition: all 0.3s; margin-top: 8px;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-copper); }
+.form-privacy { text-align: center; font-size: 10px; color: rgba(253,251,247,0.2); margin-top: 10px; font-family: 'DM Mono', monospace; }
+
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success.visible { display: block; }
+.success-icon { font-size: 44px; margin-bottom: 14px; }
+.success-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--copper-light); margin-bottom: 8px; }
+.success-sub { font-size: 13px; color: rgba(253,251,247,0.45); line-height: 1.7; }
+
+/* COUNTER */
+.counter-strip { background: rgba(196,122,58,0.06); border-top: 1px solid rgba(196,122,58,0.1); border-bottom: 1px solid rgba(196,122,58,0.1); padding: 48px; text-align: center; }
+.counter-inner { max-width: 700px; margin: 0 auto; }
+.counter-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: rgba(253,251,247,0.3); text-transform: uppercase; margin-bottom: 16px; }
+.counter-num { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; background: linear-gradient(135deg, var(--gold-brushed), var(--copper-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 8px; }
+.counter-sub { font-size: 15px; color: rgba(253,251,247,0.4); }
+
+/* FOOTER */
+footer { background: var(--velvet-black); padding: 44px 48px; border-top: 1px solid rgba(253,251,247,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 4px; color: var(--gold-brushed); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(253,251,247,0.3); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold-accent); }
+.footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(253,251,247,0.15); }
+
+.founder-section { padding: 100px 48px; background: var(--velvet-deep); }
+.founder-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.founder-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 300; font-style: italic; line-height: 1.6; color: rgba(253,251,247,0.85); margin-bottom: 32px; position: relative; }
+.founder-quote::before { content: '\201C'; font-size: 120px; color: rgba(230,201,133,0.1); position: absolute; top: -40px; left: -20px; line-height: 1; font-family: 'Cormorant Garamond', serif; }
+.founder-attr { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--gold-accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+.reveal { opacity: 1; transform: translateY(0); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 110px 24px 60px; }
+  .hero-divider { display: none; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .who-grid { grid-template-columns: 1fr 1fr; }
+  .shifts-grid { grid-template-columns: 1fr; }
+  .dual-grid { grid-template-columns: 1fr; }
+  .form-outer { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
+  .how-section, .dual-section, .form-section { padding: 60px 24px; }
+  .who-section, .shifts-section { padding: 60px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SAY-OS Talent Marketplace",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://app.say-salon.com",
+  "offers": {
+    "@type": "Offer",
+    "name": "Talent Profile",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "description": "Free professional profile for beauty professionals. Get discovered by salons. No agency fees."
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "SAY-OS",
+    "legalName": "Servicesforyou Ltd",
+    "url": "https://say-salon.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    }
+  },
+  "featureList": "Professional portfolio, Direct salon messages, Flat placement fee, No agency percentage, Verified profiles"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="/" style="text-decoration:none;display:flex;align-items:center;">
+  <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+</a></div>
+  <div class="nav-links">
+    <a href="/">Solo Professionals</a>
+    <a href="/partners.html">Salon Owners</a>
+    <a href="#join" class="nav-cta">Join the Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Talent Marketplace — Launching Soon</div>
+    <h1>
+      Get discovered.<br>Work on
+      <strong>your terms.</strong>
+    </h1>
+    <p class="hero-sub">
+      Create your talent profile on SAY-OS and get found by salons looking to hire. Browse freelance and part-time shifts that fit your schedule. You choose when, where, and how you work.
+    </p>
+    <div class="hero-actions">
+      <a href="#join" class="btn-copper">Join the Waitlist</a>
+      <a href="#how" class="btn-ghost">How it works →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-launch-badge">
+      <div class="launch-dot"></div>
+      Launching Soon — Be First In
+    </div>
+    <div class="hero-profile-stack">
+      <div class="profile-card featured">
+        <div class="profile-top">
+          <div class="profile-avatar">✂️</div>
+          <div>
+            <div class="profile-name">Sarah M.</div>
+            <div class="profile-role">Senior Colourist · 8 yrs exp</div>
+          </div>
+          <div class="profile-available"><div class="avail-dot"></div>Available</div>
+        </div>
+        <div class="profile-tags">
+          <span class="profile-tag">Balayage</span>
+          <span class="profile-tag">Highlights</span>
+          <span class="profile-tag">Colour Correction</span>
+          <span class="profile-tag">Freelance</span>
+        </div>
+        <div class="profile-footer">
+          <div><div class="profile-rate">£35/hr</div></div>
+          <div class="profile-type">East London · Flexible</div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="profile-avatar">💅</div>
+          <div>
+            <div class="profile-name">Amara O.</div>
+            <div class="profile-role">Nail Technician · 5 yrs exp</div>
+          </div>
+          <div class="profile-available"><div class="avail-dot"></div>Available</div>
+        </div>
+        <div class="profile-tags">
+          <span class="profile-tag">Gel Extensions</span>
+          <span class="profile-tag">Nail Art</span>
+          <span class="profile-tag">Acrylic</span>
+        </div>
+        <div class="profile-footer">
+          <div><div class="profile-rate">£28/hr</div></div>
+          <div class="profile-type">South London · Weekends</div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="profile-avatar">💆</div>
+          <div>
+            <div class="profile-name">Priya K.</div>
+            <div class="profile-role">Beauty Therapist · 6 yrs exp</div>
+          </div>
+          <div class="profile-available"><div class="avail-dot"></div>Available</div>
+        </div>
+        <div class="profile-tags">
+          <span class="profile-tag">Facials</span>
+          <span class="profile-tag">Waxing</span>
+          <span class="profile-tag">Massage</span>
+        </div>
+        <div class="profile-footer">
+          <div><div class="profile-rate">£30/hr</div></div>
+          <div class="profile-type">North London · Part Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-heading reveal">
+    Four steps to<br><em>your next opportunity.</em>
+  </h2>
+  <div class="steps-grid reveal">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">📋</div>
+      <div class="step-title">Create your profile</div>
+      <div class="step-desc">Add your skills, specialisms, experience, and availability. Your profile is your shop window to every salon on SAY-OS.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">🔍</div>
+      <div class="step-title">Get discovered</div>
+      <div class="step-desc">Salon owners search the marketplace for exactly your skills. You appear in their results. They contact you directly — no middleman.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">📅</div>
+      <div class="step-title">Browse shifts</div>
+      <div class="step-desc">See freelance and part-time opportunities from salons in your area. Filter by role, location, days, and rate. Apply in one tap.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">💼</div>
+      <div class="step-title">Work your way</div>
+      <div class="step-desc">You decide when you work, where you work, and at what rate. Full control. No agency taking a cut of your earnings.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN JOIN -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="section-label">Who Can Join</div>
+    <h2 class="section-heading reveal">
+      Every beauty & wellness<br><em>professional welcome.</em>
+    </h2>
+    <div class="who-grid reveal">
+      <div class="who-card">
+        <div class="who-emoji">✂️</div>
+        <div class="who-name">Hairdressers</div>
+        <div class="who-desc">Colourists, stylists, and cutting specialists looking for flexible salon work.</div>
+        <div class="who-tags"><span class="who-tag">Colour</span><span class="who-tag">Cutting</span><span class="who-tag">Styling</span></div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💆</div>
+        <div class="who-name">Beauty Therapists</div>
+        <div class="who-desc">Facials, waxing, massage, and holistic treatments. Salon or mobile.</div>
+        <div class="who-tags"><span class="who-tag">Facials</span><span class="who-tag">Waxing</span><span class="who-tag">Massage</span></div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💅</div>
+        <div class="who-name">Nail Technicians</div>
+        <div class="who-desc">Gel, acrylic, nail art, and extensions. One of the most in-demand specialisms.</div>
+        <div class="who-tags"><span class="who-tag">Gel</span><span class="who-tag">Acrylic</span><span class="who-tag">Nail Art</span></div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💈</div>
+        <div class="who-name">Barbers</div>
+        <div class="who-desc">Fades, styling, and grooming. Barbershops and salons across the UK.</div>
+        <div class="who-tags"><span class="who-tag">Fades</span><span class="who-tag">Grooming</span><span class="who-tag">Styling</span></div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">👁️</div>
+        <div class="who-name">Lash & Brow Specialists</div>
+        <div class="who-desc">The fastest growing specialism in beauty. High demand, flexible hours.</div>
+        <div class="who-tags"><span class="who-tag">Lashes</span><span class="who-tag">Brows</span><span class="who-tag">Tinting</span></div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🙌</div>
+        <div class="who-name">Massage Therapists</div>
+        <div class="who-desc">Swedish, sports, deep tissue. Mobile and salon-based opportunities.</div>
+        <div class="who-tags"><span class="who-tag">Sports</span><span class="who-tag">Relaxation</span><span class="who-tag">Mobile</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL VALUE -->
+<section class="dual-section">
+  <div class="section-label">Two Ways to Work</div>
+  <h2 class="section-heading reveal">
+    Be found. Or find<br><em>your next shift.</em>
+  </h2>
+  <div class="dual-grid reveal">
+    <div class="dual-card profile-side">
+      <div class="dual-tag gold">Your Talent Profile</div>
+      <div class="dual-title">Let salons come to you</div>
+      <div class="dual-body">Create your profile once. Salon owners across the SAY-OS network can find you, view your skills, and contact you directly — whenever they need someone with your expertise.</div>
+      <ul class="dual-list gold">
+        <li>Verified skills and specialism badges</li>
+        <li>Portfolio and experience showcase</li>
+        <li>Availability calendar — you control when you're open</li>
+        <li>Direct contact from salon owners — no agency involved</li>
+        <li>One flat fee per placement — transparent pricing</li>
+        <li>Your profile travels with you as your career grows</li>
+      </ul>
+    </div>
+    <div class="dual-card shifts-side">
+      <div class="dual-tag copper">Shift Discovery</div>
+      <div class="dual-title">Find work that fits your life</div>
+      <div class="dual-body">Browse freelance and part-time shifts posted by salons in your area. Filter by what matters to you — role, location, days, rate — and apply directly. You set the terms.</div>
+      <ul class="dual-list copper">
+        <li>Shifts posted by verified SAY-OS salon partners</li>
+        <li>Filter by location, role, days, and pay rate</li>
+        <li>One-tap application — no lengthy forms</li>
+        <li>Freelance, part-time, and cover shifts available</li>
+        <li>Direct communication with the salon owner</li>
+        <li>Build relationships that turn into regular work</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE SHIFTS -->
+<section class="shifts-section">
+  <div class="shifts-inner">
+    <div class="section-label">Example Opportunities</div>
+    <h2 class="section-heading reveal">
+      The kind of work<br><em>you'll find here.</em>
+    </h2>
+    <div class="shifts-grid reveal">
+      <div class="shift-card-wrap">
+        <div class="shift-card">
+          <div class="shift-top">
+            <div><div class="shift-salon">Maison Studio</div><div class="shift-location">Shoreditch, London</div></div>
+            <div class="shift-type">Freelance</div>
+          </div>
+          <div class="shift-role">Senior Colourist</div>
+          <div class="shift-details">Saturdays only. Looking for an experienced colourist to cover our busiest day. Balayage and highlights essential.</div>
+          <div class="shift-footer">
+            <div><div class="shift-pay">£38/hr</div><div class="shift-pay-label">negotiable</div></div>
+            <div class="shift-days">Saturdays · Ongoing</div>
+          </div>
+        </div>
+        <div class="coming-soon-overlay"><div class="coming-soon-label">Available at Launch</div></div>
+      </div>
+      <div class="shift-card-wrap">
+        <div class="shift-card">
+          <div class="shift-top">
+            <div><div class="shift-salon">The Nail Collective</div><div class="shift-location">Clapham, London</div></div>
+            <div class="shift-type">Part Time</div>
+          </div>
+          <div class="shift-role">Nail Technician</div>
+          <div class="shift-details">3 days per week. Gel and acrylic extensions required. Nail art a bonus. Friendly team, great clients.</div>
+          <div class="shift-footer">
+            <div><div class="shift-pay">£30/hr</div><div class="shift-pay-label">+ tips</div></div>
+            <div class="shift-days">Tue · Thu · Sat</div>
+          </div>
+        </div>
+        <div class="coming-soon-overlay"><div class="coming-soon-label">Available at Launch</div></div>
+      </div>
+      <div class="shift-card-wrap">
+        <div class="shift-card">
+          <div class="shift-top">
+            <div><div class="shift-salon">Bloom Wellness Spa</div><div class="shift-location">Notting Hill, London</div></div>
+            <div class="shift-type">Cover</div>
+          </div>
+          <div class="shift-role">Beauty Therapist</div>
+          <div class="shift-details">Holiday cover for 3 weeks. Full facial and massage menu. Dermalogica trained preferred. Immediate start.</div>
+          <div class="shift-footer">
+            <div><div class="shift-pay">£32/hr</div><div class="shift-pay-label">fixed rate</div></div>
+            <div class="shift-days">Mon–Fri · 3 weeks</div>
+          </div>
+        </div>
+        <div class="coming-soon-overlay"><div class="coming-soon-label">Available at Launch</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER -->
+<div class="counter-strip">
+  <div class="counter-inner">
+    <div class="counter-label">Professionals Already on the Waitlist</div>
+    <div class="counter-num" id="counter">0</div>
+    <div class="counter-sub">and growing every day — be part of the founding talent pool</div>
+  </div>
+</div>
+
+<!-- WAITLIST FORM -->
+<section class="form-section" id="join">
+  <div class="form-outer reveal">
+    <div class="form-left">
+      <div class="launch-tag">Launching Soon</div>
+      <h2 class="form-title">
+        Join the talent<br><em>waitlist today.</em>
+      </h2>
+      <p class="form-body">
+        Be among the first professionals on the SAY-OS talent marketplace. When we launch, your profile goes live immediately — visible to every salon owner on the platform from day one.
+      </p>
+      <ul class="form-perks">
+        <li>Profile live from day one of marketplace launch</li>
+        <li>Priority visibility to salon owners in your area</li>
+        <li>First access to shift listings before public opening</li>
+        <li>Founding talent badge on your profile — forever</li>
+        <li>Free profile for the first 3 months</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <form id="talentForm">
+        <div class="form-card-title">Join the Waitlist</div>
+        <div class="form-card-sub">Free to join · Profile live at launch</div>
+
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="First and last name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Your Profession</label>
+          <select name="job_title" required>
+            <option value="" disabled selected>Select your specialism</option>
+            <option value="Hairdresser / Colourist">Hairdresser / Colourist</option>
+            <option value="Beauty Therapist">Beauty Therapist</option>
+            <option value="Nail Technician">Nail Technician</option>
+            <option value="Barber">Barber</option>
+            <option value="Lash & Brow Specialist">Lash & Brow Specialist</option>
+            <option value="Massage Therapist">Massage Therapist</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Years of Experience</label>
+          <select name="company_size">
+            <option value="0-2">0–2 years</option>
+            <option value="3-5">3–5 years</option>
+            <option value="6-10">6–10 years</option>
+            <option value="10+">10+ years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>I'm looking for (select all that apply)</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" name="interest" value="profile"> <span>Talent profile</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="interest" value="shifts"> <span>Shift discovery</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="interest" value="freelance"> <span>Freelance work</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="interest" value="permanent"> <span>Permanent role</span></label>
+          </div>
+        </div>
+
+        <input type="hidden" name="source" value="landing-talent">
+        <input type="hidden" name="company" value="Self Employed">
+
+        <button type="submit" class="form-submit">Join the Talent Waitlist →</button>
+        <div class="form-privacy">Free to join · No commitment · Profile live at launch</div>
+      </form>
+      <div class="form-success" id="talentSuccess">
+        <div class="success-icon">✦</div>
+        <div class="success-title">You're on the list.</div>
+        <div class="success-sub">Welcome to the SAY-OS talent marketplace waitlist. We'll notify you the moment we launch — your profile will go live immediately and you'll have priority visibility to salon owners in your area.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="founder-inner reveal">
+    <div class="founder-quote">
+      I spent 10 years watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. SAY-OS closes it.
+    </div>
+    <div class="founder-attr">— Founder, SAY-OS · Clinical background in physiotherapy and functional therapy</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">SAY-OS</div>
+  <div class="footer-links">
+    <a href="/">Solo Professionals</a>
+    <a href="/partners.html">Salon Owners</a>
+    <a href="/education.html">Educators</a>
+    <a href="mailto:contact@say-salon.com">Talent Enquiries</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+</footer>
+
+<script>
+// Scroll reveal — bulletproof
+const reveals = document.querySelectorAll('.reveal');
+function revealAll() { reveals.forEach(el => el.classList.add('visible')); }
+setTimeout(revealAll, 1500);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
+  });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Animated counter
+function animateCounter(target, duration) {
+  const el = document.getElementById('counter');
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current).toLocaleString();
+  }, 16);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { animateCounter(247, 2000); counterObserver.disconnect(); }
+  });
+}, { threshold: 0.5 });
+const counterEl = document.getElementById('counter');
+if (counterEl) counterObserver.observe(counterEl.closest('.counter-strip'));
+
+// Form submit
+document.getElementById('talentForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  const interests = Array.from(form.querySelectorAll('input[name="interest"]:checked')).map(cb => cb.value).join(', ');
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    job_title: form.job_title.value,
+    company_size: form.company_size.value,
+    source: 'landing-talent',
+    company: 'Self Employed — ' + (interests || 'Profile & Shifts'),
+    requested_demo: false
+  };
+
+  try {
+    await fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) { console.log('Webho

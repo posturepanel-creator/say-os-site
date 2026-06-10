@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Your Skin Type? — SAY</title>
+<meta name="description" content="Find your Fitzpatrick skin type in 60 seconds. The same classification dermatologists use — free, no signup required.">
+<meta property="og:title" content="What's Your Skin Type? — Free Quiz">
+<meta property="og:description" content="Find your Fitzpatrick skin type in 60 seconds. Know your number before your next treatment.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:url" content="https://say-salon.com/skin-type/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/skin-type/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --base: #0F2818;
+  --card: #183222;
+  --card-hover: #1E3828;
+  --gold: #C9A961;
+  --gold-dim: rgba(201,169,97,0.12);
+  --gold-glow: rgba(201,169,97,0.25);
+  --champagne: #EDE5D4;
+  --whisper: #96A097;
+  --cream: #faf9f7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--base);
+  color: var(--champagne);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.container { max-width: 480px; margin: 0 auto; padding: 20px; }
+.logo { text-align: center; padding: 24px 0 8px; }
+.logo span { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; color: var(--gold); letter-spacing: 4px; }
+.hero { text-align: center; padding: 16px 0 32px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 32px; color: var(--champagne); margin-bottom: 12px; line-height: 1.2; }
+.hero p { font-size: 14px; color: var(--whisper); max-width: 360px; margin: 0 auto; }
+.progress { display: flex; gap: 6px; margin-bottom: 24px; }
+.progress-dot { flex: 1; height: 3px; border-radius: 2px; background: rgba(201,169,97,0.15); transition: background 0.3s; }
+.progress-dot.active { background: var(--gold); }
+.progress-dot.done { background: rgba(201,169,97,0.45); }
+.question-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 20px; padding: 28px 24px; margin-bottom: 16px; }
+.question-num { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; }
+.question-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--champagne); margin-bottom: 20px; line-height: 1.3; }
+.option { display: block; width: 100%; padding: 14px 16px; margin-bottom: 8px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 400; cursor: pointer; transition: all 0.2s; text-align: left; }
+.option:hover { background: var(--card-hover); border-color: rgba(201,169,97,0.3); }
+.option.selected { background: rgba(201,169,97,0.12); border-color: var(--gold); color: var(--gold); font-weight: 500; }
+.nav-row { display: flex; gap: 12px; margin-top: 8px; }
+.btn-back { flex: 0 0 auto; padding: 14px 20px; background: transparent; border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--whisper); font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-back:hover { border-color: rgba(201,169,97,0.3); color: var(--champagne); }
+.btn-next { flex: 1; padding: 14px 20px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+.btn-next:hover { filter: brightness(1.08); }
+.btn-next:disabled { opacity: 0.35; cursor: not-allowed; filter: none; }
+.email-gate { display: none; }
+.email-gate.visible { display: block; }
+.email-gate h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; text-align: center; }
+.email-gate p { font-size: 13px; color: var(--whisper); text-align: center; margin-bottom: 20px; }
+.email-input { display: block; width: 100%; padding: 14px 16px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; margin-bottom: 12px; outline: none; }
+.email-input:focus { border-color: var(--gold); }
+.email-input::placeholder { color: var(--whisper); opacity: 0.6; }
+.skip-link { display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--whisper); cursor: pointer; text-decoration: underline; opacity: 0.6; }
+.skip-link:hover { opacity: 1; }
+.result { display: none; text-align: center; }
+.result.visible { display: block; }
+.result-type { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: var(--gold); margin: 16px 0 4px; }
+.result-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; }
+.result-desc { font-size: 14px; color: var(--whisper); margin-bottom: 24px; max-width: 340px; margin-left: auto; margin-right: auto; }
+.result-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 20px; margin-bottom: 16px; text-align: left; }
+.result-card h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
+.result-card p { font-size: 13px; color: var(--champagne); line-height: 1.6; }
+.result-card ul { list-style: none; padding: 0; }
+.result-card li { font-size: 13px; color: var(--champagne); padding: 6px 0; border-bottom: 1px solid var(--gold-dim); }
+.result-card li:last-child { border-bottom: none; }
+.cta-section { margin-top: 24px; padding: 24px; background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; text-align: center; }
+.cta-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; }
+.cta-section p { font-size: 13px; color: var(--whisper); margin-bottom: 16px; }
+.cta-btn { display: inline-block; padding: 14px 32px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: 0.5px; transition: all 0.2s; }
+.cta-btn:hover { filter: brightness(1.08); }
+.footer { text-align: center; padding: 32px 0 16px; }
+.footer p { font-size: 11px; color: var(--whisper); opacity: 0.5; }
+.footer a { color: var(--gold); text-decoration: none; opacity: 0.7; }
+@media (max-width: 380px) {
+  .hero h1 { font-size: 26px; }
+  .question-text { font-size: 20px; }
+  .result-type { font-size: 48px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Fitzpatrick Skin Type Quiz",
+  "description": "Find your Fitzpatrick skin type in 60 seconds. The same classification dermatologists use to assess UV sensitivity, treatment suitability, and pigmentation risk.",
+  "url": "https://say-salon.com/skin-type/",
+  "provider": {
+    "@type": "Organization",
+    "name": "SAY-OS",
+    "legalName": "Servicesforyou Ltd",
+    "url": "https://say-salon.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    }
+  },
+  "about": {
+    "@type": "MedicalCondition",
+    "name": "Skin phototype classification"
+  },
+  "educationalLevel": "General public",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="logo"><span>SAY</span></div>
+
+  <div class="hero" id="hero">
+    <h1>What's your skin type?</h1>
+    <p>The same classification dermatologists use. 6 questions. 60 seconds. Know your number before your next treatment.</p>
+  </div>
+
+  <div id="quiz">
+    <div class="progress" id="progress"></div>
+    <div class="question-card" id="question-card">
+      <div class="question-num" id="q-num"></div>
+      <div class="question-text" id="q-text"></div>
+      <div id="options"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" id="btn-back" onclick="prevQuestion()">Back</button>
+      <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>Continue</button>
+    </div>
+  </div>
+
+  <div class="email-gate" id="email-gate">
+    <div class="question-card">
+      <h2>Your results are ready</h2>
+      <p>Enter your email to see your Fitzpatrick type, what it means for treatments, and personalised safety notes.</p>
+      <input type="email" class="email-input" id="email-input" placeholder="you@example.com" autocomplete="email">
+      <button class="btn-next" id="btn-reveal" onclick="submitEmail()" style="width:100%;">Show my skin type</button>
+      <span class="skip-link" onclick="skipEmail()">Skip — show results without email</span>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-type" id="r-type"></div>
+    <div class="result-name" id="r-name"></div>
+    <div class="result-desc" id="r-desc"></div>
+
+    <div class="result-card" id="r-treatments">
+      <h3>What this means for treatments</h3>
+      <ul id="r-treatment-list"></ul>
+    </div>
+
+    <div class="result-card" id="r-risks">
+      <h3>Key safety notes</h3>
+      <p id="r-risk-text"></p>
+    </div>
+
+    <div class="cta-section">
+      <h3>Save this to your Beauty Passport</h3>
+      <p>Your Fitzpatrick type, allergies, medications, and treatment history — all in one place. Share with any salon via QR code. Free forever.</p>
+      <a href="https://app.say-salon.com/register" class="cta-btn">Create your free passport</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>SAY-OS &mdash; the app that remembers everything for you</p>
+    <p style="margin-top:8px;"><a href="https://say-salon.com">say-salon.com</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a></p>
+  </div>
+</div>
+
+<script>
+var QUESTIONS = [
+  { q: 'What is your natural eye colour?', opts: ['Light blue, light grey or light green','Blue, grey or green','Hazel or light brown','Dark brown','Brownish black or black'] },
+  { q: 'What is your natural hair colour?', opts: ['Sandy red or blonde','Blonde','Chestnut or dark blonde','Dark brown','Black'] },
+  { q: 'What is your natural skin colour (unexposed areas)?', opts: ['Ivory white','Fair or pale','Fair to beige','Olive or light brown','Dark brown or black'] },
+  { q: 'How does your skin respond to sun exposure?', opts: ['Always burns, never tans','Usually burns, sometimes tans','Sometimes burns, always tans','Rarely burns, always tans','Never burns, always tans'] },
+  { q: 'How does your skin look in winter (unexposed areas)?', opts: ['Very white','White to pale','Pale to beige','Light brown','Dark brown'] },
+  { q: 'Do you have freckles on unexposed skin?', opts: ['Many','Several','Few','Very few','None'] }
+];
+
+var ROMAN = ['','I','II','III','IV','V','VI'];
+var NAMES = ['','Type I — Very Fair','Type II — Fair','Type III — Medium','Type IV — Olive','Type V — Brown','Type VI — Dark'];
+var DESCS = [
+  '',
+  'Very fair skin that always burns and never tans. Highest sensitivity to UV and laser treatments.',
+  'Fair skin that usually burns and tans minimally. High sensitivity — lower energy settings recommended for most treatments.',
+  'Medium skin that sometimes burns and tans gradually. Moderate sensitivity — standard treatment protocols usually safe.',
+  'Olive skin that rarely burns and tans easily. Lower burn risk but higher risk of post-inflammatory hyperpigmentation.',
+  'Brown skin that very rarely burns and tans deeply. PIH risk requires careful treatment selection and lower energy settings.',
+  'Deeply pigmented skin that never burns. Highest PIH risk — specialist protocols required for laser and chemical treatments.'
+];
+
+var TREATMENTS = [
+  [],
+  ['Laser: lowest settings, test patch mandatory','Chemical peels: superficial only, no TCA','IPL: high risk — proceed with extreme caution','Microneedling: shallow depth (0.25-0.5mm)','SPF 50+ daily, reapply every 2 hours'],
+  ['Laser: low-moderate settings, test patch recommended','Chemical peels: superficial to medium','IPL: proceed with caution, low fluence','Microneedling: 0.5-1.0mm depth','SPF 30-50 daily'],
+  ['Laser: standard settings appropriate','Chemical peels: most types suitable','IPL: standard protocols','Microneedling: 0.5-1.5mm depth','SPF 30+ recommended'],
+  ['Laser: Nd:YAG preferred over IPL','Chemical peels: caution with medium-deep','IPL: higher PIH risk — Nd:YAG safer','Microneedling: standard depth, watch for PIH','Tyrosinase inhibitor pre-treatment may help'],
+  ['Laser: Nd:YAG only, no IPL or alexandrite','Chemical peels: superficial only, mandelic preferred','IPL: contraindicated — high PIH risk','Microneedling: proceed carefully, shallow depth','Pre- and post-treatment pigment management essential'],
+  ['Laser: Nd:YAG with extreme caution only','Chemical peels: superficial only, specialist protocols','IPL: contraindicated','Microneedling: specialist assessment required','Hyperpigmentation management critical at every stage']
+];
+
+var RISKS = [
+  '',
+  'Your skin has minimal melanin protection. Any UV-based or heat-based treatment carries significant burn risk. Always request the lowest energy setting and a test patch 48 hours before full treatment. Retinol and AHAs increase your photosensitivity further — inform your therapist if you use them.',
+  'You have moderate burn risk with most energy-based treatments. Post-treatment redness may last longer than average. If you take photosensitising medications (antibiotics, NSAIDs, retinoids), inform your therapist — treatment parameters need adjusting.',
+  'Your skin responds well to most standard treatments. Main risk is inconsistent tanning response — avoid sun exposure 2 weeks before and after laser or peel treatments. Retinoid use should still be flagged.',
+  'Post-inflammatory hyperpigmentation (PIH) is your primary risk. Dark patches can appear after laser, peels, or even aggressive facials. Request a test patch for any new treatment. Nd:YAG laser is safer than IPL or alexandrite for your skin type.',
+  'PIH is a significant concern with nearly all energy-based treatments. Many standard laser and IPL protocols are not designed for your skin type. Seek practitioners experienced with Fitzpatrick V-VI. Pre-treatment with tyrosinase inhibitors (vitamin C, arbutin, kojic acid) can reduce PIH risk.',
+  'Standard aesthetic protocols carry the highest risk of adverse outcomes for your skin type. Only seek practitioners with specific training in treating deeply pigmented skin. Nd:YAG at conservative settings is the only laser generally considered appropriate. Chemical peels should be superficial only with mandelic or lactic acid — avoid glycolic at high concentrations.'
+];
+
+var step = 0;
+var answers = [null,null,null,null,null,null];
+
+function render() {
+  var prog = document.getElementById('progress');
+  prog.innerHTML = '';
+  for (var i = 0; i < 6; i++) {
+    var d = document.createElement('div');
+    d.className = 'progress-dot' + (i === step ? ' active' : '') + (answers[i] !== null && i !== step ? ' done' : '');
+    prog.appendChild(d);
+  }
+  document.getElementById('q-num').textContent = 'Question ' + (step+1) + ' of 6';
+  document.getElementById('q-text').textContent = QUESTIONS[step].q;
+  var opts = document.getElementById('options');
+  opts.innerHTML = '';
+  QUESTIONS[step].opts.forEach(function(label, idx) {
+    var b = document.createElement('button');
+    b.className = 'option' + (answers[step] === idx ? ' selected' : '');
+    b.textContent = label;
+    b.onclick = function() { answers[step] = idx; render(); };
+    opts.appendChild(b);
+  });
+  document.getElementById('btn-back').style.display = step === 0 ? 'none' : 'block';
+  document.getElementById('btn-next').disabled = answers[step] === null;
+  document.getElementById('btn-next').textContent = step === 5 ? 'See my results' : 'Continue';
+}
+
+function nextQuestion() {
+  if (answers[step] === null) return;
+  if (step < 5) { step++; render(); return; }
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('hero').style.display = 'none';
+  document.getElementById('email-gate').classList.add('visible');
+  document.getElementById('email-input').focus();
+}
+
+function prevQuestion() {
+  if (step > 0) { step--; render(); }
+}
+
+function scoreFitzpatrick(ans) {
+  var total = ans.reduce(function(a,b){ return a+b; }, 0);
+  if (total <= 3) return 1;
+  if (total <= 7) return 2;
+  if (total <= 13) return 3;
+  if (total <= 19) return 4;
+  if (total <= 23) return 5;
+  return 6;
+}
+
+function showResults() {
+  var type = scoreFitzpatrick(answers);
+  document.getElementById('email-gate').classList.remove('visible');
+  document.getElementById('r-type').textContent = ROMAN[type];
+  document.getElementById('r-name').textContent = NAMES[type];
+  document.getElementById('r-desc').textContent = DESCS[type];
+  var ul = document.getElementById('r-treatment-list');
+  ul.innerHTML = '';
+  TREATMENTS[type].forEach(function(t) {
+    var li = document.createElement('li');
+    li.textContent = t;
+    ul.appendChild(li);
+  });
+  document.getElementById('r-risk-text').textContent = RISKS[type];
+  document.getElementById('result').classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  try {
+    fetch('https://say-os.app.n8n.cloud/webhook/skin-type-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: type, roman: ROMAN[type], answers: answers, timestamp: new Date().toISOString(), source: 'landing_page' })
+    }).catch(function(){});
+  } catch(e) {}
+}
+
+function submitEmail() {
+  var email = document.getElementById('email-input').value.trim();
+  if (!email || email.indexOf('@') < 1) { document.getElementById('email-input').style.borderColor = '#C8352E'; return; }
+  var type = scoreFitzpatrick(answers);
+  try {
+    fetch('https://say-os.app.n8n.cloud/webhook/skin-type-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, fitzpatrick_type: type, roman: ROMAN[type], answers: answers, timestamp: new Date().toISOString(), source: 'landing_page' })
+    }).catch(function(){});
+  } catch(e) {}
+  showResults();
+}
+
+function skipEmail() { showResults(); }
+
+render();
+</script>
+</body>
+</html>

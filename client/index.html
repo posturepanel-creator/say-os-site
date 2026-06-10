@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAY — Your Personal Beauty Passport</title>
+<meta name="description" content="Store your beauty formulas, allergies and style preferences. Share them anywhere in the world with a QR code. Free to join.">
+<meta property="og:title" content="SAY — Your Personal Beauty Passport">
+<meta property="og:description" content="Your formulas. Your allergies. Your style. Always with you — in 14 languages.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:url" content="https://say-salon.com/client/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/client/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep:  #1C2B1C;
+  --green-card:  #243424;
+  --green-muted: #4A5A3A;
+  --gold:        #C9A96E;
+  --gold-dim:    rgba(201,169,110,0.12);
+  --gold-border: rgba(201,169,110,0.40);
+  --cream:       #F5F0E8;
+  --text-light:  #D4CFC6;
+  --text-muted:  #9A9A8A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--green-deep);
+  color: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+.topbar { background: var(--cream); padding: 20px 0; }
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  letter-spacing: 6px; color: var(--gold);
+  text-transform: uppercase; text-decoration: none;
+}
+
+.hero {
+  padding: 100px 0 80px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.passport-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--gold-border); border-radius: 60px;
+  padding: 8px 22px; font-size: 0.78rem; color: var(--gold);
+  margin-bottom: 48px; letter-spacing: 1px; font-weight: 400;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 300; line-height: 1.15;
+  letter-spacing: -0.02em; color: var(--gold); margin-bottom: 28px;
+}
+.hero p {
+  font-size: 1.05rem; font-weight: 300;
+  color: var(--text-light); line-height: 1.8;
+  max-width: 500px; margin: 0 auto 52px;
+}
+.cta-primary {
+  display: inline-block; background: transparent;
+  color: var(--gold); font-family: 'Outfit', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; text-decoration: none;
+  padding: 18px 52px; border-radius: 60px;
+  border: 1.5px solid var(--gold);
+  transition: background 0.35s ease, color 0.35s ease, transform 0.25s ease;
+}
+.cta-primary:hover {
+  background: var(--gold); color: var(--green-deep);
+  transform: translateY(-2px);
+}
+
+.features { padding: 60px 0 80px; }
+.section-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold);
+  text-align: center; margin-bottom: 48px; opacity: 0.8;
+}
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+.feature-card {
+  background: var(--green-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 20px; padding: 40px 32px;
+  transition: border-color 0.35s, transform 0.3s;
+}
+.feature-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.feature-card.holiday {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--gold);
+  display: flex; align-items: flex-start; gap: 32px;
+}
+.feature-card.holiday .card-body { flex: 1; }
+
+.card-icon {
+  width: 40px; height: 40px;
+  margin-bottom: 24px;
+  color: var(--gold);
+}
+.feature-card.holiday .card-icon {
+  width: 44px; height: 44px;
+  margin-bottom: 0; margin-top: 4px; flex-shrink: 0;
+}
+.card-icon svg { width: 100%; height: 100%; stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+
+.feature-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 12px; line-height: 1.3;
+}
+.feature-card.holiday h3 { font-size: 1.5rem; }
+.feature-card p {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--text-light); line-height: 1.75;
+}
+.feature-card.holiday p { font-size: 0.92rem; }
+
+.how-section {
+  background: var(--green-card); border-radius: 24px;
+  margin: 0 0 80px; padding: 64px 40px; text-align: center;
+}
+.how-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300; margin-bottom: 56px; color: var(--gold);
+}
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 860px; margin: 0 auto; }
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--gold-dim); border: 1px solid var(--gold-border);
+  color: var(--gold); font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;
+}
+.step p { font-size: 0.95rem; font-weight: 400; color: var(--text-light); line-height: 1.6; }
+
+footer { background: var(--cream); padding: 48px 0 36px; text-align: center; }
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 600; letter-spacing: 5px;
+  color: var(--gold); text-transform: uppercase;
+  text-decoration: none; display: inline-block; margin-bottom: 20px;
+}
+.footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--green-muted); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--green-deep); }
+.footer-copy { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.5px; }
+
+@media (max-width: 768px) {
+  .hero { padding: 70px 0 56px; }
+  .cta-primary { display: block; text-align: center; padding: 18px 28px; }
+  .features-grid { grid-template-columns: 1fr; gap: 16px; }
+  .feature-card { padding: 28px 22px; }
+  .feature-card.holiday { flex-direction: column; gap: 16px; grid-column: auto; }
+  .steps { grid-template-columns: 1fr; gap: 32px; }
+  .how-section { padding: 48px 20px; border-radius: 16px; margin: 0 0 48px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SAY Beauty Passport",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Web",
+  "url": "https://app.say-salon.com",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "description": "Free personal beauty profile with QR sharing in 14 languages"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "SAY-OS",
+    "legalName": "Servicesforyou Ltd",
+    "url": "https://say-salon.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    }
+  },
+  "featureList": "Beauty Passport, Health Profile, Skincare Routine Tracker, Travel Passport (14 languages), Event Prep Planner, Allergy tracking, QR code sharing"
+}
+</script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <a href="https://say-salon.com" class="logo">SAY</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="passport-pill">&#10022; Beauty Passport — free to join</div>
+    <h1>The app that remembers everything about your beauty routine.</h1>
+    <p>Your formulas. Your allergies. Your style.<br>Always with you — in 14 languages.</p>
+    <a href="https://app.say-salon.com/register" class="cta-primary">Get Your Free Beauty Passport</a>
+  </section>
+
+  <section class="features">
+    <p class="section-label">What SAY does for you</p>
+    <div class="features-grid">
+
+      <!-- Travel Passport — compass rose -->
+      <div class="feature-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="2"/><line x1="20" y1="4" x2="20" y2="10"/><line x1="20" y1="30" x2="20" y2="36"/><line x1="4" y1="20" x2="10" y2="20"/><line x1="30" y1="20" x2="36" y2="20"/><polygon points="20,11 22,18 20,17 18,18" fill="#C9A96E" stroke="none"/></svg>
+        </div>
+        <h3>Travel anywhere. Explain nothing.</h3>
+        <p>Your colour formula, allergies and preferences translated into 14 languages. Show a QR code — any salon anywhere understands you instantly.</p>
+      </div>
+
+      <!-- Safety Profile — shield -->
+      <div class="feature-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 40 40"><path d="M20 4 L34 10 L34 22 C34 30 20 38 20 38 C20 38 6 30 6 22 L6 10 Z"/><polyline points="14,20 18,24 26,16"/></svg>
+        </div>
+        <h3>Your health. Protected at every appointment.</h3>
+        <p>Store your allergies, skin conditions and patch test records securely. Your stylist sees exactly what to avoid — before they start.</p>
+      </div>
+
+      <!-- Beauty Passport — open book / passport -->
+      <div class="feature-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="34" rx="2"/><line x1="20" y1="6" x2="20" y2="40"/><line x1="11" y1="14" x2="17" y2="14"/><line x1="11" y1="19" x2="17" y2="19"/><line x1="11" y1="24" x2="17" y2="24"/><line x1="23" y1="14" x2="29" y2="14"/><line x1="23" y1="19" x2="29" y2="19"/></svg>
+        </div>
+        <h3>Never explain your hair again.</h3>
+        <p>Save your formulas, reference photos and style preferences. Share them with any stylist, anywhere, any time.</p>
+      </div>
+
+      <!-- Routine reminders — clock with leaf -->
+      <div class="feature-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="22" r="14"/><polyline points="20,12 20,22 26,28"/><path d="M14 6 C14 6 20 4 24 10" stroke-dasharray="2,2"/></svg>
+        </div>
+        <h3>Plan your beauty around your bookings.</h3>
+        <p>Set reminders based on your routine — colour refresh, lash fills, skin treatments. SAY tracks your history and nudges you at the right time, not randomly.</p>
+      </div>
+
+      <!-- Holiday/Wedding — full width, horizon line with sun -->
+      <div class="feature-card holiday">
+        <div class="card-icon">
+          <svg viewBox="0 0 44 44"><circle cx="22" cy="18" r="7"/><line x1="22" y1="4" x2="22" y2="8"/><line x1="22" y1="28" x2="22" y2="32"/><line x1="8" y1="18" x2="12" y2="18"/><line x1="32" y1="18" x2="36" y2="18"/><line x1="12" y1="8" x2="15" y2="11"/><line x1="29" y1="25" x2="32" y2="28"/><line x1="32" y1="8" x2="29" y2="11"/><line x1="12" y1="28" x2="15" y2="25"/><line x1="4" y1="34" x2="40" y2="34"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Planning a holiday or a wedding?</h3>
+          <p>SAY tells you exactly when to book laser, waxing, Botox and peels before you fly or walk down the aisle — so you arrive looking your best, with zero guesswork. No more last-minute panic or conflicting treatments.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="how-section">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div><span class="step-num">1</span></div>
+        <p>Sign up free — no card needed</p>
+      </div>
+      <div class="step">
+        <div><span class="step-num">2</span></div>
+        <p>Build your beauty profile in 5 minutes</p>
+      </div>
+      <div class="step">
+        <div><span class="step-num">3</span></div>
+        <p>Share your passport at any salon, anywhere in the world</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <a href="https://say-salon.com" class="footer-logo">SAY</a>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="https://say-salon.com">For salons</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 SAY-OS. London, UK.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* SAY-OS Blog — Velvet Palette */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Outfit:wght@300;400;500&display=swap');
+
+:root {
+  --surface-base: #0F2818;
+  --surface-card: #183222;
+  --surface-elevated: #1E3D2B;
+  --text-heading: #EDE5D4;
+  --text-body: #D4C5A9;
+  --text-meta: #96A097;
+  --gold-cta: #C9A961;
+  --gold-hover: #D4B872;
+  --red-accent: #C8352E;
+  --border-subtle: rgba(201, 169, 97, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 18px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  background: var(--surface-base);
+  color: var(--text-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.blog-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(15, 40, 24, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.blog-nav__logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 1.4rem;
+  color: var(--text-heading);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.blog-nav__logo span { color: var(--gold-cta); }
+.blog-nav__cta {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--surface-base);
+  background: var(--gold-cta);
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.blog-nav__cta:hover { background: var(--gold-hover); }
+
+/* HERO */
+.blog-hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+.blog-hero__category {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem; font-weight: 500;
+  color: var(--gold-cta);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+.blog-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: var(--text-heading);
+  margin-bottom: 1rem;
+}
+.blog-hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-meta);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.blog-hero__meta {
+  font-size: 0.78rem;
+  color: var(--text-meta);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+}
+
+/* ARTICLE */
+.blog-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+.blog-article p {
+  margin-bottom: 1.5rem;
+}
+.blog-article h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--text-heading);
+  margin: 2.5rem 0 1rem;
+  line-height: 1.25;
+}
+.blog-article h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--gold-cta);
+  margin: 2rem 0 0.75rem;
+}
+.blog-article strong {
+  color: var(--text-heading);
+  font-weight: 500;
+}
+.blog-article ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.blog-article ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.blog-article ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.65rem;
+  width: 6px; height: 6px;
+  background: var(--gold-cta);
+  border-radius: 50%;
+}
+.blog-article blockquote {
+  border-left: 3px solid var(--gold-cta);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: var(--surface-card);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-heading);
+}
+
+/* CONFLICT CARD */
+.conflict-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.conflict-card__title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--red-accent);
+  margin-bottom: 0.5rem;
+}
+.conflict-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* CTA BLOCK */
+.cta-block {
+  background: var(--surface-card);
+  border: 1px solid var(--gold-cta);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+.cta-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--text-heading);
+  margin: 0 0 0.75rem;
+}
+.cta-block p {
+  color: var(--text-meta);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.cta-block__button {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--surface-base);
+  background: var(--gold-cta);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+.cta-block__button:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.cta-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-meta);
+  margin-top: 1.25rem;
+}
+
+/* FOOTER */
+.blog-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-meta);
+}
+.blog-footer a { color: var(--gold-cta); text-decoration: none; }
+
+/* FEATURE LIST */
+.feature-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.feature-item {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.feature-item__label {
+  font-weight: 500;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.feature-item__desc {
+  font-size: 0.88rem;
+  color: var(--text-meta);
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .blog-hero { padding: 3rem 1.25rem 1.5rem; }
+  .blog-hero h1 { font-size: 2rem; }
+  .blog-article { padding: 1.5rem 1.25rem 3rem; }
+  .blog-nav { padding: 0.75rem 1.25rem; }
+  .cta-block { padding: 2rem 1.25rem; }
+}

@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAY-OS — The Complete Salon Operating System</title>
+<meta name="description" content="One platform that replaces your booking app, marketing tools, stock spreadsheets, and paper consultation cards. Voice-first, safety-intelligent, client-connected. Start free.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:title" content="SAY-OS — The Complete Salon Operating System">
+<meta property="og:description" content="One platform for bookings, marketing, inventory, client safety, hiring, and business intelligence. Voice-first. Start free.">
+<meta property="og:url" content="https://say-salon.com/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --velvet-black: #030a07;
+  --velvet-deep: #061a12;
+  --velvet-primary: #0f2e20;
+  --velvet-light: #1a4d36;
+  --gold-brushed: #e6c985;
+  --gold-accent: #9e824c;
+  --gold-deep: #8c7335;
+  --alabaster: #fdfbf7;
+  --pearl: #ffffff;
+  --text-main: #1a1a1a;
+  --text-muted: #6b7280;
+  --shadow-premium: 0 50px 100px -20px rgba(15,46,32,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
+  --shadow-gold: 0 20px 50px -10px rgba(230,201,133,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--velvet-black);
+  color: var(--alabaster);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(3,10,7,0.95), transparent);
+  backdrop-filter: blur(8px);
+}
+.nav-logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.nav-cta {
+  background: transparent;
+  border: 1px solid rgba(230,201,133,0.3);
+  color: var(--gold-brushed);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 9px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.nav-cta:hover {
+  background: rgba(230,201,133,0.1);
+  border-color: var(--gold-brushed);
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 48px 80px;
+  position: relative;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,77,54,0.4), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,46,32,0.3), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(6,26,18,0.4), transparent 60%);
+}
+.hero-orb {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(230,201,133,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeUp 0.5s ease forwards 0.1s;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold-accent);
+  opacity: 0.5;
+}
+.hero h1 {
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6.5vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.5s ease forwards 0.2s;
+}
+.hero h1 strong {
+  font-weight: 700;
+  display: block;
+  background: linear-gradient(135deg, var(--gold-brushed) 0%, var(--gold-accent) 60%, var(--gold-brushed) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+.hero-sub {
+  position: relative;
+  font-size: 17px;
+  color: rgba(253,251,247,0.6);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  font-weight: 300;
+  line-height: 1.9;
+  animation: fadeUp 0.5s ease forwards 0.3s;
+}
+.hero-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.5s ease forwards 0.4s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-brushed), var(--gold-accent));
+  color: var(--velvet-black);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: var(--shadow-gold);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 60px -10px rgba(230,201,133,0.35);
+}
+.btn-ghost {
+  color: rgba(253,251,247,0.6);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-ghost:hover { color: var(--gold-brushed); }
+.spots-badge {
+  position: relative;
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(230,201,133,0.06);
+  border: 1px solid rgba(230,201,133,0.15);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gold-accent);
+  animation: fadeUp 0.5s ease forwards 0.45s;
+}
+.spots-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeUp 0.5s ease forwards 0.5s;
+}
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold-accent), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.1); }
+}
+
+/* ─── SECTIONS ─── */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(230,201,133,0.15);
+  max-width: 120px;
+}
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 48px;
+}
+.section-heading em {
+  font-style: italic;
+  color: var(--gold-brushed);
+}
+
+/* ─── COMPATIBLE SECTION ─── */
+.compat-section {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.compat-intro {
+  font-size: 16px;
+  color: rgba(253,251,247,0.55);
+  line-height: 1.9;
+  max-width: 700px;
+  margin-bottom: 48px;
+}
+.compat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.compat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px;
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.08);
+  border-radius: 14px;
+  transition: all 0.3s;
+}
+.compat-item:hover {
+  border-color: rgba(230,201,133,0.18);
+  transform: translateY(-2px);
+}
+.compat-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(230,201,133,0.08);
+  border: 1px solid rgba(230,201,133,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.compat-text h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--alabaster);
+  margin-bottom: 6px;
+}
+.compat-text p {
+  font-size: 13px;
+  color: rgba(253,251,247,0.45);
+  line-height: 1.7;
+}
+.compat-note {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: rgba(230,201,133,0.04);
+  border: 1px solid rgba(230,201,133,0.1);
+  border-left: 3px solid var(--gold-accent);
+  border-radius: 0 12px 12px 0;
+  font-size: 14px;
+  color: rgba(253,251,247,0.55);
+  line-height: 1.8;
+}
+
+/* ─── SEGMENTS ─── */
+.segments-section {
+  padding: 60px 48px;
+  background: var(--velvet-deep);
+}
+.segments-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.segments-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.seg-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(253,251,247,0.04);
+  border: 1px solid rgba(253,251,247,0.08);
+  border-radius: 100px;
+  padding: 12px 22px;
+  font-size: 14px;
+  color: rgba(253,251,247,0.7);
+  transition: all 0.3s;
+  cursor: default;
+}
+.seg-pill:hover {
+  background: rgba(230,201,133,0.08);
+  border-color: rgba(230,201,133,0.2);
+  color: var(--gold-brushed);
+  transform: translateY(-2px);
+}
+.seg-pill span { font-size: 18px; }
+
+/* ─── FEATURES ─── */
+.features-section {
+  padding: 100px 48px;
+  background: var(--velvet-deep);
+}
+.features-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-card {
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.08);
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(230,201,133,0.3), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.feature-card:hover::before { transform: scaleX(1); }
+.feature-card:hover {
+  border-color: rgba(230,201,133,0.15);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-premium);
+}
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(230,201,133,0.08);
+  border: 1px solid rgba(230,201,133,0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.feature-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--alabaster);
+  margin-bottom: 10px;
+}
+.feature-desc {
+  font-size: 14px;
+  color: rgba(253,251,247,0.5);
+  line-height: 1.8;
+}
+
+/* ─── CLIENT APP ─── */
+.client-section {
+  padding: 100px 48px;
+  background: var(--velvet-black);
+}
+.client-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.client-intro {
+  font-size: 16px;
+  color: rgba(253,251,247,0.55);
+  line-height: 1.9;
+  max-width: 700px;
+  margin-bottom: 48px;
+}
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.client-card {
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.08);
+  border-radius: 16px;
+  padding: 36px 32px;
+  transition: all 0.35s;
+}
+.client-card:hover {
+  border-color: rgba(230,201,133,0.18);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium);
+}
+.client-card.full-width {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  border-left: 3px solid var(--gold-accent);
+}
+.client-card.full-width .feature-icon {
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+/* ─── INSURANCE ─── */
+.insurance-section {
+  padding: 80px 48px;
+  background: var(--velvet-deep);
+}
+.insurance-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.insurance-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 32px;
+}
+.insurance-inner h2 em {
+  font-style: italic;
+  color: var(--gold-brushed);
+}
+.insurance-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.ins-point {
+  text-align: center;
+}
+.ins-point .ins-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.ins-point h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--alabaster);
+  margin-bottom: 8px;
+}
+.ins-point p {
+  font-size: 13px;
+  color: rgba(253,251,247,0.45);
+  line-height: 1.7;
+}
+.insurance-note {
+  font-size: 15px;
+  color: rgba(253,251,247,0.5);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ─── VOICE ─── */
+.voice-section {
+  padding: 100px 48px;
+  background: var(--velvet-black);
+}
+.voice-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.voice-chat {
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.1);
+  border-radius: 20px;
+  padding: 32px;
+}
+.voice-msg { margin-bottom: 16px; }
+.msg-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: rgba(253,251,247,0.3);
+}
+.msg-bubble {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 90%;
+}
+.user-bubble {
+  background: rgba(230,201,133,0.08);
+  border: 1px solid rgba(230,201,133,0.12);
+  color: var(--gold-brushed);
+  margin-left: auto;
+  border-radius: 12px 12px 2px 12px;
+}
+.ai-bubble {
+  background: rgba(15,46,32,0.6);
+  border: 1px solid rgba(26,77,54,0.4);
+  color: rgba(253,251,247,0.75);
+  border-radius: 12px 12px 12px 2px;
+}
+.voice-msg.user .msg-label { text-align: right; }
+.chat-footer {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(230,201,133,0.05);
+  border: 1px solid rgba(230,201,133,0.1);
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(253,251,247,0.35);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ─── FREE TIER ─── */
+.free-section {
+  padding: 80px 48px;
+  background: var(--velvet-black);
+}
+.free-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.free-card {
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.12);
+  border-radius: 20px;
+  padding: 56px 48px;
+}
+.free-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.free-card h2 em {
+  font-style: italic;
+  color: var(--gold-brushed);
+}
+.free-card p {
+  font-size: 16px;
+  color: rgba(253,251,247,0.55);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.free-features {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+.free-feat {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: rgba(253,251,247,0.5);
+  letter-spacing: 0.5px;
+}
+.free-feat strong {
+  color: var(--gold-brushed);
+  font-weight: 500;
+}
+
+/* ─── STATS ─── */
+.stats-strip {
+  background: linear-gradient(135deg, var(--velvet-primary), var(--velvet-light));
+  padding: 60px 48px;
+  border-top: 1px solid rgba(230,201,133,0.1);
+  border-bottom: 1px solid rgba(230,201,133,0.1);
+}
+.stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+.stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-brushed), var(--gold-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(253,251,247,0.4);
+  text-transform: uppercase;
+}
+
+/* ─── OFFER + FORM ─── */
+.offer-section {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.offer-card {
+  background: var(--velvet-deep);
+  border: 1px solid rgba(230,201,133,0.12);
+  border-radius: 56px;
+  padding: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.offer-card::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(230,201,133,0.05), transparent 70%);
+  pointer-events: none;
+}
+.offer-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(230,201,133,0.1);
+  border: 1px solid rgba(230,201,133,0.2);
+  color: var(--gold-brushed);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.offer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.offer-title em {
+  font-style: italic;
+  color: var(--gold-brushed);
+}
+.offer-perks {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.offer-perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(253,251,247,0.05);
+  font-size: 14px;
+  color: rgba(253,251,247,0.7);
+  line-height: 1.6;
+}
+.offer-perks li::before {
+  content: '→';
+  color: var(--gold-accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.form-side {
+  background: rgba(3,10,7,0.6);
+  border: 1px solid rgba(230,201,133,0.1);
+  border-radius: 20px;
+  padding: 40px;
+}
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.form-sub {
+  font-size: 13px;
+  color: rgba(253,251,247,0.4);
+  margin-bottom: 28px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.5px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(253,251,247,0.4);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  background: rgba(253,251,247,0.04);
+  border: 1px solid rgba(253,251,247,0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--alabaster);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: rgba(230,201,133,0.4);
+  background: rgba(253,251,247,0.06);
+}
+.form-group select option {
+  background: var(--velvet-primary);
+  color: var(--alabaster);
+}
+.form-group input::placeholder {
+  color: rgba(253,251,247,0.2);
+}
+.form-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold-brushed), var(--gold-accent));
+  color: var(--velvet-black);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+.form-privacy {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(253,251,247,0.25);
+  margin-top: 12px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success.visible { display: block; }
+.success-icon { font-size: 48px; margin-bottom: 16px; }
+.success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--gold-brushed);
+  margin-bottom: 8px;
+}
+.success-sub {
+  font-size: 14px;
+  color: rgba(253,251,247,0.5);
+  line-height: 1.7;
+}
+
+/* ─── FOUNDER ─── */
+.founder-section {
+  padding: 100px 48px;
+  background: var(--velvet-deep);
+}
+.founder-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.founder-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(253,251,247,0.85);
+  margin-bottom: 32px;
+  position: relative;
+}
+.founder-quote::before {
+  content: '\201C';
+  font-size: 120px;
+  color: rgba(230,201,133,0.1);
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  line-height: 1;
+  font-family: 'Cormorant Garamond', serif;
+}
+.founder-attr {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--velvet-black);
+  padding: 48px;
+  border-top: 1px solid rgba(253,251,247,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gold-brushed);
+}
+.footer-links { display: flex; gap: 32px; }
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(253,251,247,0.3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold-accent); }
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgba(253,251,247,0.2);
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 1; transform: translateY(0); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .hero { padding: 100px 24px 60px; }
+  .compat-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .client-grid { grid-template-columns: 1fr; }
+  .client-card.full-width { grid-template-columns: 1fr; }
+  .insurance-points { grid-template-columns: 1fr; gap: 24px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .offer-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; border-radius: 24px; }
+  .voice-inner { grid-template-columns: 1fr; gap: 40px; }
+  .free-card { padding: 40px 24px; }
+  .free-features { flex-direction: column; gap: 12px; }
+  .compat-section, .features-section, .offer-section, .voice-section, .client-section { padding: 60px 24px; }
+  .segments-section, .founder-section, .insurance-section, .free-section { padding: 60px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "SAY-OS",
+      "legalName": "Servicesforyou Ltd",
+      "url": "https://say-salon.com",
+      "logo": "https://say-salon.com/og-image.png",
+      "description": "Voice-first salon and wellness management platform. The app that remembers everything about your beauty routine.",
+      "foundingDate": "2025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@say-salon.com",
+        "contactType": "customer support"
+      },
+      "sameAs": [
+        "https://instagram.com/say.salonai",
+        "https://threads.net/@say.salonai"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SAY-OS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://app.say-salon.com",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Client Beauty Passport",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "description": "Free personal beauty profile with QR sharing in 14 languages"
+        },
+        {
+          "@type": "Offer",
+          "name": "Standard Salon Plan",
+          "price": "79",
+          "priceCurrency": "GBP",
+          "billingIncrement": "P1M",
+          "description": "Voice-first salon management with safety intelligence, marketing, and smart rebooking"
+        }
+      ],
+      "featureList": "Voice-first booking, Client safety intelligence, Beauty Passport with QR, Smart rebooking, Marketing automation, Inventory management, Talent marketplace"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:12px;">
+    <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:2px;color:#fdfbf7;">SAY<span style="font-weight:600;color:#e6c985;">-OS</span></span>
+</a></div>
+  <a href="#join" class="nav-cta">Start Free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb"></div>
+
+  <div class="hero-eyebrow">Founding Member Access — 50 Spots</div>
+
+  <h1>
+    One platform.<br>Everything your salon
+    <strong>needs.</strong>
+  </h1>
+
+  <p class="hero-sub">
+    Bookings, marketing, inventory, client safety, hiring, and business intelligence — all in one system, all voice-first. The operating system that replaces your booking app, your marketing tools, your stock spreadsheets, and your paper consultation cards.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#join" class="btn-primary">Claim Your Founding Spot</a>
+    <a href="#platform" class="btn-ghost">See the full platform →</a>
+  </div>
+
+  <div class="spots-badge">
+    <div class="spots-dot"></div>
+    Founding member list open — limited spots remaining
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SECTION 1: WORKS WITH WHAT YOU HAVE -->
+<section class="compat-section" id="how">
+  <div class="section-label">Works With What You Already Use</div>
+  <h2 class="section-heading" style="margin-bottom:20px">
+    Keep your booking system.<br>SAY-OS adds everything <em>it's missing.</em>
+  </h2>
+
+  <p class="compat-intro">
+    SAY-OS is not asking you to switch. It sits on top of what you already have and adds the layers that booking platforms don't offer — safety intelligence, client memory, voice control, marketing, stock management, care reminders, and business insights.
+  </p>
+
+  <div class="compat-grid reveal">
+    <div class="compat-item">
+      <div class="compat-icon">🛡️</div>
+      <div class="compat-text">
+        <h4>Client safety profiles</h4>
+        <p>Allergy tracking, contraindication flagging, patch test records. Booking apps don't do this.</p>
+      </div>
+    </div>
+    <div class="compat-item">
+      <div class="compat-icon">🎙️</div>
+      <div class="compat-text">
+        <h4>Voice-first control</h4>
+        <p>Book, restock, market — all by voice while your hands are busy. Booking apps don't do this.</p>
+      </div>
+    </div>
+    <div class="compat-item">
+      <div class="compat-icon">💛</div>
+      <div class="compat-text">
+        <h4>Client care reminders</h4>
+        <p>Your clients aren't chased — they're cared for. Personalised reminders when their next treatment is due. Booking apps don't do this.</p>
+      </div>
+    </div>
+    <div class="compat-item">
+      <div class="compat-icon">🧬</div>
+      <div class="compat-text">
+        <h4>Skincare conflict detection</h4>
+        <p>See what products your client uses at home before you apply anything. Prevents reactions. Booking apps don't do this.</p>
+      </div>
+    </div>
+    <div class="compat-item">
+      <div class="compat-icon">📋</div>
+      <div class="compat-text">
+        <h4>ICO-registered health data</h4>
+        <p>GDPR Article 9 compliant. The only salon platform with clinical-grade health data handling. Booking apps don't do this.</p>
+      </div>
+    </div>
+    <div class="compat-item">
+      <div class="compat-icon">📊</div>
+      <div class="compat-text">
+        <h4>Business intelligence</h4>
+        <p>Revenue trends, client retention, actionable advice — not just appointment counts. Booking apps don't do this.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="compat-note reveal">
+    Already on Treatwell? Keep it. Using Fresha? Fine. When you're ready for a full switch, SAY-OS handles bookings too — but that's your choice, not a requirement.
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="segments-section">
+  <div class="segments-inner">
+    <div class="section-label">Who This Is For</div>
+    <h2 class="section-heading reveal">
+      If your hands are always at work,<br>this was built <em>for you.</em>
+    </h2>
+    <div class="segments-row reveal">
+      <div class="seg-pill"><span>✂️</span> Hairdressers</div>
+      <div class="seg-pill"><span>💆</span> Beauty Therapists</div>
+      <div class="seg-pill"><span>💅</span> Nail Technicians</div>
+      <div class="seg-pill"><span>💈</span> Barbers</div>
+      <div class="seg-pill"><span>🙌</span> Mobile Massage</div>
+      <div class="seg-pill"><span>👁️</span> Lash & Brow</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE PLATFORM -->
+<section class="features-section" id="platform">
+  <div class="features-inner">
+  <div class="section-label">The Platform</div>
+  <h2 class="section-heading reveal">
+    Your entire business.<br>One system. <em>All voice-first.</em>
+  </h2>
+
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-icon">🎙️</div>
+      <div class="feature-title">Voice-First Everything</div>
+      <div class="feature-desc">Book, restock, market — all by voice while your hands are busy. Works via WhatsApp, Siri, or in-app. No commands to memorise, just talk naturally.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <div class="feature-title">Smart Calendar & Bookings</div>
+      <div class="feature-desc">Automated scheduling, deposit collection, no-show protection, and waitlist management. Clients book in natural language — SAY-OS handles the rest.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title">Marketing Engine</div>
+      <div class="feature-desc">Post to Instagram, TikTok, and Facebook. Captions drafted, hashtags suggested, posted — one voice command. Fill cancellations in seconds.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💛</div>
+      <div class="feature-title">Client Care Reminders</div>
+      <div class="feature-desc">Your clients aren't chased — they're cared for. SAY-OS remembers their routine cycles and sends gentle reminders when their next treatment is due. Nails every 3 weeks, roots every 5 weeks, facial every 6 weeks — all personalised, all automatic.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📦</div>
+      <div class="feature-title">Stock & Inventory</div>
+      <div class="feature-desc">Voice-controlled ordering, supplier directory, low-stock alerts. "Add 2 boxes of blonde 9.1 to my order." Said out loud. Done.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💷</div>
+      <div class="feature-title">Dynamic Pricing</div>
+      <div class="feature-desc">Yield management for slow periods and peak demand. Fill last-minute gaps with smart offers. Maximise revenue from every hour in your column.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <div class="feature-title">Talent Marketplace</div>
+      <div class="feature-desc">Hire verified professionals. Flat £29 per confirmed hire — no agency percentage, no monthly subscription. Browse portfolios, send direct messages.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Business Intelligence</div>
+      <div class="feature-desc">Revenue, costs, trends, retention rates. "You're down 12% this month — here's why and what to do." Real advice based on your actual numbers.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">Safety Compliance</div>
+      <div class="feature-desc">Contraindication tracking, patch test records, medication flags. ICO registered for GDPR Article 9 health data. The only salon platform with clinical-grade safety.</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- SECTION 3: THE CLIENT APP -->
+<section class="client-section" id="client-app">
+  <div class="client-inner">
+  <div class="section-label">The Client App — Your Secret Weapon</div>
+  <h2 class="section-heading reveal">
+    Your clients do the admin <em>for you.</em>
+  </h2>
+
+  <p class="client-intro reveal">
+    SAY-OS includes a free client app that connects directly to your salon system. Clients fill in their profile once — you benefit every visit. Every Beauty Passport entry gives you better data. Every Health Profile reduces your liability. Every Skincare Routine entry prevents a bad reaction.
+  </p>
+
+  <div class="client-grid reveal">
+    <div class="client-card">
+      <div class="feature-icon">✨</div>
+      <div class="feature-title">Beauty Passport</div>
+      <div class="feature-desc">Clients store their colour formulas, style preferences, allergies, and service history. Your team sees it all before every appointment. No clipboard, no guessing, no "what did we do last time?"</div>
+    </div>
+    <div class="client-card">
+      <div class="feature-icon">🩺</div>
+      <div class="feature-title">Health Profile</div>
+      <div class="feature-desc">Skin type, conditions, contraindications, patch tests — all entered by the client, flagged automatically to you. Reduces your liability before the client sits in the chair.</div>
+    </div>
+    <div class="client-card">
+      <div class="feature-icon">🧴</div>
+      <div class="feature-title">Skincare Routine Tracker</div>
+      <div class="feature-desc">Clients log their home products and ingredients. You see potential conflicts before you apply anything. Retinol before a peel? Flagged. AHA overload? Flagged.</div>
+    </div>
+    <div class="client-card">
+      <div class="feature-icon">🗓️</div>
+      <div class="feature-title">Event Prep Planner</div>
+      <div class="feature-desc">Wedding, holiday, event — automated prep timelines with treatment scheduling. Clients arrive looking their best with zero guesswork on timing.</div>
+    </div>
+    <div class="client-card full-width">
+      <div class="feature-icon">🌍</div>
+      <div>
+        <div class="feature-title">Travel Passport</div>
+        <div class="feature-desc">Clients visiting from abroad share their full beauty profile via QR code. Complete history, no intake form, no language barrier — translated into 14 languages, 82 beauty terms. The tourist in your chair is no longer a stranger.</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- SECTION 4: THE INSURANCE ANGLE -->
+<section class="insurance-section">
+  <div class="insurance-inner reveal">
+    <div class="section-label" style="justify-content:center">Protection Built In</div>
+    <h2>
+      SAY-OS doesn't just run your business.<br><em>It protects it.</em>
+    </h2>
+
+    <div class="insurance-points">
+      <div class="ins-point">
+        <div class="ins-icon">🕐</div>
+        <h4>Timestamped</h4>
+        <p>Every consultation recorded with date, time, and practitioner.</p>
+      </div>
+      <div class="ins-point">
+        <div class="ins-icon">⚠️</div>
+        <h4>Flagged</h4>
+        <p>Every contraindication logged. Every product conflict detected.</p>
+      </div>
+      <div class="ins-point">
+        <div class="ins-icon">📁</div>
+        <h4>Documented</h4>
+        <p>Complete audit trail. If something goes wrong, you have the records.</p>
+      </div>
+    </div>
+
+    <p class="insurance-note">
+      Documented safety records reduce claims and premiums. SAY-OS is the only salon platform registered with the ICO for processing health data under GDPR Article 9.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 5: VOICE IN ACTION -->
+<section class="voice-section">
+  <div class="voice-inner">
+    <div>
+      <div class="section-label">Voice In Action</div>
+      <h2 class="section-heading" style="margin-bottom:24px">
+        Say it out loud.<br><em>Consider it done.</em>
+      </h2>
+      <p style="font-size:15px;color:rgba(253,251,247,0.55);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings, stock, marketing, safety checks — everything handled while you keep working.</p>
+      <ul style="list-style:none">
+        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(253,251,247,0.05);font-size:14px;color:rgba(253,251,247,0.6)"><span style="color:var(--gold-accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works via WhatsApp, Siri, or in-app — whatever you already use</li>
+        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(253,251,247,0.05);font-size:14px;color:rgba(253,251,247,0.6)"><span style="color:var(--gold-accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
+        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(253,251,247,0.05);font-size:14px;color:rgba(253,251,247,0.6)"><span style="color:var(--gold-accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Checks client safety profiles before treatments — allergies, contraindications, patch tests</li>
+        <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(253,251,247,0.6)"><span style="color:var(--gold-accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Learns your clients — names, preferences, history, all remembered</li>
+      </ul>
+    </div>
+    <div>
+      <!-- Demo 1: Operations -->
+      <div class="voice-chat reveal" style="margin-bottom:20px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Live Session</div>
+        <div class="voice-msg user">
+          <div class="msg-label">You</div>
+          <div class="msg-bubble user-bubble">Add 2 boxes of blonde 9.1 to my order and book in my 11am client next Friday</div>
+        </div>
+        <div class="voice-msg ai">
+          <div class="msg-label">SAY-OS</div>
+          <div class="msg-bubble ai-bubble">Done. Added 2 × Blonde 9.1 to your Salon Supplies order — total now £34.80. And booked: Emma T, Brazilian Blow Dry, Friday 10 Jan, 11am. Deposit request sent.</div>
+        </div>
+        <div class="chat-footer">Two tasks · one sentence · hands never left the client</div>
+      </div>
+
+      <!-- Demo 2: Safety -->
+      <div class="voice-chat reveal">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Safety Check</div>
+        <div class="voice-msg user">
+          <div class="msg-label">You</div>
+          <div class="msg-bubble user-bubble">Check if my 3pm has any allergies before her tint</div>
+        </div>
+        <div class="voice-msg ai">
+          <div class="msg-label">SAY-OS</div>
+          <div class="msg-bubble ai-bubble">Sarah K — 3pm Full Tint. ⚠️ PPD allergy on file (confirmed patch test, expired 14 Mar). Recommend: new patch test before proceeding, or PPD-free alternative. Her Health Profile also shows she started retinol last month.</div>
+        </div>
+        <div class="chat-footer">Safety flagged before the client sits down</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FREE TIER -->
+<section class="free-section">
+  <div class="free-inner">
+    <div class="free-card reveal">
+      <h2>Start free.<br><em>Upgrade when you're ready.</em></h2>
+      <p>Dashboard, calendar, and up to 25 clients — free forever. No credit card, no time limit. When you need voice control, marketing, safety intelligence, and unlimited clients, upgrade to the full platform.</p>
+
+      <div class="free-features">
+        <div class="free-feat"><strong>Free:</strong> Dashboard + Calendar + 25 clients</div>
+        <div class="free-feat"><strong>Standard:</strong> £79/mo — full platform, unlimited</div>
+        <div class="free-feat"><strong>Founding:</strong> Less than half price — locked forever</div>
+      </div>
+
+      <a href="#join" class="btn-primary" style="margin-top:8px">Start Free →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-val">9-in-1</div>
+      <div class="stat-label">Tools replaced by one platform</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">Hands-free</div>
+      <div class="stat-label">Voice-first — work while you manage</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">14</div>
+      <div class="stat-label">Languages in Beauty Passport</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-val">Free</div>
+      <div class="stat-label">Client app — always, no catches</div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFER + FORM -->
+<section class="offer-section" id="join">
+  <div class="offer-card reveal">
+    <div class="offer-left">
+      <div class="offer-tag">Founding Member Access</div>
+      <h2 class="offer-title">
+        Join the first<br><em>50 founding members.</em>
+      </h2>
+      <ul class="offer-perks">
+        <li>Lifetime pricing locked at founding rate — less than half of standard pricing</li>
+        <li>Direct input into what we build — your feedback shapes the product</li>
+        <li>First access to every feature before public release</li>
+        <li>Your name recognised as a SAY-OS founding member</li>
+        <li>Priority onboarding and dedicated setup support</li>
+      </ul>
+      <p style="font-size:13px;color:rgba(253,251,247,0.35);font-family:'DM Mono',monospace;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
+    </div>
+
+    <div class="form-side">
+      <form id="signupForm">
+        <div class="form-title">Claim your spot</div>
+        <div class="form-sub">50 spots · founding pricing · forever</div>
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" name="name" placeholder="Your first name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>I am a...</label>
+          <select name="job_title" required>
+            <option value="" disabled selected>Select your profession</option>
+            <option value="Hairdresser">Hairdresser / Colourist</option>
+            <option value="Beauty Therapist">Beauty Therapist</option>
+            <option value="Nail Technician">Nail Technician</option>
+            <option value="Barber">Barber</option>
+            <option value="Mobile Massage Therapist">Mobile Massage Therapist</option>
+            <option value="Lash & Brow Specialist">Lash & Brow Specialist</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Clients per week</label>
+          <select name="company_size" required>
+            <option value="" disabled selected>How busy are you?</option>
+            <option value="1-10">1–10 clients</option>
+            <option value="11-20">11–20 clients</option>
+            <option value="21-30">21–30 clients</option>
+            <option value="30+">30+ clients</option>
+          </select>
+        </div>
+
+        <input type="hidden" name="source" value="landing-solo">
+        <input type="hidden" name="company" value="Solo Operator">
+
+        <button type="submit" class="form-submit">Claim My Founding Spot →</button>
+        <div class="form-privacy">No credit card · No commitment · Founding pricing locked forever</div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✦</div>
+        <div class="success-title">You're in.</div>
+        <div class="success-sub">Welcome to SAY-OS. Check your inbox — we'll be in touch within 24 hours with everything you need to know as a founding member.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="founder-inner reveal">
+    <div class="founder-quote">
+      I spent 10 years watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. SAY-OS closes it.
+    </div>
+    <div class="founder-attr">— Founder, SAY-OS · Clinical background in physiotherapy and functional therapy</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SAY-OS</div>
+  <div class="footer-links">
+    <a href="/partners.html">Salon Owners</a>
+    <a href="/education.html">Educators</a>
+    <a href="mailto:contact@say-salon.com">Contact</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+function revealAll() { reveals.forEach(el => el.classList.add('visible')); }
+setTimeout(revealAll, 1500);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Form submit → n8n webhook
+document.getElementById('signupForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    job_title: form.job_title.value,
+    company_size: form.company_size.value,
+    source: 'landing-solo',
+    company: 'Solo Operator',
+    requested_demo: false
+  };
+
+  try {
+    await fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) {
+    console.log('Webhook delivery attempted');
+  }
+
+  form.style.display = 'none';
+  document.getElementById('formSuccess').classList.add('visible');
+});
+</script>
+
+</body>
+</html>
