@@ -13,4 +13,10 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
 Sitemap: https://say-salon.com/sitemap.xml
