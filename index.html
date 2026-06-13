@@ -914,6 +914,34 @@ nav {
   color: var(--gold-accent);
 }
 
+/* ─── TRUST STRIP ─── */
+.trust-strip {
+  background: var(--velvet-black);
+  padding: 40px 48px;
+  border-top: 1px solid rgba(253,251,247,0.06);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 48px;
+}
+.trust-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(253,251,247,0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.trust-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-accent);
+  flex-shrink: 0;
+}
+
 /* ─── FOOTER ─── */
 footer {
   background: var(--velvet-black);
@@ -974,6 +1002,7 @@ footer {
   .compat-section, .features-section, .offer-section, .voice-section, .client-section { padding: 60px 24px; }
   .segments-section, .founder-section, .insurance-section, .free-section { padding: 60px 24px; }
   footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  .trust-strip { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 </style>
 <script type="application/ld+json">
@@ -1454,6 +1483,14 @@ footer {
     </div>
     <div class="founder-attr">— Founder, SAY-OS · Clinical background in physiotherapy and functional therapy</div>
   </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip" aria-label="Trust and compliance">
+  <div class="trust-item">ICO REGISTERED — UK HEALTH DATA</div>
+  <div class="trust-item">GDPR ARTICLE 9 COMPLIANT</div>
+  <div class="trust-item">UK COMPANY — SERVICESFORYOU LTD, LONDON</div>
+  <div class="trust-item">CLINICAL BACKGROUND — FOUNDER-BUILT</div>
 </section>
 
 <!-- FOOTER -->
