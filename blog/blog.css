@@ -117,13 +117,16 @@ body {
   color: var(--gold-cta);
   margin: 2rem 0 0.75rem;
 }
-.blog-article a,
-.blog-article a:visited {
+.blog-article p a,
+.blog-article p a:visited,
+.blog-article li a,
+.blog-article li a:visited {
   color: var(--gold-cta);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.blog-article a:hover {
+.blog-article p a:hover,
+.blog-article li a:hover {
   color: var(--text-heading);
 }
 .blog-article strong {
