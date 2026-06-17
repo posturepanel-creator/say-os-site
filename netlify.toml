@@ -1,3 +1,8 @@
 [build]
   command = "node scripts/generate-sitemap.js"
   publish = "."
+
+[[redirects]]
+  from = "/Blog/*"
+  to = "/blog/:splat"
+  status = 301

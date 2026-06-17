@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * SAY-OS Marketing Site — Sitemap Generator
- * Scans core pages + /Blog/ posts and writes sitemap.xml
+ * Scans core pages + /blog/ posts and writes sitemap.xml
  * with real per-file lastmod dates.
  *
  * Usage: node scripts/generate-sitemap.js
@@ -13,7 +13,7 @@ const path = require("path");
 
 const SITE_URL = "https://say-salon.com";
 const ROOT = path.resolve(__dirname, "..");
-const BLOG_DIR = path.join(ROOT, "Blog");
+const BLOG_DIR = path.join(ROOT, "blog");
 const OUTPUT = path.join(ROOT, "sitemap.xml");
 
 // Core pages (manually maintained — add new top-level pages here)
@@ -65,7 +65,7 @@ function generate() {
     entries.push(buildUrlEntry(`${SITE_URL}/blog/`, getLastmod(blogIndex), "weekly", "0.8"));
   }
 
-  // Blog posts — scan /Blog/ for .html files (excluding index.html, css, images)
+  // Blog posts — scan /blog/ for .html files (excluding index.html, css, images)
   if (fs.existsSync(BLOG_DIR)) {
     const files = fs.readdirSync(BLOG_DIR)
       .filter((f) => f.endsWith(".html") && f !== "index.html")
