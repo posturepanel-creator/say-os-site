@@ -1568,6 +1568,20 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   form.style.display = 'none';
   document.getElementById('formSuccess').classList.add('visible');
 });
+
+// Forward UTMs from current page URL to all app.say-salon.com links
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var utms = {};
+  utmKeys.forEach(function(k) { if (params.get(k)) utms[k] = params.get(k); });
+  if (Object.keys(utms).length === 0) return;
+  var utmStr = new URLSearchParams(utms).toString();
+  document.querySelectorAll('a[href*="app.say-salon.com"]').forEach(function(a) {
+    var href = a.getAttribute('href');
+    a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + utmStr);
+  });
+})();
 </script>
 
 </body>
