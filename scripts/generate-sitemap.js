@@ -25,6 +25,7 @@ const CORE_PAGES = [
   { path: "/client/", file: "client/index.html", changefreq: "monthly", priority: "0.8" },
   { path: "/skin-type/", file: "skin-type/index.html", changefreq: "monthly", priority: "0.7" },
   { path: "/links.html", file: "links.html", changefreq: "monthly", priority: "0.5" },
+  { path: "/aesthetics", file: "aesthetics.html", changefreq: "weekly", priority: "0.9" },
   { path: "/privacy.html", file: "privacy.html", changefreq: "yearly", priority: "0.3" },
   { path: "/terms.html", file: "terms.html", changefreq: "yearly", priority: "0.3" },
 ];
