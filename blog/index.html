@@ -11,6 +11,8 @@
   <meta property="og:url" content="https://say-salon.com/blog/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SAY Salon">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QXYSM1LHV8');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,55 +26,15 @@
   <link rel="stylesheet" href="blog.css">
   <style>
     .blog-index { max-width: 720px; margin: 0 auto; padding: 2rem 2rem 4rem; }
-    .blog-index__header {
-      padding: 4rem 0 2rem;
-      border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 2.5rem;
-    }
-    .blog-index__header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600; font-size: 2.4rem;
-      color: var(--text-heading);
-      margin-bottom: 0.5rem;
-    }
-    .blog-index__header p {
-      color: var(--text-meta); font-size: 1rem;
-    }
-    .article-card {
-      display: block;
-      background: var(--surface-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 1.75rem;
-      margin-bottom: 1.25rem;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.15s;
-    }
-    .article-card:hover {
-      border-color: var(--gold-cta);
-      transform: translateY(-2px);
-    }
-    .article-card__category {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.7rem; font-weight: 500;
-      color: var(--gold-cta);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
-    }
-    .article-card h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600; font-size: 1.35rem;
-      color: var(--text-heading);
-      line-height: 1.3;
-      margin-bottom: 0.5rem;
-    }
-    .article-card p {
-      color: var(--text-meta);
-      font-size: 0.88rem;
-      line-height: 1.55;
-      margin: 0;
-    }
+    .blog-index__header { padding: 4rem 0 2rem; border-bottom: 1px solid var(--border-subtle); margin-bottom: 2.5rem; }
+    .blog-index__header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 2.4rem; color: var(--text-heading); margin-bottom: 0.5rem; }
+    .blog-index__header p { color: var(--text-meta); font-size: 1rem; }
+    .section-label { font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--gold-cta); text-transform: uppercase; letter-spacing: 0.1em; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-subtle); }
+    .article-card { display: block; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1.75rem; margin-bottom: 1.25rem; text-decoration: none; transition: border-color 0.2s, transform 0.15s; }
+    .article-card:hover { border-color: var(--gold-cta); transform: translateY(-2px); }
+    .article-card__category { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--gold-cta); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .article-card h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.35rem; color: var(--text-heading); line-height: 1.3; margin-bottom: 0.5rem; }
+    .article-card p { color: var(--text-meta); font-size: 0.88rem; line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -89,34 +51,19 @@
     <p>Beauty safety, skincare intelligence, and why your history should travel with you.</p>
   </div>
 
-  <a href="beauty-safety-uk-2026" class="article-card">
-    <div class="article-card__category">Industry Report</div>
-    <h2>The State of Beauty Safety in the UK 2026</h2>
-    <p>900,000 Botox injections a year, no mandatory qualifications, and almost no records. A data-led report on the UK beauty safety gap and a framework to close it.</p>
+  <!-- SAFETY & CONTRAINDICATIONS -->
+  <div class="section-label">Safety &amp; Contraindications</div>
+
+  <a href="salon-contraindications-medication-uk" class="article-card">
+    <div class="article-card__category">Client Safety</div>
+    <h2>Contraindications &amp; Medication: What UK Salons Must Check Before Every Treatment</h2>
+    <p>Roaccutane, retinol, cold sores, pregnancy, diabetic foot care, allergy records under GDPR Article 9 &mdash; the complete guide.</p>
   </a>
 
-  <a href="beauty-safety-framework-methodology" class="article-card">
-    <div class="article-card__category">Standards &amp; Methodology</div>
-    <h2>Beauty Safety Framework &mdash; Methodology v1.0</h2>
-    <p>A 100-point self-assessment standard across four domains. The shared definition of "safe documentation" the industry can use before the licensing scheme arrives.</p>
-  </a>
-
-  <a href="salon-booking-deposits-patch-tests-uk" class="article-card">
-    <div class="article-card__category">Salon Operations</div>
-    <h2>Deposits, Rebooking, Reminders &amp; Patch Tests: 5 Questions UK Salon Owners Ask</h2>
-    <p>The five questions that land in our inbox most often — deposits, in-chair rebooking, GDPR-safe reminder texts, patch test rules, and allergy-safe booking — answered plainly.</p>
-  </a>
-
-  <a href="reduce-salon-no-shows" class="article-card">
-    <div class="article-card__category">Salon Operations</div>
-    <h2>How Do I Reduce No-Shows Without Annoying My Clients?</h2>
-    <p>A £50 empty chair three times a week is £7,500 a year. Here's how to fix it without losing clients.</p>
-  </a>
-
-  <a href="salon-technology-2026" class="article-card">
-    <div class="article-card__category">Salon Technology</div>
-    <h2>The Salon Technology You Can't Afford to Ignore in 2026</h2>
-    <p>7 tools separating thriving salons from struggling ones — and what each one is actually costing you right now.</p>
+  <a href="salon-allergy-tracker" class="article-card">
+    <div class="article-card__category">Salon Safety</div>
+    <h2>Salon Allergy Tracker: Why Every Salon Needs One</h2>
+    <p>Paper consultation forms don't protect anyone. A digital allergy tracker flags sensitivities before the appointment starts.</p>
   </a>
 
   <a href="beauty-passport-app" class="article-card">
@@ -125,23 +72,41 @@
     <p>Your allergy history, treatment timeline, and product records don't travel with you between salons. Here's why that's dangerous.</p>
   </a>
 
-  <a href="salon-allergy-tracker" class="article-card">
-    <div class="article-card__category">Salon Safety</div>
-    <h2>Salon Allergy Tracker: Why Every Salon Needs One Before Something Goes Wrong</h2>
-    <p>Paper consultation forms exist so the salon can say "we asked." They don't exist to keep the client safe.</p>
-  </a>
-
-  <a href="skincare-ingredient-conflict-checker" class="article-card">
-    <div class="article-card__category">Skincare Intelligence</div>
-    <h2>Skincare Ingredient Conflict Checker: Stop Guessing What You Can Mix</h2>
-    <p>Individual products are tested for safety. Your specific combination of six serums, two acids, and a salon peel? Nobody is checking.</p>
-  </a>
-
   <a href="injectable-treatment-tracker" class="article-card">
     <div class="article-card__category">Safety &amp; Intelligence</div>
     <h2>Injectable Treatment Tracker: Why You Need a Record of Every Unit</h2>
     <p>Your Botox and filler history is scattered across clinics. When something goes wrong, nobody has the full picture.</p>
   </a>
+
+  <a href="skincare-ingredient-conflict-checker" class="article-card">
+    <div class="article-card__category">Skincare Intelligence</div>
+    <h2>Skincare Ingredient Conflict Checker: Stop Guessing What You Can Mix</h2>
+    <p>Nobody tests your specific product combination. A conflict checker maps your full routine and flags the clashes.</p>
+  </a>
+
+  <!-- INDUSTRY & RESEARCH -->
+  <div class="section-label">Industry &amp; Research</div>
+
+  <a href="beauty-safety-uk-2026" class="article-card">
+    <div class="article-card__category">Industry Report</div>
+    <h2>The State of Beauty Safety in the UK 2026</h2>
+    <p>900,000 Botox injections a year, no mandatory qualifications, and almost no records. A data-led report on the UK beauty safety gap.</p>
+  </a>
+
+  <a href="beauty-safety-framework-methodology" class="article-card">
+    <div class="article-card__category">Standards &amp; Methodology</div>
+    <h2>Beauty Safety Framework &mdash; Methodology v1.0</h2>
+    <p>A 100-point self-assessment standard across four domains. The shared definition of safe documentation.</p>
+  </a>
+
+  <a href="salon-technology-2026" class="article-card">
+    <div class="article-card__category">Salon Technology</div>
+    <h2>The Salon Technology You Can't Afford to Ignore in 2026</h2>
+    <p>7 tools separating thriving salons from struggling ones &mdash; and what each one costs you right now.</p>
+  </a>
+
+  <!-- PORTABILITY & TRAVEL -->
+  <div class="section-label">Portability &amp; Travel</div>
 
   <a href="travel-beauty-passport" class="article-card">
     <div class="article-card__category">Travel &amp; Portability</div>
@@ -149,10 +114,43 @@
     <p>82 beauty terms. 14 languages. One QR code. Because your allergies don't translate themselves.</p>
   </a>
 
+  <!-- SALON OPERATIONS -->
+  <div class="section-label">Salon Operations</div>
+
+  <a href="salon-booking-deposits-patch-tests-uk" class="article-card">
+    <div class="article-card__category">Salon Operations</div>
+    <h2>Deposits, Rebooking, Reminders &amp; Patch Tests: 5 Questions UK Salon Owners Ask</h2>
+    <p>Straight answers to deposits, in-chair rebooking, GDPR-safe reminder texts, patch test rules, and allergy-safe booking.</p>
+  </a>
+
+  <a href="reduce-salon-no-shows" class="article-card">
+    <div class="article-card__category">Salon Operations</div>
+    <h2>How Do I Reduce No-Shows Without Annoying My Clients?</h2>
+    <p>A missed chair three times a week is thousands a year. Here's how to fix it without losing clients.</p>
+  </a>
+
+  <!-- FOR PROFESSIONALS -->
+  <div class="section-label">For Professionals</div>
+
   <a href="salon-professional-profile" class="article-card">
     <div class="article-card__category">For Professionals</div>
     <h2>Salon Professional Profile: Build a Portable Career Record</h2>
     <p>Your skills, certifications, and client history are scattered across platforms. None of it is truly yours.</p>
+  </a>
+
+  <!-- AI & PRODUCT -->
+  <div class="section-label">AI &amp; Product</div>
+
+  <a href="ai-safety-beauty-app-vibe-coding" class="article-card">
+    <div class="article-card__category">AI &amp; Safety</div>
+    <h2>I Built a Free Beauty App With AI. Turns Out I Picked the Safest One.</h2>
+    <p>A real experiment tested five AI models for 15 days. Only one had zero safety incidents.</p>
+  </a>
+
+  <a href="ai-models-spa-clients" class="article-card">
+    <div class="article-card__category">AI &amp; Safety</div>
+    <h2>What If AI Models Were Spa Clients?</h2>
+    <p>Scientists tested 5 AI models for 15 days. We reimagined them as beauty spa clients. Only one filled out the safety form correctly.</p>
   </a>
 
 </div>
