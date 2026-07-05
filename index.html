@@ -13,13 +13,32 @@
 <meta property="og:image" content="https://say-salon.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://say-salon.com/">
-<!-- Google tag (gtag.js) — same property as app.say-salon.com for cross-domain tracking -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8"></script>
+<!-- Consent Mode v2 — GA4 loads only after user consent (UK GDPR/PECR) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
   gtag('js', new Date());
-  gtag('config', 'G-QXYSM1LHV8');
+  window.sayLoadAnalytics = function () {
+    if (window.__sayGaLoaded) return;
+    window.__sayGaLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('config', 'G-QXYSM1LHV8');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';
+    document.head.appendChild(s);
+  };
+  try {
+    if (localStorage.getItem('say_consent_analytics') === 'granted') {
+      window.sayLoadAnalytics();
+    }
+  } catch (e) {}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1325,6 +1344,50 @@ footer {
   </div>
 </section>
 
+<!-- TRUST / CREDENTIALS STRIP — verifiable EEAT signals (wired 2026-07-02, thursday-trust)
+     Verifiable claims only: ICO register + Companies House. Founder-credentials
+     card held pending Anca's confirmation of degree/clinical claims.
+     Tokens v2.1. No emojis, no #FFFFFF, no #C8352E. Lucide inline SVG. -->
+<section class="eeat-strip" aria-label="Credentials and compliance">
+  <div class="eeat-inner">
+    <p class="eeat-eyebrow">Verified &amp; regulated</p>
+    <div class="eeat-grid">
+
+      <div class="eeat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+        </svg>
+        <h4>ICO registered</h4>
+        <p>Registered with the ICO for GDPR Article 9 health data. Registration
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank">ZC121398</a>
+          — verifiable on the public ICO register.</p>
+      </div>
+
+      <div class="eeat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/>
+        </svg>
+        <h4>UK registered company</h4>
+        <p>Operated by Servicesforyou Ltd, incorporated and filed at Companies House. A UK legal entity, not an offshore app.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+.eeat-strip{padding:72px 48px;background:var(--velvet-black,#0F2818);border-top:1px solid rgba(201,169,97,0.12)}
+.eeat-inner{max-width:1040px;margin:0 auto;text-align:center}
+.eeat-eyebrow{font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A961;margin-bottom:40px}
+.eeat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:0 auto}
+.eeat-item{background:#183222;border:1px solid rgba(201,169,97,0.10);border-radius:14px;padding:32px 24px;text-align:left;transition:background .2s ease}
+.eeat-item:hover{background:#1E3828}
+.eeat-item svg{width:28px;height:28px;margin-bottom:16px}
+.eeat-item h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#EDE5D4;margin:0 0 8px}
+.eeat-item p{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;line-height:1.65;color:#D4C5A9;margin:0}
+.eeat-item a{color:#C9A961;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:760px){.eeat-strip{padding:56px 24px}.eeat-grid{grid-template-columns:1fr;gap:16px}}
+</style>
+
 <!-- SECTION 5: VOICE IN ACTION -->
 <section class="voice-section">
   <div class="voice-inner">
@@ -1608,6 +1671,36 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + utmStr);
   });
 })();
+</script>
+
+<!-- Consent Banner -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:'Outfit',sans-serif;">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">
+      We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose.
+      <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>
+    </p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'say_consent_analytics';
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored !== 'granted' && stored !== 'denied') {
+      document.getElementById('say-consent-banner').style.display = 'block';
+    }
+    window.sayConsentChoose = function (choice) {
+      try { localStorage.setItem(KEY, choice); } catch (e) {}
+      if (choice === 'granted' && window.sayLoadAnalytics) window.sayLoadAnalytics();
+      document.getElementById('say-consent-banner').style.display = 'none';
+    };
+  })();
 </script>
 
 </body>

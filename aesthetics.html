@@ -12,13 +12,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SAY">
 <meta name="twitter:card" content="summary_large_image">
-<!-- GA4 — same property as app.say-salon.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8"></script>
+<!-- Consent Mode v2 — GA4 loads only after user consent (UK GDPR/PECR) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
   gtag('js', new Date());
-  gtag('config', 'G-QXYSM1LHV8');
+  window.sayLoadAnalytics = function () {
+    if (window.__sayGaLoaded) return;
+    window.__sayGaLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('config', 'G-QXYSM1LHV8');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';
+    document.head.appendChild(s);
+  };
+  try {
+    if (localStorage.getItem('say_consent_analytics') === 'granted') {
+      window.sayLoadAnalytics();
+    }
+  } catch (e) {}
 </script>
 <!-- JSON-LD -->
 <script type="application/ld+json">
@@ -315,6 +334,36 @@ function fireCTA(location) {
     a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + qs);
   });
 })();
+</script>
+
+<!-- Consent Banner -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:'Outfit',sans-serif;">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">
+      We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose.
+      <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>
+    </p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'say_consent_analytics';
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored !== 'granted' && stored !== 'denied') {
+      document.getElementById('say-consent-banner').style.display = 'block';
+    }
+    window.sayConsentChoose = function (choice) {
+      try { localStorage.setItem(KEY, choice); } catch (e) {}
+      if (choice === 'granted' && window.sayLoadAnalytics) window.sayLoadAnalytics();
+      document.getElementById('say-consent-banner').style.display = 'none';
+    };
+  })();
 </script>
 
 </body>
