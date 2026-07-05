@@ -1,0 +1,58 @@
+<!-- ============================================================
+  SAY-OS TRUST / CREDENTIALS STRIP — DRAFT (not yet wired in)
+  Thursday-trust scheduled run, 2026-06-20
+  Purpose: verifiable EEAT signal. Surfaces the ACTUAL ICO
+  registration number (cross-checkable on the public ICO register)
+  + Companies House status + founder credentials.
+  Paste into index.html ABOVE the .founder-section, or into
+  partners.html. Tokens v2.1 compliant. No emojis, no #FFFFFF,
+  no #C8352E (marketing-forbidden). Lucide inline SVG only.
+============================================================ -->
+<section class="trust-strip" aria-label="Credentials and compliance">
+  <div class="trust-inner">
+    <p class="trust-eyebrow">Verified &amp; regulated</p>
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+        </svg>
+        <h4>ICO registered</h4>
+        <p>GDPR Article 9 health data. Registration
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank">ZC121398</a>
+          — verifiable on the public ICO register.</p>
+      </div>
+
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/>
+        </svg>
+        <h4>UK registered company</h4>
+        <p>Incorporated and filed at Companies House. A UK legal entity, not an offshore app.</p>
+      </div>
+
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+        <h4>Built on clinical credentials</h4>
+        <p>Two decades in advanced beauty therapy with a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.trust-strip{padding:72px 48px;background:#0F2818;border-top:1px solid rgba(201,169,97,0.12)}
+.trust-inner{max-width:1040px;margin:0 auto;text-align:center}
+.trust-eyebrow{font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A961;margin-bottom:40px}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.trust-item{background:#183222;border:1px solid rgba(201,169,97,0.10);border-radius:14px;padding:32px 24px;text-align:left;transition:background .2s ease}
+.trust-item:hover{background:#1E3828}
+.trust-item svg{width:28px;height:28px;margin-bottom:16px}
+.trust-item h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#EDE5D4;margin:0 0 8px}
+.trust-item p{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;line-height:1.65;color:#D4C5A9;margin:0}
+.trust-item a{color:#C9A961;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:760px){.trust-strip{padding:56px 24px}.trust-grid{grid-template-columns:1fr;gap:16px}}
+</style>
