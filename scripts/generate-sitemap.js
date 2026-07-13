@@ -16,18 +16,18 @@ const ROOT = path.resolve(__dirname, "..");
 const BLOG_DIR = path.join(ROOT, "blog");
 const OUTPUT = path.join(ROOT, "sitemap.xml");
 
-// Core pages (manually maintained — add new top-level pages here)
+// Core pages — clean URLs (no .html, Netlify pretty_urls serves them)
 const CORE_PAGES = [
   { path: "/", file: "index.html", changefreq: "weekly", priority: "1.0" },
-  { path: "/partners.html", file: "partners.html", changefreq: "weekly", priority: "0.9" },
-  { path: "/education.html", file: "education.html", changefreq: "monthly", priority: "0.8" },
-  { path: "/talent.html", file: "talent.html", changefreq: "monthly", priority: "0.8" },
+  { path: "/partners", file: "partners.html", changefreq: "weekly", priority: "0.9" },
+  { path: "/education", file: "education.html", changefreq: "monthly", priority: "0.8" },
+  { path: "/talent", file: "talent.html", changefreq: "monthly", priority: "0.8" },
   { path: "/client/", file: "client/index.html", changefreq: "monthly", priority: "0.8" },
   { path: "/skin-type/", file: "skin-type/index.html", changefreq: "monthly", priority: "0.7" },
-  { path: "/links.html", file: "links.html", changefreq: "monthly", priority: "0.5" },
+  { path: "/links", file: "links.html", changefreq: "monthly", priority: "0.5" },
   { path: "/aesthetics", file: "aesthetics.html", changefreq: "weekly", priority: "0.9" },
-  { path: "/privacy.html", file: "privacy.html", changefreq: "yearly", priority: "0.3" },
-  { path: "/terms.html", file: "terms.html", changefreq: "yearly", priority: "0.3" },
+  { path: "/privacy", file: "privacy.html", changefreq: "yearly", priority: "0.3" },
+  { path: "/terms", file: "terms.html", changefreq: "yearly", priority: "0.3" },
 ];
 
 function getLastmod(filePath) {
