@@ -26,6 +26,7 @@
   status = 301
   force = true
 
-# Netlify pretty URLs: serve .html files at extensionless paths
-[build.processing.html]
-  pretty_urls = true
+# pretty_urls DISABLED — it prevented .html → clean URL 301 redirects
+# from firing (pretty_urls serves files at both /foo and /foo.html,
+# so the redirect rules above never matched). Netlify still serves
+# foo.html at /foo by default without pretty_urls enabled.
