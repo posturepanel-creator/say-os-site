@@ -12,6 +12,16 @@
   to = "/blog/:splat"
   status = 301
 
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+
 # Netlify pretty URLs: serve .html files at extensionless paths
 [build.processing.html]
   pretty_urls = true
