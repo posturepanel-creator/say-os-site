@@ -1,0 +1,7 @@
+# Case-fix
+/Blog/* /blog/:splat 301!
+
+# .html → clean URL redirects (! = force, overrides existing files)
+/blog/*.html /blog/:splat 301!
+/index.html / 301!
+/*.html /:splat 301!
