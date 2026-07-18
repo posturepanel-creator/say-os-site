@@ -645,6 +645,40 @@ footer {
   </div>
 </section>
 
+<!-- VERIFIED & REGULATED STRIP — added 2026-07-17 (thursday-trust).
+     High-intent comparison page: verifiable EEAT signals before the CTA.
+     All three claims already live on index.html eeat-strip + this page's FAQ —
+     no new claim introduced. Native compare.html palette (DM Mono / DM Sans /
+     --gold-accent), NOT product v2.1 tokens. -->
+<section class="verified-strip" aria-label="Credentials and compliance">
+  <div class="container">
+    <div class="section-label" style="justify-content:center">Verified &amp; Regulated</div>
+    <div class="verified-grid">
+      <div class="verified-item">
+        <h4>ICO registered</h4>
+        <p>GDPR Article 9 health data. Registration <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank">ZC121398</a> — verifiable on the public ICO register.</p>
+      </div>
+      <div class="verified-item">
+        <h4>UK registered company</h4>
+        <p>Operated by Servicesforyou Ltd, incorporated and filed at Companies House. A UK legal entity, not an offshore app.</p>
+      </div>
+      <div class="verified-item">
+        <h4>Built on clinical credentials</h4>
+        <p>Founded on two decades in advanced beauty therapy, a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.verified-strip{padding:72px 48px;background:var(--velvet-deep);border-top:1px solid rgba(230,201,133,0.10)}
+.verified-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1040px;margin:24px auto 0}
+.verified-item{background:rgba(253,251,247,0.03);border:1px solid rgba(230,201,133,0.10);border-radius:14px;padding:28px 24px;text-align:left}
+.verified-item h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:var(--gold-brushed);margin:0 0 8px}
+.verified-item p{font-family:'DM Sans',sans-serif;font-weight:300;font-size:14px;line-height:1.65;color:var(--text-muted);margin:0}
+.verified-item a{color:var(--gold-accent);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:760px){.verified-strip{padding:48px 24px}.verified-grid{grid-template-columns:1fr;gap:16px}}
+</style>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
