@@ -150,6 +150,20 @@ body{font-family:'Outfit',sans-serif;font-weight:400;background:var(--bg);color:
   .hero-phone{width:160px}
 }
 </style>
+  <!-- PostHog: consent-gated via sayLoadAnalytics (loads /assets/say-posthog.js) -->
+  <script>
+  (function(){
+    var _orig = window.sayLoadAnalytics;
+    window.sayLoadAnalytics = function(){
+      if (typeof _orig === 'function') _orig();
+      if (window.__sayPhLoaded) return; window.__sayPhLoaded = true;
+      var p = document.createElement('script');
+      p.async = true; p.src = '/assets/say-posthog.js';
+      document.head.appendChild(p);
+    };
+    try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
+  })();
+  </script>
 </head>
 <body>
 
@@ -341,7 +355,7 @@ function fireCTA(location) {
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:'Outfit',sans-serif;">
     <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
     <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">
-      We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose.
+      We use analytics cookies (Google Analytics and PostHog) to understand how this site is used and improve it. Nothing loads until you choose.
       <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
