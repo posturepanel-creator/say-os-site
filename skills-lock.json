@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "build-list": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/build-list/SKILL.md",
+      "computedHash": "1267f96eee8df6c77c1379dc59345d22f4c744f36306deb3c77e400b85561072"
+    }
+  }
+}
