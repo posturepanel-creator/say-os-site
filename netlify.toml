@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/generate-sitemap.js"
+  command = "node scripts/render-answers.js && node scripts/generate-sitemap.js"
   publish = "."
 
 [[redirects]]

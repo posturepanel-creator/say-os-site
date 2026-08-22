@@ -2,187 +2,457 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://say-salon.com/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://say-salon.com/partners</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://say-salon.com/education</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://say-salon.com/talent</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://say-salon.com/client/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://say-salon.com/skin-type/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/links</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://say-salon.com/aesthetics</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://say-salon.com/privacy</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://say-salon.com/terms</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/ai-models-spa-clients</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/ai-safety-beauty-app-vibe-coding</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/beauty-passport-app</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/beauty-safety-framework-methodology</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/beauty-safety-uk-2026</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/botox-aftercare</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-colour-hair-or-tint-lashes-for-under-16s-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-cut-or-colour-hair-for-a-client-with-head-lice-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-a-facial-on-a-client-with-a-cold-sore-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-a-facial-or-massage-on-a-client-who-just-had-botox-or-fillers-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-a-pedicure-on-a-client-with-a-fungal-nail-infection-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-gel-nails-on-a-client-with-an-acrylate-allergy-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-laser-or-ipl-hair-removal-on-tanned-skin-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-laser-or-ipl-on-a-client-taking-antibiotics-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-do-lashes-or-brows-on-a-client-with-an-eye-infection-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-massage-a-client-with-dvt-or-history-of-blood-clots-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-massage-a-client-with-high-blood-pressure-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-spray-tan-a-client-with-asthma-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-undergoing-chemotherapy-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-a-nut-allergy-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-an-eczema-or-psoriasis-flare-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-diabetes-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-epilepsy-in-my-salon-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-ringworm-impetigo-or-scabies-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-treat-a-client-with-shingles-or-chickenpox-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-use-microcurrent-or-radiofrequency-on-a-client-with-a-pacemaker-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-a-client-using-retinol-or-tretinoin-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-a-client-using-steroid-creams-or-oral-steroids-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-massage-or-spray-tan-over-a-new-tattoo-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-or-do-microneedling-on-a-client-taking-blood-thinners-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-or-laser-over-a-mole-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-or-massage-a-client-with-varicose-veins-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-or-peel-a-client-on-roaccutane-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/can-i-wax-or-peel-a-client-with-recent-sunburn-or-sunbed-use-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/clients-who-rebook-themselves</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/do-i-need-a-patch-test-for-lash-lift-or-brow-lamination-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/do-i-need-consent-to-text-appointment-reminders-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-do-i-build-a-salon-rota-that-covers-my-busiest-times</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-do-i-fill-last-minute-gaps-in-my-salon-schedule</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-do-i-get-clients-to-rebook-before-they-leave</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-do-i-raise-my-prices-without-losing-clients</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-do-i-record-client-allergies-and-reactions-safely-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-often-patch-test-hair-colour-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-to-handle-last-minute-cancellations-salon-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/how-to-reduce-salon-no-shows-uk</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/injectable-treatment-tracker</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/reduce-salon-no-shows</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/safe-injectables-london</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-allergy-tracker</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-booking-deposits-patch-tests-uk</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-contagious-conditions-reactions-uk</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-contraindications-medication-uk</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-hidden-contraindications-uk</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-medical-checks-before-treatment-uk</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-no-show-policy-template</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-professional-profile</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-skin-conditions-contraindications-uk</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/salon-technology-2026</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/should-i-charge-booking-deposits</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/skincare-ingredient-conflict-checker</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://say-salon.com/blog/travel-beauty-passport</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/what-to-do-if-a-client-has-an-allergic-reaction-mid-treatment-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/which-salon-treatments-are-unsafe-during-pregnancy-uk</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://say-salon.com/blog/which-salon-treatments-need-caution-for-breastfeeding-clients-uk</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
