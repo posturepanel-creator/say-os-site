@@ -4,8 +4,8 @@ slug: can-i-do-a-pedicure-on-a-client-with-a-fungal-nail-infection-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do a pedicure or apply gel over a fungal nail infection?

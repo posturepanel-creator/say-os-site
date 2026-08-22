@@ -4,8 +4,8 @@ slug: can-i-massage-a-client-with-dvt-or-history-of-blood-clots-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I massage a client with DVT or a history of blood clots?

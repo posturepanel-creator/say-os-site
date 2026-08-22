@@ -4,8 +4,8 @@ slug: can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-14
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I massage a client with lymphoedema or after lymph node removal?

@@ -4,8 +4,8 @@ slug: which-salon-treatments-need-caution-for-breastfeeding-clients-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-08
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Which salon treatments need caution for a breastfeeding client?

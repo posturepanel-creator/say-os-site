@@ -4,8 +4,8 @@ slug: should-i-charge-booking-deposits
 category: ops
 region: UK
 drafted: 2026-06-10
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Should I charge booking deposits at my salon?

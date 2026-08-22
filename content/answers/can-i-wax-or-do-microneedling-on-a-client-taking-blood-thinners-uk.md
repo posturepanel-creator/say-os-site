@@ -4,8 +4,8 @@ slug: can-i-wax-or-do-microneedling-on-a-client-taking-blood-thinners-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-01
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax, do microneedling, or treat a client who's on blood thinners?

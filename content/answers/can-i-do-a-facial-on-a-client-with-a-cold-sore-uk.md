@@ -4,8 +4,8 @@ slug: can-i-do-a-facial-on-a-client-with-a-cold-sore-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-24
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do a facial or wax on a client with an active cold sore?

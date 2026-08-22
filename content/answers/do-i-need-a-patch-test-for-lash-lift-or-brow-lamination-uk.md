@@ -4,8 +4,8 @@ slug: do-i-need-a-patch-test-for-lash-lift-or-brow-lamination-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-05
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Do I need a patch test for a lash lift or brow lamination?

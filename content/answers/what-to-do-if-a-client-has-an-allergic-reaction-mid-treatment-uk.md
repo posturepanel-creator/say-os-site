@@ -4,8 +4,8 @@ slug: what-to-do-if-a-client-has-an-allergic-reaction-mid-treatment-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-20
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # What do I do if a client has an allergic reaction mid-treatment?

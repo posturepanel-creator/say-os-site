@@ -4,8 +4,8 @@ slug: can-i-treat-a-client-with-epilepsy-in-my-salon-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-14
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I treat a client with epilepsy in my salon?

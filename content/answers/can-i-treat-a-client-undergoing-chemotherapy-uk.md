@@ -4,8 +4,8 @@ slug: can-i-treat-a-client-undergoing-chemotherapy-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-28
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I treat a client who is undergoing chemotherapy?

@@ -4,8 +4,8 @@ slug: how-do-i-fill-last-minute-gaps-in-my-salon-schedule
 category: ops
 region: UK
 drafted: 2026-06-17
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How do I fill last-minute gaps in my salon's schedule?

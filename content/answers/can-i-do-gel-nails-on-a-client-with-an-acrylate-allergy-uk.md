@@ -4,8 +4,8 @@ slug: can-i-do-gel-nails-on-a-client-with-an-acrylate-allergy-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-31
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do gel nails on a client with an acrylate (HEMA) allergy? (UK)

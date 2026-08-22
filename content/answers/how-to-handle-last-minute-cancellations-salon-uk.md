@@ -4,8 +4,8 @@ slug: how-to-handle-last-minute-cancellations-salon-uk
 category: ops
 region: UK
 drafted: 2026-06-16
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How should I handle last-minute cancellations?

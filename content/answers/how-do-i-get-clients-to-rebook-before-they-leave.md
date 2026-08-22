@@ -4,8 +4,8 @@ slug: how-do-i-get-clients-to-rebook-before-they-leave
 category: ops
 region: UK
 drafted: 2026-06-12
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How do I get clients to rebook before they leave the salon?

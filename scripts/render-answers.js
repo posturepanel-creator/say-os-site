@@ -266,10 +266,19 @@ function main() {
   const files = fs.readdirSync(SRC_DIR).filter((f) => f.endsWith(".md"));
   let rendered = 0;
   let skipped = 0;
+  let unpublished = 0;
 
   for (const file of files) {
     const raw = fs.readFileSync(path.join(SRC_DIR, file), "utf-8");
     const { data, body: rawBody } = parseFrontmatter(raw);
+
+    // PUBLISH GATE: only render atoms with a real ISO `published:` date.
+    // Draft atoms (published: null / empty) stay in the repo but never ship.
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(data.published || "").trim())) {
+      unpublished++;
+      continue;
+    }
+
     const body = stripTrailingPitch(rawBody);
     const slug = data.slug || file.replace(/\.md$/, "");
     const outPath = path.join(BLOG_DIR, `${slug}.html`);
@@ -304,7 +313,7 @@ function main() {
     rendered++;
   }
 
-  console.log(`Atoms rendered: ${rendered} → /blog/  (skipped ${skipped})`);
+  console.log(`Atoms rendered: ${rendered} → /blog/  (unpublished/draft: ${unpublished}, skipped: ${skipped})`);
 }
 
 main();

@@ -4,8 +4,8 @@ slug: can-i-wax-or-laser-over-a-mole-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-05
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax or use laser/IPL over a mole?

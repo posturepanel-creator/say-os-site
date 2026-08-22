@@ -4,8 +4,8 @@ slug: can-i-treat-a-client-with-an-eczema-or-psoriasis-flare-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I treat a client with an active eczema or psoriasis flare?

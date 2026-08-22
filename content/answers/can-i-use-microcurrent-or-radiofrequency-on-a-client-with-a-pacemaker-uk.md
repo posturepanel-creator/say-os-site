@@ -4,8 +4,8 @@ slug: can-i-use-microcurrent-or-radiofrequency-on-a-client-with-a-pacemaker-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-13
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I use microcurrent or radiofrequency on a client with a pacemaker?

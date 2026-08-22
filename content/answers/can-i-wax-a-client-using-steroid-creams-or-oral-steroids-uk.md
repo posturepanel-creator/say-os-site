@@ -4,8 +4,8 @@ slug: can-i-wax-a-client-using-steroid-creams-or-oral-steroids-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-05
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax a client who uses steroid creams or takes oral steroids?

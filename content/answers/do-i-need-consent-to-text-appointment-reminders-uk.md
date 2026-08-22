@@ -4,8 +4,8 @@ slug: do-i-need-consent-to-text-appointment-reminders-uk
 category: ops
 region: UK
 drafted: 2026-06-11
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Do I need consent to text clients appointment reminders in the UK?

@@ -4,8 +4,8 @@ slug: can-i-do-laser-or-ipl-hair-removal-on-tanned-skin-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do laser or IPL hair removal on a client with a tan?

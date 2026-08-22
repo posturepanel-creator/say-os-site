@@ -4,8 +4,8 @@ slug: how-do-i-record-client-allergies-and-reactions-safely-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-17
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How do I record client allergies and reactions safely? (UK)

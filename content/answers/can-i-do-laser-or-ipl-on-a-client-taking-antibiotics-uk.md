@@ -4,8 +4,8 @@ slug: can-i-do-laser-or-ipl-on-a-client-taking-antibiotics-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-07
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do laser or IPL on a client taking antibiotics? (UK)

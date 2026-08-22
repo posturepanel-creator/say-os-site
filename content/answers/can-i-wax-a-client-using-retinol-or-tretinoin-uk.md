@@ -4,8 +4,8 @@ slug: can-i-wax-a-client-using-retinol-or-tretinoin-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-24
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax a client who uses retinol or tretinoin?

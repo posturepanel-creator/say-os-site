@@ -4,8 +4,8 @@ slug: can-i-do-a-facial-or-massage-on-a-client-who-just-had-botox-or-fillers-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-02
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do a facial or massage on a client who's just had Botox or fillers?

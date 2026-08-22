@@ -4,8 +4,8 @@ slug: can-i-do-lashes-or-brows-on-a-client-with-an-eye-infection-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I do lash or brow treatments on a client with an eye infection?

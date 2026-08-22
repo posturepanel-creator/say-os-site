@@ -4,8 +4,8 @@ slug: can-i-spray-tan-a-client-with-asthma-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-12
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I spray tan a client with asthma?

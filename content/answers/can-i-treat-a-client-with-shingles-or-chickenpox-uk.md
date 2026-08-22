@@ -4,8 +4,8 @@ slug: can-i-treat-a-client-with-shingles-or-chickenpox-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-29
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I treat a client with shingles or chickenpox?

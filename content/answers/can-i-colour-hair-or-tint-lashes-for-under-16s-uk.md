@@ -4,8 +4,8 @@ slug: can-i-colour-hair-or-tint-lashes-for-under-16s-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-07-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I colour hair or tint lashes and brows for under-16s in the UK?

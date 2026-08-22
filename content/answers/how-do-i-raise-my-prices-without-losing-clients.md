@@ -4,8 +4,8 @@ slug: how-do-i-raise-my-prices-without-losing-clients
 category: ops
 region: UK
 drafted: 2026-06-16
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How do I raise my prices without losing clients?

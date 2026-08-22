@@ -4,8 +4,8 @@ slug: how-do-i-build-a-salon-rota-that-covers-my-busiest-times
 category: ops
 region: UK
 drafted: 2026-06-17
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # How do I build a staff rota that covers my busiest times?

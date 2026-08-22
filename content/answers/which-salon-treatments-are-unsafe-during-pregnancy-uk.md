@@ -4,8 +4,8 @@ slug: which-salon-treatments-are-unsafe-during-pregnancy-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-25
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Which salon treatments should I avoid on a pregnant client?

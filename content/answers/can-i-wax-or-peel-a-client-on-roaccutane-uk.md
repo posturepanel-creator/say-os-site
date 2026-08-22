@@ -4,8 +4,8 @@ slug: can-i-wax-or-peel-a-client-on-roaccutane-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-20
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax, peel, or do facials on a client taking Roaccutane?

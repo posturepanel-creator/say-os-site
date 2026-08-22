@@ -4,8 +4,8 @@ slug: can-i-cut-or-colour-hair-for-a-client-with-head-lice-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-08-08
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I cut or colour hair for a client with head lice?

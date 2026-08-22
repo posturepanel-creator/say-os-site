@@ -4,8 +4,8 @@ slug: can-i-wax-or-peel-a-client-with-recent-sunburn-or-sunbed-use-uk
 category: safety-contraindication
 region: UK
 drafted: 2026-06-30
-status: draft
-published: null
+status: published
+published: 2026-08-22
 ---
 
 # Can I wax, peel, or do IPL on a client with recent sunburn or a sunbed?
