@@ -235,6 +235,7 @@ function pageHtml({ title, slug, categoryLabel, desc, drafted, published, heroH1
 
 <footer class="blog-footer">
   <p>&copy; 2026 SAY-OS by Servicesforyou Ltd. &nbsp;|&nbsp; <a href="${SITE_URL}">say-salon.com</a> &nbsp;|&nbsp; <a href="${APP_URL}">app.say-salon.com</a></p>
+  <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
 </footer>
 
 <!-- Consent Banner -->
