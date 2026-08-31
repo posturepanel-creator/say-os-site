@@ -42,7 +42,9 @@ body {
   color: var(--text-heading);
   text-decoration: none;
   letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 10px;
 }
+.blog-nav__logo img { height: 34px; border-radius: 8px; }
 .blog-nav__logo span { color: var(--gold-cta); }
 .blog-nav__cta {
   font-family: 'Outfit', sans-serif;
