@@ -88,7 +88,7 @@
 </nav>
 
 <div class="video-hero">
-  <video autoplay loop muted playsinline poster="assets/injection-map-poster.jpg" aria-label="Rotating gold wireframe face with glowing injection points labelled with product, units and date">
+  <video id="injHero" autoplay loop muted playsinline poster="assets/injection-map-poster.jpg" aria-label="Rotating gold wireframe face with glowing injection points labelled with product, units and date">
     <source src="assets/injection-map-hero.webm" type="video/webm">
     <source src="assets/injection-map-hero.mp4" type="video/mp4">
   </video>
@@ -99,6 +99,20 @@
     <div class="video-hero__meta">PUBLISHED JULY 2026 · 8 MIN READ</div>
   </div>
 </div>
+<script>
+  // Calm the hero: play the wireframe-face animation at half speed.
+  // Browsers reset playbackRate on load, so reassert it on the relevant events.
+  (function () {
+    var v = document.getElementById('injHero');
+    if (!v) return;
+    var RATE = 0.5;
+    var setRate = function () { try { v.playbackRate = RATE; } catch (e) {} };
+    setRate();
+    ['loadedmetadata', 'loadeddata', 'play', 'playing'].forEach(function (ev) {
+      v.addEventListener(ev, setRate);
+    });
+  })();
+</script>
 
 <article class="blog-article">
   <p>Somewhere in London right now, a woman is sitting in a clinic chair asking a practitioner to dissolve the filler in her lips. The practitioner's first question is the one that matters: <em>"What product was used?"</em> And she doesn't know. It was two years ago, at a different clinic, booked through Instagram. The clinic has since closed. If it was a hyaluronic acid filler, it can be dissolved in minutes. If it was something else, it can't — and the practitioner is now guessing at what's inside her face.</p>
