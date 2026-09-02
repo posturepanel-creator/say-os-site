@@ -211,7 +211,7 @@ function pageHtml({ title, slug, categoryLabel, desc, drafted, published, heroH1
 <body>
 
 <nav class="blog-nav">
-  <a href="${SITE_URL}" class="blog-nav__logo"><img src="/logo.png" alt="">SAY<span>.</span></a>
+  <a href="${SITE_URL}" class="blog-nav__logo"><img src="/logo.png" alt="" height="34" style="height:34px;width:auto;border-radius:8px">SAY<span>.</span></a>
   <a href="${APP_URL}" class="blog-nav__cta">Get Free Access</a>
 </nav>
 
