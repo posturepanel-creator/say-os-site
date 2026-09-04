@@ -1,6 +1,3 @@
-# Partner/salon invite links → app business signup (ref token passes through)
-/partners  https://app.say-salon.com/business  302!
-
 # Case-fix
 /Blog/* /blog/:splat 301!
 # .html → clean URL redirects (! = force, overrides existing files)
