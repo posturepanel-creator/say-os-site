@@ -158,13 +158,129 @@ function metaDescription(body) {
   return text.slice(0, 152).replace(/\s+\S*$/, "") + "…";
 }
 
+// ---- related-atom clusters ----------------------------------------------
+// Curated topical clusters for cross-linking. An atom's "Related questions"
+// = other atoms sharing any cluster (deduped, capped at RELATED_MAX). Atoms
+// may belong to several clusters (e.g. keloid is skin + post-procedure).
+// Add new atom slugs here so they inherit related links automatically.
+const RELATED_MAX = 4;
+const CLUSTERS = [
+  // Retinoids / skin-thinning topicals + waxing
+  [
+    "can-i-wax-a-client-using-retinol-or-tretinoin-uk",
+    "can-i-wax-or-peel-a-client-on-roaccutane-uk",
+    "can-i-wax-a-client-using-steroid-creams-or-oral-steroids-uk",
+  ],
+  // Laser / IPL
+  [
+    "can-i-do-laser-or-ipl-hair-removal-on-tanned-skin-uk",
+    "can-i-do-laser-or-ipl-on-a-client-taking-antibiotics-uk",
+    "can-i-do-laser-or-ipl-on-darker-skin-fitzpatrick-v-vi-uk",
+    "can-i-wax-or-laser-over-a-mole-uk",
+    "can-i-wax-or-peel-a-client-with-recent-sunburn-or-sunbed-use-uk",
+  ],
+  // Bleeding / circulation
+  [
+    "can-i-massage-a-client-with-high-blood-pressure-uk",
+    "can-i-massage-a-client-with-dvt-or-history-of-blood-clots-uk",
+    "can-i-wax-or-massage-a-client-with-varicose-veins-uk",
+    "can-i-wax-or-do-microneedling-on-a-client-taking-blood-thinners-uk",
+    "can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk",
+  ],
+  // Contagious skin / bloodborne infections
+  [
+    "can-i-do-a-facial-on-a-client-with-a-cold-sore-uk",
+    "can-i-treat-a-client-with-ringworm-impetigo-or-scabies-uk",
+    "can-i-treat-a-client-with-shingles-or-chickenpox-uk",
+    "can-i-do-a-pedicure-on-a-client-with-a-fungal-nail-infection-uk",
+    "can-i-cut-or-colour-hair-for-a-client-with-head-lice-uk",
+    "can-i-do-lashes-or-brows-on-a-client-with-an-eye-infection-uk",
+    "can-i-treat-a-client-with-hepatitis-b-c-or-hiv-uk",
+  ],
+  // Inflammatory / scarring skin conditions
+  [
+    "can-i-treat-a-client-with-an-eczema-or-psoriasis-flare-uk",
+    "can-i-treat-a-client-with-rosacea-uk",
+    "can-i-treat-a-client-prone-to-keloid-scarring-uk",
+  ],
+  // Allergies / patch testing / reactions
+  [
+    "can-i-do-gel-nails-on-a-client-with-an-acrylate-allergy-uk",
+    "can-i-treat-a-client-with-a-latex-allergy-uk",
+    "can-i-treat-a-client-with-a-nut-allergy-uk",
+    "can-i-spray-tan-a-client-with-asthma-uk",
+    "do-i-need-a-patch-test-for-lash-lift-or-brow-lamination-uk",
+    "how-often-patch-test-hair-colour-uk",
+    "how-do-i-record-client-allergies-and-reactions-safely-uk",
+    "what-to-do-if-a-client-has-an-allergic-reaction-mid-treatment-uk",
+  ],
+  // Systemic health / medication
+  [
+    "can-i-treat-a-client-with-diabetes-uk",
+    "can-i-treat-a-client-with-epilepsy-in-my-salon-uk",
+    "can-i-treat-a-client-undergoing-chemotherapy-uk",
+    "can-i-treat-a-client-on-immunosuppressants-or-biologics-uk",
+    "can-i-treat-a-client-on-mounjaro-or-wegovy-uk",
+    "can-i-use-microcurrent-or-radiofrequency-on-a-client-with-a-pacemaker-uk",
+    "can-i-massage-a-client-with-osteoporosis-uk",
+    "can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk",
+  ],
+  // Pregnancy / consent / capacity / age
+  [
+    "which-salon-treatments-are-unsafe-during-pregnancy-uk",
+    "which-salon-treatments-need-caution-for-breastfeeding-clients-uk",
+    "can-i-treat-a-client-with-dementia-or-who-cant-consent-uk",
+    "can-i-colour-hair-or-tint-lashes-for-under-16s-uk",
+  ],
+  // Post-procedure / tattoo / surgery / scars
+  [
+    "can-i-do-a-facial-or-massage-on-a-client-who-just-had-botox-or-fillers-uk",
+    "can-i-wax-massage-or-spray-tan-over-a-new-tattoo-uk",
+    "can-i-treat-a-client-after-recent-surgery-or-over-a-new-scar-uk",
+    "can-i-treat-a-client-prone-to-keloid-scarring-uk",
+  ],
+  // Salon operations
+  [
+    "do-i-need-consent-to-text-appointment-reminders-uk",
+    "how-do-i-build-a-salon-rota-that-covers-my-busiest-times",
+    "how-do-i-fill-last-minute-gaps-in-my-salon-schedule",
+    "how-do-i-get-clients-to-rebook-before-they-leave",
+    "how-do-i-raise-my-prices-without-losing-clients",
+    "how-to-reduce-salon-no-shows-uk",
+    "how-to-handle-last-minute-cancellations-salon-uk",
+    "should-i-charge-booking-deposits",
+  ],
+];
+
+// Ordered related slugs for a given atom (before publish-filtering / cap).
+function relatedSlugs(slug) {
+  const out = [];
+  for (const cluster of CLUSTERS) {
+    if (!cluster.includes(slug)) continue;
+    for (const s of cluster) {
+      if (s !== slug && !out.includes(s)) out.push(s);
+    }
+  }
+  return out;
+}
+
 // ---- page template ------------------------------------------------------
 
-function pageHtml({ title, slug, categoryLabel, desc, drafted, published, heroH1, articleHtml }) {
+function pageHtml({ title, slug, categoryLabel, desc, drafted, published, heroH1, articleHtml, related }) {
   const canonical = `${SITE_URL}/blog/${slug}`;
   const pub = published && published !== "null" ? published : drafted;
   const escTitle = escapeHtml(title);
   const escDesc = escapeHtml(desc);
+  const relatedHtml = (related && related.length)
+    ? `
+  <nav class="related-block" aria-label="Related questions">
+    <h2>Related questions</h2>
+    <ul>
+${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></li>`).join("\n")}
+    </ul>
+  </nav>
+`
+    : "";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -223,7 +339,7 @@ function pageHtml({ title, slug, categoryLabel, desc, drafted, published, heroH1
 <article class="blog-article">
 
   ${articleHtml}
-
+${relatedHtml}
   <div class="cta-block">
     <h2>Every client, remembered — safely.</h2>
     <p>SAY-OS keeps each client's contraindications, allergies and history in one place, and flags them at booking — so the right call happens before they're in the chair.</p>
@@ -269,6 +385,17 @@ function main() {
   let skipped = 0;
   let unpublished = 0;
 
+  // PASS 1: index every PUBLISHED atom's slug → title, so cross-links can
+  // resolve link text and skip any related slug that isn't published yet.
+  const titleBySlug = {};
+  for (const file of files) {
+    const { data } = parseFrontmatter(fs.readFileSync(path.join(SRC_DIR, file), "utf-8"));
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(data.published || "").trim())) continue;
+    const slug = data.slug || file.replace(/\.md$/, "");
+    titleBySlug[slug] = data.title || slug;
+  }
+
+  // PASS 2: render.
   for (const file of files) {
     const raw = fs.readFileSync(path.join(SRC_DIR, file), "utf-8");
     const { data, body: rawBody } = parseFrontmatter(raw);
@@ -282,6 +409,10 @@ function main() {
 
     const body = stripTrailingPitch(rawBody);
     const slug = data.slug || file.replace(/\.md$/, "");
+    const related = relatedSlugs(slug)
+      .filter((s) => titleBySlug[s]) // only link published atoms
+      .slice(0, RELATED_MAX)
+      .map((s) => ({ slug: s, title: titleBySlug[s] }));
     const outPath = path.join(BLOG_DIR, `${slug}.html`);
 
     // SAFETY: never clobber a hand-written post.
@@ -309,6 +440,7 @@ function main() {
       published: data.published || "",
       heroH1,
       articleHtml: html,
+      related,
     });
     fs.writeFileSync(outPath, out, "utf-8");
     rendered++;
