@@ -193,6 +193,7 @@ const CLUSTERS = [
     "can-i-treat-a-client-with-ringworm-impetigo-or-scabies-uk",
     "can-i-treat-a-client-with-shingles-or-chickenpox-uk",
     "can-i-do-a-pedicure-on-a-client-with-a-fungal-nail-infection-uk",
+    "can-i-do-a-pedicure-on-a-client-with-a-verruca-uk",
     "can-i-cut-or-colour-hair-for-a-client-with-head-lice-uk",
     "can-i-do-lashes-or-brows-on-a-client-with-an-eye-infection-uk",
     "can-i-treat-a-client-with-hepatitis-b-c-or-hiv-uk",
@@ -201,6 +202,7 @@ const CLUSTERS = [
   [
     "can-i-treat-a-client-with-an-eczema-or-psoriasis-flare-uk",
     "can-i-treat-a-client-with-rosacea-uk",
+    "can-i-treat-a-client-with-vitiligo-uk",
     "can-i-treat-a-client-prone-to-keloid-scarring-uk",
   ],
   // Allergies / patch testing / reactions
@@ -249,6 +251,11 @@ const CLUSTERS = [
     "how-to-reduce-salon-no-shows-uk",
     "how-to-handle-last-minute-cancellations-salon-uk",
     "should-i-charge-booking-deposits",
+  ],
+  // Therapist-facing: working conditions & professional health.
+  // Seeded with one atom; grows as more therapist-facing questions are added.
+  [
+    "can-i-keep-working-in-my-salon-while-pregnant-uk",
   ],
 ];
 
