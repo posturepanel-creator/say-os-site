@@ -6,6 +6,9 @@ region: UK
 drafted: 2026-06-30
 status: published
 published: 2026-08-22
+# HAND-TUNED / DO NOT REGENERATE: blog/can-i-do-lashes-or-brows-on-a-client-with-an-eye-infection-uk.html
+# has hand-edited SEO title+meta and its "generated:atom" marker removed on purpose. Do NOT re-add the
+# marker or re-render this atom — render-answers.js would clobber the hand-tuned title (<60 chars) + meta.
 ---
 
 # Can I do lash or brow treatments on a client with an eye infection?
