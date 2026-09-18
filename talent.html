@@ -450,7 +450,7 @@ footer { background: var(--velvet-black); padding: 44px 48px; border-top: 1px so
     "name": "Talent Profile",
     "price": "0",
     "priceCurrency": "GBP",
-    "description": "Free professional profile for beauty professionals. Get discovered by salons. No agency fees."
+    "description": "Free professional profile for beauty professionals, launching soon. Get discovered by salons. No agency fees."
   },
   "provider": {
     "@type": "Organization",
@@ -745,9 +745,8 @@ footer { background: var(--velvet-black); padding: 44px 48px; border-top: 1px so
 <!-- COUNTER -->
 <div class="counter-strip">
   <div class="counter-inner">
-    <div class="counter-label">Professionals Already on the Waitlist</div>
-    <div class="counter-num" id="counter">0</div>
-    <div class="counter-sub">and growing every day — be part of the founding talent pool</div>
+    <div class="counter-label">Be among the first professionals to join at launch.</div>
+    <div class="counter-sub">Be part of the founding talent pool</div>
   </div>
 </div>
 
@@ -766,7 +765,7 @@ footer { background: var(--velvet-black); padding: 44px 48px; border-top: 1px so
         <li>Profile live from day one of marketplace launch</li>
         <li>Priority visibility to salon owners in your area</li>
         <li>First access to shift listings before public opening</li>
-        <li>Founding talent badge on your profile — forever</li>
+        <li>Founding talent badge on your profile</li>
         <li>Free profile for the first 3 months</li>
       </ul>
     </div>
@@ -866,26 +865,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
-
-// Animated counter
-function animateCounter(target, duration) {
-  const el = document.getElementById('counter');
-  const start = 0;
-  const increment = target / (duration / 16);
-  let current = start;
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) { current = target; clearInterval(timer); }
-    el.textContent = Math.floor(current).toLocaleString();
-  }, 16);
-}
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { animateCounter(247, 2000); counterObserver.disconnect(); }
-  });
-}, { threshold: 0.5 });
-const counterEl = document.getElementById('counter');
-if (counterEl) counterObserver.observe(counterEl.closest('.counter-strip'));
 
 // Form submit
 document.getElementById('talentForm').addEventListener('submit', async function(e) {
