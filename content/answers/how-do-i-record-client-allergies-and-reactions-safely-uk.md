@@ -20,4 +20,4 @@ Second, **make it impossible to miss at the chair.** A safety record buried in a
 
 Third, **store it lawfully.** Special-category data needs a clear basis, restricted access, and a retention limit. A shared spreadsheet or an open WhatsApp chat fails all three.
 
-Most salon booking tools were built to take payments and fill diaries — client safety was bolted on, if it's there at all. SAY-OS was built the other way round: every client carries a structured safety and contraindication record that's held to the Article 9 standard and shown to you the moment it's relevant. It's the app that remembers everything for you — including the one thing you can't afford to forget.
+Most salon booking tools were built to take payments and fill diaries — client safety was bolted on, if it's there at all. SAY-OS was built the other way round: every client carries a structured safety and contraindication record, stored securely as health data and available to review before treatment. It's the app that remembers everything for you — including the one thing you can't afford to forget.
