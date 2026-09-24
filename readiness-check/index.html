@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How treatment-ready is your client information? — SAY</title>
+<meta name="description" content="A 7-question self-check for advanced skin professionals — laser, IPL, RF, microneedling, peels and advanced facials. See how consistently you capture the information you may not have before treatment. Free, no signup.">
+<meta property="og:title" content="How treatment-ready is your client information?">
+<meta property="og:description" content="A quick self-check of your pre-treatment information process, for advanced skin professionals. Free, no signup required.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:url" content="https://say-salon.com/readiness-check/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/readiness-check/">
+<!-- Consent Mode v2 — GA4 loads only after user consent (UK GDPR/PECR) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+  gtag('js', new Date());
+  window.sayLoadAnalytics = function () {
+    if (window.__sayGaLoaded) return;
+    window.__sayGaLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('config', 'G-QXYSM1LHV8');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';
+    document.head.appendChild(s);
+  };
+  try {
+    if (localStorage.getItem('say_consent_analytics') === 'granted') {
+      window.sayLoadAnalytics();
+    }
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --base: #0F2818;
+  --card: #183222;
+  --card-hover: #1E3828;
+  --gold: #C9A961;
+  --gold-dim: rgba(201,169,97,0.12);
+  --gold-glow: rgba(201,169,97,0.25);
+  --champagne: #EDE5D4;
+  --whisper: #96A097;
+  --cream: #faf9f7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--base);
+  color: var(--champagne);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.container { max-width: 480px; margin: 0 auto; padding: 20px; }
+.logo { text-align: center; padding: 24px 0 8px; }
+.logo span { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; color: var(--gold); letter-spacing: 4px; }
+.hero { text-align: center; padding: 16px 0 24px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 30px; color: var(--champagne); margin-bottom: 12px; line-height: 1.25; }
+.hero p { font-size: 14px; color: var(--whisper); max-width: 380px; margin: 0 auto; }
+.hero .aud { display:block; margin-top:10px; font-size:12px; color:var(--gold); letter-spacing:0.5px; }
+.progress { display: flex; gap: 6px; margin-bottom: 24px; }
+.progress-dot { flex: 1; height: 3px; border-radius: 2px; background: rgba(201,169,97,0.15); transition: background 0.3s; }
+.progress-dot.active { background: var(--gold); }
+.progress-dot.done { background: rgba(201,169,97,0.45); }
+.question-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 20px; padding: 28px 24px; margin-bottom: 16px; }
+.question-num { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; }
+.question-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; line-height: 1.35; }
+.question-note { font-size: 12px; color: var(--whisper); margin-bottom: 18px; }
+.option { display: block; width: 100%; padding: 14px 16px; margin-bottom: 8px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 400; cursor: pointer; transition: all 0.2s; text-align: left; }
+.option:hover { background: var(--card-hover); border-color: rgba(201,169,97,0.3); }
+.option.selected { background: rgba(201,169,97,0.12); border-color: var(--gold); color: var(--gold); font-weight: 500; }
+.nav-row { display: flex; gap: 12px; margin-top: 8px; }
+.btn-back { flex: 0 0 auto; padding: 14px 20px; background: transparent; border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--whisper); font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-back:hover { border-color: rgba(201,169,97,0.3); color: var(--champagne); }
+.btn-next { flex: 1; padding: 14px 20px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+.btn-next:hover { filter: brightness(1.08); }
+.btn-next:disabled { opacity: 0.35; cursor: not-allowed; filter: none; }
+.result { display: none; }
+.result.visible { display: block; }
+.result-band { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--gold); margin: 12px 0 4px; text-align:center; }
+.result-lead { font-size: 14px; color: var(--champagne); margin-bottom: 22px; text-align:center; max-width: 380px; margin-left:auto; margin-right:auto; }
+.result-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 20px; margin-bottom: 16px; text-align: left; }
+.result-card h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
+.result-card p { font-size: 13px; color: var(--champagne); line-height: 1.6; }
+.result-card ul { list-style: none; padding: 0; margin: 4px 0 0; }
+.result-card li { font-size: 13px; color: var(--champagne); padding: 8px 0 8px 18px; border-bottom: 1px solid var(--gold-dim); position: relative; }
+.result-card li:last-child { border-bottom: none; }
+.result-card li::before { content: "•"; color: var(--gold); position: absolute; left: 0; }
+.cta-section { margin-top: 4px; padding: 22px; background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; text-align: center; }
+.cta-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; }
+.cta-section p { font-size: 13px; color: var(--whisper); margin-bottom: 16px; }
+.cta-btn { display: inline-block; padding: 13px 28px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: 0.5px; transition: all 0.2s; cursor: pointer; }
+.cta-btn:hover { filter: brightness(1.08); }
+.cta-btn:disabled { opacity: 0.4; cursor: not-allowed; filter: none; }
+/* Email copy form */
+.email-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 20px; margin: 16px 0; text-align: left; }
+.email-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--champagne); margin-bottom: 6px; }
+.email-card .sub { font-size: 12px; color: var(--whisper); margin-bottom: 14px; }
+.email-input { display: block; width: 100%; padding: 13px 16px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; margin-bottom: 12px; outline: none; }
+.email-input:focus { border-color: var(--gold); }
+.email-input::placeholder { color: var(--whisper); opacity: 0.6; }
+.consent-row { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 14px; }
+.consent-row input { margin-top: 3px; width: 16px; height: 16px; flex: 0 0 auto; accent-color: var(--gold); }
+.consent-row label { font-size: 12px; color: var(--whisper); line-height: 1.5; }
+.form-note { font-size: 11px; color: var(--whisper); opacity: 0.8; margin-top: 12px; text-align: center; }
+.form-note a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.form-msg { font-size: 13px; margin-top: 12px; text-align: center; display: none; }
+.form-msg.ok { display: block; color: var(--gold); }
+.form-msg.err { display: block; color: #E7C9A9; }
+.disclaimer { font-size: 11px; color: var(--whisper); opacity: 0.75; line-height: 1.6; margin: 20px 4px 0; text-align: center; }
+.footer { text-align: center; padding: 28px 0 8px; }
+.footer p { font-size: 11px; color: var(--whisper); opacity: 0.5; }
+.footer a { color: var(--gold); text-decoration: none; opacity: 0.7; }
+@media (max-width: 380px) {
+  .hero h1 { font-size: 25px; }
+  .question-text { font-size: 19px; }
+  .result-band { font-size: 32px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Client Information Readiness Check",
+  "applicationCategory": "BusinessApplication",
+  "description": "A self-assessment for advanced skin professionals of how consistently they capture pre-treatment client information.",
+  "url": "https://say-salon.com/readiness-check/",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SAY-OS",
+    "legalName": "Servicesforyou Ltd",
+    "url": "https://say-salon.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" }
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="logo"><span>SAY</span></div>
+
+  <div class="hero" id="hero">
+    <h1>How treatment-ready is your client information?</h1>
+    <p>A quick, honest look at your own information process before treatment — not a test of any individual client.</p>
+    <span class="aud">For laser, IPL, RF, microneedling, peel &amp; advanced facial professionals</span>
+  </div>
+
+  <div id="quiz">
+    <div class="progress" id="progress"></div>
+    <div class="question-card" id="question-card">
+      <div class="question-num" id="q-num"></div>
+      <div class="question-text" id="q-text"></div>
+      <div class="question-note" id="q-note"></div>
+      <div id="options"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" id="btn-back" onclick="prevQuestion()">Back</button>
+      <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>Continue</button>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-band" id="r-band"></div>
+    <div class="result-lead" id="r-lead"></div>
+
+    <div class="result-card" id="r-gaps-card">
+      <h3>Information you may not have before treatment</h3>
+      <ul id="r-gaps"></ul>
+    </div>
+
+    <div class="cta-section">
+      <h3>Bring it together in one place</h3>
+      <p>A client's Beauty Passport keeps medication, allergies, skin conditions, product use and treatment history in one record — so the information is there to review before treatment. You keep professional judgement for every treatment.</p>
+      <a href="https://say-salon.com/" class="cta-btn">See how the Beauty Passport works</a>
+    </div>
+
+    <div class="email-card">
+      <h3>Email me a copy of this result</h3>
+      <div class="sub">Optional. We'll send your result band and the checklist above to your inbox.</div>
+      <input type="email" class="email-input" id="email-input" placeholder="you@salon.com" autocomplete="email">
+      <div class="consent-row">
+        <input type="checkbox" id="marketing-consent">
+        <label for="marketing-consent">Also send me occasional emails about SAY-OS. Optional — leave unticked to receive only your result.</label>
+      </div>
+      <button class="cta-btn" id="btn-email" onclick="submitEmail()" style="width:100%;">Email me a copy of this result</button>
+      <div class="form-msg" id="form-msg"></div>
+      <p class="form-note">We use your email to send the result you asked for. See our <a href="/privacy">Privacy Policy</a>.</p>
+    </div>
+
+    <p class="disclaimer">This is a self-assessment of your own information process — not a diagnosis, a compliance score, or a clinical judgement. SAY provides information, records and context; you retain professional judgement for every treatment.</p>
+  </div>
+
+  <div class="footer">
+    <p>SAY-OS &mdash; the app that remembers everything for you</p>
+    <p style="margin-top:8px;"><a href="https://say-salon.com">say-salon.com</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></p>
+  </div>
+</div>
+
+<script>
+// 7 process-focused questions. Each option maps to a maturity value: 2 / 1 / 0.
+var OPTS = [
+  { label: 'Yes — routinely, for every relevant client', v: 2 },
+  { label: 'Sometimes, or only for some clients', v: 1 },
+  { label: 'Rarely, or not as a set routine', v: 0 }
+];
+var QUESTIONS = [
+  { q: 'Before every relevant treatment, do you record current medication, including blood-thinning or photosensitising medication?',
+    note: '', area: 'Current medication (including blood-thinning or photosensitising medication)' },
+  { q: 'Do you ask about recent use of topical products such as retinoids or exfoliating acids and follow your applicable treatment protocol?',
+    note: '', area: 'Recent use of topical retinoids or exfoliating acids' },
+  { q: 'Do you ask about and record pregnancy or breastfeeding status where it is relevant to the treatment?',
+    note: '', area: 'Pregnancy or breastfeeding status' },
+  { q: 'Do you capture allergies and any previous reactions, and can you retrieve them at the next visit?',
+    note: '', area: 'Allergies and previous reactions' },
+  { q: 'Do you check for active skin conditions before treatment (for example eczema or psoriasis flare, infection, recent sunburn)?',
+    note: '', area: 'Active skin conditions' },
+  { q: 'Do you ask about recent treatments or procedures done elsewhere that could interact with what you are planning?',
+    note: '', area: 'Recent treatments or procedures elsewhere' },
+  { q: 'Do you record patch-test status and the aftercare given, with dates?',
+    note: '', area: 'Patch-test status and aftercare, with dates' }
+];
+var TOTAL_Q = QUESTIONS.length;
+
+// ── UTM capture ──────────────────────────────────────────────
+function getParam(name) {
+  try { return new URLSearchParams(window.location.search).get(name) || ''; }
+  catch (e) { return ''; }
+}
+var UTM = {
+  utm_source: getParam('utm_source'),
+  utm_medium: getParam('utm_medium'),
+  utm_campaign: getParam('utm_campaign')
+};
+var SOURCE = UTM.utm_source; // e.g. "october_show" when arriving via the show QR
+
+// ── Analytics (consent-gated: gtag only initialises after consent) ──
+function sayTrack(name, params) {
+  try { gtag('event', name, params || {}); } catch (e) {}
+}
+
+var step = 0;
+var answers = new Array(TOTAL_Q).fill(null);
+var startedFired = false;
+
+function render() {
+  var prog = document.getElementById('progress');
+  prog.innerHTML = '';
+  for (var i = 0; i < TOTAL_Q; i++) {
+    var d = document.createElement('div');
+    d.className = 'progress-dot' + (i === step ? ' active' : '') + (answers[i] !== null && i !== step ? ' done' : '');
+    prog.appendChild(d);
+  }
+  document.getElementById('q-num').textContent = 'Question ' + (step + 1) + ' of ' + TOTAL_Q;
+  document.getElementById('q-text').textContent = QUESTIONS[step].q;
+  var noteEl = document.getElementById('q-note');
+  noteEl.textContent = QUESTIONS[step].note || '';
+  noteEl.style.display = QUESTIONS[step].note ? 'block' : 'none';
+  var opts = document.getElementById('options');
+  opts.innerHTML = '';
+  OPTS.forEach(function (o, idx) {
+    var b = document.createElement('button');
+    b.className = 'option' + (answers[step] === idx ? ' selected' : '');
+    b.textContent = o.label;
+    b.onclick = function () {
+      answers[step] = idx;
+      if (!startedFired) {
+        startedFired = true;
+        sayTrack('readiness_check_started', SOURCE ? { source: SOURCE } : {});
+      }
+      render();
+    };
+    opts.appendChild(b);
+  });
+  document.getElementById('btn-back').style.display = step === 0 ? 'none' : 'block';
+  document.getElementById('btn-next').disabled = answers[step] === null;
+  document.getElementById('btn-next').textContent = step === TOTAL_Q - 1 ? 'See my result' : 'Continue';
+}
+
+function nextQuestion() {
+  if (answers[step] === null) return;
+  if (step < TOTAL_Q - 1) { step++; render(); return; }
+  showResults();
+}
+
+function prevQuestion() {
+  if (step > 0) { step--; render(); }
+}
+
+function scoreBand() {
+  var total = answers.reduce(function (a, b) { return a + OPTS[b].v; }, 0);
+  // max 14. Neutral bands, no score shown.
+  if (total >= 11) return 'Established';
+  if (total >= 6) return 'Developing';
+  return 'Inconsistent';
+}
+
+var BAND_LEAD = {
+  'Established': 'Your information process looks well established. You are routinely capturing the information you may not otherwise have before treatment.',
+  'Developing': 'Your information process is developing. A few types of information you may not have before treatment can still slip through.',
+  'Inconsistent': 'Your information process looks inconsistent. Several types of information you may not have before treatment are not yet captured as a routine.'
+};
+
+function showResults() {
+  var band = scoreBand();
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('hero').style.display = 'none';
+
+  document.getElementById('r-band').textContent = band;
+  document.getElementById('r-lead').textContent = BAND_LEAD[band];
+
+  // Gaps = areas answered below "routinely"
+  var gaps = [];
+  answers.forEach(function (a, i) {
+    if (OPTS[a].v < 2) gaps.push(QUESTIONS[i].area);
+  });
+  var ul = document.getElementById('r-gaps');
+  ul.innerHTML = '';
+  if (gaps.length === 0) {
+    document.getElementById('r-gaps-card').querySelector('h3').textContent = 'You are capturing these routinely';
+    QUESTIONS.forEach(function (q) {
+      var li = document.createElement('li'); li.textContent = q.area; ul.appendChild(li);
+    });
+  } else {
+    gaps.forEach(function (g) {
+      var li = document.createElement('li'); li.textContent = g; ul.appendChild(li);
+    });
+  }
+
+  document.getElementById('result').classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  var params = { result_band: band };
+  if (SOURCE) params.source = SOURCE;
+  sayTrack('readiness_check_completed', params);
+
+  window.__readinessBand = band;
+}
+
+function submitEmail() {
+  var input = document.getElementById('email-input');
+  var email = input.value.trim();
+  var msg = document.getElementById('form-msg');
+  msg.className = 'form-msg';
+  if (!email || email.indexOf('@') < 1) {
+    input.style.borderColor = '#E7C9A9';
+    msg.textContent = 'Please enter a valid email address.';
+    msg.className = 'form-msg err';
+    return;
+  }
+  input.style.borderColor = '';
+  var btn = document.getElementById('btn-email');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  var payload = {
+    type: 'readiness_check',
+    source: SOURCE || 'october_show',
+    result_band: window.__readinessBand || scoreBand(),
+    email: email,
+    marketing_opt_in: !!document.getElementById('marketing-consent').checked,
+    utm_source: UTM.utm_source,
+    utm_medium: UTM.utm_medium,
+    utm_campaign: UTM.utm_campaign
+  };
+
+  fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function (r) {
+    if (r && r.ok) {
+      msg.textContent = 'Thank you — we’ll send your copy within 48 hours.';
+      msg.className = 'form-msg ok';
+      btn.textContent = 'Requested';
+      var p = { result_band: payload.result_band };
+      if (SOURCE) p.source = SOURCE;
+      sayTrack('email_captured', p);
+    } else {
+      throw new Error('bad status');
+    }
+  }).catch(function () {
+    msg.textContent = 'Sorry — we couldn’t submit that just now. Your result is shown above; please try again later.';
+    msg.className = 'form-msg err';
+    btn.disabled = false;
+    btn.textContent = 'Email me a copy of this result';
+  });
+}
+
+render();
+</script>
+
+<!-- Consent Banner -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
+    <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this page is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var KEY='say_consent_analytics';var stored=null;try{stored=localStorage.getItem(KEY);}catch(e){}if(stored!=='granted'&&stored!=='denied'){document.getElementById('say-consent-banner').style.display='block';}window.sayConsentChoose=function(choice){try{localStorage.setItem(KEY,choice);}catch(e){}if(choice==='granted'&&window.sayLoadAnalytics)window.sayLoadAnalytics();document.getElementById('say-consent-banner').style.display='none';};})();
+</script>
+<footer style="max-width:720px;margin:2.5rem auto 0;padding:1.75rem 1.5rem 2.5rem;border-top:1px solid rgba(201,169,97,0.15);text-align:center;font-family:'Outfit',sans-serif;color:#96A097;font-size:0.8rem;line-height:1.6;">
+  <div>&copy; 2026 Servicesforyou Ltd &middot; <a href="/privacy" style="color:#C9A961;text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:#C9A961;text-decoration:none;">Terms</a></div>
+</footer>
+</body>
+</html>
