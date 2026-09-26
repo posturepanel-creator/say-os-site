@@ -48,6 +48,7 @@
     try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
   })();
   </script>
+  <script defer src="/oaiq.js"></script>
 </head>
 <body>
   <div class="container">
@@ -227,7 +228,17 @@
       <li><strong>Voice analytics</strong> — stored locally on your device only, not transmitted to our servers</li>
       <li><strong>App preferences</strong> — language, notification settings</li>
     </ul>
-    <p>We do not use advertising cookies, tracking pixels, or third-party analytics cookies.</p>
+    <p>The SAY client app itself does not use advertising cookies or tracking pixels. On our marketing website (say-salon.com) we use analytics cookies (Google Analytics and PostHog) and one advertising-measurement pixel (see 10.1). These are optional, off by default, and load only after you consent. You can change or withdraw these choices at any time using the &ldquo;Cookie settings&rdquo; control on the site.</p>
+
+    <h3>10.1 Advertising measurement (OpenAI)</h3>
+    <p>On our marketing website only, we use OpenAI as an advertising-measurement provider for our own ad campaigns:</p>
+    <ul>
+      <li><strong>Purpose</strong> — campaign attribution and conversion measurement, so we can understand which ads bring visitors to say-salon.com.</li>
+      <li><strong>Pixel identifier</strong> — OpenAI uses a pixel identifier to measure ad performance. We do not send your personal, health, or readiness-check answers to OpenAI.</li>
+      <li><strong>Attribution parameter (&ldquo;oppref&rdquo;)</strong> — if you arrive from one of our ads, an <code>oppref</code> value may be present in the link. It is only read, stored for your browsing session, or passed to our own app (app.say-salon.com) <em>after</em> you allow advertising cookies; otherwise it is ignored.</li>
+      <li><strong>Activation</strong> — the OpenAI pixel and any <code>oppref</code> handling activate only after you opt in to advertising cookies. They are off by default.</li>
+      <li><strong>Withdrawal</strong> — you can withdraw advertising consent at any time via the &ldquo;Cookie settings&rdquo; control on the site. After withdrawal the pixel does not load on future visits and any stored <code>oppref</code> is removed.</li>
+    </ul>
 
     <h2>11. Children &amp; Under-18s</h2>
     <p>SAY (the client app) is not directed at children under 16, and we do not knowingly collect personal data directly from under-16s. Where a salon using SAY-OS records data about a client under 18 — for example, a consultation record for a minor — the salon is the controller for that record and is responsible for obtaining verifiable parental or guardian consent before treatment. If you believe a child has provided us with personal data directly, contact <a href="mailto:privacy@say-salon.com">privacy@say-salon.com</a> and we will delete it promptly.</p>
