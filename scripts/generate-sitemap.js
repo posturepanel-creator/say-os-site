@@ -27,6 +27,7 @@ const CORE_PAGES = [
   { path: "/client/", file: "client/index.html", changefreq: "monthly", priority: "0.8" },
   { path: "/skin-type/", file: "skin-type/index.html", changefreq: "monthly", priority: "0.7" },
   { path: "/readiness-check/", file: "readiness-check/index.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/beauty-passport/", file: "beauty-passport/index.html", changefreq: "monthly", priority: "0.8" },
   { path: "/links", file: "links.html", changefreq: "monthly", priority: "0.5" },
   { path: "/aesthetics", file: "aesthetics.html", changefreq: "weekly", priority: "0.9" },
   { path: "/privacy", file: "privacy.html", changefreq: "yearly", priority: "0.3" },
