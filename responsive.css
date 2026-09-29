@@ -9,12 +9,30 @@
 /* Contain the page: no horizontal page scroll, nothing off the right edge. */
 html, body { max-width: 100%; overflow-x: hidden; }
 
-/* Media never forces the page wider than the viewport. */
-img, video, iframe, canvas { max-width: 100%; height: auto; }
-svg { max-width: 100%; }
+/* Media never forces the page wider than the viewport.
+   NOTE: only max-width is set — deliberately NO height:auto. Forcing height:auto
+   would override an element's intended height (e.g. the nav logo, sized by a
+   height attribute or CSS) and blow it up to its intrinsic size, covering the
+   hero. max-width:100% alone prevents horizontal overflow without resizing
+   logos or icons. */
+img, video, iframe, canvas, svg { max-width: 100%; }
 
 /* Long words / headings wrap instead of clipping; no auto-hyphenation. */
 h1, h2, h3, h4, .hero h1, .blog-hero__title { overflow-wrap: break-word; hyphens: manual; }
+
+/* Accessibility + robustness: honour reduced-motion, and make sure content that
+   animates in can never stay hidden/blocked if animation or JS reveal fails.
+   Under reduced-motion we near-disable animation/transition and force any
+   scroll-reveal content to its visible end-state. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, [class*="reveal"] { opacity: 1 !important; transform: none !important; }
+}
 
 /* Small screens: long CTA / submit / nav labels wrap instead of being clipped. */
 @media (max-width: 480px) {
