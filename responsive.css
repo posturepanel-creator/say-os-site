@@ -1,0 +1,27 @@
+/* SAY-OS — shared responsive & readability guard
+ * Loaded AFTER each page's own <style>. Additive, low-risk rules only:
+ * no layout redesign, no hidden meaningful content, dark theme preserved.
+ * Purpose: eliminate horizontal overflow, clipped headings, off-viewport
+ * content and clipped controls on small screens (320–430px), and stop
+ * inappropriate hyphenation of large words.
+ */
+
+/* Contain the page: no horizontal page scroll, nothing off the right edge. */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Media never forces the page wider than the viewport. */
+img, video, iframe, canvas { max-width: 100%; height: auto; }
+svg { max-width: 100%; }
+
+/* Long words / headings wrap instead of clipping; no auto-hyphenation. */
+h1, h2, h3, h4, .hero h1, .blog-hero__title { overflow-wrap: break-word; hyphens: manual; }
+
+/* Small screens: long CTA / submit / nav labels wrap instead of being clipped. */
+@media (max-width: 480px) {
+  .form-submit, .btn, .btn-primary, .btn-secondary, .btn-ghost, .nav-cta,
+  .cta, .cta-primary, .cta-btn, .lp-cta, .lp-nav__cta {
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+  }
+}

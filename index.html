@@ -347,7 +347,7 @@ nav {
 }
 .compat-intro {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.9;
   max-width: 700px;
   margin-bottom: 48px;
@@ -392,7 +392,7 @@ nav {
 }
 .compat-text p {
   font-size: 13px;
-  color: rgba(237,229,212,0.45);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 .compat-note {
@@ -403,7 +403,7 @@ nav {
   border-left: 3px solid var(--gold-accent);
   border-radius: 0 12px 12px 0;
   font-size: 14px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
 }
 
@@ -501,7 +501,7 @@ nav {
 }
 .feature-desc {
   font-size: 14px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
 }
 
@@ -516,7 +516,7 @@ nav {
 }
 .client-intro {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.9;
   max-width: 700px;
   margin-bottom: 48px;
@@ -594,12 +594,12 @@ nav {
 }
 .ins-point p {
   font-size: 13px;
-  color: rgba(237,229,212,0.45);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 .insurance-note {
   font-size: 15px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
   max-width: 640px;
   margin: 0 auto;
@@ -643,7 +643,7 @@ nav {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 5px;
-  color: rgba(237,229,212,0.3);
+  color:rgba(237,229,212,0.72);
 }
 .msg-bubble {
   padding: 12px 16px;
@@ -674,7 +674,7 @@ nav {
   border-radius: 8px;
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
-  color: rgba(237,229,212,0.35);
+  color:rgba(237,229,212,0.72);
   text-align: center;
   letter-spacing: 0.5px;
 }
@@ -707,7 +707,7 @@ nav {
 }
 .free-card p {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
   margin-bottom: 8px;
 }
@@ -721,7 +721,7 @@ nav {
 .free-feat {
   font-family: 'Outfit', sans-serif;
   font-size: 12px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   letter-spacing: 0.5px;
 }
 .free-feat strong {
@@ -732,7 +732,7 @@ nav {
 /* ─── STATS ─── */
 .stats-strip {
   background: linear-gradient(135deg, var(--velvet-primary), var(--velvet-light));
-  padding: 60px 48px;
+  padding: 48px 24px;
   border-top: 1px solid rgba(201,169,97,0.1);
   border-bottom: 1px solid rgba(201,169,97,0.1);
 }
@@ -741,26 +741,31 @@ nav {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 16px;
   text-align: center;
+}
+.stat-card {
+  background: rgba(15,40,24,0.35);
+  border: 1px solid rgba(201,169,97,0.14);
+  border-radius: 14px;
+  padding: 18px 12px;
 }
 .stat-val {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
-  background: var(--gold-brushed); /* flat gold */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-  margin-bottom: 8px;
+  font-size: clamp(20px, 4.5vw, 30px);
+  font-weight: 600;
+  color: var(--gold-brushed);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  white-space: nowrap;
 }
 .stat-label {
   font-family: 'Outfit', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: rgba(237,229,212,0.4);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: rgba(237,229,212,0.72);
   text-transform: uppercase;
+  line-height: 1.45;
 }
 
 /* ─── OFFER + FORM ─── */
@@ -850,7 +855,7 @@ nav {
 }
 .form-sub {
   font-size: 13px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   margin-bottom: 28px;
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.5px;
@@ -861,7 +866,7 @@ nav {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
   letter-spacing: 1.5px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -889,7 +894,7 @@ nav {
   color: var(--alabaster);
 }
 .form-group input::placeholder {
-  color: rgba(237,229,212,0.2);
+  color:rgba(237,229,212,0.72);
 }
 .form-submit {
   width: 100%;
@@ -913,7 +918,7 @@ nav {
 .form-privacy {
   text-align: center;
   font-size: 11px;
-  color: rgba(237,229,212,0.25);
+  color:rgba(237,229,212,0.72);
   margin-top: 12px;
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.3px;
@@ -933,7 +938,7 @@ nav {
 }
 .success-sub {
   font-size: 14px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 
@@ -960,7 +965,7 @@ nav {
 .founder-quote::before {
   content: '\201C';
   font-size: 120px;
-  color: rgba(201,169,97,0.1);
+  color:rgba(201,169,97,0.72);
   position: absolute;
   top: -40px;
   left: -20px;
@@ -988,7 +993,7 @@ nav {
   font-family: 'Outfit', sans-serif;
   font-size: 11px;
   letter-spacing: 2px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1025,7 +1030,7 @@ footer {
   font-family: 'Outfit', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
-  color: rgba(237,229,212,0.3);
+  color:rgba(237,229,212,0.72);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -1034,7 +1039,7 @@ footer {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
   letter-spacing: 1px;
-  color: rgba(237,229,212,0.2);
+  color:rgba(237,229,212,0.72);
 }
 
 /* ─── ANIMATIONS ─── */
@@ -1148,6 +1153,7 @@ footer {
   })();
   </script>
   <script defer src="/oaiq.js"></script>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 
@@ -1462,7 +1468,7 @@ footer {
       <h2 class="section-heading" style="margin-bottom:24px">
         Say it out loud.<br><em>Consider it done.</em>
       </h2>
-      <p style="font-size:15px;color:rgba(237,229,212,0.55);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
+      <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
       <ul style="list-style:none">
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works via WhatsApp, Siri, or in-app — whatever you already use</li>
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
@@ -1524,21 +1530,21 @@ footer {
 <!-- STATS -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <div class="reveal">
-      <div class="stat-val">9-in-1</div>
-      <div class="stat-label">Tools replaced by one platform</div>
+    <div class="reveal stat-card">
+      <div class="stat-val">Voice-first</div>
+      <div class="stat-label">Work hands-free while you manage</div>
     </div>
-    <div class="reveal">
-      <div class="stat-val">Hands-free</div>
-      <div class="stat-label">Voice-first — work while you manage</div>
-    </div>
-    <div class="reveal">
+    <div class="reveal stat-card">
       <div class="stat-val">14</div>
       <div class="stat-label">Languages in Beauty Passport</div>
     </div>
-    <div class="reveal">
+    <div class="reveal stat-card">
       <div class="stat-val">Free</div>
-      <div class="stat-label">Client app — free for clients, no catches</div>
+      <div class="stat-label">Client app for your clients</div>
+    </div>
+    <div class="reveal stat-card">
+      <div class="stat-val">&pound;0</div>
+      <div class="stat-label">To start &mdash; 25 clients included</div>
     </div>
   </div>
 </div>
@@ -1558,7 +1564,7 @@ footer {
         <li>Your name recognised as a SAY-OS founding member</li>
         <li>Priority onboarding and dedicated setup support</li>
       </ul>
-      <p style="font-size:13px;color:rgba(237,229,212,0.35);font-family:'Outfit',sans-serif;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
+      <p style="font-size:13px;color:rgba(237,229,212,0.72);font-family:'Outfit',sans-serif;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
     </div>
 
     <div class="form-side">
@@ -1616,7 +1622,7 @@ footer {
 
 <!-- FROM THE BLOG -->
 <section style="padding:60px 48px;border-top:1px solid rgba(253,251,247,0.06);max-width:900px;margin:0 auto;">
-  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.4);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
+  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fdfbf7;margin-bottom:24px;">Guides for salon owners and clients</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
     <a href="/blog/reduce-salon-no-shows" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
@@ -1649,9 +1655,9 @@ footer {
 
 <!-- CLIENT CTA -->
 <section style="padding:60px 48px;text-align:center;border-top:1px solid rgba(253,251,247,0.06);">
-  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.4);text-transform:uppercase;margin-bottom:16px;">Not a salon owner?</p>
+  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">Not a salon owner?</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#fdfbf7;margin-bottom:12px;">Your beauty history should travel with you.</h2>
-  <p style="font-family:'DM Sans',sans-serif;font-size:16px;color:rgba(253,251,247,0.5);max-width:520px;margin:0 auto 28px;line-height:1.6;">Build your free Beauty Passport — allergies, routines, treatment history, and safety profile in one place. Share it with any salon via QR code.</p>
+  <p style="font-family:'DM Sans',sans-serif;font-size:16px;color:rgba(253,251,247,0.72);max-width:520px;margin:0 auto 28px;line-height:1.6;">Build your free Beauty Passport — allergies, routines, treatment history, and safety profile in one place. Share it with any salon via QR code.</p>
   <a href="https://app.say-salon.com/register" style="display:inline-block;padding:16px 40px;background:#c1a368;color:#030a07;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:10px;">Start Free</a>
 </section>
 
