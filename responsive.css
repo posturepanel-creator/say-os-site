@@ -55,6 +55,13 @@ h1, h2, h3, h4, .hero h1, .blog-hero__title { overflow-wrap: break-word; hyphens
   position: relative; top: 0.03em; /* optical centre against cap-height */
 }
 
+/* Very narrow screens (index/pricing nav): drop the secondary text links so the
+   crown + wordmark + "Start Free" CTA stay on one row without collision or wrap.
+   The Pricing/Blog destinations remain reachable in-page and in the footer. */
+@media (max-width: 420px) {
+  .nav-hide-narrow { display: none !important; }
+}
+
 /* Small screens: long CTA / submit / nav labels wrap instead of being clipped. */
 @media (max-width: 480px) {
   .form-submit, .btn, .btn-primary, .btn-secondary, .btn-ghost, .nav-cta,
