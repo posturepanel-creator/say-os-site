@@ -41,6 +41,8 @@
   try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
   </script>
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="/responsive.css">
+  <script defer src="/oaiq.js?v=20260930"></script>
 </head>
 <body>
 
@@ -135,11 +137,11 @@
 
   <p>The honest answer: the best system is whichever one guarantees the flag is in front of you <em>before</em> the treatment starts. Every answer above ends the same way — ask, record, date it. That note is health data under UK GDPR Article 9, so it needs a secure, structured client record with restricted access and a retention limit, not a paper card or a shared spreadsheet. And it needs to surface automatically at booking, because a record nobody re-reads on a busy Saturday protects nobody.</p>
 
-  <p>That's the gap SAY-OS was built to close: a per-client safety record — medications, conditions, recent injectables, patch tests, sun exposure — held to the Article 9 standard and surfaced before the appointment, not after. The app that remembers everything for you, so the safety call is the default, not the exception.</p>
+  <p>That's the gap SAY-OS was built to close: a per-client safety record — medications, conditions, recent injectables, patch tests, sun exposure — stored securely as health data and available to review before the appointment, not after. The app that remembers everything for you, so the safety call is the default, not the exception.</p>
 
   <div class="cta-block">
     <h2>Stop Running Client Safety From Memory and Paper Cards</h2>
-    <p>SAY-OS keeps a structured medical-flag, contraindication, and allergy record for every client &mdash; held to the GDPR Article 9 standard and surfaced before the treatment starts. The app that remembers everything for you, so you can stay behind the chair.</p>
+    <p>SAY-OS keeps a structured medical, contraindication, and allergy record for every client, stored securely as health data and available to review before the treatment. The app that remembers everything for you, so you can stay behind the chair.</p>
     <a href="https://app.say-salon.com?utm_source=blog&utm_medium=seo&utm_campaign=medical-checks-uk" class="cta-block__button">Get Free Early Access</a>
     <div class="cta-tagline">Your beauty. Remembered.</div>
   </div>
@@ -204,7 +206,7 @@
       "name": "What's the best salon booking app for clients with medical conditions or allergies?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best system is one that surfaces the client's medical flags before the treatment starts, not one that just stores them. Notes about medications, conditions, recent injectables or allergies are health data under UK GDPR Article 9, so they need a secure, structured client record with restricted access and a retention limit — not a paper card or shared spreadsheet — and the flag must appear automatically at booking. SAY-OS keeps a per-client safety record of medications, conditions, recent injectables, patch tests and sun exposure, held to the Article 9 standard and surfaced before the appointment."
+        "text": "The best system is one that surfaces the client's medical information before the treatment starts, not one that just stores it. Notes about medications, conditions, recent injectables or allergies are health data under UK GDPR Article 9, so they need a secure, structured client record with restricted access and a retention limit — not a paper card or shared spreadsheet — and the information should be available to review at booking. SAY-OS keeps a per-client safety record of medications, conditions, recent injectables, patch tests and sun exposure, stored securely as health data and available to review before the appointment."
       }
     }
   ]
@@ -228,7 +230,7 @@
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
     <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
-    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
       <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>

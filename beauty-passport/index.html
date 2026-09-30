@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Beauty Passport works — client records, shared with your salon | SAY</title>
+<meta name="description" content="See how the free client Beauty Passport works: the client keeps their own beauty and safety record, controls what they share, and shares it with a salon by QR code. A no-login demonstration with example data.">
+<meta property="og:title" content="How Beauty Passport works">
+<meta property="og:description" content="The client keeps their own beauty and safety record and chooses what to share with a salon. A no-login demonstration with example data.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:url" content="https://say-salon.com/beauty-passport/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/beauty-passport/">
+<!-- Consent Mode v2 — GA4 loads only after analytics consent (UK GDPR/PECR) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  gtag('js', new Date());
+  window.sayLoadAnalytics = function () {
+    if (window.__sayGaLoaded) return;
+    window.__sayGaLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('config', 'G-QXYSM1LHV8');
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';
+    document.head.appendChild(s);
+  };
+  try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="/oaiq.js?v=20260930"></script>
+<style>
+:root{
+  --base:#0F2818; --card:#183222; --card-hover:#1E3828; --gold:#C9A961;
+  --gold-dim:rgba(201,169,97,0.12); --champagne:#EDE5D4; --whisper:#B7C0B4; --whisper-soft:#96A097;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--base);color:var(--champagne);font-family:'Outfit',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.wrap{max-width:760px;margin:0 auto;padding:20px;}
+.logo{text-align:center;padding:24px 0 8px;}
+.logo a{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:var(--gold);letter-spacing:4px;text-decoration:none;}
+.hero{text-align:center;padding:24px 0 8px;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,7vw,44px);line-height:1.15;color:var(--champagne);margin-bottom:14px;}
+.hero p{font-size:15px;color:var(--whisper);max-width:520px;margin:0 auto;}
+.example-note{display:inline-block;margin-top:16px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:6px 14px;}
+.step{margin:44px 0;}
+.step-num{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(22px,5.5vw,30px);line-height:1.25;color:var(--champagne);margin-bottom:10px;}
+.step > p{font-size:14px;color:var(--whisper);max-width:560px;}
+/* phone frame */
+.phone{max-width:340px;margin:22px auto 0;background:var(--card);border:1px solid var(--gold-dim);border-radius:26px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,0.45);}
+.phone-top{display:flex;align-items:center;justify-content:space-between;padding:4px 8px 12px;border-bottom:1px solid var(--gold-dim);}
+.phone-top .who{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--champagne);}
+.phone-top .who small{display:block;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.pill{font-size:10px;color:var(--base);background:var(--gold);border-radius:999px;padding:4px 9px;font-weight:600;}
+.rec{margin-top:12px;background:var(--base);border:1px solid var(--gold-dim);border-radius:14px;padding:12px 14px;}
+.rec h3{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.rec p{font-size:13px;color:var(--champagne);line-height:1.55;}
+.rec .tag{display:inline-block;font-size:12px;color:var(--champagne);background:var(--card-hover);border:1px solid var(--gold-dim);border-radius:8px;padding:4px 9px;margin:3px 4px 0 0;}
+.cardgrid{display:grid;grid-template-columns:1fr;gap:12px;max-width:520px;margin:20px auto 0;}
+.info{background:var(--card);border:1px solid var(--gold-dim);border-radius:16px;padding:18px 18px;display:flex;gap:14px;align-items:flex-start;}
+.info svg{width:24px;height:24px;flex:0 0 auto;color:var(--gold);margin-top:2px;}
+.info h3{font-size:15px;color:var(--champagne);margin-bottom:3px;}
+.info p{font-size:13px;color:var(--whisper);line-height:1.55;}
+/* qr */
+.share-vis{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin-top:20px;}
+.qr{width:132px;height:132px;background:#fff;border-radius:14px;padding:12px;flex:0 0 auto;}
+.qr svg{width:100%;height:100%;display:block;}
+.qr-cap{font-size:11px;color:var(--whisper-soft);text-align:center;margin-top:6px;letter-spacing:1px;text-transform:uppercase;}
+.pending{background:var(--card);border:1px dashed rgba(201,169,97,0.35);border-radius:16px;padding:20px;margin-top:18px;}
+.pending h3{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.pending p{font-size:14px;color:var(--champagne);line-height:1.6;}
+.value{background:var(--card);border:1px solid var(--gold-dim);border-radius:16px;padding:22px;margin-top:8px;}
+.value p{font-size:14.5px;color:var(--champagne);line-height:1.65;}
+.value strong{color:var(--gold);font-weight:600;}
+/* next actions */
+.actions{margin:44px 0 8px;text-align:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:12px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.3px;text-decoration:none;cursor:pointer;transition:filter .15s;}
+.btn-primary{background:var(--gold);color:var(--base);border:1px solid var(--gold);}
+.btn-primary:hover{filter:brightness(1.08);}
+.btn-secondary{background:transparent;color:var(--champagne);border:1px solid rgba(201,169,97,0.55);}
+.btn-secondary:hover{background:var(--card-hover);}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px;}
+.client-actions{margin-top:26px;padding-top:22px;border-top:1px solid var(--gold-dim);}
+.client-actions .lbl{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.footer{text-align:center;padding:36px 0 16px;}
+.footer p{font-size:11px;color:var(--whisper-soft);}
+.footer a{color:var(--gold);text-decoration:none;}
+@media (min-width:620px){ .cardgrid{grid-template-columns:1fr 1fr;} }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"How Beauty Passport works",
+  "description":"A no-login demonstration, using example data, of how the free client Beauty Passport records a client's beauty and safety details and lets the client share them with a salon.",
+  "url":"https://say-salon.com/beauty-passport/",
+  "isPartOf":{"@type":"WebSite","name":"SAY-OS","url":"https://say-salon.com"},
+  "publisher":{"@type":"Organization","name":"SAY-OS","legalName":"Servicesforyou Ltd","url":"https://say-salon.com"}
+}
+</script>
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="logo"><a href="/">SAY</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">SAY: Beauty Passport</div>
+    <h1>How clients record and share their Beauty Passport</h1>
+    <p>The Beauty Passport is a free client app. Clients keep their own beauty and safety record, choose what to share, and hand it to a salon in seconds. Here's how it works for salon owners considering SAY-OS.</p>
+    <span class="example-note">Example data — not a real client</span>
+  </header>
+
+  <!-- STEP 1 — CLIENT RECORDS (verified client-side fields only) -->
+  <section class="step" aria-labelledby="s1">
+    <div class="step-num">Step 1</div>
+    <h2 id="s1">The client keeps their own record</h2>
+    <p>In the free client app, a client builds a Beauty Passport and a Health Profile over time. These are the fields the app supports today:</p>
+
+    <div class="phone" role="img" aria-label="Example client Beauty Passport for Maya Chen showing allergies, skin type, conditions, patch tests, service timeline, colour formulas and style photos">
+      <div class="phone-top">
+        <div class="who">Maya Chen<small>Beauty Passport</small></div>
+        <span class="pill">Example</span>
+      </div>
+      <div class="rec">
+        <h3>Allergies</h3>
+        <p>PPD (hair dye) · fragrance</p>
+      </div>
+      <div class="rec">
+        <h3>Health Profile</h3>
+        <p><span class="tag">2 conditions</span><span class="tag">1 allergy</span><span class="tag">1 patch test</span></p>
+      </div>
+      <div class="rec">
+        <h3>Skin type</h3>
+        <p>Fitzpatrick III · sensitive</p>
+      </div>
+      <div class="rec">
+        <h3>Service timeline</h3>
+        <p>Balayage — 12 Apr · Patch test — 10 Apr · Keratin — 2 Feb</p>
+      </div>
+      <div class="rec">
+        <h3>Colour formulas &amp; style photos</h3>
+        <p><span class="tag">3 formulas</span><span class="tag">5 photos</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 — CLIENT CONTROLS SHARING (verified: QR / translated profile / share with any salon) -->
+  <section class="step" aria-labelledby="s2">
+    <div class="step-num">Step 2</div>
+    <h2 id="s2">The client controls what's shared</h2>
+    <p>The record belongs to the client. They decide when to share it and with whom, and can control what a salon sees. Sharing is by QR code — the same passport works in any salon, with the profile translated for the reader.</p>
+
+    <div class="share-vis">
+      <div>
+        <div class="qr" role="img" aria-label="Illustrative QR code — example only, not scannable">
+          <svg viewBox="0 0 29 29" shape-rendering="crispEdges" aria-hidden="true" fill="#0F2818">
+            <rect width="29" height="29" fill="#fff"/>
+            <path d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM22 0h7v7h-7zM23 1v5h5V1zM24 2h3v3h-3zM0 22h7v7H0zM1 23v5h5v-5zM2 24h3v3H2zM9 0h1v1H9zM11 0h2v2h-2zM14 1h1v2h-1zM16 0h1v3h-1zM19 0h1v1h-1zM9 2h1v1H9zM12 3h2v1h-2zM8 5h3v1H8zM13 5h1v2h-1zM17 5h2v1h-2zM20 5h1v1h-1zM0 9h1v1H0zM2 9h3v1H2zM6 9h2v2H6zM9 9h2v1H9zM12 9h1v2h-1zM15 9h2v1h-2zM19 9h1v1h-1zM22 9h1v2h-1zM25 9h3v1h-3zM4 11h2v1H4zM8 11h1v2H8zM11 11h2v1h-2zM17 11h1v3h-1zM20 11h2v1h-2zM24 11h1v2h-1zM27 11h1v3h-1zM0 13h3v1H0zM5 13h2v1H5zM10 13h2v1h-2zM14 13h2v2h-2zM19 13h2v1h-2zM23 13h1v1h-1zM9 15h2v1H9zM13 16h2v1h-2zM17 15h1v2h-1zM21 15h2v1h-2zM25 15h3v1h-3zM8 17h2v1H8zM11 18h2v1h-2zM15 18h1v2h-1zM19 17h2v2h-2zM24 17h1v3h-1zM27 17h1v2h-1zM9 20h1v1H9zM12 21h2v1h-2zM16 21h2v1h-2zM20 21h1v2h-1zM23 21h3v1h-3zM9 22h2v1H9zM13 23h1v2h-1zM16 23h2v1h-2zM19 23h1v3h-1zM22 23h1v2h-1zM25 23h3v1h-3zM10 25h2v1h-2zM14 26h2v1h-2zM17 25h1v2h-1zM21 25h2v1h-2zM24 26h3v1h-3zM11 27h3v1h-3zM16 27h1v1h-1zM20 27h2v1h-2z"/>
+          </svg>
+        </div>
+        <div class="qr-cap">Illustrative QR — example only</div>
+      </div>
+      <div class="cardgrid" style="margin-top:0;">
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v7h-7"/></svg>
+          <div><h3>Shared by QR code</h3><p>The client shows a code; the salon opens the shared profile. Works in any salon.</p></div>
+        </div>
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          <div><h3>Translated profile</h3><p>The passport can be read in the salon's language, so nothing gets lost.</p></div>
+        </div>
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><h3>The client stays in control</h3><p>It's the client's record. They choose when to share it and can control what's visible.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 — SALON REVIEWS: intentionally not depicting the salon interface until verified evidence is supplied. No invented UI, fields or claims. -->
+  <section class="step" aria-labelledby="s3">
+    <div class="step-num">Step 3</div>
+    <h2 id="s3">The salon reviews it before treatment</h2>
+    <p>When a client shares their passport, the salon can review the information the client has chosen to share before treatment. A visual walkthrough of the salon view is coming shortly.</p>
+    <div class="pending">
+      <h3>Salon view — demonstration coming</h3>
+      <p>We're finishing a faithful demonstration of the salon-side view using example data. Professional judgement always stays with the practitioner.</p>
+    </div>
+  </section>
+
+  <!-- STEP 4 — VALUE (no auto-warning / diagnosis / prevention / compliance claims) -->
+  <section class="step" aria-labelledby="s4">
+    <div class="step-num">Step 4</div>
+    <h2 id="s4">Why it helps a salon</h2>
+    <div class="value">
+      <p>A shared Beauty Passport gives you <strong>more context than an appointment alone provides</strong> — a client's allergies, patch tests, skin type and history, brought together in one place to review before treatment. It doesn't make decisions for you: <strong>professional judgement stays with the practitioner.</strong></p>
+    </div>
+  </section>
+
+  <!-- STEP 5 — NEXT ACTIONS -->
+  <section class="actions" aria-labelledby="s5">
+    <div class="step-num">Get started</div>
+    <h2 id="s5" style="margin-bottom:14px;">Ready when you are</h2>
+    <a class="btn btn-primary" href="https://app.say-salon.com/register?utm_source=beauty_passport&utm_medium=web&utm_campaign=explainer">Start with SAY-OS</a>
+
+    <div class="client-actions">
+      <div class="lbl">For clients</div>
+      <div class="btn-row">
+        <a class="btn btn-secondary" href="https://app.say-salon.com/register">Use Beauty Passport on the web</a>
+        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.sayos.app" rel="noopener">Get it on Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>SAY-OS &mdash; the app that remembers everything for you</p>
+    <p style="margin-top:8px;"><a href="https://say-salon.com">say-salon.com</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></p>
+  </div>
+</div>
+
+<!-- Consent banner (granular UI rendered by /oaiq.js) -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
+    <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies to understand how this website is used and to measure the performance of our advertising. Nothing non-essential loads unless you choose to allow it. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var KEY='say_consent_analytics';var stored=null;try{stored=localStorage.getItem(KEY);}catch(e){}if(stored!=='granted'&&stored!=='denied'){document.getElementById('say-consent-banner').style.display='block';}window.sayConsentChoose=function(choice){try{localStorage.setItem(KEY,choice);}catch(e){}if(choice==='granted'&&window.sayLoadAnalytics)window.sayLoadAnalytics();document.getElementById('say-consent-banner').style.display='none';};})();
+</script>
+</body>
+</html>

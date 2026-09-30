@@ -36,6 +36,8 @@
   try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
   </script>
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="/responsive.css">
+  <script defer src="/oaiq.js?v=20260930"></script>
 </head>
 <body>
 
@@ -59,11 +61,11 @@
 
   <p>This happens in salons across the UK every week. Not because stylists are careless — because the system has no memory.</p>
 
-  <p><em>Updated June 2026:</em> with the UK moving toward a licensing scheme for non-surgical cosmetic procedures in England, a timestamped digital safety record is shifting from best practice to the expected standard of care — and an open spreadsheet or paper card no longer meets it.</p>
+  <p><em>Updated June 2026:</em> with the UK moving toward a licensing scheme for non-surgical cosmetic procedures in England, a timestamped digital safety record supports more consistent record-keeping than an open spreadsheet or paper card.</p>
 
   <h2>Paper forms don't protect anyone</h2>
 
-  <p>Consultation forms are filled in once, filed in a drawer, and never updated. They don't travel between salons. They don't flag conflicts between a home skincare routine and a salon treatment. They don't update when a client starts a new medication that changes how their skin reacts.</p>
+  <p>Consultation forms are filled in once, filed in a drawer, and never updated. They don't travel between salons. They don't bring a client's home skincare routine together with their salon treatment history. They don't update when a client starts a new medication that changes how their skin reacts.</p>
 
   <p>They exist so the salon can say "we asked." They don't exist to keep the client safe.</p>
 
@@ -73,8 +75,8 @@
 
   <div class="feature-list">
     <div class="feature-item">
-      <div class="feature-item__label">Flags known allergies before the appointment starts</div>
-      <p class="feature-item__desc">Not during — before. The stylist sees the safety summary when the client checks in.</p>
+      <div class="feature-item__label">Keeps known allergies on record before the appointment</div>
+      <p class="feature-item__desc">Not during — before. The stylist can review the safety summary when the client checks in.</p>
     </div>
     <div class="feature-item">
       <div class="feature-item__label">Updates automatically</div>
@@ -86,11 +88,11 @@
     </div>
     <div class="feature-item">
       <div class="feature-item__label">Creates an audit trail</div>
-      <p class="feature-item__desc">Timestamped records that protect the salon if something does go wrong. Insurance-grade documentation.</p>
+      <p class="feature-item__desc">Timestamped records that give the salon a clear account if something does go wrong. Thorough, timestamped documentation.</p>
     </div>
   </div>
 
-  <p>This isn't a nice-to-have. For salon insurance purposes, a digital safety record is becoming the standard of care.</p>
+  <p>This isn't a nice-to-have. Digital records support more consistent record-keeping.</p>
 
   <h2>How SAY-OS handles this</h2>
 
@@ -132,7 +134,7 @@
       "name": "What's the best salon booking app for clients with allergies?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best salon app for clients with allergies is one that flags the safety record before the appointment starts, not during. Look for a live per-client allergy and contraindication record that updates automatically, travels between salons, and creates a timestamped audit trail held to the UK GDPR Article 9 standard. SAY-OS gives every client a Safety Profile that surfaces red flags at check-in, so the stylist sees known allergies before they start."
+        "text": "The best salon app for clients with allergies keeps the safety record available to review before the appointment starts, not during. Look for a live per-client allergy and contraindication record that updates as the client adds information, travels between salons, and creates a timestamped record held securely as UK GDPR Article 9 health data. SAY-OS gives every client a Safety Profile that shows known allergies at check-in, so the stylist can review them before they start."
       }
     }
   ]
@@ -156,7 +158,7 @@
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
     <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
-    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
       <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>

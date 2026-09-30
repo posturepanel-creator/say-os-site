@@ -347,7 +347,7 @@ nav {
 }
 .compat-intro {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.9;
   max-width: 700px;
   margin-bottom: 48px;
@@ -392,7 +392,7 @@ nav {
 }
 .compat-text p {
   font-size: 13px;
-  color: rgba(237,229,212,0.45);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 .compat-note {
@@ -403,7 +403,7 @@ nav {
   border-left: 3px solid var(--gold-accent);
   border-radius: 0 12px 12px 0;
   font-size: 14px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
 }
 
@@ -501,7 +501,7 @@ nav {
 }
 .feature-desc {
   font-size: 14px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
 }
 
@@ -516,7 +516,7 @@ nav {
 }
 .client-intro {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.9;
   max-width: 700px;
   margin-bottom: 48px;
@@ -594,12 +594,12 @@ nav {
 }
 .ins-point p {
   font-size: 13px;
-  color: rgba(237,229,212,0.45);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 .insurance-note {
   font-size: 15px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
   max-width: 640px;
   margin: 0 auto;
@@ -643,7 +643,7 @@ nav {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 5px;
-  color: rgba(237,229,212,0.3);
+  color:rgba(237,229,212,0.72);
 }
 .msg-bubble {
   padding: 12px 16px;
@@ -674,7 +674,7 @@ nav {
   border-radius: 8px;
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
-  color: rgba(237,229,212,0.35);
+  color:rgba(237,229,212,0.72);
   text-align: center;
   letter-spacing: 0.5px;
 }
@@ -707,7 +707,7 @@ nav {
 }
 .free-card p {
   font-size: 16px;
-  color: rgba(237,229,212,0.55);
+  color:rgba(237,229,212,0.72);
   line-height: 1.8;
   margin-bottom: 8px;
 }
@@ -721,7 +721,7 @@ nav {
 .free-feat {
   font-family: 'Outfit', sans-serif;
   font-size: 12px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   letter-spacing: 0.5px;
 }
 .free-feat strong {
@@ -732,7 +732,7 @@ nav {
 /* ─── STATS ─── */
 .stats-strip {
   background: linear-gradient(135deg, var(--velvet-primary), var(--velvet-light));
-  padding: 60px 48px;
+  padding: 48px 24px;
   border-top: 1px solid rgba(201,169,97,0.1);
   border-bottom: 1px solid rgba(201,169,97,0.1);
 }
@@ -741,26 +741,31 @@ nav {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 16px;
   text-align: center;
+}
+.stat-card {
+  background: rgba(15,40,24,0.35);
+  border: 1px solid rgba(201,169,97,0.14);
+  border-radius: 14px;
+  padding: 18px 12px;
 }
 .stat-val {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
-  background: var(--gold-brushed); /* flat gold */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-  margin-bottom: 8px;
+  font-size: clamp(20px, 4.5vw, 30px);
+  font-weight: 600;
+  color: var(--gold-brushed);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  white-space: nowrap;
 }
 .stat-label {
   font-family: 'Outfit', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: rgba(237,229,212,0.4);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: rgba(237,229,212,0.72);
   text-transform: uppercase;
+  line-height: 1.45;
 }
 
 /* ─── OFFER + FORM ─── */
@@ -850,7 +855,7 @@ nav {
 }
 .form-sub {
   font-size: 13px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   margin-bottom: 28px;
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.5px;
@@ -861,7 +866,7 @@ nav {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
   letter-spacing: 1.5px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -889,7 +894,7 @@ nav {
   color: var(--alabaster);
 }
 .form-group input::placeholder {
-  color: rgba(237,229,212,0.2);
+  color:rgba(237,229,212,0.72);
 }
 .form-submit {
   width: 100%;
@@ -913,7 +918,7 @@ nav {
 .form-privacy {
   text-align: center;
   font-size: 11px;
-  color: rgba(237,229,212,0.25);
+  color:rgba(237,229,212,0.72);
   margin-top: 12px;
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.3px;
@@ -933,7 +938,7 @@ nav {
 }
 .success-sub {
   font-size: 14px;
-  color: rgba(237,229,212,0.5);
+  color:rgba(237,229,212,0.72);
   line-height: 1.7;
 }
 
@@ -960,7 +965,7 @@ nav {
 .founder-quote::before {
   content: '\201C';
   font-size: 120px;
-  color: rgba(201,169,97,0.1);
+  color:rgba(201,169,97,0.72);
   position: absolute;
   top: -40px;
   left: -20px;
@@ -988,7 +993,7 @@ nav {
   font-family: 'Outfit', sans-serif;
   font-size: 11px;
   letter-spacing: 2px;
-  color: rgba(237,229,212,0.4);
+  color:rgba(237,229,212,0.72);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1025,7 +1030,7 @@ footer {
   font-family: 'Outfit', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
-  color: rgba(237,229,212,0.3);
+  color:rgba(237,229,212,0.72);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -1034,7 +1039,7 @@ footer {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
   letter-spacing: 1px;
-  color: rgba(237,229,212,0.2);
+  color:rgba(237,229,212,0.72);
 }
 
 /* ─── ANIMATIONS ─── */
@@ -1147,18 +1152,20 @@ footer {
     try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
   })();
   </script>
+  <script defer src="/oaiq.js?v=20260930"></script>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:12px;">
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
     <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:2px;color:#EDE5D4;">SAY<span style="font-weight:600;color:#C9A961;">-OS</span></span>
+    <span class="say-wm" aria-hidden="true" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:#C9A961;">SAY<span class="say-wm__sep"></span><span style="font-weight:600;">OS</span></span>
 </a></div>
-  <a href="/pricing" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
-  <a href="/blog/" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
-  <a href="#join" class="nav-cta">Start Free</a>
+  <a href="/pricing" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
+  <a href="/blog/" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
+  <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
 </nav>
 
 <!-- HERO -->
@@ -1170,7 +1177,7 @@ footer {
     <source src="/assets/face-mesh-bg.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-eyebrow">Founding Member Access — 20 Spots</div>
+  <div class="hero-eyebrow">Founding Member Access <span style="white-space:nowrap">&mdash; 20 Spots</span></div>
 
   <h1>
     One platform.<br>Everything your salon
@@ -1184,6 +1191,10 @@ footer {
   <div class="hero-actions">
     <a href="#join" class="btn-primary">Claim Your Founding Spot</a>
     <a href="https://app.say-salon.com/register" class="btn-ghost">I'm a client — start free →</a>
+  </div>
+
+  <div style="margin-top:14px;font-size:13px;color:rgba(237,229,212,0.72);">
+    <a href="https://play.google.com/store/apps/details?id=com.sayos.app" rel="noopener" style="color:var(--gold-brushed);text-decoration:underline;text-underline-offset:3px;">Get SAY: Beauty Passport on Google Play</a> &middot; iPhone coming soon
   </div>
 
   <div class="spots-badge">
@@ -1200,7 +1211,7 @@ footer {
 <section class="compat-section" id="how">
   <div class="section-label">Works With What You Already Use</div>
   <h2 class="section-heading" style="margin-bottom:20px">
-    Keep your booking system.<br>SAY-OS adds everything <em>it's missing.</em>
+    Keep your booking system.<br><span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> adds everything <em>it's missing.</em>
   </h2>
 
   <p class="compat-intro">
@@ -1212,13 +1223,13 @@ footer {
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div class="compat-text">
         <h4>Client safety profiles</h4>
-        <p>Allergy tracking, contraindication flagging, patch test records. Booking apps don't do this.</p>
+        <p>Allergy records, contraindication notes, patch test records. Booking apps don't do this.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
       <div class="compat-text">
-        <h4>Voice-first control</h4>
+        <h4><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span> control</h4>
         <p>Book, rebook, take deposits — by voice, while your hands are busy. Booking apps don't do this.</p>
       </div>
     </div>
@@ -1232,15 +1243,15 @@ footer {
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></div>
       <div class="compat-text">
-        <h4>Skincare conflict detection</h4>
-        <p>See what products your client uses at home before you apply anything. Prevents reactions. Booking apps don't do this.</p>
+        <h4>Skincare product records</h4>
+        <p>See what products your client uses at home before you apply anything. Booking apps don't do this.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
       <div class="compat-text">
-        <h4>ICO-registered health data</h4>
-        <p>Built for GDPR Article 9 health data, with clinical-grade handling. Booking apps don't do this.</p>
+        <h4>Registered with the ICO</h4>
+        <p>SAY-OS supports structured handling of client information, including health information. Booking apps don't do this.</p>
       </div>
     </div>
     <div class="compat-item">
@@ -1271,6 +1282,8 @@ footer {
       <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span> Barbers</div>
       <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span> Mobile Massage</div>
       <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span> Lash &amp; Brow</div>
+      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/></svg></span> Salon Owners</div>
+      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span> Aesthetics Clinics</div>
     </div>
   </div>
 </section>
@@ -1280,14 +1293,14 @@ footer {
   <div class="features-inner">
   <div class="section-label">The Platform</div>
   <h2 class="section-heading reveal">
-    Your entire business.<br>One system. <em>Voice-first.</em>
+    Your entire business.<br>One system. <em><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span>.</em>
   </h2>
 
   <div class="features-grid reveal">
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
       <div class="feature-title">Voice-First Everything</div>
-      <div class="feature-desc">Book and rebook by voice while your hands are busy. Works via WhatsApp, Siri, or in-app. No commands to memorise, just talk naturally.</div>
+      <div class="feature-desc">Book and rebook by voice while your hands are busy — hands-free in the app. No commands to memorise, just talk naturally.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
@@ -1316,8 +1329,8 @@ footer {
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="feature-title">Safety Compliance</div>
-      <div class="feature-desc">Contraindication tracking, patch test records, medication flags. ICO registered — built for GDPR Article 9 health data. Built around clinical-grade safety.</div>
+      <div class="feature-title">Safety Records</div>
+      <div class="feature-desc">Contraindication records, patch test records, medication records. Registered with the ICO. SAY-OS supports structured handling of client information, including health information.</div>
     </div>
   </div>
   </div>
@@ -1332,7 +1345,7 @@ footer {
   </h2>
 
   <p class="client-intro reveal">
-    SAY-OS includes a free client app that connects directly to your salon system. Clients fill in their profile once — you benefit every visit. Every Beauty Passport entry gives you better data. Every Health Profile reduces your liability. Every Skincare Routine entry prevents a bad reaction.
+    SAY-OS includes a free client app that connects directly to your salon system. Clients fill in their profile once — you benefit every visit. Every Beauty Passport entry gives you better data. Each Health Profile and Skincare Routine entry gives the professional more context for their own judgement.
   </p>
 
   <div class="client-grid reveal">
@@ -1344,12 +1357,12 @@ footer {
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><polyline points="3 12 7 12 9 6 13 18 15 12 21 12" stroke-width="1.3"/></svg></div>
       <div class="feature-title">Health Profile</div>
-      <div class="feature-desc">Skin type, conditions, contraindications, patch tests — all entered by the client, flagged automatically to you. Reduces your liability before the client sits in the chair.</div>
+      <div class="feature-desc">Skin type, conditions, contraindications, patch tests — all entered by the client, ready for you to review before the client sits in the chair.</div>
     </div>
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
       <div class="feature-title">Skincare Routine Tracker</div>
-      <div class="feature-desc">Clients log their home products and ingredients. You see potential conflicts before you apply anything. Retinol before a peel? Flagged. AHA overload? Flagged.</div>
+      <div class="feature-desc">Clients log their home products and ingredients, so you can review recent retinoid or acid use before you apply anything.</div>
     </div>
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>
@@ -1372,7 +1385,7 @@ footer {
   <div class="insurance-inner reveal">
     <div class="section-label" style="justify-content:center">Protection Built In</div>
     <h2>
-      SAY-OS doesn't just run your business.<br><em>It protects it.</em>
+      <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> doesn't just run your business.<br><em>It protects it.</em>
     </h2>
 
     <div class="insurance-points">
@@ -1383,8 +1396,8 @@ footer {
       </div>
       <div class="ins-point">
         <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <h4>Flagged</h4>
-        <p>Every contraindication logged. Every product conflict detected.</p>
+        <h4>Recorded</h4>
+        <p>Every contraindication and home product a client enters is kept on their record.</p>
       </div>
       <div class="ins-point">
         <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
@@ -1394,7 +1407,7 @@ footer {
     </div>
 
     <p class="insurance-note">
-      Documented safety records reduce claims and premiums. SAY-OS is registered with the ICO for processing health data under GDPR Article 9.
+      Documented records can help you maintain a clear, timestamped account of the information collected and the checks recorded. SAY-OS is a trading name of SERVICESFORYOU LTD, registered with the ICO under reference ZC121398.
     </p>
   </div>
 </section>
@@ -1414,9 +1427,9 @@ footer {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
         </svg>
         <h4>ICO registered</h4>
-        <p>Registered with the ICO — registration
+        <p>SAY-OS is a trading name of SERVICESFORYOU LTD, registered with the ICO under reference
           <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank">ZC121398</a>,
-          verifiable on the public ICO register. Built for GDPR Article 9 health data.</p>
+          verifiable on the public ICO register.</p>
       </div>
 
       <div class="eeat-item">
@@ -1461,11 +1474,11 @@ footer {
       <h2 class="section-heading" style="margin-bottom:24px">
         Say it out loud.<br><em>Consider it done.</em>
       </h2>
-      <p style="font-size:15px;color:rgba(237,229,212,0.55);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
+      <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
       <ul style="list-style:none">
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works via WhatsApp, Siri, or in-app — whatever you already use</li>
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Checks client safety profiles before treatments — allergies, contraindications, patch tests</li>
+        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Client safety profiles to review before treatments — allergies, contraindications, patch tests</li>
         <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Learns your clients — names, preferences, history, all remembered</li>
       </ul>
     </div>
@@ -1495,7 +1508,7 @@ footer {
           <div class="msg-label">SAY-OS</div>
           <div class="msg-bubble ai-bubble">Sarah K — 3pm Full Tint. <strong style="color:#C8352E">PPD allergy on file</strong> (confirmed patch test, expired 14 Mar). Recommend: new patch test before proceeding, or PPD-free alternative. Her Health Profile also shows she started retinol last month.</div>
         </div>
-        <div class="chat-footer">Safety flagged before the client sits down</div>
+        <div class="chat-footer">Safety information on hand before the client sits down</div>
       </div>
     </div>
   </div>
@@ -1506,12 +1519,12 @@ footer {
   <div class="free-inner">
     <div class="free-card reveal">
       <h2>Start free.<br><em>Upgrade when you're ready.</em></h2>
-      <p>Dashboard, calendar, and up to 25 clients — free to start. No credit card, no time limit. When you need voice control, safety intelligence, and unlimited clients, move up to Standard.</p>
+      <p>Dashboard, calendar, up to 50 clients and 1 team member — free to start. No credit card, no time limit. When you need voice control, safety intelligence, and unlimited clients, move up to Standard.</p>
 
       <div class="free-features">
-        <div class="free-feat"><strong>Free:</strong> Dashboard + Calendar + 25 clients</div>
+        <div class="free-feat"><strong>Free:</strong> Dashboard + Calendar + 50 clients + 1 team member</div>
         <div class="free-feat"><strong>Standard:</strong> £79/mo — full platform, unlimited clients</div>
-        <div class="free-feat" style="opacity:0.75"><strong>Or:</strong> £234 for 6 months (£39/mo), paid up front</div>
+        <div class="free-feat" style="opacity:0.75"><strong>Founding:</strong> £234 every 6 months, billed upfront (£39/mo) — renews at the same price while your subscription stays active. First 20 salons.</div>
       </div>
 
       <a href="https://app.say-salon.com/register" class="btn-primary" style="margin-top:8px">Start Free →</a>
@@ -1523,21 +1536,21 @@ footer {
 <!-- STATS -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <div class="reveal">
-      <div class="stat-val">9-in-1</div>
-      <div class="stat-label">Tools replaced by one platform</div>
+    <div class="reveal stat-card">
+      <div class="stat-val"><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span></div>
+      <div class="stat-label">Work hands-free while you manage</div>
     </div>
-    <div class="reveal">
-      <div class="stat-val">Hands-free</div>
-      <div class="stat-label">Voice-first — work while you manage</div>
-    </div>
-    <div class="reveal">
+    <div class="reveal stat-card">
       <div class="stat-val">14</div>
       <div class="stat-label">Languages in Beauty Passport</div>
     </div>
-    <div class="reveal">
+    <div class="reveal stat-card">
       <div class="stat-val">Free</div>
-      <div class="stat-label">Client app — free for clients, no catches</div>
+      <div class="stat-label">Client app for your clients</div>
+    </div>
+    <div class="reveal stat-card">
+      <div class="stat-val">&pound;0</div>
+      <div class="stat-label">To start &mdash; 50 clients &amp; 1 team member</div>
     </div>
   </div>
 </div>
@@ -1551,13 +1564,13 @@ footer {
         Join the first<br><em>20 founding members.</em>
       </h2>
       <ul class="offer-perks">
-        <li>Lifetime pricing locked at founding rate — less than half of standard pricing</li>
+        <li>Founding pricing — £234 every 6 months (£39/month), locked at the same price for as long as you stay subscribed</li>
         <li>Direct input into what we build — your feedback shapes the product</li>
         <li>First access to every feature before public release</li>
         <li>Your name recognised as a SAY-OS founding member</li>
         <li>Priority onboarding and dedicated setup support</li>
       </ul>
-      <p style="font-size:13px;color:rgba(237,229,212,0.35);font-family:'Outfit',sans-serif;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
+      <p style="font-size:13px;color:rgba(237,229,212,0.72);font-family:'Outfit',sans-serif;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
     </div>
 
     <div class="form-side">
@@ -1615,7 +1628,7 @@ footer {
 
 <!-- FROM THE BLOG -->
 <section style="padding:60px 48px;border-top:1px solid rgba(253,251,247,0.06);max-width:900px;margin:0 auto;">
-  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.4);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
+  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fdfbf7;margin-bottom:24px;">Guides for salon owners and clients</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
     <a href="/blog/reduce-salon-no-shows" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
@@ -1648,9 +1661,9 @@ footer {
 
 <!-- CLIENT CTA -->
 <section style="padding:60px 48px;text-align:center;border-top:1px solid rgba(253,251,247,0.06);">
-  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.4);text-transform:uppercase;margin-bottom:16px;">Not a salon owner?</p>
+  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">Not a salon owner?</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#fdfbf7;margin-bottom:12px;">Your beauty history should travel with you.</h2>
-  <p style="font-family:'DM Sans',sans-serif;font-size:16px;color:rgba(253,251,247,0.5);max-width:520px;margin:0 auto 28px;line-height:1.6;">Build your free Beauty Passport — allergies, routines, treatment history, and safety profile in one place. Share it with any salon via QR code.</p>
+  <p style="font-family:'DM Sans',sans-serif;font-size:16px;color:rgba(253,251,247,0.72);max-width:520px;margin:0 auto 28px;line-height:1.6;">Build your free Beauty Passport — allergies, routines, treatment history, and safety profile in one place. Share it with any salon via QR code.</p>
   <a href="https://app.say-salon.com/register" style="display:inline-block;padding:16px 40px;background:#c1a368;color:#030a07;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:10px;">Start Free</a>
 </section>
 
@@ -1658,23 +1671,23 @@ footer {
 <section class="founder-section">
   <div class="founder-inner reveal">
     <div class="founder-quote">
-      I spent two decades watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. SAY-OS closes it.
+      I spent two decades watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> closes it.
     </div>
-    <div class="founder-attr">— Founder, SAY-OS · Two decades in advanced beauty therapy, with a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management</div>
+    <div class="founder-attr">— Founder, <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> · Two decades in advanced beauty therapy, with a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management</div>
   </div>
 </section>
 
 <!-- TRUST STRIP -->
 <section class="trust-strip" aria-label="Trust and compliance">
-  <div class="trust-item"><a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ICO REGISTERED — ZC121398 · UK HEALTH DATA</a></div>
-  <div class="trust-item">BUILT FOR GDPR ARTICLE 9 HEALTH DATA</div>
+  <div class="trust-item"><a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ICO REGISTERED — ZC121398</a></div>
+  <div class="trust-item">STRUCTURED HANDLING OF CLIENT HEALTH INFORMATION</div>
   <div class="trust-item">UK COMPANY — SERVICESFORYOU LTD, LONDON</div>
   <div class="trust-item">FOUNDER-BUILT · TWO DECADES IN BEAUTY THERAPY</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">SAY-OS</div>
+  <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
   <div class="footer-links">
     <a href="/pricing">Pricing</a>
     <a href="/partners">Salon Owners</a>
@@ -1843,7 +1856,7 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:'Outfit',sans-serif;">
     <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
     <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">
-      We use analytics cookies (Google Analytics and PostHog) to understand how this site is used and improve it. Nothing loads until you choose.
+      We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose.
       <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">

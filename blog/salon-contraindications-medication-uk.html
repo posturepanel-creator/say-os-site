@@ -41,6 +41,8 @@
   try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
   </script>
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="/responsive.css">
+  <script defer src="/oaiq.js?v=20260930"></script>
 </head>
 <body>
 
@@ -101,7 +103,7 @@
 
   <h2>5. What's the best salon app for tracking contraindications and medication notes?</h2>
 
-  <p>The best one isn't the app with the prettiest calendar — it's the one that <strong>holds the safety record to the Article 9 standard and surfaces it before the service, not after.</strong> Most booking tools were built to take payments and fill diaries; client safety was bolted on, if it's there at all. So the medication note gets typed once and never seen again — which is exactly how a contraindication slips through.</p>
+  <p>The best one isn't the app with the prettiest calendar — it's the one that <strong>keeps the safety record secure as health data and makes it available to review before the service, not after.</strong> Most booking tools were built to take payments and fill diaries; client safety was bolted on, if it's there at all. So the medication note gets typed once and never seen again — which is exactly how a contraindication slips through.</p>
 
   <p>What to look for: a structured per-client safety and contraindication record that travels between visits and stylists; medication and allergy flags that appear at the point of booking, so a treatment can't quietly get booked for someone it's contraindicated for; and secure, access-controlled storage with a retention limit built in. That's the gap SAY-OS was built to close — it's the app that remembers everything for you, so the safety conversation happens every time, not just when someone thinks to ask.</p>
 
@@ -158,7 +160,7 @@
 
   <div class="cta-block">
     <h2>Stop Running Client Safety From Memory and Paper Cards</h2>
-    <p>SAY-OS keeps a structured contraindication and allergy record for every client &mdash; held to the GDPR Article 9 standard and surfaced before the treatment starts. The app that remembers everything for you, so you can stay behind the chair.</p>
+    <p>SAY-OS keeps a structured contraindication and allergy record for every client, stored securely as health data and available to review before the treatment. The app that remembers everything for you, so you can stay behind the chair.</p>
     <a href="https://app.say-salon.com?utm_source=blog&utm_medium=seo&utm_campaign=contraindications-uk" class="cta-block__button">Get Free Early Access</a>
     <div class="cta-tagline">Your beauty. Remembered.</div>
   </div>
@@ -215,7 +217,7 @@
       "name": "What's the best salon app for tracking contraindications and medication notes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best app holds the safety record to the GDPR Article 9 standard and surfaces it before the service, not after. Look for a structured per-client contraindication and allergy record that travels between visits and stylists, medication and allergy flags shown at the point of booking, and secure access-controlled storage with a retention limit. SAY-OS is built to close this gap so the safety check happens every time."
+        "text": "The best app keeps the safety record secure as health data and makes it available to review before the service, not after. Look for a structured per-client contraindication and allergy record that travels between visits and stylists, medication and allergy notes shown at the point of booking, and secure access-controlled storage with a retention limit. SAY-OS is built to help close this gap so the safety check is part of every visit."
       }
     },
     {
@@ -271,7 +273,7 @@
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
     <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
-    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
       <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>

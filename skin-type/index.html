@@ -121,6 +121,8 @@ body {
   "isAccessibleForFree": true
 }
 </script>
+  <script defer src="/oaiq.js?v=20260930"></script>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 <div class="container">
@@ -170,9 +172,10 @@ body {
     </div>
 
     <div class="cta-section">
-      <h3>Save this to your Beauty Passport</h3>
-      <p>Your Fitzpatrick type, allergies, medications, and treatment history — all in one place. Share with any salon via QR code. Free forever.</p>
+      <h3>Save this to your SAY: Beauty Passport</h3>
+      <p>Your Fitzpatrick type, allergies, medications, and treatment history — all in one place. Share with any salon via QR code. Free for clients.</p>
       <a href="https://app.say-salon.com/register" class="cta-btn">Create your free passport</a>
+      <div style="margin-top:12px;font-size:12px;color:var(--whisper);"><a href="https://play.google.com/store/apps/details?id=com.sayos.app" rel="noopener" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Get SAY: Beauty Passport on Google Play</a> &middot; iPhone coming soon</div>
     </div>
   </div>
 
@@ -322,7 +325,7 @@ render();
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
     <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
-    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
       <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>

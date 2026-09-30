@@ -1,0 +1,73 @@
+/* SAY-OS — shared responsive & readability guard
+ * Loaded AFTER each page's own <style>. Additive, low-risk rules only:
+ * no layout redesign, no hidden meaningful content, dark theme preserved.
+ * Purpose: eliminate horizontal overflow, clipped headings, off-viewport
+ * content and clipped controls on small screens (320–430px), and stop
+ * inappropriate hyphenation of large words.
+ */
+
+/* Contain the page: no horizontal page scroll, nothing off the right edge. */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Media never forces the page wider than the viewport.
+   NOTE: only max-width is set — deliberately NO height:auto. Forcing height:auto
+   would override an element's intended height (e.g. the nav logo, sized by a
+   height attribute or CSS) and blow it up to its intrinsic size, covering the
+   hero. max-width:100% alone prevents horizontal overflow without resizing
+   logos or icons. */
+img, video, iframe, canvas, svg { max-width: 100%; }
+
+/* Long words / headings wrap instead of clipping; no auto-hyphenation. */
+h1, h2, h3, h4, .hero h1, .blog-hero__title { overflow-wrap: break-word; hyphens: manual; }
+
+/* Accessibility + robustness: honour reduced-motion, and make sure content that
+   animates in can never stay hidden/blocked if animation or JS reveal fails.
+   Under reduced-motion we near-disable animation/transition and force any
+   scroll-reveal content to its visible end-state. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, [class*="reveal"] { opacity: 1 !important; transform: none !important; }
+}
+
+/* Brand wordmark lockup: SAY · a true horizontal CSS separator · OS.
+   Replaces the font-rendered hyphen/dash (which read as diagonal in the serif
+   face) with a real horizontal bar that stays horizontal at every viewport
+   size, aligns optically with the caps, and inherits the wordmark's colour.
+   ONE reusable component, used for every branded wordmark AND display lockup:
+   - .say-wm / .say-wm__sep  → nav + footer + links branding
+   - .wm-lock / .wm-bar      → SAY-OS and Voice-first inside display typography
+   Both names share identical rules. The bar is a real CSS block, so it stays
+   horizontal even when the surrounding heading/quote is italic, and it inherits
+   the wordmark's colour, size and (via the parent) italic treatment. */
+.say-wm, .wm-lock {
+  display: inline-flex; align-items: center; gap: 0.24em;
+  white-space: nowrap; vertical-align: baseline;
+}
+.say-wm__sep, .wm-bar {
+  display: inline-block; flex: 0 0 auto;
+  width: 0.42em; height: 0.08em; min-height: 2px;
+  background: currentColor; border-radius: 2px;
+  position: relative; top: 0.03em; /* optical centre against cap-height */
+}
+
+/* Very narrow screens (index/pricing nav): drop the secondary text links so the
+   crown + wordmark + "Start Free" CTA stay on one row without collision or wrap.
+   The Pricing/Blog destinations remain reachable in-page and in the footer. */
+@media (max-width: 420px) {
+  .nav-hide-narrow { display: none !important; }
+}
+
+/* Small screens: long CTA / submit / nav labels wrap instead of being clipped. */
+@media (max-width: 480px) {
+  .form-submit, .btn, .btn-primary, .btn-secondary, .btn-ghost, .nav-cta,
+  .cta, .cta-primary, .cta-btn, .lp-cta, .lp-nav__cta {
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+  }
+}

@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SAY-OS">
   <meta property="og:title" content="Privacy Policy — SAY-OS">
-  <meta property="og:description" content="How we collect, use, and protect your data. ICO registered (ZC121398). Built for GDPR Article 9 health data.">
+  <meta property="og:description" content="How we collect, use, and protect your data. Registered with the ICO (ZC121398). Structured handling of client information, including health information.">
   <meta property="og:url" content="https://say-salon.com/privacy">
   <meta property="og:image" content="https://say-salon.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -48,6 +48,8 @@
     try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
   })();
   </script>
+  <script defer src="/oaiq.js?v=20260930"></script>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
   <div class="container">
@@ -55,7 +57,7 @@
     <p class="subtitle">Last updated: 9 September 2026 &middot; Effective: 9 September 2026</p>
 
     <h2>1. Who We Are</h2>
-    <p>This policy applies to both of our products: <strong>SAY</strong>, our client app, and <strong>SAY-OS</strong>, our salon and professional platform. Both are operated by <strong>Servicesforyou Ltd</strong> ("we", "us", "our"), a company registered in England and Wales (No. 11636155).</p>
+    <p>This policy applies to both of our products: <strong>SAY</strong>, our client app, and <strong>SAY-OS</strong>, our salon and professional platform. Both are operated by <strong>Servicesforyou Ltd</strong> ("we", "us", "our"), a company registered in England and Wales (No. <a href="https://find-and-update.company-information.service.gov.uk/company/11636155" target="_blank" rel="noopener">11636155</a>).</p>
     <div class="card">
       <p style="margin:0"><strong>Data Controller:</strong> Servicesforyou Ltd</p>
       <p style="margin:4px 0 0"><strong>Trading as:</strong> SAY and SAY-OS</p>
@@ -165,7 +167,7 @@
       <tr><td>Google (Gemini)</td><td>AI voice processing fallback</td><td>Voice command text (not stored)</td><td>US</td></tr>
       <tr><td>Firebase (FCM/APNs)</td><td>Push notifications</td><td>Device tokens</td><td>US</td></tr>
     </table>
-    <p>Voice commands processed on-device (native app) use Apple's Speech framework or Android's SpeechRecognizer and do not leave your device. Only the Gemini fallback route transmits command text to a server. We do not intentionally transmit health data, and voice commands are not stored.</p>
+    <p>Voice features are salon-side only and run in the SAY-OS web app (browser/PWA) using ElevenLabs. The client app has no microphone and does not capture voice. We do not intentionally transmit health data, and voice interactions are not stored.</p>
 
     <h2>6. International Data Transfers</h2>
     <p>Some of our processors are based in the United States. Where data is transferred outside the UK, we rely on:</p>
@@ -227,7 +229,17 @@
       <li><strong>Voice analytics</strong> — stored locally on your device only, not transmitted to our servers</li>
       <li><strong>App preferences</strong> — language, notification settings</li>
     </ul>
-    <p>We do not use advertising cookies, tracking pixels, or third-party analytics cookies.</p>
+    <p>The SAY client app itself does not use advertising cookies or tracking pixels. On our marketing website (say-salon.com) we use analytics cookies (Google Analytics and PostHog) and one advertising-measurement pixel (see 10.1). These are optional, off by default, and load only after you consent. You can change or withdraw these choices at any time using the &ldquo;Cookie settings&rdquo; control on the site.</p>
+
+    <h3>10.1 Advertising measurement (OpenAI)</h3>
+    <p>On our marketing website only, we use OpenAI as an advertising-measurement provider for our own ad campaigns:</p>
+    <ul>
+      <li><strong>Purpose</strong> — campaign attribution and conversion measurement, so we can understand which ads bring visitors to say-salon.com.</li>
+      <li><strong>Pixel identifier</strong> — OpenAI uses a pixel identifier to measure ad performance. We do not send your personal, health, or readiness-check answers to OpenAI.</li>
+      <li><strong>Attribution parameter (&ldquo;oppref&rdquo;)</strong> — if you arrive from one of our ads, an <code>oppref</code> value may be present in the link. It is only read, stored for your browsing session, or passed to our own app (app.say-salon.com) <em>after</em> you allow advertising cookies; otherwise it is ignored.</li>
+      <li><strong>Activation</strong> — the OpenAI pixel and any <code>oppref</code> handling activate only after you opt in to advertising cookies. They are off by default.</li>
+      <li><strong>Withdrawal</strong> — you can withdraw advertising consent at any time via the &ldquo;Cookie settings&rdquo; control on the site. After withdrawal the pixel does not load on future visits and any stored <code>oppref</code> is removed.</li>
+    </ul>
 
     <h2>11. Children &amp; Under-18s</h2>
     <p>SAY (the client app) is not directed at children under 16, and we do not knowingly collect personal data directly from under-16s. Where a salon using SAY-OS records data about a client under 18 — for example, a consultation record for a minor — the salon is the controller for that record and is responsible for obtaining verifiable parental or guardian consent before treatment. If you believe a child has provided us with personal data directly, contact <a href="mailto:privacy@say-salon.com">privacy@say-salon.com</a> and we will delete it promptly.</p>
@@ -237,7 +249,7 @@
 
     <h2>13. Contact Us</h2>
     <div class="card">
-      <p style="margin:0"><strong>Data Controller:</strong> Servicesforyou Ltd (No. 11636155)</p>
+      <p style="margin:0"><strong>Data Controller:</strong> Servicesforyou Ltd (No. <a href="https://find-and-update.company-information.service.gov.uk/company/11636155" target="_blank" rel="noopener">11636155</a>)</p>
       <p style="margin:4px 0 0"><strong>Privacy contact:</strong> <a href="mailto:privacy@say-salon.com">privacy@say-salon.com</a></p>
       <p style="margin:4px 0 0"><strong>ICO Registration:</strong> <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398">ZC121398</a></p>
       <p style="margin:4px 0 0"><strong>ICO Complaints:</strong> <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk/make-a-complaint</a></p>

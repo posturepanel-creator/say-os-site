@@ -8,12 +8,12 @@ SAY-OS is a voice-first salon and wellness management platform built in London, 
 Voice-first management: bookings, marketing, inventory, and client safety intelligence — all hands-free. Designed for professionals who work alone and can't stop mid-service to answer the phone.
 
 ## For Salon & Clinic Owners
-Safety intelligence, client retention, talent marketplace, and GDPR Article 9 health data compliance. ICO registered (ZC121398). Manage teams with clinical-grade documentation.
+Safety intelligence, client retention, talent marketplace, and structured handling of client information, including health information. ICO registered (ZC121398). Manage teams with structured, timestamped documentation.
 
 ## For Beauty Educators
-Free institutional licence for colleges and NVQ providers. Students train on professional tools, not simulations. Graduates get 3 months of the Standard plan free via STUDENT6 code.
+Free institutional licence for colleges and NVQ providers. Students train on professional tools, not simulations. Graduates get 3 months of the Standard plan free (code provided by their academy).
 
-## For Clients — Beauty Passport
+## For Clients — SAY: Beauty Passport
 Free personal beauty profile: store formulas, allergies, skin type, and style preferences. Share with any salon anywhere in the world via QR code. Translated into 14 languages.
 
 ## Skin Type Quiz

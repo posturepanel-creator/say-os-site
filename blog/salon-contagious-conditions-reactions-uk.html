@@ -41,6 +41,8 @@
   try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
   </script>
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="/responsive.css">
+  <script defer src="/oaiq.js?v=20260930"></script>
 </head>
 <body>
 
@@ -124,11 +126,11 @@
 
   <p>Every scenario on this page ends the same way: with a record that has to resurface at the right moment. The cold sore note has to appear when the client rebooks a lip wax next month. The reaction record has to stop a colleague reaching for the same product family next year. A paper card or a group-chat message does neither — and each of these notes is health data, special category under UK GDPR Article 9, so it needs restricted access and a retention limit, not a notebook.</p>
 
-  <p>That&rsquo;s the test for any salon booking software, in Camden or anywhere else in the UK: does what you saw in the chair today surface automatically at the next booking? SAY-OS keeps a structured safety record per client — contraindications, reactions with product and batch, postponements and rebook dates — held to the Article 9 standard and flagged the moment a risky treatment is booked. The app that remembers everything for you, so the chair-side call you made once doesn&rsquo;t have to be remembered by anyone.</p>
+  <p>That&rsquo;s the test for any salon booking software, in Camden or anywhere else in the UK: does what you saw in the chair today surface automatically at the next booking? SAY-OS keeps a structured record for each client — contraindications, reactions with product and batch, postponements and rebook dates — so relevant information can be reviewed before treatment. The app that remembers everything for you, so the chair-side call you made once doesn&rsquo;t have to be remembered by anyone.</p>
 
   <div class="cta-block">
     <h2>The Call You Make in the Chair Shouldn&rsquo;t Rely on Memory Next Visit</h2>
-    <p>SAY-OS records contraindications, reactions and postponements per client — held to the GDPR Article 9 standard and surfaced before the next treatment starts. The app that remembers everything for you.</p>
+    <p>SAY-OS records contraindications, reactions and postponements per client, stored securely as health data and available to review before the next treatment. The app that remembers everything for you.</p>
     <a href="https://app.say-salon.com?utm_source=blog&utm_medium=seo&utm_campaign=contagious-conditions-reactions-uk" class="cta-block__button">Get Free Early Access</a>
     <div class="cta-tagline">Your beauty. Remembered.</div>
   </div>
@@ -185,7 +187,7 @@
       "name": "What's the best salon app for tracking client reactions and contraindications between visits?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best salon software makes what you saw in the chair today surface automatically at the next booking. Contraindication and reaction notes are special category health data under UK GDPR Article 9, so they need a secure record with restricted access and a retention limit rather than a paper card or group chat. SAY-OS keeps a structured safety record per client — contraindications, reactions with product and batch numbers, postponements and rebook dates — and flags it the moment a risky treatment is booked, so the safety call does not rely on anyone's memory."
+        "text": "The best salon software makes what you saw in the chair today surface automatically at the next booking. Contraindication and reaction notes are special category health data under UK GDPR Article 9, so they need a secure record with restricted access and a retention limit rather than a paper card or group chat. SAY-OS keeps a structured record for each client — contraindications, reactions with product and batch numbers, postponements and rebook dates — so relevant information can be reviewed before treatment and does not rely on anyone's memory."
       }
     }
   ]
@@ -209,7 +211,7 @@
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
   <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
     <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
-    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use one analytics cookie (Google Analytics) to understand how this site is used and improve it. Nothing loads until you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
       <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
