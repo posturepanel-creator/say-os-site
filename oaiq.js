@@ -36,7 +36,19 @@
   function allDecided() { return decided(ANALYTICS_KEY) && decided(ADS_KEY); }
 
   // ---------------- OpenAI pixel (advertising only) ----------------
+  // Pages where the OpenAI pixel must NEVER load/initialise — even if
+  // advertising consent was previously granted — to avoid sending any
+  // page context (Referer, quiz answers, email, health-related details)
+  // to a measurement provider. Consent UI + Cookie settings still work.
+  var PIXEL_EXCLUDE = ["/readiness-check"];
+  function pixelExcludedHere() {
+    try {
+      var p = window.location.pathname;
+      return PIXEL_EXCLUDE.some(function (x) { return p === x || p === x + "/" || p.indexOf(x + "/") === 0; });
+    } catch (e) { return false; }
+  }
   function loadPixel() {
+    if (pixelExcludedHere()) return; // never load the measurement pixel here
     if (!adsGranted()) return;   // hard gate
     if (window.oaiq) return;     // once
     !(function (w, d, s, u) {
@@ -150,9 +162,12 @@
   function setAnalytics(granted) { set(ANALYTICS_KEY, granted ? "granted" : "denied"); applyAnalyticsState(); }
   function setAdvertising(granted) { set(ADS_KEY, granted ? "granted" : "denied"); applyAdsState(); }
   window.sayAdsConsent = function (choice) { setAdvertising(choice === "granted"); };
-  window.sayConsentChoose = function (choice) { // backward-compatible: analytics only
-    setAnalytics(choice === "granted");
-  };
+  // G4: oaiq owns the consent handler. Named so init() can re-assert it, so an
+  // inline analytics-only sayConsentChoose can never override oaiq regardless of
+  // script order. (This still only sets analytics as a backward-compatible shim;
+  // the granular banner buttons use wireActions, not this.)
+  function oaiqConsentChoose(choice) { setAnalytics(choice === "granted"); }
+  window.sayConsentChoose = oaiqConsentChoose;
 
   // ---------------- shared markup ----------------
   var COPY_INTRO =
@@ -278,6 +293,8 @@
 
   // ---------------- init ----------------
   function init() {
+    // G4: re-assert oaiq's consent handler after any inline definition.
+    window.sayConsentChoose = oaiqConsentChoose;
     // apply whatever was previously chosen (loads only granted categories)
     applyAdsState();
     if (analyticsGranted() && typeof window.sayLoadAnalytics === "function") window.sayLoadAnalytics();
