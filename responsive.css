@@ -34,6 +34,19 @@ h1, h2, h3, h4, .hero h1, .blog-hero__title { overflow-wrap: break-word; hyphens
   .reveal, [class*="reveal"] { opacity: 1 !important; transform: none !important; }
 }
 
+/* Brand wordmark lockup: SAY · a true horizontal CSS separator · OS.
+   Replaces the font-rendered hyphen/dash (which read as diagonal in the serif
+   face) with a real horizontal bar that stays horizontal at every viewport
+   size, aligns optically with the caps, and inherits the wordmark's colour.
+   Shared by every branded SAY-OS wordmark (nav + footer + links). */
+.say-wm { display: inline-flex; align-items: center; gap: 0.26em; white-space: nowrap; }
+.say-wm__sep {
+  display: inline-block; flex: 0 0 auto;
+  width: 0.42em; height: 0.08em; min-height: 2px;
+  background: currentColor; border-radius: 2px;
+  position: relative; top: 0.02em; /* optical centre against cap-height */
+}
+
 /* Small screens: long CTA / submit / nav labels wrap instead of being clipped. */
 @media (max-width: 480px) {
   .form-submit, .btn, .btn-primary, .btn-secondary, .btn-ghost, .nav-cta,
