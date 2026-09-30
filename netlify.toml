@@ -30,3 +30,17 @@
 # from firing (pretty_urls serves files at both /foo and /foo.html,
 # so the redirect rules above never matched). Netlify still serves
 # foo.html at /foo by default without pretty_urls enabled.
+
+# Shared consent/layout assets must always revalidate — never cached as
+# immutable — so a change (e.g. the oaiq.js consent gate) reaches every
+# visitor. oaiq.js is also version-busted (?v=YYYYMMDD) in the page refs;
+# these headers are the belt-and-braces at the CDN layer.
+[[headers]]
+  for = "/oaiq.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/responsive.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
