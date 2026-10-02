@@ -612,23 +612,32 @@ nav {
   position: relative;
   overflow: hidden;
 }
+/* Decorative voice wave — sits in-flow beneath the heading, inside the text
+   column. Never positioned behind content. Calm, low-opacity, contained. */
+.voice-wave {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 46px;
+  margin: 2px 0 26px;
+}
 .voice-wave-canvas {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.3;
 }
-.voice-section > *:not(.voice-wave-canvas) { position: relative; z-index: 1; }
-@media (prefers-reduced-motion: reduce) { .voice-wave-canvas { display: none; } }
+.voice-wave-static { display: none; }
+.voice-wave-static svg { display: block; width: 100%; height: 100%; }
+/* prefers-reduced-motion: hide the animated canvas, show a static wave. */
+@media (prefers-reduced-motion: reduce) {
+  .voice-wave-canvas { display: none; }
+  .voice-wave-static { display: block; height: 100%; opacity: 0.5; }
+}
 .voice-inner {
-  max-width: 1100px;
+  max-width: 680px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
 }
 .voice-chat {
   background: var(--velvet-deep);
@@ -1465,52 +1474,22 @@ footer {
 @media(max-width:760px){.eeat-strip{padding:56px 24px}.eeat-grid{grid-template-columns:1fr;gap:16px}}
 </style>
 
-<!-- SECTION 5: VOICE IN ACTION -->
+<!-- SECTION 5: VOICE -->
 <section class="voice-section">
-  <canvas class="voice-wave-canvas" id="voiceWave" aria-hidden="true"></canvas>
   <div class="voice-inner">
-    <div>
-      <div class="section-label">Voice In Action</div>
-      <h2 class="section-heading" style="margin-bottom:24px">
-        Say it out loud.<br><em>Consider it done.</em>
-      </h2>
-      <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
-      <ul style="list-style:none">
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works via WhatsApp, Siri, or in-app — whatever you already use</li>
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Client safety profiles to review before treatments — allergies, contraindications, patch tests</li>
-        <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Learns your clients — names, preferences, history, all remembered</li>
-      </ul>
-    </div>
-    <div>
-      <!-- Demo 1: Operations -->
-      <div class="voice-chat reveal" style="margin-bottom:20px">
-        <div style="font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Illustrative example</div>
-        <div class="voice-msg user">
-          <div class="msg-label">You</div>
-          <div class="msg-bubble user-bubble">Book in my 11am client next Friday and send her the deposit request</div>
-        </div>
-        <div class="voice-msg ai">
-          <div class="msg-label">SAY-OS</div>
-          <div class="msg-bubble ai-bubble">Done. Booked: Emma T, Brazilian Blow Dry, Friday 10 Jan, 11am. Deposit request sent — I'll confirm once she pays.</div>
-        </div>
-        <div class="chat-footer">Two tasks · one sentence · hands never left the client</div>
-      </div>
-
-      <!-- Demo 2: Safety -->
-      <div class="voice-chat reveal">
-        <div style="font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Illustrative example</div>
-        <div class="voice-msg user">
-          <div class="msg-label">You</div>
-          <div class="msg-bubble user-bubble">Check if my 3pm has any allergies before her tint</div>
-        </div>
-        <div class="voice-msg ai">
-          <div class="msg-label">SAY-OS</div>
-          <div class="msg-bubble ai-bubble">Sarah K — 3pm Full Tint. <strong style="color:#C8352E">PPD allergy on file</strong> (confirmed patch test, expired 14 Mar). Recommend: new patch test before proceeding, or PPD-free alternative. Her Health Profile also shows she started retinol last month.</div>
-        </div>
-        <div class="chat-footer">Safety information on hand before the client sits down</div>
+    <div class="section-label">Voice</div>
+    <h2 class="section-heading" style="margin-bottom:20px">Voice, within your salon workflow.</h2>
+    <div class="voice-wave" aria-hidden="true">
+      <canvas class="voice-wave-canvas" id="voiceWave"></canvas>
+      <div class="voice-wave-static">
+        <svg viewBox="0 0 420 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,23 Q26,10 52,23 T105,23 T158,23 T210,23 T263,23 T316,23 T368,23 T420,23" fill="none" stroke="rgba(201,169,97,0.4)" stroke-width="1.5"/></svg>
       </div>
     </div>
+    <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">SAY includes a voice assistant you can talk to inside the app, in your own words. It is part of your salon workflow, and you stay in control of what happens next.</p>
+    <ul style="list-style:none;max-width:520px">
+      <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works inside the SAY app</li>
+      <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
+    </ul>
   </div>
 </section>
 
@@ -1757,7 +1736,8 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   }
 })();
 
-// Voice wave — particle sound-wave, three phases: silence → speech → understood
+// Voice wave — gentle, decorative undulation. Constant and calm: it does NOT
+// react to sound, has no mic, and does not simulate listening/speaking phases.
 (function () {
   var canvas = document.getElementById('voiceWave');
   if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1765,43 +1745,30 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   var running = false, t = 0;
 
   function size() {
-    var r = canvas.parentElement.getBoundingClientRect();
+    var r = canvas.getBoundingClientRect();
     var dpr = window.devicePixelRatio > 1 ? 2 : 1;
-    canvas.width = r.width * dpr;
-    canvas.height = r.height * dpr;
+    canvas.width = Math.max(1, Math.round(r.width * dpr));
+    canvas.height = Math.max(1, Math.round(r.height * dpr));
   }
   size();
   window.addEventListener('resize', size);
 
-  // 8s cycle: quiet (0-2.5s) → speech (2.5-5s) → settle + gold pulse (5-7s) → quiet
-  function envelope(s) {
-    if (s < 2.5) return 0.08;
-    if (s < 5)   return 0.08 + 0.92 * Math.sin(((s - 2.5) / 2.5) * Math.PI) *
-                  (0.65 + 0.35 * Math.sin(s * 9.3) * Math.sin(s * 4.1));
-    if (s < 7)   return 0.35 * Math.exp(-(s - 5) * 1.6) + 0.08;
-    return 0.08;
-  }
-
   function draw() {
     if (!running) return;
-    t += 1 / 60;
-    var s = t % 8;
-    var env = envelope(s);
+    t += 1 / 120; // slow, calm — roughly half the previous speed
     var W = canvas.width, H = canvas.height, mid = H / 2;
-    var pulse = (s > 5 && s < 5.6) ? (1 - (s - 5) / 0.6) : 0;
     ctx.clearRect(0, 0, W, H);
-    for (var strand = 0; strand < 3; strand++) {
-      var N = 160;
+    for (var strand = 0; strand < 2; strand++) {
+      var N = 120;
       for (var i = 0; i < N; i++) {
         var x = i / (N - 1);
         var taper = Math.sin(x * Math.PI);
         var y = mid
-          + Math.sin(x * 11 + t * 1.1 + strand * 2.1) * 26 * taper
-          + Math.sin(x * 23 - t * 1.7 + strand * 4.2) * H * 0.11 * env * taper
-          + Math.sin(x * 5 + t * 0.4 + strand) * 12 * taper;
-        var a = 0.10 + 0.22 * taper + 0.3 * env * taper + 0.35 * pulse * taper;
+          + Math.sin(x * 7 + t * 0.9 + strand * 2.1) * H * 0.18 * taper
+          + Math.sin(x * 3 + t * 0.5 + strand) * H * 0.10 * taper;
+        var a = 0.08 + 0.16 * taper;
         ctx.fillStyle = 'rgba(201,169,97,' + a.toFixed(3) + ')';
-        var r = (1 + taper * 1.2 + pulse) * (W > 2000 ? 2 : 1);
+        var r = (0.8 + taper * 0.9) * (W > 1200 ? 2 : 1);
         ctx.beginPath();
         ctx.arc(x * W, y, r, 0, 6.2832);
         ctx.fill();
