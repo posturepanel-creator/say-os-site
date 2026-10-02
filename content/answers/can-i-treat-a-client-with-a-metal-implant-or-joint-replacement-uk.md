@@ -5,7 +5,7 @@ category: safety-contraindication
 region: UK
 drafted: 2026-09-15
 status: published
-published: 2026-10-01
+published: 2026-10-02
 ---
 
 # Can I treat a client with a metal implant or joint replacement?
