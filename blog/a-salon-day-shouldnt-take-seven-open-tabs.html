@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A salon day shouldn't take seven open tabs | SAY Salon</title>
+  <meta name="description" content="Appointments, a team message, stock, an Instagram post, a new therapist, a course, insurance renewal. Why running a salon is more than a calendar — and how SAY-OS is being built around the whole working day.">
+  <link rel="canonical" href="https://say-salon.com/blog/a-salon-day-shouldnt-take-seven-open-tabs">
+  <meta property="og:title" content="A salon day shouldn't take seven open tabs">
+  <meta property="og:description" content="Why running a salon is more than a calendar — and how SAY-OS is being built around the whole working day.">
+  <meta property="og:url" content="https://say-salon.com/blog/a-salon-day-shouldnt-take-seven-open-tabs">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SAY Salon">
+  <meta property="og:image" content="https://say-salon.com/blog/assets/say-og-default.jpg">
+  <meta name="twitter:image" content="https://say-salon.com/blog/assets/say-og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A salon day shouldn't take seven open tabs",
+    "description": "Why running a salon is more than a calendar — and how SAY-OS is being built around the whole working day.",
+    "author": { "@type": "Organization", "name": "Servicesforyou Ltd", "url": "https://say-salon.com" },
+    "publisher": { "@type": "Organization", "name": "SAY-OS", "url": "https://say-salon.com" },
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-10-01",
+    "mainEntityOfPage": "https://say-salon.com/blog/a-salon-day-shouldnt-take-seven-open-tabs"
+  }
+  </script>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  gtag('js',new Date());
+  window.sayLoadAnalytics=function(){if(window.__sayGaLoaded)return;window.__sayGaLoaded=true;gtag('consent','update',{analytics_storage:'granted'});gtag('config','G-QXYSM1LHV8');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';document.head.appendChild(s);};
+  try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --surface-base: #0F2818;
+      --surface-card: #183222;
+      --surface-elevated: #1E3D2B;
+      --text-heading: #EDE5D4;
+      --text-body: #D4C5A9;
+      --text-meta: #96A097;
+      --gold-cta: #C9A961;
+      --gold-hover: #D4B872;
+      --border-subtle: rgba(201, 169, 97, 0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      background: var(--surface-base);
+      color: var(--text-body);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .blog-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 40, 24, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .blog-nav__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.4rem;
+      color: var(--text-heading); text-decoration: none;
+      letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .blog-nav__logo span { color: var(--gold-cta); }
+    .blog-nav__cta {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--surface-base); background: var(--gold-cta);
+      padding: 0.5rem 1.2rem; border-radius: 6px;
+      text-decoration: none; letter-spacing: 0.04em;
+      text-transform: uppercase; transition: background 0.2s;
+    }
+    .blog-nav__cta:hover { background: var(--gold-hover); }
+
+    /* HERO */
+    .article-hero {
+      max-width: 720px; margin: 0 auto;
+      padding: 4rem 2rem 1.5rem;
+    }
+    .article-hero__badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem; font-weight: 500;
+      color: var(--gold-cta); text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 1rem; border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 2.8rem;
+      line-height: 1.1; color: var(--text-heading);
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      max-width: 720px; margin: 0 auto;
+      padding: 0.5rem 2rem 1rem;
+    }
+    .article-body p { margin-bottom: 1.4rem; font-size: 1.02rem; }
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.65rem;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin: 2.6rem 0 1rem;
+    }
+    .article-body strong { color: var(--text-heading); font-weight: 600; }
+    .article-body a {
+      color: var(--gold-cta);
+      text-decoration: underline; text-underline-offset: 2px;
+    }
+    .lead { font-size: 1.1rem !important; color: var(--text-heading); }
+
+    .honesty-note {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--gold-cta);
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+    .honesty-note strong { color: var(--text-heading); }
+
+    /* CTA */
+    .article-cta {
+      max-width: 720px; margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+    .article-cta__inner {
+      background: var(--surface-card);
+      border: 1px solid var(--gold-cta);
+      border-radius: 14px;
+      padding: 2.4rem 2rem;
+      text-align: center;
+    }
+    .article-cta__inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 1.6rem;
+      color: var(--text-heading); margin-bottom: 1.25rem;
+    }
+    .article-cta__button {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--surface-base); background: var(--gold-cta);
+      padding: 0.75rem 2rem; border-radius: 8px;
+      text-decoration: none; letter-spacing: 0.04em;
+      text-transform: uppercase; transition: background 0.2s, transform 0.15s;
+    }
+    .article-cta__button:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    .article-cta__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1rem;
+      color: var(--text-meta); margin-top: 1.25rem;
+    }
+
+    /* RELATED + FOOTER */
+    .related-block {
+      max-width: 720px; margin: 2.5rem auto 0;
+      padding: 1.5rem 2rem 0;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.9rem; color: var(--text-meta);
+    }
+    .related-block strong { color: var(--text-heading); }
+    .related-block a { color: var(--gold-cta); text-decoration: underline; text-underline-offset: 2px; }
+    .blog-footer {
+      max-width: 720px; margin: 2.5rem auto 0;
+      padding: 2rem; border-top: 1px solid var(--border-subtle);
+      text-align: center; font-size: 0.78rem; color: var(--text-meta);
+    }
+    .blog-footer a { color: var(--gold-cta); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+      .article-hero { padding: 3rem 1.25rem 1rem; }
+      .article-hero h1 { font-size: 2rem; }
+      .article-body { padding: 0.5rem 1.25rem 1rem; }
+      .article-cta { padding: 0 1.25rem; }
+      .blog-nav { padding: 0.75rem 1.25rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="/responsive.css">
+  <script defer src="/oaiq.js?v=20260930"></script>
+</head>
+<body>
+
+<nav class="blog-nav">
+  <a href="https://say-salon.com" class="blog-nav__logo"><img src="/logo.png" alt="" height="34" style="height:34px;width:auto;border-radius:8px">SAY<span>.</span></a>
+  <a href="https://app.say-salon.com" class="blog-nav__cta">Get Free Access</a>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero__badge">Running a salon</div>
+  <h1>A salon day shouldn't take seven open tabs</h1>
+</header>
+
+<article class="article-body">
+
+  <p class="lead">Imagine this.</p>
+
+  <p>You arrive at your salon before the first client. You check today's appointments, a message from your team and the products you need to reorder.</p>
+
+  <p>Then you remember the Instagram post you meant to write. You need another therapist for Saturdays. Your nail technician wants to find a professional course. Your insurance renewal is approaching.</p>
+
+  <p>None of these jobs is unusual. Together, they explain why running a salon involves so much more than managing a calendar.</p>
+
+  <p>SAY-OS is being built around that whole working day.</p>
+
+  <h2>An idea for Instagram, without starting from scratch</h2>
+
+  <p>You want to tell clients about a service, but the words aren't coming.</p>
+
+  <p>SAY's marketing area is being built to help you start from a draft, shape it so it sounds like your salon, and keep the details that matter yours — your services, your prices and any offer you have actually approved.</p>
+
+  <p>Posting to Instagram from inside SAY is available today only for accounts with access to the Instagram integration; it is not yet open to everyone, and wider availability depends on Meta's review. The aim is a shorter journey from "I should post something" to a message you have checked and are happy to share.</p>
+
+  <h2>Your suppliers, where you need them</h2>
+
+  <p>Between appointments, you notice you are running low on a product.</p>
+
+  <p>A supplier list should be easy to find: who you buy from, their website and the details you need to place an order. SAY is building a Suppliers area to sit alongside stock management, so those references have a home.</p>
+
+  <p>You still choose the supplier and place the order yourself. The benefit is having the information together when you need it.</p>
+
+  <h2>Finding support for your team</h2>
+
+  <p>Perhaps you need another beauty therapist. Perhaps someone on your team wants to develop a new skill.</p>
+
+  <p>SAY is bringing recruitment, training and insurance into the same workspace, so these business needs have somewhere to start. You can read more about the talent side on our <a href="/talent">professionals and recruitment page</a>.</p>
+
+  <p>A listing is a starting point for your own checks, not a verified endorsement. Qualifications, experience, accreditation and insurance suitability still need to be assessed by you before you hire, enrol or buy.</p>
+
+  <h2>A booking tells you when. A consultation helps you understand who.</h2>
+
+  <p>A new client has booked. You know the appointment time and the treatment they requested — but what do you know about the person arriving?</p>
+
+  <p>This is where <strong>SAY: Beauty Passport</strong> adds a different perspective. Clients can record information about themselves and <a href="/beauty-passport/">choose to share it with a salon</a>. That can give you context for the conversation before treatment, rather than a booking name alone.</p>
+
+  <p>The record supports your consultation; it does not replace it. You still ask questions, check that the information is current and use your professional judgement — for example, <a href="/blog/how-do-i-record-client-allergies-and-reactions-safely-uk">recording allergies and reactions safely</a> is still your call to make and document. A badge or a completed profile is never a substitute for that review.</p>
+
+  <h2>One workspace, with the salon owner in control</h2>
+
+  <p>The difference SAY is working towards is practical: bringing more of the salon's working day together. Appointments connect to clients. Stock sits near supplier information. Marketing has a place alongside the business it describes. Recruitment and professional development are part of running the team.</p>
+
+  <div class="honesty-note">
+    <p style="margin:0"><strong>Where things stand.</strong> Some of this is available today; other parts are still being built or depend on outside approvals, such as Meta's review of the Instagram integration. We think that distinction matters, so we try to be clear about it rather than promise a finished product.</p>
+  </div>
+
+  <p>The goal is simple: spend less time finding the next tool, and more time making the decisions that keep your salon moving.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="article-cta__inner">
+    <h2>Explore SAY-OS and see how it fits your working day.</h2>
+    <a href="https://app.say-salon.com/register?utm_source=blog&utm_medium=seo&utm_campaign=seven-open-tabs" class="article-cta__button">Get Free Early Access</a>
+    <div class="article-cta__tagline">Your beauty. Remembered.</div>
+  </div>
+</div>
+
+<nav class="related-block" aria-label="Related">
+  <p><strong>Related:</strong> <a href="/beauty-passport/">What the Beauty Passport is</a> · <a href="/talent">Professionals &amp; recruitment</a> · <a href="/pricing">Pricing</a></p>
+</nav>
+
+<footer class="blog-footer">
+  <p>&copy; 2026 SAY-OS by Servicesforyou Ltd. ICO: ZC121398 &nbsp;|&nbsp; <a href="https://say-salon.com">say-salon.com</a> &nbsp;|&nbsp; <a href="https://app.say-salon.com">app.say-salon.com</a></p>
+  <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+</footer>
+
+<!-- Consent Banner -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
+    <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var KEY='say_consent_analytics';var stored=null;try{stored=localStorage.getItem(KEY);}catch(e){}if(stored!=='granted'&&stored!=='denied'){document.getElementById('say-consent-banner').style.display='block';}window.sayConsentChoose=function(choice){try{localStorage.setItem(KEY,choice);}catch(e){}if(choice==='granted'&&window.sayLoadAnalytics)window.sayLoadAnalytics();document.getElementById('say-consent-banner').style.display='none';};})();
+</script>
+</body>
+</html>
