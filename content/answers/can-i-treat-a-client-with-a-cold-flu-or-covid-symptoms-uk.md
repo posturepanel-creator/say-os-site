@@ -5,7 +5,7 @@ category: safety-contraindication
 region: UK
 drafted: 2026-09-30
 status: published
-published: 2026-10-02
+published: 2026-10-03
 ---
 
 # Can I treat a client who has a cold, flu or COVID symptoms?
