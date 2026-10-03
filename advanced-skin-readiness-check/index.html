@@ -329,8 +329,8 @@ body {
       <div class="capture-success" id="capture-success" role="status" style="display:none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
         <div>
-          <h3>You're on the follow-up list.</h3>
-          <p>Your request and readiness priorities have been saved for SAY to follow up. No email has been sent automatically.</p>
+          <h3>Your details have been received for follow-up.</h3>
+          <p>SAY has your request and readiness priorities. No email has been sent automatically.</p>
         </div>
       </div>
       <div class="skip-success" id="skip-success" role="status" style="display:none;">
@@ -629,7 +629,7 @@ function uuid(){
 
 document.getElementById('lead-form').addEventListener('submit', function(event){
   event.preventDefault();
-  if (captureState === 'saving') return;
+  if (captureState === 'saving' || captureState === 'saved') return; // block repeat clicks while saving and after success
   var input = document.getElementById('email-input');
   var email = input.value.trim();
   var consent = document.getElementById('consent-input').checked;
@@ -652,7 +652,9 @@ document.getElementById('lead-form').addEventListener('submit', function(event){
   var btn = document.getElementById('btn-followup');
   btn.disabled = true; btn.textContent = 'Saving…';
 
-  if (!submissionId) submissionId = uuid(); // idempotency across retries
+  // Stable per-session id so the workflow CAN de-duplicate if/when it supports it.
+  // Server-side duplicate prevention is NOT yet verified — do not assume retries are idempotent.
+  if (!submissionId) submissionId = uuid();
 
   var payload = {
     type: 'advanced_skin_readiness_check',
