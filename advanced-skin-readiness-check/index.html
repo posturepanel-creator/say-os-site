@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced-skin pre-arrival readiness check — SAY</title>
+<meta name="description" content="A 7-question process self-check for advanced-skin practitioners (peels, microneedling, laser and more). See where an earlier, more consistent consultation could help — before the client arrives. Free, no signup.">
+<meta property="og:title" content="Before the client arrives — an advanced-skin readiness check">
+<meta property="og:description" content="A quick self-check of your pre-arrival consultation process, for advanced-skin practitioners. Free, no signup required.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAY-OS">
+<meta property="og:url" content="https://say-salon.com/advanced-skin-readiness-check/">
+<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://say-salon.com/advanced-skin-readiness-check/">
+<!-- Consent Mode v2 — GA4 loads only after user consent (UK GDPR/PECR) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+  gtag('js', new Date());
+  window.sayLoadAnalytics = function () {
+    if (window.__sayGaLoaded) return;
+    window.__sayGaLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('config', 'G-QXYSM1LHV8');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';
+    document.head.appendChild(s);
+  };
+  try {
+    if (localStorage.getItem('say_consent_analytics') === 'granted') {
+      window.sayLoadAnalytics();
+    }
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --base: #0F2818;
+  --card: #183222;
+  --card-hover: #1E3828;
+  --gold: #C9A961;
+  --gold-dim: rgba(201,169,97,0.12);
+  --gold-glow: rgba(201,169,97,0.25);
+  --champagne: #EDE5D4;
+  --whisper: #96A097;
+  --cream: #faf9f7;
+  --alert: #E7C9A9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--base);
+  color: var(--champagne);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.container { max-width: 480px; margin: 0 auto; padding: 20px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 6px; gap: 12px; flex-wrap: wrap; }
+.brand { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; color: var(--gold); letter-spacing: 3px; text-decoration: none; display: inline-flex; align-items: baseline; gap: 8px; }
+.brand .brand-caption { font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; color: var(--whisper); }
+.passport-chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border: 1px solid var(--gold-dim); border-radius: 999px; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; color: var(--gold); }
+.passport-chip svg { width: 15px; height: 15px; }
+.hero { text-align: center; padding: 16px 0 20px; }
+.hero .eyebrow { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 30px; color: var(--champagne); margin-bottom: 12px; line-height: 1.25; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero p { font-size: 14px; color: var(--whisper); max-width: 400px; margin: 0 auto; }
+.check-meta { display: flex; gap: 18px; justify-content: center; margin-top: 14px; font-size: 12px; color: var(--whisper); }
+.check-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.hero .aud { display: block; margin-top: 10px; font-size: 12px; color: var(--gold); letter-spacing: 0.3px; }
+
+/* Beauty Passport intro panel */
+.passport-panel { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 18px 20px; margin: 4px 0 22px; text-align: left; }
+.passport-panel .ph { display: flex; align-items: center; gap: 9px; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--champagne); margin-bottom: 6px; }
+.passport-panel .ph svg { width: 20px; height: 20px; color: var(--gold); }
+.passport-panel p { font-size: 13px; color: var(--whisper); margin-bottom: 10px; }
+.passport-panel ul { list-style: none; padding: 0; margin: 0; }
+.passport-panel li { font-size: 12.5px; color: var(--champagne); padding: 4px 0 4px 20px; position: relative; }
+.passport-panel li::before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-size: 12px; }
+.passport-panel .pb { margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--gold); }
+
+/* Progress */
+.progress { display: flex; gap: 6px; margin-bottom: 10px; }
+.progress-dot { flex: 1; height: 3px; border-radius: 2px; background: rgba(201,169,97,0.15); transition: background 0.3s; }
+.progress-dot.active { background: var(--gold); }
+.progress-dot.done { background: rgba(201,169,97,0.45); }
+.step-count { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--whisper); margin-bottom: 18px; }
+.step-count b { color: var(--gold); }
+
+/* Question */
+.question-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 20px; padding: 26px 22px; margin-bottom: 16px; }
+.q-topic { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; }
+.q-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--champagne); margin-bottom: 8px; line-height: 1.35; }
+.q-note { font-size: 12.5px; color: var(--whisper); margin-bottom: 18px; }
+.option { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; padding: 14px 16px; margin-bottom: 8px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 400; cursor: pointer; transition: all 0.2s; text-align: left; }
+.option:hover { background: var(--card-hover); border-color: rgba(201,169,97,0.3); }
+.option.selected { background: rgba(201,169,97,0.12); border-color: var(--gold); color: var(--gold); font-weight: 500; }
+.option .tick { opacity: 0; width: 18px; height: 18px; flex: 0 0 auto; }
+.option.selected .tick { opacity: 1; }
+.option:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.nav-row { display: flex; gap: 12px; margin-top: 8px; }
+.btn-back { flex: 0 0 auto; padding: 14px 20px; background: transparent; border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--whisper); font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-back:hover { border-color: rgba(201,169,97,0.3); color: var(--champagne); }
+.btn-next { flex: 1; padding: 14px 20px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+.btn-next:hover { filter: brightness(1.08); }
+.btn-next:disabled { opacity: 0.35; cursor: not-allowed; filter: none; }
+.btn-back:focus-visible, .btn-next:focus-visible, .cta-btn:focus-visible, .text-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.surface-note { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 11.5px; color: var(--whisper); }
+.surface-note svg { width: 15px; height: 15px; color: var(--gold); flex: 0 0 auto; }
+
+/* Result */
+.result { display: none; }
+.result.visible { display: block; }
+.result-eyebrow { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); text-align: center; margin-bottom: 8px; }
+.result-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--champagne); margin: 2px 0 8px; text-align: center; line-height: 1.2; }
+.result-summary { font-size: 14px; color: var(--champagne); margin-bottom: 20px; text-align: center; max-width: 400px; margin-left: auto; margin-right: auto; }
+.counts { display: flex; gap: 10px; margin-bottom: 18px; }
+.counts div { flex: 1; background: var(--card); border: 1px solid var(--gold-dim); border-radius: 14px; padding: 14px 8px; text-align: center; }
+.counts strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--gold); }
+.counts span { font-size: 10.5px; color: var(--whisper); letter-spacing: 0.4px; }
+.review-flag { display: flex; gap: 10px; align-items: flex-start; background: rgba(201,169,97,0.08); border: 1px solid var(--gold); border-radius: 14px; padding: 14px 16px; margin-bottom: 16px; }
+.review-flag svg { width: 18px; height: 18px; color: var(--gold); flex: 0 0 auto; margin-top: 2px; }
+.review-flag p { font-size: 13px; color: var(--champagne); }
+.priorities-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin: 4px 0 10px; }
+.priorities { list-style: none; padding: 0; margin: 0 0 18px; }
+.priorities li { display: flex; gap: 12px; background: var(--card); border: 1px solid var(--gold-dim); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
+.priority-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: rgba(201,169,97,0.15); color: var(--gold); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.priorities h4 { font-size: 14px; font-weight: 600; color: var(--champagne); margin-bottom: 4px; }
+.priorities p { font-size: 12.5px; color: var(--whisper); line-height: 1.6; }
+
+/* Beauty Passport result block */
+.result-passport { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 20px; margin-bottom: 14px; align-items: flex-start; }
+.result-passport svg { width: 26px; height: 26px; color: var(--gold); flex: 0 0 auto; margin-top: 2px; }
+.result-passport h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--champagne); margin-bottom: 6px; }
+.result-passport p { font-size: 12.5px; color: var(--whisper); margin-bottom: 12px; }
+.cta-btn { display: inline-block; padding: 12px 24px; background: var(--gold); border: none; border-radius: 12px; color: var(--base); font-family: 'Outfit', sans-serif; font-size: 13.5px; font-weight: 600; text-decoration: none; letter-spacing: 0.4px; transition: all 0.2s; cursor: pointer; }
+.cta-btn:hover { filter: brightness(1.08); }
+.cta-btn:disabled { opacity: 0.4; cursor: not-allowed; filter: none; }
+.result-limit { font-size: 11.5px; color: var(--whisper); opacity: 0.85; line-height: 1.6; margin: 2px 2px 18px; text-align: center; }
+
+/* Email */
+.email-card { background: var(--card); border: 1px solid var(--gold-dim); border-radius: 16px; padding: 20px; margin: 4px 0 16px; text-align: left; }
+.email-head { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
+.email-head svg { width: 20px; height: 20px; color: var(--gold); flex: 0 0 auto; margin-top: 2px; }
+.email-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--champagne); }
+.email-head p { font-size: 12px; color: var(--whisper); }
+.field-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: var(--whisper); margin-bottom: 6px; }
+.email-input { display: block; width: 100%; padding: 13px 16px; background: var(--base); border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--champagne); font-family: 'Outfit', sans-serif; font-size: 14px; margin-bottom: 12px; outline: none; }
+.email-input:focus { border-color: var(--gold); }
+.email-input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.email-input::placeholder { color: var(--whisper); opacity: 0.6; }
+.consent-row { display: flex; align-items: flex-start; gap: 10px; margin: 2px 0 14px; }
+.consent-row input { margin-top: 3px; width: 17px; height: 17px; flex: 0 0 auto; accent-color: var(--gold); }
+.consent-row label { font-size: 12.5px; color: var(--champagne); line-height: 1.5; }
+.email-actions { display: flex; gap: 10px; }
+.btn-skip { flex: 0 0 auto; padding: 13px 18px; background: transparent; border: 1px solid var(--gold-dim); border-radius: 12px; color: var(--whisper); font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; }
+.btn-skip:hover { color: var(--champagne); border-color: rgba(201,169,97,0.3); }
+.form-msg { font-size: 12.5px; margin-top: 12px; display: none; }
+.form-msg.err { display: block; color: var(--alert); }
+.privacy-short { font-size: 11px; color: var(--whisper); opacity: 0.85; margin-top: 12px; }
+.privacy-short a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.capture-success, .skip-success { display: flex; gap: 12px; align-items: flex-start; }
+.capture-success svg { width: 22px; height: 22px; color: var(--gold); flex: 0 0 auto; margin-top: 2px; }
+.capture-success h3, .skip-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--champagne); margin-bottom: 4px; }
+.capture-success p, .skip-success p { font-size: 12.5px; color: var(--whisper); }
+.text-btn { background: none; border: none; color: var(--gold); font-family: 'Outfit', sans-serif; font-size: 12.5px; font-weight: 500; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; padding: 4px 0; }
+.result-controls { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 6px 0 4px; }
+.restart-confirm { display: inline-flex; gap: 10px; align-items: center; font-size: 12.5px; color: var(--whisper); }
+
+/* Footer */
+.footer-details { margin: 22px 2px 0; }
+.footer-details details { border-top: 1px solid var(--gold-dim); padding: 10px 0; }
+.footer-details summary { font-size: 12.5px; font-weight: 500; color: var(--gold); cursor: pointer; }
+.footer-details p { font-size: 11.5px; color: var(--whisper); margin: 8px 0 0; line-height: 1.6; }
+.footer-details a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.footer { text-align: center; padding: 26px 0 8px; }
+.footer p { font-size: 11px; color: var(--whisper); opacity: 0.6; }
+.footer a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 25px; }
+  .q-text { font-size: 19px; }
+  .result-title { font-size: 25px; }
+  .counts strong { font-size: 23px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Advanced-skin pre-arrival readiness check",
+  "applicationCategory": "BusinessApplication",
+  "description": "A self-assessment for advanced-skin practitioners of how consistently they capture and review pre-arrival consultation information.",
+  "url": "https://say-salon.com/advanced-skin-readiness-check/",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SAY-OS",
+    "legalName": "Servicesforyou Ltd",
+    "url": "https://say-salon.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" }
+  }
+}
+</script>
+  <script defer src="/oaiq.js?v=20260930"></script>
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+<div class="container">
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="SAY home">SAY <span class="brand-caption">ADVANCED SKIN</span></a>
+    <span class="passport-chip" aria-label="Beauty Passport">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M17.5 12a5.5 5.5 0 1 0-11 0"/><path d="M12 12v9"/><path d="M8 17h8"/><circle cx="12" cy="7" r="1"/></svg>
+      <span>Beauty Passport</span>
+    </span>
+  </header>
+
+  <div class="hero" id="hero">
+    <p class="eyebrow">The pre-arrival check</p>
+    <h1>Before the client <em>arrives.</em></h1>
+    <p>A quick, honest look at your own consultation process before advanced-skin treatments — not a test of any individual client.</p>
+    <div class="check-meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>7 questions</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 60 seconds</span>
+    </div>
+    <span class="aud">For peel, microneedling, laser &amp; other advanced-skin practitioners</span>
+  </div>
+
+  <div class="passport-panel" id="intro-passport">
+    <div class="ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M17.5 12a5.5 5.5 0 1 0-11 0"/><path d="M12 12v9"/><path d="M8 17h8"/><circle cx="12" cy="7" r="1"/></svg>
+      <span>Beauty Passport</span>
+    </div>
+    <p>A client-held record they can choose to share with you.</p>
+    <ul>
+      <li>Relevant health &amp; reaction history</li>
+      <li>Recent treatments across providers</li>
+      <li>Updates before their next visit</li>
+    </ul>
+    <div class="pb">Your beauty. Remembered.</div>
+  </div>
+
+  <div id="quiz">
+    <div class="progress" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" aria-label="Questions completed"></div>
+    <div class="step-count" id="step-count"></div>
+    <div class="question-card">
+      <div class="q-topic" id="q-topic"></div>
+      <h2 class="q-text" id="q-text" tabindex="-1"></h2>
+      <p class="q-note" id="q-note"></p>
+      <div id="options" role="group" aria-labelledby="q-text"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" id="btn-back" type="button" onclick="prevQuestion()">Back</button>
+      <button class="btn-next" id="btn-next" type="button" onclick="nextQuestion()" disabled>Continue</button>
+    </div>
+    <div class="surface-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>About your process. No client health details needed.</span>
+    </div>
+  </div>
+
+  <div class="result" id="result" aria-live="polite">
+    <p class="result-eyebrow">Your readiness snapshot</p>
+    <h2 class="result-title" id="r-title" tabindex="-1"></h2>
+    <p class="result-summary" id="r-summary"></p>
+
+    <div class="counts" aria-label="Your process summary">
+      <div><strong id="r-inplace">0</strong><span>In place</span></div>
+      <div><strong id="r-incons">0</strong><span>Inconsistent</span></div>
+      <div><strong id="r-gaps">0</strong><span>Gaps / unsure</span></div>
+    </div>
+
+    <div class="review-flag" id="review-flag" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <p id="review-flag-text"></p>
+    </div>
+
+    <h3 class="priorities-title" id="priorities-title">Your next practical steps</h3>
+    <ol class="priorities" id="priorities"></ol>
+
+    <div class="result-passport">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M17.5 12a5.5 5.5 0 1 0-11 0"/><path d="M12 12v9"/><path d="M8 17h8"/><circle cx="12" cy="7" r="1"/></svg>
+      <div>
+        <h3>Bring the picture together with the Beauty Passport.</h3>
+        <p>A client-held record to share relevant history across providers — a starting point for your consultation and professional review. You keep professional judgement for every treatment.</p>
+        <a href="/beauty-passport/" class="cta-btn">See how the Beauty Passport works</a>
+      </div>
+    </div>
+
+    <p class="result-limit">This is a self-reported process check, not clearance to treat, a clinical assessment or a compliance certificate. Follow your training, manufacturer guidance, insurer conditions and applicable local requirements.</p>
+
+    <div class="email-card" id="email-card">
+      <div id="email-form-wrap">
+        <div class="email-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div>
+            <h3>Continue after the show?</h3>
+            <p>Optional: leave an email for a SAY follow-up about your result and the Beauty Passport.</p>
+          </div>
+        </div>
+        <form id="lead-form" novalidate>
+          <label class="field-label" for="email-input">Email address</label>
+          <input type="email" class="email-input" id="email-input" inputmode="email" autocomplete="email" placeholder="you@yourbusiness.co.uk" maxlength="254" aria-describedby="email-privacy">
+          <div class="consent-row">
+            <input type="checkbox" id="consent-input">
+            <label for="consent-input" id="consent-label"></label>
+          </div>
+          <p class="form-msg" id="form-msg" role="alert"></p>
+          <div class="email-actions">
+            <button class="cta-btn" id="btn-followup" type="submit" style="flex:1;">Request a follow-up</button>
+            <button class="btn-skip" id="btn-skip" type="button" onclick="skipEmail()">No thanks</button>
+          </div>
+        </form>
+        <p class="privacy-short" id="email-privacy">Email + result summary only. No client records. <a href="#privacy-details" onclick="document.getElementById('privacy-details').open=true;">How we use your details</a></p>
+      </div>
+      <div class="capture-success" id="capture-success" role="status" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <h3>You're on the follow-up list.</h3>
+          <p>Your request and readiness priorities have been saved for SAY to follow up. No email has been sent automatically.</p>
+        </div>
+      </div>
+      <div class="skip-success" id="skip-success" role="status" style="display:none;">
+        <div>
+          <h3>Your result is yours to use.</h3>
+          <p>No email needed — you can screenshot your priorities. <button class="text-btn" type="button" onclick="unskipEmail()">Request a follow-up instead</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-controls">
+      <button class="text-btn" type="button" onclick="reviewAnswers()">Review answers</button>
+      <span id="restart-wrap"><button class="text-btn" type="button" onclick="promptRestart()">Start a new check</button></span>
+    </div>
+  </div>
+
+  <div class="footer-details">
+    <details>
+      <summary>About this check &amp; UK rules</summary>
+      <p>This checks your consultation workflow, not an individual client's suitability. Follow your training, manufacturer guidance, insurer conditions and applicable local requirements.</p>
+      <p>England is moving towards a licensing scheme for non-surgical cosmetic procedures. In August 2025 the government published its response to consultation, setting out a proposed risk-based (Red/Amber/Green) model — but the scheme is not yet in force: no commencement date has been set and further legislation is required before it applies. Existing local-authority licensing may already apply, and requirements differ across the UK.</p>
+      <a href="https://www.gov.uk/government/consultations/licensing-of-non-surgical-cosmetic-procedures" target="_blank" rel="noopener noreferrer">Read the government's proposals (GOV.UK)</a>
+    </details>
+    <details id="privacy-details">
+      <summary>Privacy</summary>
+      <p>Completing the check does not send your answers to SAY. They stay in this page while it is open.</p>
+      <p>If you request a follow-up, Servicesforyou LTD (SAY) stores your email, result title, up to three priorities, the source you arrived from, and your permission with a timestamp. We use these to follow up about this check and the Beauty Passport. No client health records are collected, and your email is never sent to analytics.</p>
+      <p>Only leave your email if you want that follow-up. You can withdraw permission or request deletion by replying to any follow-up from SAY. See our <a href="/privacy">Privacy Policy</a>.</p>
+    </details>
+  </div>
+
+  <div class="footer">
+    <p>SAY-OS &mdash; the app that remembers everything for you</p>
+    <p style="margin-top:8px;"><a href="https://say-salon.com">say-salon.com</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></p>
+  </div>
+</div>
+
+<script>
+/* ──────────────────────────────────────────────────────────────
+   Advanced-skin pre-arrival readiness check
+   Logic ported verbatim from the handoff module (readiness.ts).
+   Option index i -> value (2 - i): first option = 2 (routine),
+   second = 1 (inconsistent), third = 0 (gap / unsure).
+   ────────────────────────────────────────────────────────────── */
+var QUESTIONS = [
+  { id:'before-arrival', topic:'Timing', title:'When do you collect a client’s consultation details?',
+    note:'Think about your usual advanced-skin appointments.',
+    options:['Before the appointment','Before some appointments','On arrival / not yet'],
+    action:'Move the consultation earlier',
+    detail:'Ask for treatment-relevant details before the appointment, with enough time for a practitioner to review them.' },
+  { id:'changes', topic:'Keeping records current', title:'Do returning clients confirm what has changed?',
+    note:'A familiar client can have a new health, medication or skincare update.',
+    options:['At every appointment','Sometimes, if it comes up','We rely on their old form / unsure'],
+    action:'Add a “what’s changed?” check',
+    detail:'Ask every returning client to confirm changes, then date the update. Reconfirm relevant details on the treatment day.' },
+  { id:'medicines', topic:'Medicines & skincare', title:'Do you ask about medicines and active skincare before they arrive?',
+    note:'Include recent changes and relevant supplements; the practitioner interprets the information.',
+    options:['Yes, as a routine step','Sometimes / only for certain treatments','Only on arrival / unsure'],
+    action:'Prompt for medicines and active skincare',
+    detail:'Add a specific prompt for relevant medicines, active skincare and recent changes. Review against the intended treatment’s guidance.' },
+  { id:'reactions', topic:'Allergies & reactions', title:'Are allergies and previous reactions visible before treatment day?',
+    note:'Include product reactions and previous treatment reactions, not just known allergies.',
+    options:['Yes, collected and reviewed','Collected, but review varies','Not routinely / unsure'],
+    action:'Make reaction history visible',
+    detail:'Collect known allergies and previous product or treatment reactions, and make them easy for the treating practitioner to review.' },
+  { id:'elsewhere', topic:'The bigger picture', title:'Do you ask about recent treatments at other providers?',
+    note:'For example, peels, laser, microneedling or injectables, including when and where.',
+    options:['Yes, every time','Only when a client mentions them','Not routinely / unsure'],
+    action:'Ask what happened elsewhere',
+    detail:'Ask about relevant recent treatments and dates across providers. Check any timing or interaction concern against treatment guidance.' },
+  { id:'review', topic:'Practitioner review', title:'Does someone review possible contraindications before the visit?',
+    note:'Collecting a form is only useful if someone acts on the information.',
+    options:['Yes, with a clear review process','Sometimes / depends who is working','We usually review on arrival / unsure'],
+    action:'Give the review a clear owner',
+    detail:'Name who reviews the consultation and what triggers a follow-up, postponement or referral. Confirm suitability on the day using professional judgement.' },
+  { id:'evidence', topic:'A record you can find', title:'Can the treating practitioner quickly find the record and decision?',
+    note:'Include the current consultation, relevant test records and the reason for the decision.',
+    options:['Yes, together and easy to retrieve','Yes, but spread across places','Not consistently / unsure'],
+    action:'Keep the decision with the record',
+    detail:'Keep a dated consultation, relevant test evidence and the practitioner’s decision together, with access limited to people who need it.' }
+];
+var TOTAL_Q = QUESTIONS.length;
+var REVIEW_INDEX = 5;
+var CONSENT_VERSION = 'show-followup-v1';
+var CONSENT_TEXT = 'I’d like SAY to contact me about my result and the Beauty Passport.';
+var LEAD_ENDPOINT = 'https://say-os.app.n8n.cloud/webhook/new-lead';
+
+document.getElementById('consent-label').textContent = CONSENT_TEXT;
+
+/* ── Source / UTM attribution ── */
+function getParam(name){ try { return new URLSearchParams(window.location.search).get(name) || ''; } catch(e){ return ''; } }
+var UTM = { utm_source:getParam('utm_source'), utm_medium:getParam('utm_medium'), utm_campaign:getParam('utm_campaign') };
+var SOURCE = getParam('source') || UTM.utm_source || 'advanced-skin-readiness';
+
+/* ── Analytics (consent-gated; never receives email or health info) ── */
+function sayTrack(name, params){ try { gtag('event', name, params || {}); } catch(e){} }
+
+/* ── State ── */
+var step = 0;
+var answers = new Array(TOTAL_Q).fill(null); // stores values 2/1/0
+var startedFired = false, completedFired = false;
+var submissionId = '';
+var captureState = 'idle'; // idle | saving | saved | skipped
+
+function isComplete(a){ return a.length === TOTAL_Q && a.every(function(v){ return v === 0 || v === 1 || v === 2; }); }
+
+function getResult(a){
+  var inplace = a.filter(function(v){ return v === 2; }).length;
+  var incons  = a.filter(function(v){ return v === 1; }).length;
+  var gaps    = a.filter(function(v){ return v === 0; }).length;
+  var total   = a.reduce(function(x,y){ return x + y; }, 0);
+  var title = a[REVIEW_INDEX] === 0 ? 'Give the review a clear owner'
+            : total >= 12 ? 'Strong process foundations'
+            : total >= 7  ? 'Make your process more consistent'
+            : 'Build your pre-arrival picture';
+  var summary = total === 14
+    ? 'Your answers describe a consistent process across all seven areas. Keep records current and confirm relevant changes on treatment day.'
+    : 'Your answers show where an earlier, more consistent consultation could help. Start with the priorities below.';
+  var priorities = QUESTIONS.map(function(q,i){ return { q:q, value:a[i], index:i }; })
+    .filter(function(p){ return p.value < 2; })
+    .sort(function(x,y){ return (x.value - y.value) || (x.index === REVIEW_INDEX ? -1 : y.index === REVIEW_INDEX ? 1 : x.index - y.index); })
+    .slice(0,3);
+  return { title:title, summary:summary, inplace:inplace, incons:incons, gaps:gaps, priorities:priorities };
+}
+
+/* ── Question rendering ── */
+function render(){
+  var prog = document.getElementById('progress');
+  prog.innerHTML = '';
+  for (var i = 0; i < TOTAL_Q; i++){
+    var d = document.createElement('div');
+    d.className = 'progress-dot' + (i === step ? ' active' : '') + (answers[i] !== null && i !== step ? ' done' : '');
+    prog.appendChild(d);
+  }
+  prog.setAttribute('aria-valuenow', String(answers.filter(function(v){ return v !== null; }).length));
+  document.getElementById('step-count').innerHTML = '<b>' + String(step + 1).padStart(2,'0') + '</b> / 07';
+  var q = QUESTIONS[step];
+  document.getElementById('q-topic').textContent = q.topic;
+  document.getElementById('q-text').textContent = q.title;
+  var noteEl = document.getElementById('q-note');
+  noteEl.textContent = q.note || '';
+  noteEl.style.display = q.note ? 'block' : 'none';
+
+  var opts = document.getElementById('options');
+  opts.innerHTML = '';
+  q.options.forEach(function(label, i){
+    var value = 2 - i;
+    var selected = answers[step] === value;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'option' + (selected ? ' selected' : '');
+    b.setAttribute('aria-pressed', selected ? 'true' : 'false');
+    b.innerHTML = '<span>' + label.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>' +
+      '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+    b.onclick = function(){
+      answers[step] = value;
+      if (!startedFired){ startedFired = true; sayTrack('readiness_check_started', SOURCE ? { source:SOURCE } : {}); }
+      render();
+    };
+    opts.appendChild(b);
+  });
+
+  document.getElementById('btn-back').style.visibility = step === 0 ? 'hidden' : 'visible';
+  var next = document.getElementById('btn-next');
+  next.disabled = answers[step] === null;
+  next.textContent = step === TOTAL_Q - 1 ? 'See my result' : 'Continue';
+  document.getElementById('q-text').focus({ preventScroll:true });
+}
+
+function nextQuestion(){
+  if (answers[step] === null) return;
+  if (step < TOTAL_Q - 1){ step++; render(); return; }
+  showResults();
+}
+function prevQuestion(){ if (step > 0){ step--; render(); } }
+
+/* ── Result rendering ── */
+function showResults(){
+  if (!isComplete(answers)) return;
+  var r = getResult(answers);
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('hero').style.display = 'none';
+  document.getElementById('intro-passport').style.display = 'none';
+
+  document.getElementById('r-title').textContent = r.title;
+  document.getElementById('r-summary').textContent = r.summary;
+  document.getElementById('r-inplace').textContent = r.inplace;
+  document.getElementById('r-incons').textContent = r.incons;
+  document.getElementById('r-gaps').textContent = r.gaps;
+
+  // Missing/weak practitioner review: highlight even when other answers are strong.
+  var reviewFlag = document.getElementById('review-flag');
+  if (answers[REVIEW_INDEX] < 2){
+    document.getElementById('review-flag-text').textContent =
+      answers[REVIEW_INDEX] === 0
+        ? 'Practitioner review is the step that turns collected information into a safe decision. Right now it has no clear owner — make this your first priority, even where the rest of your process is strong.'
+        : 'Practitioner review is the step that turns collected information into a safe decision. Yours is inconsistent — give it a clear owner, even where the rest of your process is strong.';
+    reviewFlag.style.display = 'flex';
+  } else {
+    reviewFlag.style.display = 'none';
+  }
+
+  var list = document.getElementById('priorities');
+  list.innerHTML = '';
+  if (r.priorities.length){
+    document.getElementById('priorities-title').textContent = 'Your next practical steps';
+    r.priorities.forEach(function(p, i){
+      var li = document.createElement('li');
+      var num = document.createElement('span'); num.className = 'priority-num'; num.textContent = String(i + 1);
+      var div = document.createElement('div');
+      var h4 = document.createElement('h4'); h4.textContent = p.q.action;
+      var para = document.createElement('p'); para.textContent = p.q.detail;
+      div.appendChild(h4); div.appendChild(para);
+      li.appendChild(num); li.appendChild(div); list.appendChild(li);
+    });
+  } else {
+    document.getElementById('priorities-title').textContent = 'Keep the foundation strong';
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="priority-num">✓</span><div><h4>Keep checking for changes</h4>' +
+      '<p>Keep the review owner clear, confirm updates on the day and record the decision. Revisit your process when guidance, products or treatments change.</p></div>';
+    list.appendChild(li);
+  }
+
+  window.__resultTitle = r.title;
+  window.__resultPriorities = r.priorities.map(function(p){ return p.q.action; });
+
+  document.getElementById('result').classList.add('visible');
+  window.scrollTo({ top:0, behavior:'smooth' });
+  requestAnimationFrame(function(){ document.getElementById('r-title').focus({ preventScroll:true }); });
+
+  if (!completedFired){
+    completedFired = true;
+    var params = { result_title: r.title };
+    if (SOURCE) params.source = SOURCE;
+    sayTrack('readiness_check_completed', params); // no email / no client health
+  }
+}
+
+function reviewAnswers(){
+  document.getElementById('result').classList.remove('visible');
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('hero').style.display = 'block';
+  document.getElementById('intro-passport').style.display = 'block';
+  step = TOTAL_Q - 1;
+  resetCapture();
+  render();
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function promptRestart(){
+  var wrap = document.getElementById('restart-wrap');
+  wrap.innerHTML = '<span class="restart-confirm">Clear this result? ' +
+    '<button class="text-btn" type="button" onclick="restart()">Yes, start again</button>' +
+    '<button class="text-btn" type="button" onclick="cancelRestart()">Keep it</button></span>';
+}
+function cancelRestart(){
+  document.getElementById('restart-wrap').innerHTML =
+    '<button class="text-btn" type="button" onclick="promptRestart()">Start a new check</button>';
+}
+function restart(){
+  answers = new Array(TOTAL_Q).fill(null);
+  step = 0; startedFired = false; completedFired = false; submissionId = '';
+  resetCapture();
+  cancelRestart();
+  document.getElementById('result').classList.remove('visible');
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('hero').style.display = 'block';
+  document.getElementById('intro-passport').style.display = 'block';
+  render();
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+/* ── Email capture (optional) ── */
+function resetCapture(){
+  captureState = 'idle';
+  document.getElementById('email-form-wrap').style.display = 'block';
+  document.getElementById('capture-success').style.display = 'none';
+  document.getElementById('skip-success').style.display = 'none';
+  var msg = document.getElementById('form-msg'); msg.textContent = ''; msg.className = 'form-msg';
+}
+function skipEmail(){
+  captureState = 'skipped';
+  document.getElementById('email-form-wrap').style.display = 'none';
+  document.getElementById('skip-success').style.display = 'flex';
+  document.getElementById('email-input').value = '';
+  document.getElementById('consent-input').checked = false;
+}
+function unskipEmail(){ resetCapture(); }
+
+function uuid(){
+  var b = crypto.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6] & 15) | 64; b[8] = (b[8] & 63) | 128;
+  var h = Array.from(b, function(x){ return x.toString(16).padStart(2,'0'); }).join('');
+  return [h.slice(0,8), h.slice(8,12), h.slice(12,16), h.slice(16,20), h.slice(20)].join('-');
+}
+
+document.getElementById('lead-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  if (captureState === 'saving') return;
+  var input = document.getElementById('email-input');
+  var email = input.value.trim();
+  var consent = document.getElementById('consent-input').checked;
+  var msg = document.getElementById('form-msg');
+  msg.className = 'form-msg';
+
+  if (!email || email.indexOf('@') < 1 || email.lastIndexOf('.') < email.indexOf('@')){
+    input.style.borderColor = 'var(--alert)';
+    msg.textContent = 'Please enter a valid email address.'; msg.className = 'form-msg err';
+    input.focus(); return;
+  }
+  if (!consent){
+    msg.textContent = 'Tick the permission box to request a follow-up.'; msg.className = 'form-msg err';
+    document.getElementById('consent-input').focus(); return;
+  }
+  if (!isComplete(answers)) return;
+  input.style.borderColor = '';
+
+  captureState = 'saving';
+  var btn = document.getElementById('btn-followup');
+  btn.disabled = true; btn.textContent = 'Saving…';
+
+  if (!submissionId) submissionId = uuid(); // idempotency across retries
+
+  var payload = {
+    type: 'advanced_skin_readiness_check',
+    id: submissionId,
+    email: email,
+    consent: true,
+    consent_version: CONSENT_VERSION,
+    consent_text: CONSENT_TEXT,
+    result_title: window.__resultTitle || getResult(answers).title,
+    priorities: (window.__resultPriorities || []).slice(0,3),
+    source: SOURCE,
+    utm_source: UTM.utm_source,
+    utm_medium: UTM.utm_medium,
+    utm_campaign: UTM.utm_campaign,
+    submitted_at: new Date().toISOString()
+  };
+
+  var done = false;
+  var timer = setTimeout(function(){ if (!done){ done = true; fail('Connection taking too long. Your result is still here; please try again.'); } }, 12000);
+
+  function fail(text){
+    captureState = 'idle';
+    btn.disabled = false; btn.textContent = 'Request a follow-up';
+    msg.textContent = text; msg.className = 'form-msg err';
+  }
+
+  fetch(LEAD_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function(r){
+    if (done) return;
+    // Treat a server-confirmed acceptance as the save. If the endpoint returns
+    // a JSON body, honour an explicit {saved:false}; otherwise HTTP 2xx is the
+    // confirmation (matches the site's existing lead webhook contract).
+    if (!r.ok) throw new Error('bad status');
+    return r.text().then(function(text){
+      var ok = true;
+      if (text){ try { var j = JSON.parse(text); if (j && j.saved === false) ok = false; } catch(e){} }
+      if (!ok) throw new Error('not saved');
+      done = true; clearTimeout(timer);
+      captureState = 'saved';
+      document.getElementById('email-form-wrap').style.display = 'none';
+      document.getElementById('capture-success').style.display = 'flex';
+      var p = { result_title: payload.result_title };
+      if (SOURCE) p.source = SOURCE;
+      sayTrack('email_captured', p); // never includes the email address
+    });
+  }).catch(function(){
+    if (done) return; done = true; clearTimeout(timer);
+    fail('We couldn’t save your request just now. Your result is still here — please try again.');
+  });
+});
+
+/* Show the first question immediately. */
+render();
+</script>
+
+<!-- Consent Banner -->
+<div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">
+  <div style="max-width:640px;margin:0 auto;background:#183222;border:1px solid rgba(201,169,97,0.12);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:Outfit,sans-serif;">
+    <h3 style="font-family:Cormorant Garamond,serif;font-weight:600;font-size:18px;color:#EDE5D4;margin:0 0 6px;">Your privacy, your choice</h3>
+    <p style="font-size:13px;line-height:1.6;color:#D4C5A9;margin:0 0 16px;">We use optional technologies you control by category: analytics (Google Analytics and PostHog) to understand how the site is used, and advertising measurement (OpenAI) to measure our ads. Each is off until you allow it and can be changed any time in Cookie settings. Nothing non-essential loads before you choose. <a href="/privacy" style="color:#C9A961;text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button onclick="sayConsentChoose('denied')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#EDE5D4;background:transparent;border:1px solid rgba(150,160,151,0.20);cursor:pointer;">Reject analytics</button>
+      <button onclick="sayConsentChoose('granted')" style="flex:1;min-width:140px;padding:12px;border-radius:12px;font-size:13px;font-weight:500;color:#0F2818;background:#C9A961;border:1px solid #C9A961;cursor:pointer;">Accept analytics</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var KEY='say_consent_analytics';var stored=null;try{stored=localStorage.getItem(KEY);}catch(e){}if(stored!=='granted'&&stored!=='denied'){document.getElementById('say-consent-banner').style.display='block';}window.sayConsentChoose=function(choice){try{localStorage.setItem(KEY,choice);}catch(e){}if(choice==='granted'&&window.sayLoadAnalytics)window.sayLoadAnalytics();document.getElementById('say-consent-banner').style.display='none';};})();
+</script>
+<footer style="max-width:720px;margin:2.5rem auto 0;padding:1.75rem 1.5rem 2.5rem;border-top:1px solid rgba(201,169,97,0.15);text-align:center;font-family:'Outfit',sans-serif;color:#96A097;font-size:0.8rem;line-height:1.6;">
+  <div>&copy; 2026 Servicesforyou Ltd &middot; <a href="/privacy" style="color:#C9A961;text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:#C9A961;text-decoration:none;">Terms</a></div>
+</footer>
+</body>
+</html>
