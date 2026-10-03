@@ -612,23 +612,42 @@ nav {
   position: relative;
   overflow: hidden;
 }
+/* Decorative voice wave — sits in-flow beneath the heading, inside the text
+   column, above the introduction. Never behind content. Muted gold, calm.
+   The static SVG wave is the VISIBLE DEFAULT/fallback; the animated canvas
+   overlays it and hides it only once it is actually drawing (so if the canvas
+   cannot initialise, the static wave stays visible). */
+.voice-wave {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 56px;
+  margin: 6px 0 30px;
+}
+.voice-wave-static {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.voice-wave-static svg { display: block; width: 100%; height: 100%; }
 .voice-wave-canvas {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.85;
 }
-.voice-section > *:not(.voice-wave-canvas) { position: relative; z-index: 1; }
-@media (prefers-reduced-motion: reduce) { .voice-wave-canvas { display: none; } }
+.voice-wave.is-animating .voice-wave-static { display: none; }
+/* prefers-reduced-motion: no animation — always show the static wave. */
+@media (prefers-reduced-motion: reduce) {
+  .voice-wave-canvas { display: none !important; }
+  .voice-wave-static { display: block !important; }
+}
 .voice-inner {
-  max-width: 1100px;
+  max-width: 680px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
 }
 .voice-chat {
   background: var(--velvet-deep);
@@ -962,16 +981,6 @@ nav {
   margin-bottom: 32px;
   position: relative;
 }
-.founder-quote::before {
-  content: '\201C';
-  font-size: 120px;
-  color:rgba(201,169,97,0.72);
-  position: absolute;
-  top: -40px;
-  left: -20px;
-  line-height: 1;
-  font-family: 'Cormorant Garamond', serif;
-}
 .founder-attr {
   font-family: 'Outfit', sans-serif;
   font-size: 11px;
@@ -1122,7 +1131,7 @@ footer {
           "name": "Client Beauty Passport",
           "price": "0",
           "priceCurrency": "GBP",
-          "description": "Free personal beauty profile with QR sharing in 14 languages"
+          "description": "Free personal beauty profile with QR sharing in multiple languages"
         },
         {
           "@type": "Offer",
@@ -1130,10 +1139,10 @@ footer {
           "price": "79",
           "priceCurrency": "GBP",
           "billingIncrement": "P1M",
-          "description": "Voice-first salon management with safety intelligence, bookings, and consultation records"
+          "description": "Voice-first salon management with recorded client information for practitioner review, bookings, and consultation records"
         }
       ],
-      "featureList": "Voice-first booking, Client safety intelligence, Beauty Passport with QR, Consultation records, Inventory management"
+      "featureList": "Voice-first booking, Recorded client information for practitioner review, Beauty Passport with QR, Consultation records, Inventory management"
     }
   ]
 }
@@ -1185,7 +1194,7 @@ footer {
   </h1>
 
   <p class="hero-sub">
-    Bookings, client safety, consultation records, and business insight — all in one system, voice-first. The operating system that replaces your booking app and your paper consultation cards.
+    Bookings, client records and business tools in one workspace, voice-first. SAY-OS has its own calendar and bookings.
   </p>
 
   <div class="hero-actions">
@@ -1209,13 +1218,13 @@ footer {
 
 <!-- SECTION 1: WORKS WITH WHAT YOU HAVE -->
 <section class="compat-section" id="how">
-  <div class="section-label">Works With What You Already Use</div>
+  <div class="section-label">Bookings, client records and business tools in one workspace</div>
   <h2 class="section-heading" style="margin-bottom:20px">
-    Keep your booking system.<br><span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> adds everything <em>it's missing.</em>
+    Bookings, client records and business tools,<br>in one <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> <em>workspace.</em>
   </h2>
 
   <p class="compat-intro">
-    SAY-OS is not asking you to switch. It sits on top of what you already have and adds the layers that booking platforms don't offer — safety intelligence, client memory, voice control, stock management, care reminders, and business insights.
+    SAY-OS has its own calendar and bookings, and does not sync with Treatwell or Fresha. Clients can share their Beauty Passport records with you independently; and a booking made in SAY can trigger advisory safety guidance. It brings recorded client information, voice tools, stock management and business insights into one workspace.
   </p>
 
   <div class="compat-grid reveal">
@@ -1223,42 +1232,42 @@ footer {
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div class="compat-text">
         <h4>Client safety profiles</h4>
-        <p>Allergy records, contraindication notes, patch test records. Booking apps don't do this.</p>
+        <p>Allergy, contraindication and patch-test records on every client. For supported treatments booked in SAY, available Safety Profile information can generate advisory guidance for practitioner review. Missing information or no flag is not treatment clearance.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
       <div class="compat-text">
         <h4><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span> control</h4>
-        <p>Book, rebook, take deposits — by voice, while your hands are busy. Booking apps don't do this.</p>
+        <p>Book and rebook by voice, inside the app.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="compat-text">
         <h4>Client care reminders</h4>
-        <p>See when each client's next treatment is due, and reach out at the right moment. Booking apps don't do this.</p>
+        <p>Planned — see when each client's next treatment is due, and reach out at the right moment.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></div>
       <div class="compat-text">
         <h4>Skincare product records</h4>
-        <p>See what products your client uses at home before you apply anything. Booking apps don't do this.</p>
+        <p>See what products your client uses at home before you apply anything.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
       <div class="compat-text">
         <h4>Registered with the ICO</h4>
-        <p>SAY-OS supports structured handling of client information, including health information. Booking apps don't do this.</p>
+        <p>SAY-OS supports structured handling of client information, including health information.</p>
       </div>
     </div>
     <div class="compat-item">
       <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
       <div class="compat-text">
         <h4>Business intelligence</h4>
-        <p>Revenue trends, client retention, actionable advice — not just appointment counts. Booking apps don't do this.</p>
+        <p>Figures calculated from your salon's records, shown separately from AI-generated advice. Realized revenue counts recorded paid payments.</p>
       </div>
     </div>
   </div>
@@ -1300,22 +1309,22 @@ footer {
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
       <div class="feature-title">Voice-First Everything</div>
-      <div class="feature-desc">Book and rebook by voice while your hands are busy — hands-free in the app. No commands to memorise, just talk naturally.</div>
+      <div class="feature-desc">Book and rebook by voice inside the app. Designed to understand natural phrasing, so you can talk in your own words.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
       <div class="feature-title">Smart Calendar & Bookings</div>
-      <div class="feature-desc">Scheduling, deposit collection, and no-show protection. Clients can book in natural language, and you keep full control of your column.</div>
+      <div class="feature-desc">Scheduling and no-show protection. Clients can book in natural language, and you keep full control of your column.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="feature-title">Client Care Reminders</div>
-      <div class="feature-desc">SAY-OS tracks each client's routine cycle — nails every 3 weeks, roots every 5, facials every 6 — so you can send a reminder at exactly the right moment.</div>
+      <div class="feature-desc">Planned — routine-cycle reminders: set each client's cycle (nails every 3 weeks, roots every 5, facials every 6) so you can reach out at the right moment.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
       <div class="feature-title">Stock & Inventory</div>
-      <div class="feature-desc">Supplier directory, low-stock alerts, and reorder tracking — so you never run out of a product mid-service.</div>
+      <div class="feature-desc">Track stock and auto-deduct products at completed checkout, with low-stock alerts. SAY flags what to reorder; you place the order.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -1352,7 +1361,7 @@ footer {
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
       <div class="feature-title">Beauty Passport</div>
-      <div class="feature-desc">Clients store their colour formulas, style preferences, allergies, and service history. Your team sees it all before every appointment. No clipboard, no guessing, no "what did we do last time?"</div>
+      <div class="feature-desc">Clients store their colour formulas, style preferences, allergies, and service history, and choose to share it with your salon before an appointment. No clipboard, no "what did we do last time?"</div>
     </div>
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><polyline points="3 12 7 12 9 6 13 18 15 12 21 12" stroke-width="1.3"/></svg></div>
@@ -1367,13 +1376,13 @@ footer {
     <div class="client-card">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>
       <div class="feature-title">Event Prep Planner</div>
-      <div class="feature-desc">Wedding, holiday, event — automated prep timelines with treatment scheduling. Clients arrive looking their best with zero guesswork on timing.</div>
+      <div class="feature-desc">Wedding, holiday, event — prep timelines with treatment scheduling so clients can plan ahead. Automated timelines are planned.</div>
     </div>
     <div class="client-card full-width">
       <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
       <div>
         <div class="feature-title">Travel Passport</div>
-        <div class="feature-desc">Clients visiting from abroad share their full beauty profile via QR code. Complete history, no intake form, no language barrier — translated into 14 languages, 82 beauty terms. The tourist in your chair is no longer a stranger.</div>
+        <div class="feature-desc">Clients visiting from abroad share their beauty profile via QR code — client-recorded information that supports the consultation, translated to help across languages. The tourist in your chair is no longer a stranger.</div>
       </div>
     </div>
   </div>
@@ -1465,52 +1474,22 @@ footer {
 @media(max-width:760px){.eeat-strip{padding:56px 24px}.eeat-grid{grid-template-columns:1fr;gap:16px}}
 </style>
 
-<!-- SECTION 5: VOICE IN ACTION -->
+<!-- SECTION 5: VOICE -->
 <section class="voice-section">
-  <canvas class="voice-wave-canvas" id="voiceWave" aria-hidden="true"></canvas>
   <div class="voice-inner">
-    <div>
-      <div class="section-label">Voice In Action</div>
-      <h2 class="section-heading" style="margin-bottom:24px">
-        Say it out loud.<br><em>Consider it done.</em>
-      </h2>
-      <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">You've got colour on and your hands can't touch your phone. SAY-OS hears you. Bookings and safety checks, handled while you keep working. The exchanges below are illustrations of how it works.</p>
-      <ul style="list-style:none">
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works via WhatsApp, Siri, or in-app — whatever you already use</li>
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Understands natural language — no commands to memorise</li>
-        <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Client safety profiles to review before treatments — allergies, contraindications, patch tests</li>
-        <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Learns your clients — names, preferences, history, all remembered</li>
-      </ul>
-    </div>
-    <div>
-      <!-- Demo 1: Operations -->
-      <div class="voice-chat reveal" style="margin-bottom:20px">
-        <div style="font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Illustrative example</div>
-        <div class="voice-msg user">
-          <div class="msg-label">You</div>
-          <div class="msg-bubble user-bubble">Book in my 11am client next Friday and send her the deposit request</div>
-        </div>
-        <div class="voice-msg ai">
-          <div class="msg-label">SAY-OS</div>
-          <div class="msg-bubble ai-bubble">Done. Booked: Emma T, Brazilian Blow Dry, Friday 10 Jan, 11am. Deposit request sent — I'll confirm once she pays.</div>
-        </div>
-        <div class="chat-footer">Two tasks · one sentence · hands never left the client</div>
-      </div>
-
-      <!-- Demo 2: Safety -->
-      <div class="voice-chat reveal">
-        <div style="font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:2px;color:var(--gold-accent);margin-bottom:20px;text-transform:uppercase">SAY-OS · Illustrative example</div>
-        <div class="voice-msg user">
-          <div class="msg-label">You</div>
-          <div class="msg-bubble user-bubble">Check if my 3pm has any allergies before her tint</div>
-        </div>
-        <div class="voice-msg ai">
-          <div class="msg-label">SAY-OS</div>
-          <div class="msg-bubble ai-bubble">Sarah K — 3pm Full Tint. <strong style="color:#C8352E">PPD allergy on file</strong> (confirmed patch test, expired 14 Mar). Recommend: new patch test before proceeding, or PPD-free alternative. Her Health Profile also shows she started retinol last month.</div>
-        </div>
-        <div class="chat-footer">Safety information on hand before the client sits down</div>
+    <div class="section-label">Voice</div>
+    <h2 class="section-heading" style="margin-bottom:20px">Voice, within your salon workflow.</h2>
+    <div class="voice-wave" aria-hidden="true">
+      <canvas class="voice-wave-canvas" id="voiceWave"></canvas>
+      <div class="voice-wave-static">
+        <svg viewBox="0 0 440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 Q27.5,11 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.62)" stroke-width="2"/><path d="M0,28 Q27.5,42 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.3)" stroke-width="1.5"/></svg>
       </div>
     </div>
+    <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">SAY includes a voice assistant you can talk to inside the app, in your own words. It is part of your salon workflow, and you stay in control of what happens next.</p>
+    <ul style="list-style:none;max-width:520px">
+      <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works inside the SAY app</li>
+      <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Designed to understand natural phrasing — talk in your own words</li>
+    </ul>
   </div>
 </section>
 
@@ -1519,7 +1498,7 @@ footer {
   <div class="free-inner">
     <div class="free-card reveal">
       <h2>Start free.<br><em>Upgrade when you're ready.</em></h2>
-      <p>Dashboard, calendar, up to 50 clients and 1 team member — free to start. No credit card, no time limit. When you need voice control, safety intelligence, and unlimited clients, move up to Standard.</p>
+      <p>Dashboard, calendar, up to 50 clients and 1 team member — free to start. No credit card, no time limit. When you need voice control, recorded client information to review before treatments, and unlimited clients, move up to Standard.</p>
 
       <div class="free-features">
         <div class="free-feat"><strong>Free:</strong> Dashboard + Calendar + 50 clients + 1 team member</div>
@@ -1538,7 +1517,7 @@ footer {
   <div class="stats-inner">
     <div class="reveal stat-card">
       <div class="stat-val"><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span></div>
-      <div class="stat-label">Work hands-free while you manage</div>
+      <div class="stat-label">Part of your salon workflow</div>
     </div>
     <div class="reveal stat-card">
       <div class="stat-val">14</div>
@@ -1671,7 +1650,7 @@ footer {
 <section class="founder-section">
   <div class="founder-inner reveal">
     <div class="founder-quote">
-      I spent two decades watching the most skilled professionals in the world put products on skin they knew nothing about — no allergy checks, no contraindication tracking, no record of what was used last time. The beauty industry has a safety gap. <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> closes it.
+      After two decades working in beauty, I know how much can change between appointments. A client may start a medication, develop an allergy or have a treatment elsewhere. I'm building <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> to bring relevant client information into the consultation, so practitioners have more context before treatment.
     </div>
     <div class="founder-attr">— Founder, <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> · Two decades in advanced beauty therapy, with a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management</div>
   </div>
@@ -1757,51 +1736,50 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   }
 })();
 
-// Voice wave — particle sound-wave, three phases: silence → speech → understood
+// Voice wave — gentle, decorative undulation in muted gold. Constant and calm:
+// it does NOT react to sound, has no mic, and does not simulate listening.
+// If it cannot initialise (no canvas, zero size, or reduced motion) the static
+// SVG wave remains visible as the fallback — we only hide the static once the
+// canvas is genuinely drawing (adds .is-animating).
 (function () {
   var canvas = document.getElementById('voiceWave');
-  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var ctx = canvas.getContext('2d');
-  var running = false, t = 0;
+  if (!canvas) return;
+  var wave = canvas.parentElement;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ctx = canvas.getContext && canvas.getContext('2d');
+  if (!ctx) return;
+  var running = false, t = 0, sized = false;
 
   function size() {
-    var r = canvas.parentElement.getBoundingClientRect();
+    var r = canvas.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) return false;
     var dpr = window.devicePixelRatio > 1 ? 2 : 1;
-    canvas.width = r.width * dpr;
-    canvas.height = r.height * dpr;
+    canvas.width = Math.round(r.width * dpr);
+    canvas.height = Math.round(r.height * dpr);
+    sized = true;
+    return true;
   }
-  size();
-  window.addEventListener('resize', size);
-
-  // 8s cycle: quiet (0-2.5s) → speech (2.5-5s) → settle + gold pulse (5-7s) → quiet
-  function envelope(s) {
-    if (s < 2.5) return 0.08;
-    if (s < 5)   return 0.08 + 0.92 * Math.sin(((s - 2.5) / 2.5) * Math.PI) *
-                  (0.65 + 0.35 * Math.sin(s * 9.3) * Math.sin(s * 4.1));
-    if (s < 7)   return 0.35 * Math.exp(-(s - 5) * 1.6) + 0.08;
-    return 0.08;
-  }
+  window.addEventListener('resize', function () { sized = false; });
 
   function draw() {
     if (!running) return;
-    t += 1 / 60;
-    var s = t % 8;
-    var env = envelope(s);
+    if (!sized && !size()) { requestAnimationFrame(draw); return; } // keep static until we can size
+    wave.classList.add('is-animating');
+    t += 1 / 100; // slow, calm
+    var dpr = window.devicePixelRatio > 1 ? 2 : 1;
     var W = canvas.width, H = canvas.height, mid = H / 2;
-    var pulse = (s > 5 && s < 5.6) ? (1 - (s - 5) / 0.6) : 0;
     ctx.clearRect(0, 0, W, H);
     for (var strand = 0; strand < 3; strand++) {
-      var N = 160;
+      var N = 140;
       for (var i = 0; i < N; i++) {
         var x = i / (N - 1);
         var taper = Math.sin(x * Math.PI);
         var y = mid
-          + Math.sin(x * 11 + t * 1.1 + strand * 2.1) * 26 * taper
-          + Math.sin(x * 23 - t * 1.7 + strand * 4.2) * H * 0.11 * env * taper
-          + Math.sin(x * 5 + t * 0.4 + strand) * 12 * taper;
-        var a = 0.10 + 0.22 * taper + 0.3 * env * taper + 0.35 * pulse * taper;
+          + Math.sin(x * 7 + t * 0.9 + strand * 2.1) * H * 0.22 * taper
+          + Math.sin(x * 3 + t * 0.5 + strand) * H * 0.12 * taper;
+        var a = 0.16 + 0.42 * taper;
         ctx.fillStyle = 'rgba(201,169,97,' + a.toFixed(3) + ')';
-        var r = (1 + taper * 1.2 + pulse) * (W > 2000 ? 2 : 1);
+        var r = (1.0 + taper * 1.5) * dpr;
         ctx.beginPath();
         ctx.arc(x * W, y, r, 0, 6.2832);
         ctx.fill();
@@ -1810,12 +1788,13 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     requestAnimationFrame(draw);
   }
 
+  size();
   new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       running = e.isIntersecting;
       if (running) requestAnimationFrame(draw);
     });
-  }, { threshold: 0.05 }).observe(canvas);
+  }, { threshold: 0.01 }).observe(canvas);
 })();
 
 // Scroll reveal — sections fade up as they enter the viewport
