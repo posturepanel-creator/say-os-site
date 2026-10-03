@@ -613,27 +613,37 @@ nav {
   overflow: hidden;
 }
 /* Decorative voice wave — sits in-flow beneath the heading, inside the text
-   column. Never positioned behind content. Calm, low-opacity, contained. */
+   column, above the introduction. Never behind content. Muted gold, calm.
+   The static SVG wave is the VISIBLE DEFAULT/fallback; the animated canvas
+   overlays it and hides it only once it is actually drawing (so if the canvas
+   cannot initialise, the static wave stays visible). */
 .voice-wave {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  height: 46px;
-  margin: 2px 0 26px;
+  max-width: 440px;
+  height: 56px;
+  margin: 6px 0 30px;
 }
+.voice-wave-static {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.voice-wave-static svg { display: block; width: 100%; height: 100%; }
 .voice-wave-canvas {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.85;
 }
-.voice-wave-static { display: none; }
-.voice-wave-static svg { display: block; width: 100%; height: 100%; }
-/* prefers-reduced-motion: hide the animated canvas, show a static wave. */
+.voice-wave.is-animating .voice-wave-static { display: none; }
+/* prefers-reduced-motion: no animation — always show the static wave. */
 @media (prefers-reduced-motion: reduce) {
-  .voice-wave-canvas { display: none; }
-  .voice-wave-static { display: block; height: 100%; opacity: 0.5; }
+  .voice-wave-canvas { display: none !important; }
+  .voice-wave-static { display: block !important; }
 }
 .voice-inner {
   max-width: 680px;
@@ -1472,7 +1482,7 @@ footer {
     <div class="voice-wave" aria-hidden="true">
       <canvas class="voice-wave-canvas" id="voiceWave"></canvas>
       <div class="voice-wave-static">
-        <svg viewBox="0 0 420 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,23 Q26,10 52,23 T105,23 T158,23 T210,23 T263,23 T316,23 T368,23 T420,23" fill="none" stroke="rgba(201,169,97,0.4)" stroke-width="1.5"/></svg>
+        <svg viewBox="0 0 440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 Q27.5,11 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.62)" stroke-width="2"/><path d="M0,28 Q27.5,42 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.3)" stroke-width="1.5"/></svg>
       </div>
     </div>
     <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">SAY includes a voice assistant you can talk to inside the app, in your own words. It is part of your salon workflow, and you stay in control of what happens next.</p>
@@ -1726,39 +1736,50 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   }
 })();
 
-// Voice wave — gentle, decorative undulation. Constant and calm: it does NOT
-// react to sound, has no mic, and does not simulate listening/speaking phases.
+// Voice wave — gentle, decorative undulation in muted gold. Constant and calm:
+// it does NOT react to sound, has no mic, and does not simulate listening.
+// If it cannot initialise (no canvas, zero size, or reduced motion) the static
+// SVG wave remains visible as the fallback — we only hide the static once the
+// canvas is genuinely drawing (adds .is-animating).
 (function () {
   var canvas = document.getElementById('voiceWave');
-  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var ctx = canvas.getContext('2d');
-  var running = false, t = 0;
+  if (!canvas) return;
+  var wave = canvas.parentElement;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ctx = canvas.getContext && canvas.getContext('2d');
+  if (!ctx) return;
+  var running = false, t = 0, sized = false;
 
   function size() {
     var r = canvas.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) return false;
     var dpr = window.devicePixelRatio > 1 ? 2 : 1;
-    canvas.width = Math.max(1, Math.round(r.width * dpr));
-    canvas.height = Math.max(1, Math.round(r.height * dpr));
+    canvas.width = Math.round(r.width * dpr);
+    canvas.height = Math.round(r.height * dpr);
+    sized = true;
+    return true;
   }
-  size();
-  window.addEventListener('resize', size);
+  window.addEventListener('resize', function () { sized = false; });
 
   function draw() {
     if (!running) return;
-    t += 1 / 120; // slow, calm — roughly half the previous speed
+    if (!sized && !size()) { requestAnimationFrame(draw); return; } // keep static until we can size
+    wave.classList.add('is-animating');
+    t += 1 / 100; // slow, calm
+    var dpr = window.devicePixelRatio > 1 ? 2 : 1;
     var W = canvas.width, H = canvas.height, mid = H / 2;
     ctx.clearRect(0, 0, W, H);
-    for (var strand = 0; strand < 2; strand++) {
-      var N = 120;
+    for (var strand = 0; strand < 3; strand++) {
+      var N = 140;
       for (var i = 0; i < N; i++) {
         var x = i / (N - 1);
         var taper = Math.sin(x * Math.PI);
         var y = mid
-          + Math.sin(x * 7 + t * 0.9 + strand * 2.1) * H * 0.18 * taper
-          + Math.sin(x * 3 + t * 0.5 + strand) * H * 0.10 * taper;
-        var a = 0.08 + 0.16 * taper;
+          + Math.sin(x * 7 + t * 0.9 + strand * 2.1) * H * 0.22 * taper
+          + Math.sin(x * 3 + t * 0.5 + strand) * H * 0.12 * taper;
+        var a = 0.16 + 0.42 * taper;
         ctx.fillStyle = 'rgba(201,169,97,' + a.toFixed(3) + ')';
-        var r = (0.8 + taper * 0.9) * (W > 1200 ? 2 : 1);
+        var r = (1.0 + taper * 1.5) * dpr;
         ctx.beginPath();
         ctx.arc(x * W, y, r, 0, 6.2832);
         ctx.fill();
@@ -1767,12 +1788,13 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     requestAnimationFrame(draw);
   }
 
+  size();
   new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       running = e.isIntersecting;
       if (running) requestAnimationFrame(draw);
     });
-  }, { threshold: 0.05 }).observe(canvas);
+  }, { threshold: 0.01 }).observe(canvas);
 })();
 
 // Scroll reveal — sections fade up as they enter the viewport
