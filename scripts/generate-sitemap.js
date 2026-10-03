@@ -10,6 +10,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const SITE_URL = "https://say-salon.com";
 const ROOT = path.resolve(__dirname, "..");
@@ -37,6 +38,16 @@ const CORE_PAGES = [
 ];
 
 function getLastmod(filePath) {
+  // Prefer the file's last *git commit* date so a rebuild/redeploy doesn't reset
+  // every page's lastmod to the deploy date (checkout mtime). Preserves each
+  // page's substantive last-changed date; new files get their first-commit date.
+  // Falls back to filesystem mtime, then today, if git history is unavailable.
+  try {
+    const d = execSync('git log -1 --format=%cs -- "' + filePath + '"', {
+      cwd: ROOT, stdio: ["ignore", "pipe", "ignore"],
+    }).toString().trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d)) return d;
+  } catch { /* git unavailable — fall through */ }
   try {
     const stat = fs.statSync(filePath);
     return stat.mtime.toISOString().split("T")[0];
