@@ -1,5 +1,8 @@
 [build]
-  command = "node scripts/render-answers.js && node scripts/generate-sitemap.js"
+  # Deepen history (if shallow) so generate-sitemap can read each file's last
+  # git commit date for lastmod — otherwise a redeploy resets every lastmod to
+  # the deploy date. Harmless (|| true) when the clone is already complete.
+  command = "git fetch --unshallow 2>/dev/null || true; node scripts/render-answers.js && node scripts/generate-sitemap.js"
   publish = "."
 
 [[redirects]]
