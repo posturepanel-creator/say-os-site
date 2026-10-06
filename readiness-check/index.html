@@ -259,6 +259,7 @@ function sayTrack(name, params) {
 var step = 0;
 var answers = new Array(TOTAL_Q).fill(null);
 var startedFired = false;
+var completedFired = false;
 
 function render() {
   var prog = document.getElementById('progress');
@@ -347,9 +348,12 @@ function showResults() {
   document.getElementById('result').classList.add('visible');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  var params = { result_band: band };
-  if (SOURCE) params.source = SOURCE;
-  sayTrack('readiness_check_completed', params);
+  if (!completedFired) {
+    completedFired = true;
+    var params = { result_band: band };
+    if (SOURCE) params.source = SOURCE;
+    sayTrack('readiness_check_completed', params); // engagement, once per completion; no PII
+  }
 
   window.__readinessBand = band;
 }
