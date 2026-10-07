@@ -828,6 +828,7 @@ footer { background: var(--velvet-black); padding: 44px 48px; border-top: 1px so
         <input type="hidden" name="company" value="Self Employed">
 
         <button type="submit" class="form-submit">Join the Talent Waitlist →</button>
+        <div class="form-msg" id="talentFormMsg" role="alert" aria-live="polite" style="display:none;margin-top:10px;font-size:13px;line-height:1.5;color:#E7C9A9;"></div>
         <div class="form-privacy">Free to join · No commitment · Profile live at launch</div>
       </form>
       <div class="form-success" id="talentSuccess">
@@ -895,18 +896,35 @@ document.getElementById('talentForm').addEventListener('submit', async function(
     requested_demo: false
   };
 
+  const msg = document.getElementById('talentFormMsg');
+  if (msg) { msg.style.display = 'none'; msg.textContent = ''; }
+
+  function talentFail(text) {
+    // Preserve all inputs and allow retry — the form stays visible and the button re-enables.
+    btn.disabled = false;
+    btn.textContent = 'Join the Talent Waitlist →';
+    if (msg) { msg.textContent = text; msg.style.display = 'block'; }
+  }
+
   try {
-    await fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
+    const r = await fetch('https://say-os.app.n8n.cloud/webhook/new-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
+    // Show success ONLY after an explicit storage acknowledgement ({saved:true} or
+    // {status:"success"}). HTTP 2xx alone, empty/unparseable, or ambiguous bodies are
+    // treated as failure (inputs preserved, retry allowed); network errors fall to catch.
+    if (!r.ok) throw new Error('bad status');
+    const text = await r.text();
+    let ok = false;
+    if (text) { try { const j = JSON.parse(text); if (j && (j.saved === true || j.status === 'success')) ok = true; } catch (e) {} }
+    if (!ok) throw new Error('not saved');
+    form.style.display = 'none';
+    document.getElementById('talentSuccess').classList.add('visible');
   } catch (err) {
-    console.log('Webhook error', err);
+    talentFail('Sorry — we couldn’t save your request just now. Please try again.');
   }
-
-  form.style.display = 'none';
-  document.getElementById('talentSuccess').classList.add('visible');
 });
 </script>
 

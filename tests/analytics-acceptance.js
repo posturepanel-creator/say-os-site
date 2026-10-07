@@ -44,7 +44,7 @@ async function instrument(context, leadRef){
     const req = route.request(); const url = req.url();
     try {
       if (/\/__ga(\?|$)/.test(url)) { rec.ga.push(url); return route.fulfill({ status:204, body:"" }); }
-      if (/\/webhook\/new-lead/.test(url)) { let body=null; try{ body=req.postData(); }catch(_){}; rec.leads.push({ url, body }); return route.fulfill({ status: leadRef.status, contentType:"application/json", body: leadRef.body }); }
+      if (/\/webhook\/new-lead/.test(url)) { let body=null; try{ body=req.postData(); }catch(_){}; rec.leads.push({ url, body }); if (leadRef.status===0) return route.abort(); return route.fulfill({ status: leadRef.status, contentType:"application/json", body: leadRef.body }); }
       if (/googletagmanager\.com\/gtag\/js/.test(url)) { rec.gaLoader.push(url); return route.fulfill({ status:200, contentType:"application/javascript", body: GTAG_SHIM }); }
       if (/google-analytics\.com|analytics\.google\.com/.test(url)) { rec.collectBlocked.push(url); return route.abort(); }
       if (/posthog\.com/.test(url)) { rec.posthog.push(url); return route.abort(); }
@@ -111,6 +111,24 @@ async function run(){
   };
   const subReadiness = async (page) => { await page.fill('#email-input', TEST_EMAIL); await page.click('#btn-email'); };
   const subAdvanced  = async (page) => { await page.fill('#email-input', TEST_EMAIL); await page.check('#consent-input').catch(()=>{}); await page.click('#btn-followup'); };
+  const fillTalent = async (page) => {
+    await page.fill('input[name="name"]', "QA Tester");
+    await page.fill('input[name="email"]', TEST_EMAIL);
+    await page.selectOption('select[name="job_title"]', { index: 1 });
+    await page.selectOption('select[name="company_size"]', { index: 0 });
+    await page.click('#talentForm .form-submit');
+  };
+  const talentFailAsserts = async (page, label) => {
+    const successVisible = await page.locator('#talentSuccess.visible').count();
+    const formVisible = await page.locator('#talentForm').isVisible().catch(()=>false);
+    const btnEnabled = await page.locator('#talentForm .form-submit').isEnabled().catch(()=>false);
+    const emailKept = await page.inputValue('input[name="email"]').catch(()=>"");
+    const nameKept = await page.inputValue('input[name="name"]').catch(()=>"");
+    const errShown = await page.locator('#talentFormMsg').isVisible().catch(()=>false);
+    check(`talent/${label}: success NOT shown (no unacked success)`, successVisible===0, `vis=${successVisible}`);
+    check(`talent/${label}: inputs preserved + retry allowed`, formVisible && btnEnabled && emailKept===TEST_EMAIL && nameKept==="QA Tester", `form=${formVisible} btn=${btnEnabled} email=${emailKept===TEST_EMAIL} name=${nameKept==="QA Tester"}`);
+    check(`talent/${label}: error message shown`, errShown, `err=${errShown}`);
+  };
 
   // 1. readiness — REJECT
   await scen("readiness/reject", JSON.stringify({status:"success"}), 200, async ({page,rec}) => {
@@ -236,17 +254,35 @@ async function run(){
     check("talent/accept: no app id", !rec.gaLoader.concat(rec.ga).some(u=>u.includes("G-QXYSM1LHV8")), "");
   });
 
-  // 14. talent — repaired lead form reveals success (validates the truncation fix)
-  await scen("talent/form-repair", JSON.stringify({status:"success"}), 200, async ({page,rec}) => {
-    await page.goto(P.talent);
-    await page.fill('input[name="name"]', "QA Tester");
-    await page.fill('input[name="email"]', TEST_EMAIL);
-    await page.selectOption('select[name="job_title"]', { index: 1 });   // required select
-    await page.selectOption('select[name="company_size"]', { index: 0 });
-    await page.click('#talentForm .form-submit');
-    const ok = await waitUntil(async ()=> await page.locator('#talentSuccess.visible').count()>0, 4000);
-    check("talent/form-repair: lead POSTed (mocked)", rec.leads.length>=1, `leads=${rec.leads.length}`);
-    check("talent/form-repair: success panel revealed", ok, `visible=${ok}`);
+  // 14. talent lead form — success ONLY after explicit storage acknowledgement.
+  //     confirmed ({status:"success"} / {saved:true}) -> success shown;
+  //     HTTP 500 / network failure / empty 2xx / ambiguous 2xx -> NO success, inputs preserved, retry allowed.
+  await scen("talent/confirmed status:success", JSON.stringify({status:"success"}), 200, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page);
+    const ok = await waitUntil(async ()=> await page.locator('#talentSuccess.visible').count()>0, 5000);
+    check("talent/confirmed(status:success): lead POSTed (mocked)", rec.leads.length>=1, `leads=${rec.leads.length}`);
+    check("talent/confirmed(status:success): success shown after ack", ok, `visible=${ok}`);
+  });
+  await scen("talent/confirmed saved:true", JSON.stringify({saved:true}), 200, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page);
+    const ok = await waitUntil(async ()=> await page.locator('#talentSuccess.visible').count()>0, 5000);
+    check("talent/confirmed(saved:true): success shown after ack", ok, `visible=${ok}`);
+  });
+  await scen("talent/http500", "err", 500, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page); await waitUntil(()=>rec.leads.length>0,4000); await sleep(600);
+    await talentFailAsserts(page, "http500");
+  });
+  await scen("talent/network-failure", "", 0, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page); await waitUntil(()=>rec.leads.length>0,4000); await sleep(600);
+    await talentFailAsserts(page, "network-failure");
+  });
+  await scen("talent/empty-2xx", "", 200, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page); await waitUntil(()=>rec.leads.length>0,4000); await sleep(600);
+    await talentFailAsserts(page, "empty-2xx");
+  });
+  await scen("talent/ambiguous-2xx", "{}", 200, async ({page,rec}) => {
+    await page.goto(P.talent); await fillTalent(page); await waitUntil(()=>rec.leads.length>0,4000); await sleep(600);
+    await talentFailAsserts(page, "ambiguous-2xx");
   });
 
   await browser.close();
