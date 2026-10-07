@@ -260,6 +260,14 @@ const CLUSTERS = [
     "do-i-need-a-patch-test-for-lash-lift-or-brow-lamination-uk",
     "do-i-need-consent-to-text-appointment-reminders-uk",
   ],
+  // Equality, consent & the right to refuse / adapt a treatment
+  [
+    "can-i-refuse-to-treat-a-client-uk",
+    "can-i-treat-a-client-with-dementia-or-who-cant-consent-uk",
+    "how-do-i-record-client-allergies-and-reactions-safely-uk",
+    "how-long-should-i-keep-client-consultation-records-uk",
+    "do-i-need-consent-to-text-appointment-reminders-uk",
+  ],
   // Therapist-facing: working conditions & professional health.
   // Seeded with one atom; grows as more therapist-facing questions are added.
   [
