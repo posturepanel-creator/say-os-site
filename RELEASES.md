@@ -1,5 +1,22 @@
 # Release Log
 
+## 2026-10-07 — Published: "Can I refuse to treat a client?" (UK)
+
+- **PR:** #8 (`publish/refuse-to-treat`)
+- **Merge commit:** `f640f56` → `master`
+- **Date:** 7 October 2026
+- **Live URL:** https://say-salon.com/blog/can-i-refuse-to-treat-a-client-uk
+
+### What shipped
+- Ops/equality atom, published (`published: 2026-10-07`). Reviewed against authoritative sources over several rounds: Equality Act 2010 scoped to **England, Wales & Scotland** (NI separate); refusal *because of* a protected characteristic is unlawful, but a connected refusal is **not automatically unlawful** — different tests apply (s.15 objective justification; separate **anticipatory** reasonable-adjustments duty). Diagnosis ≠ decision (assess individual risk, consent, access); **presume capacity**. Separate valid-consent bullet; proportionate response to abuse/threats and disability-related behaviour. Policy wording/training/device IFU govern; a GP letter is not a green light.
+- Article carries a **clickable Sources section** (legislation.gov.uk Part 3 / s.15 / s.6+Sch 1, EHRC Code Ch.7, MCA 2005 s.1).
+- Internal links: "equality, consent & refusal" cluster (outbound) + A–Z hub link (inbound).
+
+### Production verification (7 October 2026)
+- Canonical, title, meta description correct; Article JSON-LD with publisher logo, image, `datePublished 2026-10-07`.
+- **GA website ID `G-SWCB3H6QEF`** present; app ID `G-QXYSM1LHV8` absent; previews keep analytics disabled.
+- Five clickable source links, four related links, blog hub link and sitemap entry all live.
+
 ## 2026-10-07 — Published: "How long should I keep client consultation and patch test records? (UK)"
 
 - **PR:** #7 (`publish/consultation-records`)
