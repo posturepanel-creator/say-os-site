@@ -3,7 +3,7 @@ title: "How long after botox can you have microneedling or a facial?"
 slug: microneedling-after-botox
 category: aftercare
 region: UK
-description: "A gentle facial is fine 24h after botox; microneedling, RF, HIFU and microcurrent should wait two weeks while the toxin binds — here's why, per treatment."
+description: "Considering microneedling or a facial after Botox? Review treatment-specific precautions and discuss timing with your treating practitioner."
 drafted: 2026-09-08
 status: published
 published: 2026-09-09

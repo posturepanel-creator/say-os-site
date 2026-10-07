@@ -48,6 +48,10 @@
     } catch (e) { return false; }
   }
   function loadPixel() {
+    // Production-only: never load the production measurement pixel off the
+    // production host, so preview / branch-deploy / local traffic can't reach it.
+    var _h = window.location.hostname;
+    if (_h !== "say-salon.com" && _h !== "www.say-salon.com") return;
     if (pixelExcludedHere()) return; // never load the measurement pixel here
     if (!adsGranted()) return;   // hard gate
     if (window.oaiq) return;     // once
