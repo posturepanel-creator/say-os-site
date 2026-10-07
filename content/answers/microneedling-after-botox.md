@@ -3,6 +3,7 @@ title: "How long after botox can you have microneedling or a facial?"
 slug: microneedling-after-botox
 category: aftercare
 region: UK
+description: "Considering microneedling or a facial after Botox? Review treatment-specific precautions and discuss timing with your treating practitioner."
 drafted: 2026-09-08
 status: published
 published: 2026-09-09

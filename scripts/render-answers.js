@@ -315,8 +315,9 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
     "@type": "Article",
     "headline": ${JSON.stringify(title)},
     "description": ${JSON.stringify(desc)},
+    "image": "${SITE_URL}/blog/assets/say-og-default.jpg",
     "author": { "@type": "Organization", "name": "SAY-OS", "url": "${SITE_URL}" },
-    "publisher": { "@type": "Organization", "name": "SAY-OS", "url": "${SITE_URL}" },
+    "publisher": { "@type": "Organization", "name": "SAY-OS", "url": "${SITE_URL}", "logo": { "@type": "ImageObject", "url": "${SITE_URL}/logo.png" } },
     "datePublished": "${pub}",
     "dateModified": "${pub}",
     "mainEntityOfPage": "${canonical}"
@@ -326,7 +327,7 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
   gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
   gtag('js',new Date());
-  window.sayLoadAnalytics=function(){if(window.__sayGaLoaded)return;window.__sayGaLoaded=true;gtag('consent','update',{analytics_storage:'granted'});gtag('config','G-QXYSM1LHV8');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-QXYSM1LHV8';document.head.appendChild(s);};
+  window.sayLoadAnalytics=function(){if(window.__sayGaLoaded)return;window.__sayGaLoaded=true;gtag('consent','update',{analytics_storage:'granted'});gtag('config','G-SWCB3H6QEF');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SWCB3H6QEF';document.head.appendChild(s);};
   try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
   </script>
   <link rel="stylesheet" href="blog.css">
@@ -437,7 +438,10 @@ function main() {
     const { h1, html } = renderBody(body);
     const title = data.title || h1 || slug;
     const heroH1 = h1 || title;
-    const desc = metaDescription(body) || title;
+    // Description source: explicit frontmatter `description:` wins (lets an atom
+    // fix an awkward auto-truncation), else the first paragraph (~155 chars),
+    // else the title as a last-resort fallback.
+    const desc = (data.description && String(data.description).trim()) || metaDescription(body) || title;
     const categoryLabel = CATEGORY_LABELS[data.category] || "Salon Guidance";
 
     const out = pageHtml({
