@@ -687,13 +687,14 @@ document.getElementById('lead-form').addEventListener('submit', function(event){
     body: JSON.stringify(payload)
   }).then(function(r){
     if (done) return;
-    // Treat a server-confirmed acceptance as the save. If the endpoint returns
-    // a JSON body, honour an explicit {saved:false}; otherwise HTTP 2xx is the
-    // confirmation (matches the site's existing lead webhook contract).
+    // Require an EXPLICIT storage-success acknowledgement — HTTP 2xx alone, or
+    // merely the absence of saved:false, is NOT enough. Accept only an explicit
+    // {saved:true} or {status:"success"}; non-2xx, empty/unparseable, or ambiguous
+    // responses are treated as failure (form preserved, no email_captured fired).
     if (!r.ok) throw new Error('bad status');
     return r.text().then(function(text){
-      var ok = true;
-      if (text){ try { var j = JSON.parse(text); if (j && j.saved === false) ok = false; } catch(e){} }
+      var ok = false;
+      if (text){ try { var j = JSON.parse(text); if (j && (j.saved === true || j.status === 'success')) ok = true; } catch(e){} }
       if (!ok) throw new Error('not saved');
       done = true; clearTimeout(timer);
       captureState = 'saved';

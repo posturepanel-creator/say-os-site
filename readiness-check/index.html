@@ -260,6 +260,7 @@ var step = 0;
 var answers = new Array(TOTAL_Q).fill(null);
 var startedFired = false;
 var completedFired = false;
+var emailCapturedFired = false;
 
 function render() {
   var prog = document.getElementById('progress');
@@ -390,16 +391,22 @@ function submitEmail() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   }).then(function (r) {
-    if (r && r.ok) {
-      msg.textContent = 'Thank you — we’ll send your copy within 48 hours.';
-      msg.className = 'form-msg ok';
-      btn.textContent = 'Requested';
-      var p = { result_band: payload.result_band };
-      if (SOURCE) p.source = SOURCE;
-      sayTrack('email_captured', p);
-    } else {
-      throw new Error('bad status');
-    }
+    if (!r.ok) throw new Error('bad status');
+    return r.text();
+  }).then(function (text) {
+    // Require an EXPLICIT storage-success ack ({saved:true} or {status:"success"}).
+    // HTTP 2xx alone is insufficient; empty/unparseable/ambiguous bodies are failures.
+    var ok = false;
+    if (text) { try { var j = JSON.parse(text); if (j && (j.saved === true || j.status === 'success')) ok = true; } catch (e) {} }
+    if (!ok) throw new Error('not saved');
+    if (emailCapturedFired) return;
+    emailCapturedFired = true;
+    msg.textContent = 'Thank you — we’ll send your copy within 48 hours.';
+    msg.className = 'form-msg ok';
+    btn.textContent = 'Requested';
+    var p = { result_band: payload.result_band };
+    if (SOURCE) p.source = SOURCE;
+    sayTrack('email_captured', p); // lead, once, only after explicit save ack; no PII
   }).catch(function () {
     msg.textContent = 'Sorry — we couldn’t submit that just now. Your result is shown above; please try again later.';
     msg.className = 'form-msg err';
