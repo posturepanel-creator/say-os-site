@@ -1,0 +1,13 @@
+{
+  "name": "say-os-site-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated, hermetic runtime acceptance for consent-gated analytics + lead tracking. Not part of the Netlify build (separate from the root package.json).",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "test": "node analytics-acceptance.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}
