@@ -252,6 +252,14 @@ const CLUSTERS = [
     "how-to-handle-last-minute-cancellations-salon-uk",
     "should-i-charge-booking-deposits",
   ],
+  // Records, retention & data protection (consultation/patch-test records, consent, GDPR)
+  [
+    "how-long-should-i-keep-client-consultation-records-uk",
+    "how-do-i-record-client-allergies-and-reactions-safely-uk",
+    "how-often-patch-test-hair-colour-uk",
+    "do-i-need-a-patch-test-for-lash-lift-or-brow-lamination-uk",
+    "do-i-need-consent-to-text-appointment-reminders-uk",
+  ],
   // Therapist-facing: working conditions & professional health.
   // Seeded with one atom; grows as more therapist-facing questions are added.
   [
