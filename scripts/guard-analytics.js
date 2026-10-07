@@ -5,11 +5,14 @@
  * On non-production Netlify contexts (deploy-preview / branch-deploy) this
  * DISABLES analytics loading and sending in the built HTML — for BOTH known GA4
  * measurement IDs (the website stream and the app stream), regardless of which
- * one a page carries — so preview/branch traffic never reaches the production
- * "SAY-OS Marketing" property. It does NOT substitute a fake ID:
+ * one a page carries — AND for the consent-gated PostHog loader — so preview /
+ * branch traffic never reaches the production "SAY-OS Marketing" property or the
+ * production PostHog project. It does NOT substitute a fake ID:
  *   - each GA library loader URL is neutralised to a no-op data: URI, so gtag.js
- *     never loads and no beacons are sent; and
- *   - the gtag('config', <id>) call is removed, so no direct config/send fires.
+ *     never loads and no beacons are sent;
+ *   - the gtag('config', <id>) call is removed, so no direct config/send fires;
+ *   - the PostHog loader src (/assets/say-posthog.js) is neutralised to a no-op
+ *     data: URI, so PostHog never initialises on preview even if consent is given.
  * With gtag.js absent, any remaining direct gtag('event', …) calls only push to
  * the in-page dataLayer array — no network request.
  *
@@ -33,6 +36,9 @@ for (const id of GA_IDS) {
   REPLACEMENTS.push(["gtag('config','" + id + "')", "void 0 /*analytics-disabled-on-preview*/"]);
   REPLACEMENTS.push(["gtag('config', '" + id + "')", "void 0 /*analytics-disabled-on-preview*/"]);
 }
+// Consent-gated PostHog loader — disable on preview too (it would otherwise send to prod PostHog).
+REPLACEMENTS.push(["'/assets/say-posthog.js'", "'data:text/javascript,/*analytics-disabled-on-preview*/'"]);
+REPLACEMENTS.push(['"/assets/say-posthog.js"', '"data:text/javascript,/*analytics-disabled-on-preview*/"']);
 
 if (!NON_PROD.has(CONTEXT)) {
   console.log(`guard-analytics: CONTEXT="${CONTEXT || "(unset)"}" — production/local, analytics left intact.`);
@@ -64,4 +70,4 @@ function walk(dir) {
 }
 
 walk(ROOT);
-console.log(`guard-analytics: CONTEXT="${CONTEXT}" — GA loading/sending disabled (both IDs) in ${changed}/${scanned} HTML files.`);
+console.log(`guard-analytics: CONTEXT="${CONTEXT}" — GA (both IDs) + PostHog loading/sending disabled in ${changed}/${scanned} HTML files.`);

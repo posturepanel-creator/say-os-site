@@ -18,10 +18,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "name": "SAY-OS Standard Salon Plan",
+      "@type": "SoftwareApplication",
+      "name": "SAY-OS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Android",
       "description": "Voice-first salon operating system with recorded client information for review, consultation records, bookings and reports. Structured handling of client information, including health information.",
-      "brand": { "@type": "Brand", "name": "SAY-OS" },
+      "image": "https://say-salon.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "SAY-OS", "url": "https://say-salon.com" },
       "offers": [
         {
           "@type": "Offer",
@@ -119,6 +122,13 @@ footer{padding:36px 24px;text-align:center;border-top:1px solid var(--line)}
 .footer-links a{font-family:'Outfit',sans-serif;font-size:13px;color:rgba(237,229,212,0.6);text-decoration:none}
 .footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(237,229,212,0.72)}
 </style>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  gtag('js',new Date());
+  window.sayLoadAnalytics=function(){if(window.__sayGaLoaded)return;window.__sayGaLoaded=true;gtag('consent','update',{analytics_storage:'granted'});gtag('config','G-SWCB3H6QEF');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SWCB3H6QEF';document.head.appendChild(s);};
+  try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
+  </script>
   <script defer src="/oaiq.js?v=20260930"></script>
   <link rel="stylesheet" href="/responsive.css">
 </head>

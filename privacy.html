@@ -34,6 +34,13 @@
     .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--meta); font-size: 12px; text-align: center; }
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Outfit:wght@400;500&display=swap');
   </style>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  gtag('js',new Date());
+  window.sayLoadAnalytics=function(){if(window.__sayGaLoaded)return;window.__sayGaLoaded=true;gtag('consent','update',{analytics_storage:'granted'});gtag('config','G-SWCB3H6QEF');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SWCB3H6QEF';document.head.appendChild(s);};
+  try{if(localStorage.getItem('say_consent_analytics')==='granted'){window.sayLoadAnalytics();}}catch(e){}
+  </script>
   <!-- PostHog: consent-gated via sayLoadAnalytics (loads /assets/say-posthog.js) -->
   <script>
   (function(){
