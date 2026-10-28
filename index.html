@@ -190,27 +190,37 @@ nav {
 .hero h1 {
   position: relative;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 6.5vw, 80px);
+  /* Line 1 — Cormorant 300, ~34px desktop, champagne */
+  font-size: clamp(22px, 2.6vw, 34px);
   font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -1px;
+  color: var(--alabaster);
+  line-height: 1.14;
+  letter-spacing: -0.5px;
+  text-wrap: balance; /* no orphan words when it wraps on small screens */
   margin-bottom: 28px;
   animation: fadeUp 0.5s ease forwards 0.2s;
 }
 .hero h1 strong {
-  font-weight: 700;
+  /* Line 2 — Cormorant 600 italic, ~56px desktop, gold. vw-capped so each
+     line stays on ONE line at >=1200px and scales down below that. */
   display: block;
-  color: var(--gold-brushed); /* flat gold — no gradient, locked rule */
+  margin-top: 10px;
+  font-weight: 600;
   font-style: italic;
+  font-size: clamp(28px, 3.9vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  color: var(--gold-brushed); /* flat gold — no gradient, locked rule */
+  text-wrap: balance;
 }
 .hero-sub {
   position: relative;
-  font-size: 17px;
+  font-size: 18px;
   color: rgba(237,229,212,0.6);
-  max-width: 560px;
+  max-width: 60ch;
   margin: 0 auto 48px;
-  font-weight: 300;
-  line-height: 1.9;
+  font-weight: 400;
+  line-height: 1.75;
   animation: fadeUp 0.5s ease forwards 0.3s;
 }
 .hero-actions {
@@ -1253,7 +1263,7 @@ footer {
 
   <div class="hero-eyebrow">Voice &middot; Marketing &middot; Business insights</div>
 
-  <h1>Empty slots, late cancellations, admin after hours.<br><strong>One workspace that remembers everything for you.</strong></h1>
+  <h1>Empty slots, late cancellations, admin after hours.<strong>One workspace that remembers everything for you.</strong></h1>
 
   <p class="hero-sub">
     Manage bookings by voice. Create campaigns and captions inside SAY-OS. Get AI business advice informed by your recorded figures. Your calendar, clients, team, stock and rental spaces &mdash; connected in one workspace.
