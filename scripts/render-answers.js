@@ -349,6 +349,8 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
   <link rel="stylesheet" href="blog.css">
   <link rel="stylesheet" href="/responsive.css">
   <script defer src="/oaiq.js?v=20260930"></script>
+  <!-- Google Preferred Sources button library -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 
@@ -363,6 +365,10 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
 </header>
 
 <article class="blog-article">
+
+  <div class="preferred-source">
+    <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
+  </div>
 
   ${articleHtml}
 ${relatedHtml}
