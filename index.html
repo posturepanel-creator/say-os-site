@@ -1190,11 +1190,13 @@ footer {
 .hp-grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .hp-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
 .hp-cards.three{grid-template-columns:repeat(3,1fr)}
-.hp-cards.four{grid-template-columns:repeat(2,1fr)}
+.hp-cards.four{grid-template-columns:repeat(4,1fr)}
 .hp-card{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.12);border-radius:14px;padding:24px}
 .hp-card h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
 .hp-card p{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.62;color:#C7BBA3;margin:0}
 .hp-card .soon{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-accent);margin-bottom:10px}
+.hp-ico{width:46px;height:46px;border-radius:50%;background:var(--velvet-light);border:1px solid rgba(201,169,97,0.18);display:flex;align-items:center;justify-content:center;color:var(--gold-brushed);margin-bottom:14px}
+.hp-ico svg{width:22px;height:22px}
 .hp-panel{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.14);border-radius:16px;padding:26px}
 .hp-panel .ptag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-accent);margin-bottom:18px}
 .hp-bubble{font-family:'Outfit',sans-serif;font-size:15px;line-height:1.55;border-radius:14px;padding:12px 16px;margin-bottom:12px;max-width:85%}
@@ -1348,10 +1350,22 @@ footer {
     <div class="hp-eyebrow">Daily operations</div>
     <h2 class="hp-h2">More than appointments.<br>Your business, <em>connected.</em></h2>
     <div class="hp-cards four">
-      <div class="hp-card"><h3>Calendar &amp; team rota</h3><p>Manage appointments, availability and your team&rsquo;s working schedule.</p></div>
-      <div class="hp-card"><h3>Rental spaces</h3><p>Manage the spaces you rent out alongside your salon operations.</p></div>
-      <div class="hp-card"><h3>Stockroom</h3><p>Track products and supplies, deduct stock at completed checkout and see low-stock alerts.</p></div>
-      <div class="hp-card"><h3>Client records</h3><p>Keep visit history and consultation information together, with client-reliability insights and deposit advisories for higher-risk bookings.</p></div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></div>
+        <h3>Calendar &amp; team rota</h3><p>Appointments, availability and your team&rsquo;s working schedule.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.562Z"/></svg></div>
+        <h3>Rental spaces</h3><p>The spaces you rent out, managed alongside your salon.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
+        <h3>Stockroom</h3><p>Stock deducted at checkout, with low-stock alerts.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Client records</h3><p>Visit history, consultation notes and client-reliability insights.</p>
+      </div>
     </div>
   </div>
 </section>
