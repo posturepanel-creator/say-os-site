@@ -1244,9 +1244,13 @@ footer .container {
 .hp-center{text-align:center}
 .hp-center .hp-h2,.hp-center .hp-faq-q,.hp-center .hp-lead{max-width:72ch;margin-left:auto;margin-right:auto}
 .hp-center .hp-quote{max-width:60ch;margin-left:auto;margin-right:auto}
-.hp-values .vrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:16px 26px}
-.hp-values .vrow .v{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#D4C5A9}
-.hp-values .vrow .vdiv{width:1px;height:15px;background:rgba(201,169,97,0.45)}
+.hp-values{padding:112px 0;position:relative;overflow:hidden}
+.hp-values::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 32% 42%,rgba(201,169,97,0.07),transparent 62%),radial-gradient(ellipse 50% 55% at 74% 64%,rgba(201,169,97,0.05),transparent 60%),linear-gradient(118deg,rgba(201,169,97,0.03),transparent 42%)}
+.hp-values .container{position:relative}
+.hp-values-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3vw,36px);color:#EDE5D4;text-align:center;margin:0 0 40px}
+.hp-values .vrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0}
+.hp-values .vrow .v{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;letter-spacing:0;text-transform:none;color:#EDE5D4}
+.hp-values .vrow .vdiv{width:1px;height:40px;margin:0 40px;background:var(--gold-brushed);opacity:0.55}
 /* Feature sections: eyebrow+heading+intro left, panel right; points row beneath both columns; qualification line below. */
 .feat-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .feat-points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
@@ -1260,7 +1264,10 @@ footer .container {
   .feat-points,.feat-points.two{grid-template-columns:1fr;gap:24px}
   .hp-cards,.hp-cards.three,.hp-cards.four,.hp-plans{grid-template-columns:1fr}
   .hp-section{padding:64px 0}
-  .hp-values .vrow .vdiv{display:none}
+  .hp-values{padding:72px 0}
+  .hp-values .vrow{flex-direction:column;gap:0}
+  .hp-values .vrow .v{padding:16px 0}
+  .hp-values .vrow .vdiv{width:48px;height:1px;margin:0}
 }
 </style>
 
@@ -1457,8 +1464,9 @@ footer .container {
 </section>
 
 <!-- VALUES -->
-<section class="hp-section hp-values">
+<section class="hp-section hp-values hp-center">
   <div class="container reveal">
+    <h2 class="hp-values-title">Our values</h2>
     <div class="vrow">
       <span class="v">Client safety</span>
       <span class="vdiv" aria-hidden="true"></span>
