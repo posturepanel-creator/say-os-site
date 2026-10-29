@@ -798,8 +798,8 @@ nav {
 
 /* ─── OFFER + FORM ─── */
 .offer-section {
-  padding: 64px 48px;
-  max-width: 1100px;
+  padding: 96px 24px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .offer-card {
@@ -1028,8 +1028,10 @@ nav {
 /* ─── FOOTER ─── */
 footer {
   background: var(--velvet-black);
-  padding: 48px;
+  padding: 48px 0;
   border-top: 1px solid rgba(237,229,212,0.06);
+}
+footer .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1188,14 +1190,14 @@ footer {
 
 <style>
 /* ── Unified homepage (v2) layout — scoped .hp-* ── */
-.hp-section{max-width:1140px;margin:0 auto;padding:50px 24px}
-.hp-section.alt{max-width:none;background:var(--velvet-black)}
-.hp-section.alt > .hp-inner{max-width:1140px;margin:0 auto}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.hp-section{padding:96px 0}
+.hp-section.alt{background:var(--velvet-black)}
 .hp-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-brushed);margin-bottom:16px}
-.hp-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,3.8vw,44px);line-height:1.12;color:var(--alabaster);margin:0 0 18px}
+.hp-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,3.8vw,44px);line-height:1.12;color:var(--alabaster);margin:0 0 24px}
 .hp-h2 em{font-style:italic;color:var(--gold-brushed)}
-.hp-lead{font-family:'Outfit',sans-serif;font-weight:300;font-size:18px;line-height:1.75;color:#D4C5A9;max-width:620px;margin:0 0 20px}
-.hp-body{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.7;color:#C7BBA3;max-width:620px;margin:0 0 14px}
+.hp-lead{font-family:'Outfit',sans-serif;font-weight:300;font-size:18px;line-height:1.75;color:#D4C5A9;max-width:62ch;margin:0 0 20px}
+.hp-body{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.7;color:#C7BBA3;max-width:62ch;margin:0 0 14px}
 .hp-grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .hp-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
 .hp-cards.three{grid-template-columns:repeat(3,1fr)}
@@ -1215,7 +1217,7 @@ footer {
 .hp-row:last-child{border-bottom:0}
 .hp-row .k{color:var(--text-muted)}
 .hp-row .v{color:var(--alabaster);font-weight:500}
-.hp-note{font-family:'Outfit',sans-serif;font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:18px;max-width:640px}
+.hp-note{font-family:'Outfit',sans-serif;font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:18px}
 .hp-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 .hp-btn{display:inline-block;padding:15px 30px;border-radius:12px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.5px;text-decoration:none;transition:all .2s ease}
 .hp-btn.primary{background:var(--gold-brushed);color:#0F2818}
@@ -1241,13 +1243,13 @@ footer {
 .hp-faq-q{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3vw,32px);color:var(--alabaster);margin:0 0 14px}
 .hp-center{text-align:center}
 .hp-center .hp-lead{margin-left:auto;margin-right:auto}
-.hp-values .vrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 26px}
+.hp-values .vrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:16px 26px}
 .hp-values .vrow .v{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#D4C5A9}
 .hp-values .vrow .vdiv{width:1px;height:15px;background:rgba(201,169,97,0.45)}
 @media(max-width:820px){
   .hp-grid2{grid-template-columns:1fr;gap:30px}
   .hp-cards,.hp-cards.three,.hp-cards.four,.hp-plans{grid-template-columns:1fr}
-  .hp-section{padding:36px 20px}
+  .hp-section{padding:64px 0}
   .hp-values .vrow .vdiv{display:none}
 }
 </style>
@@ -1261,6 +1263,7 @@ footer {
     <source src="/assets/face-mesh-bg.mp4" type="video/mp4">
   </video>
 
+  <div class="container">
   <div class="hero-eyebrow">Voice &middot; Marketing &middot; Business insights</div>
 
   <h1>Empty slots, late cancellations, admin after hours.<strong>One workspace that remembers everything for you.</strong></h1>
@@ -1277,11 +1280,12 @@ footer {
   <div style="margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto;font-size:13px;line-height:1.6;color:rgba(237,229,212,0.72);">
     Free business plan: 25 clients &middot; 50 bookings per month &middot; 1 team member. No credit card. No time limit.
   </div>
+  </div>
 </section>
 
 <!-- THESIS -->
-<section class="hp-section hp-center">
-  <div class="reveal">
+<section class="hp-section">
+  <div class="container reveal">
     <h2 class="hp-h2">A booking is not a <em>treatment.</em></h2>
     <p class="hp-lead">SAY-OS gives salons bookings, records, stock, marketing and insights in one place, with a voice assistant for hands-free booking. Paired with the Beauty Passport, clients carry one portable record of allergies, medications, treatments and aftercare &mdash; so the professional knows what matters before treatment, and the client knows what matters after.</p>
   </div>
@@ -1289,7 +1293,7 @@ footer {
 
 <!-- 2. VOICE -->
 <section class="hp-section">
-  <div class="hp-grid2 reveal">
+  <div class="container hp-grid2 reveal">
     <div>
       <div class="hp-eyebrow">Voice</div>
       <h2 class="hp-h2">Your salon workflow.<br>Made simpler <em>by voice.</em></h2>
@@ -1311,7 +1315,7 @@ footer {
 
 <!-- 3. MARKETING -->
 <section class="hp-section alt">
-  <div class="hp-inner hp-grid2 reveal">
+  <div class="container hp-grid2 reveal">
     <div class="hp-panel">
       <div class="ptag">Example &middot; generated caption</div>
       <p style="font-family:'Outfit',sans-serif;font-size:15px;line-height:1.65;color:#D4C5A9;margin:0 0 14px;">Mid-week colour refresh? Our chairs are open Thursday and Friday. Book in for a gloss and a trim before the weekend &mdash; your roots will thank you.</p>
@@ -1332,7 +1336,7 @@ footer {
 
 <!-- 4. AI BUSINESS ADVICE -->
 <section class="hp-section">
-  <div class="hp-grid2 reveal">
+  <div class="container hp-grid2 reveal">
     <div>
       <div class="hp-eyebrow">AI business advice</div>
       <h2 class="hp-h2">Advice that starts with <em>your figures.</em></h2>
@@ -1357,7 +1361,7 @@ footer {
 
 <!-- 5. DAILY OPERATIONS -->
 <section class="hp-section alt">
-  <div class="hp-inner reveal">
+  <div class="container reveal">
     <div class="hp-eyebrow">Daily operations</div>
     <h2 class="hp-h2">More than appointments.<br>Your business, <em>connected.</em></h2>
     <div class="hp-cards four">
@@ -1383,7 +1387,7 @@ footer {
 
 <!-- 6. BEAUTY PASSPORT -->
 <section class="hp-section">
-  <div class="hp-grid2 reveal">
+  <div class="container hp-grid2 reveal">
     <div>
       <div class="hp-eyebrow">Beauty Passport</div>
       <h2 class="hp-h2">Your next appointment.<br>With more of the <em>picture.</em></h2>
@@ -1408,7 +1412,7 @@ footer {
 
 <!-- 7. ECOSYSTEM -->
 <section class="hp-section alt">
-  <div class="hp-inner reveal">
+  <div class="container reveal">
     <div class="hp-eyebrow">Ecosystem</div>
     <h2 class="hp-h2">One record. <em>Two sides.</em></h2>
     <div class="hp-cards four">
@@ -1433,8 +1437,8 @@ footer {
 </section>
 
 <!-- VALUES -->
-<section class="hp-section hp-values hp-center">
-  <div class="reveal">
+<section class="hp-section hp-values">
+  <div class="container reveal">
     <div class="vrow">
       <span class="v">Client safety</span>
       <span class="vdiv" aria-hidden="true"></span>
@@ -1449,7 +1453,7 @@ footer {
 
 <!-- 8. PRICING -->
 <section class="hp-section">
-  <div class="reveal">
+  <div class="container reveal">
     <div class="hp-eyebrow">Pricing</div>
     <h2 class="hp-h2">Try it with your own <em>working day.</em></h2>
     <p class="hp-lead">Start with your calendar. Add your clients. Create your first booking.</p>
@@ -1548,7 +1552,7 @@ footer {
 
 <!-- 9. FOUNDER & COMPANY -->
 <section class="hp-section alt">
-  <div class="hp-inner reveal">
+  <div class="container reveal">
     <div class="hp-eyebrow">Founder &amp; company</div>
     <h2 class="hp-h2">Built from experience in <em>the treatment room.</em></h2>
     <p class="hp-quote">&ldquo;Running a salon means moving constantly between clients, bookings, stock and business decisions. I&rsquo;m building SAY-OS to bring those tasks together &mdash; and give practitioners more context before treatment.&rdquo;</p>
@@ -1559,7 +1563,7 @@ footer {
 
 <!-- 10. COMPATIBILITY FAQ -->
 <section class="hp-section">
-  <div class="reveal">
+  <div class="container reveal">
     <div class="hp-eyebrow">Compatibility</div>
     <p class="hp-faq-q">Can I use SAY-OS alongside another booking system?</p>
     <p class="hp-lead">Yes. SAY-OS has its own calendar and bookings. It can be used alongside another system, but it does not sync with Treatwell or Fresha.</p>
@@ -1568,7 +1572,7 @@ footer {
 
 <!-- 11. CLIENT INVITATION -->
 <section class="hp-section alt">
-  <div class="hp-inner hp-center reveal">
+  <div class="container hp-center reveal">
     <div class="hp-eyebrow">Not a salon owner?</div>
     <h2 class="hp-h2">Your beauty. <em>Remembered.</em></h2>
     <p class="hp-lead">Keep your beauty history, routines and safety information in your free Beauty Passport. Choose which categories to share before your next appointment.</p>
@@ -1577,7 +1581,8 @@ footer {
 </section>
 
 <!-- FROM THE BLOG (SEO internal links) -->
-<section style="padding:60px 24px;border-top:1px solid rgba(253,251,247,0.06);max-width:1140px;margin:0 auto;">
+<section class="hp-section" style="border-top:1px solid rgba(253,251,247,0.06);">
+  <div class="container">
   <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fdfbf7;margin-bottom:24px;">Guides for salon owners and clients</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
@@ -1587,10 +1592,12 @@ footer {
     <a href="/blog/beauty-passport-app" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;"><p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Product</p><p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Why you need a Beauty Passport</p></a>
   </div>
   <p style="text-align:center;margin-top:20px;"><a href="/blog/" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#c1a368;text-decoration:underline;text-underline-offset:3px;">View all guides &rarr;</a></p>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <div class="container">
   <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
   <div class="footer-links">
     <a href="/pricing">Pricing</a>
@@ -1604,6 +1611,7 @@ footer {
   </div>
   <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
   <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  </div>
 </footer>
 
 <script>
