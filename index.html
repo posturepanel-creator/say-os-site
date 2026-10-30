@@ -1029,6 +1029,8 @@ footer {
   padding: 48px 0;
   border-top: 1px solid rgba(237,229,212,0.06);
 }
+/* While the cookie banner is visible, clear space under the footer so nothing (incl. the ElevenLabs badge) sits beneath it. */
+body.consent-open footer { padding-bottom: calc(var(--consent-h, 300px) + 16px); }
 footer .container {
   display: flex;
   align-items: center;
@@ -1817,13 +1819,24 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     var KEY = 'say_consent_analytics';
     var stored = null;
     try { stored = localStorage.getItem(KEY); } catch (e) {}
+    var banner = document.getElementById('say-consent-banner');
+    function syncHeight() {
+      if (banner && document.body.classList.contains('consent-open')) {
+        document.body.style.setProperty('--consent-h', banner.offsetHeight + 'px');
+      }
+    }
     if (stored !== 'granted' && stored !== 'denied') {
-      document.getElementById('say-consent-banner').style.display = 'block';
+      banner.style.display = 'block';
+      document.body.classList.add('consent-open');
+      syncHeight();
+      window.addEventListener('resize', syncHeight);
+      window.addEventListener('orientationchange', syncHeight);
     }
     window.sayConsentChoose = function (choice) {
       try { localStorage.setItem(KEY, choice); } catch (e) {}
       if (choice === 'granted' && window.sayLoadAnalytics) window.sayLoadAnalytics();
-      document.getElementById('say-consent-banner').style.display = 'none';
+      banner.style.display = 'none';
+      document.body.classList.remove('consent-open');
     };
   })();
 </script>
