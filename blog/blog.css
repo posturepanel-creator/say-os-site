@@ -124,6 +124,20 @@ body {
   margin: 0 auto;
   padding: 2rem 2rem 4rem;
 }
+/* Google Preferred Sources — official "Add as a preferred source" button.
+   Centered under the headline; the Google library replaces the inner element
+   with its own rendered button. If the button does not render (e.g. the
+   domain is not yet eligible) the container is empty and collapses, so there
+   is no stray box on desktop or mobile. */
+.preferred-source {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  max-width: 720px;
+}
+.preferred-source > [google-add-preferred-source-btn] {
+  max-width: 100%;
+}
 .blog-article p {
   margin-bottom: 1.5rem;
 }

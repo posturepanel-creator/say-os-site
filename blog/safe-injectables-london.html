@@ -81,6 +81,20 @@
   </style>
   <link rel="stylesheet" href="/responsive.css">
   <script defer src="/oaiq.js?v=20260930"></script>
+  <!-- Google Preferred Sources button library — consent-gated via say_consent_analytics -->
+  <script>
+  (function(){
+    var _orig = window.sayLoadAnalytics;
+    window.sayLoadAnalytics = function(){
+      if (typeof _orig === "function") _orig();
+      if (window.__sayPrefSrcLoaded) return; window.__sayPrefSrcLoaded = true;
+      var s = document.createElement("script");
+      s.async = true; s.src = "https://news.google.com/swg/js/v1/publisher.js";
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
+  })();
+  </script>
 </head>
 <body>
 
@@ -117,6 +131,11 @@
 </script>
 
 <article class="blog-article">
+
+  <div class="preferred-source">
+    <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
+  </div>
+
   <p>Somewhere in London right now, a woman is sitting in a clinic chair asking a practitioner to dissolve the filler in her lips. The practitioner's first question is the one that matters: <em>"What product was used?"</em> And she doesn't know. It was two years ago, at a different clinic, booked through Instagram. The clinic has since closed. If it was a hyaluronic acid filler, it can be dissolved in minutes. If it was something else, it can't — and the practitioner is now guessing at what's inside her face.</p>
 
   <p>This happens every day, and it's the part of injectables safety nobody talks about. Everyone tells you to "do your research" before the needle. Almost nobody tells you that your safety <em>after</em> the appointment depends on a record most people never receive.</p>

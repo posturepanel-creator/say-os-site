@@ -349,6 +349,20 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
   <link rel="stylesheet" href="blog.css">
   <link rel="stylesheet" href="/responsive.css">
   <script defer src="/oaiq.js?v=20260930"></script>
+  <!-- Google Preferred Sources button library — consent-gated via say_consent_analytics -->
+  <script>
+  (function(){
+    var _orig = window.sayLoadAnalytics;
+    window.sayLoadAnalytics = function(){
+      if (typeof _orig === "function") _orig();
+      if (window.__sayPrefSrcLoaded) return; window.__sayPrefSrcLoaded = true;
+      var s = document.createElement("script");
+      s.async = true; s.src = "https://news.google.com/swg/js/v1/publisher.js";
+      document.head.appendChild(s);
+    };
+    try { if (localStorage.getItem('say_consent_analytics') === 'granted') window.sayLoadAnalytics(); } catch(e){}
+  })();
+  </script>
 </head>
 <body>
 
@@ -363,6 +377,10 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
 </header>
 
 <article class="blog-article">
+
+  <div class="preferred-source">
+    <div google-add-preferred-source-btn data-theme="dark" data-lang="en"></div>
+  </div>
 
   ${articleHtml}
 ${relatedHtml}
