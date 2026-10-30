@@ -1252,16 +1252,18 @@ footer .container {
 .hp-values .vrow .v{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;letter-spacing:0;text-transform:none;color:#EDE5D4}
 .hp-values .vrow .vdiv{width:1px;height:40px;margin:0 40px;background:var(--gold-brushed);opacity:0.55}
 /* Feature sections: eyebrow+heading+intro left, panel right; points row beneath both columns; qualification line below. */
-.feat-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.feat-points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
-.feat-points.two{grid-template-columns:repeat(2,1fr)}
+.feat-top{display:grid;grid-template-columns:1fr 1fr;column-gap:64px;row-gap:24px;align-items:start;grid-template-areas:"lead panel" "rest panel"}
+.feat-lead{grid-area:lead}
+.feat-lead .hp-lead{margin-bottom:0}
+.feat-top > .hp-panel{grid-area:panel;align-self:start}
+.feat-rest{grid-area:rest}
+.feat-points{display:flex;flex-direction:column;gap:24px}
 .feat-points .pt h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
 .feat-points .pt p{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.6;color:#C7BBA3;margin:0}
-.feat-qual{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.65;color:#D4C5A9;margin-top:36px}
+.feat-qual{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.65;color:#D4C5A9;margin-top:24px}
 @media(max-width:820px){
   .hp-grid2{grid-template-columns:1fr;gap:30px}
-  .feat-top{grid-template-columns:1fr;gap:30px}
-  .feat-points,.feat-points.two{grid-template-columns:1fr;gap:24px}
+  .feat-top{grid-template-columns:1fr;grid-template-areas:"lead" "panel" "rest";row-gap:24px}
   .hp-cards,.hp-cards.three,.hp-cards.four,.hp-plans{grid-template-columns:1fr}
   .hp-section{padding:56px 0}
   .hp-values{padding:72px 0}
@@ -1312,7 +1314,7 @@ footer .container {
 <section class="hp-section">
   <div class="container reveal">
     <div class="feat-top">
-      <div>
+      <div class="feat-lead">
         <div class="hp-eyebrow">Voice</div>
         <h2 class="hp-h2">Your salon workflow.<br>Made simpler <em>by voice.</em></h2>
         <p class="hp-lead">Talk to SAY-OS inside the app, in your own words. You stay in control of what happens next.</p>
@@ -1324,10 +1326,12 @@ footer .container {
         <div class="hp-bubble you">&ldquo;Yes, go ahead.&rdquo;</div>
         <div class="hp-bubble os">&ldquo;Booked. Chloe &mdash; Thursday, 2:00 PM.&rdquo;</div>
       </div>
-    </div>
-    <div class="feat-points two">
-      <div class="pt"><h3>Create a booking</h3><p>Tell SAY-OS what you need, in plain language.</p></div>
-      <div class="pt"><h3>Check availability</h3><p>Ask about a slot without searching through the calendar.</p></div>
+      <div class="feat-rest">
+        <div class="feat-points">
+          <div class="pt"><h3>Create a booking</h3><p>Tell SAY-OS what you need, in plain language.</p></div>
+          <div class="pt"><h3>Check availability</h3><p>Ask about a slot without searching through the calendar.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1336,7 +1340,7 @@ footer .container {
 <section class="hp-section alt">
   <div class="container reveal">
     <div class="feat-top">
-      <div>
+      <div class="feat-lead">
         <div class="hp-eyebrow">Marketing</div>
         <h2 class="hp-h2">From an idea to a campaign.<br>Inside your <em>salon workspace.</em></h2>
         <p class="hp-lead">Create campaigns and generate captions without starting from a blank page. Marketing tools are part of the Standard plan.</p>
@@ -1348,12 +1352,14 @@ footer .container {
         <div class="hp-row"><span class="k">Tone</span><span class="v">Warm &middot; concise</span></div>
         <div class="hp-row"><span class="k">Status</span><span class="v">Draft &mdash; you review before publishing</span></div>
       </div>
+      <div class="feat-rest">
+        <div class="feat-points">
+          <div class="pt"><p>Connect your salon&rsquo;s own Instagram professional account to publish posts, reply to comments and see reach &mdash; you review everything before it goes out. Clients in your area can opt in to offers from salons near them, the first step towards local campaigns.</p></div>
+          <div class="pt"><p>See which clients may be due another visit from their recorded visit history. A client who has just had a wax needs a different message from someone due back in three weeks.</p></div>
+        </div>
+        <p class="feat-qual">You decide what to offer and when. Automated one-tap outreach and routine-cycle reminder sending are coming soon.</p>
+      </div>
     </div>
-    <div class="feat-points two">
-      <div class="pt"><p>Connect your salon&rsquo;s own Instagram professional account to publish posts, reply to comments and see reach &mdash; you review everything before it goes out. Clients in your area can opt in to offers from salons near them, the first step towards local campaigns.</p></div>
-      <div class="pt"><p>See which clients may be due another visit from their recorded visit history. A client who has just had a wax needs a different message from someone due back in three weeks.</p></div>
-    </div>
-    <p class="feat-qual">You decide what to offer and when. Automated one-tap outreach and routine-cycle reminder sending are coming soon.</p>
   </div>
 </section>
 
@@ -1361,7 +1367,7 @@ footer .container {
 <section class="hp-section">
   <div class="container reveal">
     <div class="feat-top">
-      <div>
+      <div class="feat-lead">
         <div class="hp-eyebrow">AI business advice</div>
         <h2 class="hp-h2">Advice that starts with <em>your figures.</em></h2>
         <p class="hp-lead">What deserves your attention next &mdash; rebooking, inactive clients, stock or revenue? SAY-OS brings your recorded figures into its recommendations, helping you decide where to focus.</p>
@@ -1374,13 +1380,15 @@ footer .container {
         <div class="hp-row"><span class="k">Low-stock items</span><span class="v">3</span></div>
         <div class="hp-bubble os" style="margin-top:16px;max-width:100%;">Suggested focus: 11 clients are due back this month &mdash; a good week to plan your outreach.</div>
       </div>
+      <div class="feat-rest">
+        <div class="feat-points">
+          <div class="pt"><h3>Know what was paid</h3><p>Recorded revenue reflects payments marked as paid.</p></div>
+          <div class="pt"><h3>Understand repeat visits</h3><p>Review returning-client and rebooking figures.</p></div>
+          <div class="pt"><h3>Find your next action</h3><p>Consider suggestions informed by your booking, client, payment and stock records.</p></div>
+        </div>
+        <p class="feat-qual">Calculated figures and AI recommendations are shown separately. Their usefulness depends on how complete and accurate your records are.</p>
+      </div>
     </div>
-    <div class="feat-points">
-      <div class="pt"><h3>Know what was paid</h3><p>Recorded revenue reflects payments marked as paid.</p></div>
-      <div class="pt"><h3>Understand repeat visits</h3><p>Review returning-client and rebooking figures.</p></div>
-      <div class="pt"><h3>Find your next action</h3><p>Consider suggestions informed by your booking, client, payment and stock records.</p></div>
-    </div>
-    <p class="feat-qual">Calculated figures and AI recommendations are shown separately. Their usefulness depends on how complete and accurate your records are.</p>
   </div>
 </section>
 
@@ -1414,7 +1422,7 @@ footer .container {
 <section class="hp-section">
   <div class="container reveal">
     <div class="feat-top">
-      <div>
+      <div class="feat-lead">
         <div class="hp-eyebrow">Beauty Passport</div>
         <h2 class="hp-h2">Your next appointment.<br>With more of the <em>picture.</em></h2>
         <p class="hp-lead">A returning client can bring something new: a skincare routine, a medication, an allergy or a treatment at another clinic. Their Beauty Passport gives them a place to maintain that information and choose which categories to share before an appointment. And your clients book straight into your calendar &mdash; no more phone calls, texts or DMs.</p>
@@ -1427,13 +1435,15 @@ footer .container {
         <div class="hp-row"><span class="k">Home skincare</span><span class="v">Shared</span></div>
         <div class="hp-row"><span class="k">Link</span><span class="v">Expires in 90 days &middot; revocable</span></div>
       </div>
+      <div class="feat-rest">
+        <div class="feat-points">
+          <div class="pt"><h3>Beauty history</h3><p>Recorded treatments, colour formulas and preferences.</p></div>
+          <div class="pt"><h3>Health and safety information</h3><p>Client-reported allergies, medications, conditions and patch-test information.</p></div>
+          <div class="pt"><h3>Home skincare</h3><p>Products and ingredients that may be relevant to the next treatment.</p></div>
+        </div>
+        <p class="feat-qual">Sharing is client-controlled, with category choices and revocable links. Practitioners review shared information and confirm relevant changes during the consultation. For supported treatments booked in SAY-OS, available Safety Profile information can prompt advisory guidance &mdash; missing information or no flag is not treatment clearance.</p>
+      </div>
     </div>
-    <div class="feat-points">
-      <div class="pt"><h3>Beauty history</h3><p>Recorded treatments, colour formulas and preferences.</p></div>
-      <div class="pt"><h3>Health and safety information</h3><p>Client-reported allergies, medications, conditions and patch-test information.</p></div>
-      <div class="pt"><h3>Home skincare</h3><p>Products and ingredients that may be relevant to the next treatment.</p></div>
-    </div>
-    <p class="feat-qual">Sharing is client-controlled, with category choices and revocable links. Practitioners review shared information and confirm relevant changes during the consultation. For supported treatments booked in SAY-OS, available Safety Profile information can prompt advisory guidance &mdash; missing information or no flag is not treatment clearance.</p>
   </div>
 </section>
 
