@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salon Software That Remembers Every Client | SAY-OS</title>
-<meta name="description" content="The salon system that tracks allergies, patch tests and contraindications before every treatment — plus bookings, calendar and client records. Start free.">
+<title>SAY-OS — One workspace that remembers everything for you</title>
+<meta name="description" content="Manage bookings by voice. Create campaigns and captions inside SAY-OS. Get AI business advice informed by your recorded figures.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SAY-OS">
-<meta property="og:title" content="Salon Software That Remembers Every Client | SAY-OS">
-<meta property="og:description" content="One platform for bookings, client safety, consultation records, and business insight. Voice-first. Start free.">
+<meta property="og:title" content="SAY-OS — One workspace that remembers everything for you">
+<meta property="og:description" content="Manage bookings by voice. Create campaigns and captions inside SAY-OS. Get AI business advice informed by your recorded figures.">
 <meta property="og:url" content="https://say-salon.com/">
-<meta property="og:image" content="https://say-salon.com/og-image.png">
+<meta property="og:image" content="https://say-salon.com/og-business.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://say-salon.com/og-business.png">
 <link rel="canonical" href="https://say-salon.com/">
 <!-- Consent Mode v2 — GA4 loads only after user consent (UK GDPR/PECR) -->
 <script>
@@ -53,7 +56,6 @@
   --gold-accent: rgba(201,169,97,0.65); /* --text-eyebrow */
   --gold-deep: rgba(201,169,97,0.5);
   --alabaster: #EDE5D4;      /* --text-heading champagne */
-  --pearl: #ffffff;
   --text-main: #1a1a1a;
   --text-muted: #96A097;     /* --text-meta */
   --shadow-premium: 0 50px 100px -20px rgba(15,40,24,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
@@ -131,9 +133,9 @@ nav {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,77,54,0.4), transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,46,32,0.3), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(6,26,18,0.4), transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,77,54,0.22), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,46,32,0.16), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(6,26,18,0.22), transparent 60%);
 }
 .hero-orb {
   position: absolute;
@@ -142,7 +144,7 @@ nav {
   transform: translateX(-50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(201,169,97,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,169,97,0.02) 0%, transparent 70%);
   pointer-events: none;
 }
 /* ─── AMBIENT FACE MESH (gold wireframe, blends into velvet black) ─── */
@@ -152,7 +154,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: min(760px, 96vw);
-  opacity: 0.5;
+  opacity: 0.18;
   pointer-events: none;
   mix-blend-mode: screen; /* black video bg vanishes — only gold light composites onto velvet */
   -webkit-mask-image: radial-gradient(ellipse 58% 55% at 50% 45%, #000 35%, transparent 74%);
@@ -191,27 +193,37 @@ nav {
 .hero h1 {
   position: relative;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 6.5vw, 80px);
+  /* Line 1 — Cormorant 300, ~34px desktop, champagne */
+  font-size: clamp(22px, 2.6vw, 34px);
   font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -1px;
+  color: var(--alabaster);
+  line-height: 1.14;
+  letter-spacing: -0.5px;
+  text-wrap: balance; /* no orphan words when it wraps on small screens */
   margin-bottom: 28px;
   animation: fadeUp 0.5s ease forwards 0.2s;
 }
 .hero h1 strong {
-  font-weight: 700;
+  /* Line 2 — Cormorant 600 italic, ~56px desktop, gold. vw-capped so each
+     line stays on ONE line at >=1200px and scales down below that. */
   display: block;
-  color: var(--gold-brushed); /* flat gold — no gradient, locked rule */
+  margin-top: 10px;
+  font-weight: 600;
   font-style: italic;
+  font-size: clamp(28px, 3.9vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  color: var(--gold-brushed); /* flat gold — no gradient, locked rule */
+  text-wrap: balance;
 }
 .hero-sub {
   position: relative;
-  font-size: 17px;
+  font-size: 18px;
   color: rgba(237,229,212,0.6);
-  max-width: 560px;
+  max-width: 60ch;
   margin: 0 auto 48px;
-  font-weight: 300;
-  line-height: 1.9;
+  font-weight: 400;
+  line-height: 1.75;
   animation: fadeUp 0.5s ease forwards 0.3s;
 }
 .hero-actions {
@@ -789,9 +801,7 @@ nav {
 
 /* ─── OFFER + FORM ─── */
 .offer-section {
-  padding: 100px 48px;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 88px 0;
 }
 .offer-card {
   background: var(--velvet-deep);
@@ -810,7 +820,7 @@ nav {
   position: absolute;
   top: -100px; right: -100px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(201,169,97,0.05), transparent 70%);
+  background: radial-gradient(circle, rgba(201,169,97,0.03), transparent 70%);
   pointer-events: none;
 }
 .offer-tag {
@@ -1019,8 +1029,12 @@ nav {
 /* ─── FOOTER ─── */
 footer {
   background: var(--velvet-black);
-  padding: 48px;
+  padding: 48px 0;
   border-top: 1px solid rgba(237,229,212,0.06);
+}
+/* While the cookie banner is visible, clear space under the footer so nothing (incl. the ElevenLabs badge) sits beneath it. */
+body.consent-open footer { padding-bottom: calc(var(--consent-h, 300px) + 16px); }
+footer .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1075,7 +1089,9 @@ footer {
   .free-features { flex-direction: column; gap: 12px; }
   .compat-section, .features-section, .offer-section, .voice-section, .client-section { padding: 60px 24px; }
   .segments-section, .founder-section, .insurance-section, .free-section { padding: 60px 24px; }
-  footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  footer { padding: 32px 0 72px; }
+  footer .container { flex-direction: column; align-items: flex-start; }
+  .footer-links { flex-wrap: wrap; gap: 14px 20px; }
   .trust-strip { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 </style>
@@ -1088,7 +1104,8 @@ footer {
       "name": "SAY-OS",
       "legalName": "Servicesforyou Ltd",
       "url": "https://say-salon.com",
-      "logo": "https://say-salon.com/og-image.png",
+      "logo": "https://say-salon.com/logo.png",
+      "image": "https://say-salon.com/og-business.png",
       "description": "Voice-first salon and wellness management platform. The app that remembers everything about your beauty routine.",
       "foundingDate": "2025",
       "address": {
@@ -1177,7 +1194,95 @@ footer {
   <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
 </nav>
 
-<!-- HERO -->
+<style>
+/* ── Unified homepage (v2) layout — scoped .hp-* ── */
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.hp-section{padding:88px 0}
+.hp-section.alt{background:var(--velvet-black)}
+.hp-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-brushed);margin-bottom:16px}
+.hp-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1.12;color:var(--alabaster);margin:0 0 24px;text-wrap:balance}
+.hp-h2 em{font-style:italic;color:var(--gold-brushed)}
+.hp-lead{font-family:'Outfit',sans-serif;font-weight:300;font-size:18px;line-height:1.65;color:#D4C5A9;margin:0 0 20px}
+.hp-body{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.7;color:#C7BBA3;margin:0 0 14px}
+.hp-grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.hp-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+.hp-cards.three{grid-template-columns:repeat(3,1fr)}
+.hp-cards.four{grid-template-columns:repeat(4,1fr)}
+.hp-card{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.12);border-radius:14px;padding:24px}
+.hp-card h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
+.hp-card p{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.62;color:#C7BBA3;margin:0}
+.hp-card .soon{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-accent);margin-bottom:10px}
+.hp-ico{width:46px;height:46px;border-radius:50%;background:var(--velvet-light);border:1px solid rgba(201,169,97,0.18);display:flex;align-items:center;justify-content:center;color:var(--gold-brushed);margin-bottom:14px}
+.hp-ico svg{width:22px;height:22px}
+.hp-panel{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.14);border-radius:16px;padding:32px}
+.hp-panel .ptag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-accent);margin-bottom:18px}
+.hp-bubble{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.55;border-radius:14px;padding:12px 16px;margin-bottom:12px;max-width:85%}
+.hp-bubble.you{background:rgba(201,169,97,0.12);color:var(--alabaster);margin-left:auto;border-bottom-right-radius:4px}
+.hp-bubble.os{background:rgba(253,251,247,0.05);color:#D4C5A9;border-bottom-left-radius:4px}
+.hp-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(237,229,212,0.06);font-family:'Outfit',sans-serif;font-size:14px}
+.hp-row:last-child{border-bottom:0}
+.hp-row .k{color:var(--text-muted)}
+.hp-row .v{color:var(--alabaster);font-weight:500}
+.hp-note{font-family:'Outfit',sans-serif;font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:18px}
+.hp-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hp-btn{display:inline-block;padding:15px 30px;border-radius:12px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.5px;text-decoration:none;transition:all .2s ease}
+.hp-btn.primary{background:var(--gold-brushed);color:#0F2818}
+.hp-btn.primary:hover{background:#D9BD7A}
+.hp-btn.ghost{background:transparent;color:var(--alabaster);border:1px solid rgba(201,169,97,0.30)}
+.hp-btn.ghost:hover{border-color:var(--gold-brushed)}
+.hp-mini{margin-top:22px}
+.hp-mini .mi{margin-bottom:14px}
+.hp-mini .mi strong{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;color:var(--alabaster);margin-bottom:2px}
+.hp-mini .mi span{font-family:'Outfit',sans-serif;font-weight:300;font-size:14px;line-height:1.55;color:#C7BBA3}
+.hp-plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.hp-plan{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.12);border-radius:16px;padding:28px;display:flex;flex-direction:column}
+.hp-plan.feat{border-color:rgba(201,169,97,0.4)}
+.hp-plan .pn{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:12px;color:var(--gold-brushed);margin-bottom:8px}
+.hp-plan .pp{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--alabaster);margin-bottom:10px}
+.hp-plan p{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.6;color:#C7BBA3;margin:0 0 22px}
+.hp-plan .hp-btn{margin-top:auto;align-self:flex-start}
+.hp-compare{display:inline-block;margin-top:22px;font-family:'Outfit',sans-serif;font-size:14px;letter-spacing:0.5px;color:var(--gold-brushed);text-decoration:underline;text-underline-offset:3px}
+.hp-founding{margin-top:30px;background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.18);border-radius:16px;padding:28px}
+.hp-founding h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--alabaster);margin:0 0 10px}
+.hp-founding p{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.65;color:#C7BBA3;margin:0 0 8px}
+.hp-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.5;color:var(--alabaster);max-width:60ch;margin:0 0 20px}
+.hp-attr{font-family:'Outfit',sans-serif;font-size:14px;letter-spacing:0.5px;color:var(--gold-brushed)}
+.hp-company{font-family:'Outfit',sans-serif;font-size:13px;color:var(--text-muted);margin-top:14px}
+.hp-faq-q{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3vw,32px);color:var(--alabaster);margin:0 0 14px;text-wrap:balance}
+.hp-center{text-align:center}
+.hp-center .hp-h2,.hp-center .hp-faq-q,.hp-center .hp-lead{max-width:72ch;margin-left:auto;margin-right:auto}
+.hp-center .hp-quote{max-width:60ch;margin-left:auto;margin-right:auto}
+.hp-values{padding:112px 0;position:relative}
+.hp-values::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 32% 42%,rgba(201,169,97,0.07),transparent 62%),radial-gradient(ellipse 50% 55% at 74% 64%,rgba(201,169,97,0.05),transparent 60%),linear-gradient(118deg,rgba(201,169,97,0.03),transparent 42%)}
+.hp-values .container{position:relative}
+.hp-values-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3vw,36px);color:var(--gold-brushed);text-align:center;margin:0 0 40px}
+.hp-values .vrow{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:0}
+.hp-values .vrow .v{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;letter-spacing:0;text-transform:none;color:#EDE5D4;white-space:nowrap;padding:0 28px}
+.hp-values .vrow .vdiv{width:1px;height:40px;background:var(--gold-brushed);opacity:0.55}
+/* Feature sections: eyebrow+heading+intro left, panel right; points row beneath both columns; qualification line below. */
+.feat-top{display:grid;grid-template-columns:1fr 1fr;column-gap:64px;align-items:start}
+.feat-points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px;align-items:start}
+.feat-points.two{grid-template-columns:repeat(2,1fr)}
+.feat-points.stack{display:flex;flex-direction:column;gap:24px;margin-top:24px}
+.feat-points .pt h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
+.feat-points .pt p{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.6;color:#C7BBA3;margin:0}
+.feat-qual{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.65;color:#D4C5A9;margin-top:24px}
+@media(max-width:820px){
+  .hp-grid2{grid-template-columns:1fr;gap:30px}
+  .feat-top{grid-template-columns:1fr;gap:30px}
+  .feat-points,.feat-points.two{grid-template-columns:1fr;gap:24px}
+  .hp-cards,.hp-cards.three,.hp-cards.four,.hp-plans{grid-template-columns:1fr}
+  .hp-section{padding:56px 0}
+  .hp-values{padding:72px 0}
+}
+@media(max-width:1023px){
+  .hp-values .vrow{flex-direction:column;flex-wrap:nowrap}
+  .hp-values .vrow .v{padding:16px 0;white-space:normal}
+  .hp-values .vrow .vdiv{width:48px;height:1px}
+}
+</style>
+
+<!-- 1. HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-orb"></div>
@@ -1186,376 +1291,255 @@ footer {
     <source src="/assets/face-mesh-bg.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-eyebrow">Founding Member Access <span style="white-space:nowrap">&mdash; 20 Spots</span></div>
+  <div class="container">
+  <div class="hero-eyebrow">Voice &middot; Marketing &middot; Business insights</div>
 
-  <h1>
-    One platform.<br>Everything your salon
-    <strong>needs.</strong>
-  </h1>
+  <h1>Empty slots, late cancellations, admin after hours.<strong>One workspace that remembers everything for you.</strong></h1>
 
   <p class="hero-sub">
-    Bookings, client records and business tools in one workspace, voice-first. SAY-OS has its own calendar and bookings.
+    Manage bookings by voice. Create campaigns and captions inside SAY-OS. Get AI business advice informed by your recorded figures. Your calendar, clients, team, stock, rental spaces and hiring &mdash; connected in one workspace.
   </p>
 
   <div class="hero-actions">
-    <a href="#join" class="btn-primary">Claim Your Founding Spot</a>
-    <a href="https://app.say-salon.com/register" class="btn-ghost">I'm a client — start free →</a>
+    <a href="https://app.say-salon.com/register" class="btn-primary">Start free</a>
+    <a href="https://app.say-salon.com/register" class="btn-ghost">Create your free Beauty Passport &rarr;</a>
   </div>
 
-  <div style="margin-top:14px;font-size:13px;color:rgba(237,229,212,0.72);">
-    <a href="https://play.google.com/store/apps/details?id=com.sayos.app" rel="noopener" style="color:var(--gold-brushed);text-decoration:underline;text-underline-offset:3px;">Get SAY: Beauty Passport on Google Play</a> &middot; iPhone coming soon
-  </div>
-
-  <div class="spots-badge">
-    <div class="spots-dot"></div>
-    Founding member list open — limited spots remaining
-  </div>
-
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- SECTION 1: WORKS WITH WHAT YOU HAVE -->
-<section class="compat-section" id="how">
-  <div class="section-label">Bookings, client records and business tools in one workspace</div>
-  <h2 class="section-heading" style="margin-bottom:20px">
-    Bookings, client records and business tools,<br>in one <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> <em>workspace.</em>
-  </h2>
-
-  <p class="compat-intro">
-    SAY-OS has its own calendar and bookings, and does not sync with Treatwell or Fresha. Clients can share their Beauty Passport records with you independently; and a booking made in SAY can trigger advisory safety guidance. It brings recorded client information, voice tools, stock management and business insights into one workspace.
-  </p>
-
-  <div class="compat-grid reveal">
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="compat-text">
-        <h4>Client safety profiles</h4>
-        <p>Allergy, contraindication and patch-test records on every client. For supported treatments booked in SAY, available Safety Profile information can generate advisory guidance for practitioner review. Missing information or no flag is not treatment clearance.</p>
-      </div>
-    </div>
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-      <div class="compat-text">
-        <h4><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span> control</h4>
-        <p>Book and rebook by voice, inside the app.</p>
-      </div>
-    </div>
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <div class="compat-text">
-        <h4>Client care reminders</h4>
-        <p>Planned — see when each client's next treatment is due, and reach out at the right moment.</p>
-      </div>
-    </div>
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></div>
-      <div class="compat-text">
-        <h4>Skincare product records</h4>
-        <p>See what products your client uses at home before you apply anything.</p>
-      </div>
-    </div>
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
-      <div class="compat-text">
-        <h4>Registered with the ICO</h4>
-        <p>SAY-OS supports structured handling of client information, including health information.</p>
-      </div>
-    </div>
-    <div class="compat-item">
-      <div class="compat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
-      <div class="compat-text">
-        <h4>Business intelligence</h4>
-        <p>Figures calculated from your salon's records, shown separately from AI-generated advice. Realized revenue counts recorded paid payments.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="compat-note reveal">
-    Already on Treatwell? Keep it. Using Fresha? Fine. When you're ready for a full switch, SAY-OS handles bookings too — but that's your choice, not a requirement.
-  </div>
-</section>
-
-<!-- SEGMENTS -->
-<section class="segments-section">
-  <div class="segments-inner">
-    <div class="section-label">Who This Is For</div>
-    <h2 class="section-heading reveal">
-      If your hands are always at work,<br>this was built <em>for you.</em>
-    </h2>
-    <div class="segments-row reveal">
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span> Hairdressers</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg></span> Beauty Therapists</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg></span> Nail Technicians</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span> Barbers</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span> Mobile Massage</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span> Lash &amp; Brow</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/></svg></span> Salon Owners</div>
-      <div class="seg-pill"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span> Aesthetics Clinics</div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 2: THE PLATFORM -->
-<section class="features-section" id="platform">
-  <div class="features-inner">
-  <div class="section-label">The Platform</div>
-  <h2 class="section-heading reveal">
-    Your entire business.<br>One system. <em><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span>.</em>
-  </h2>
-
-  <div class="features-grid reveal">
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-      <div class="feature-title">Voice-First Everything</div>
-      <div class="feature-desc">Book and rebook by voice inside the app. Designed to understand natural phrasing, so you can talk in your own words.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <div class="feature-title">Smart Calendar & Bookings</div>
-      <div class="feature-desc">Scheduling and no-show protection. Clients can book in natural language, and you keep full control of your column.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <div class="feature-title">Client Care Reminders</div>
-      <div class="feature-desc">Planned — routine-cycle reminders: set each client's cycle (nails every 3 weeks, roots every 5, facials every 6) so you can reach out at the right moment.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-      <div class="feature-title">Stock & Inventory</div>
-      <div class="feature-desc">Track stock and auto-deduct products at completed checkout, with low-stock alerts. SAY flags what to reorder; you place the order.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="feature-title">Talent Marketplace <span style="font-size:11px;color:var(--gold-accent);letter-spacing:1px;text-transform:uppercase;vertical-align:middle">· Coming soon</span></div>
-      <div class="feature-desc">Coming soon: hire verified professionals directly — one flat fee per confirmed hire, no agency percentage, no monthly subscription.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
-      <div class="feature-title">Business Intelligence</div>
-      <div class="feature-desc">Revenue, costs, trends, and retention rates from your real numbers — so you can see what's working at a glance.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="feature-title">Safety Records</div>
-      <div class="feature-desc">Contraindication records, patch test records, medication records. Registered with the ICO. SAY-OS supports structured handling of client information, including health information.</div>
-    </div>
+  <div style="margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto;font-size:13px;line-height:1.6;color:rgba(237,229,212,0.72);">
+    Free business plan: 25 clients &middot; 50 bookings per month &middot; 1 team member. No credit card. No time limit.
   </div>
   </div>
 </section>
 
-<!-- SECTION 3: THE CLIENT APP -->
-<section class="client-section" id="client-app">
-  <div class="client-inner">
-  <div class="section-label">The Client App — Your Secret Weapon</div>
-  <h2 class="section-heading reveal">
-    Your clients do the admin <em>for you.</em>
-  </h2>
-
-  <p class="client-intro reveal">
-    SAY-OS includes a free client app that connects directly to your salon system. Clients fill in their profile once — you benefit every visit. Every Beauty Passport entry gives you better data. Each Health Profile and Skincare Routine entry gives the professional more context for their own judgement.
-  </p>
-
-  <div class="client-grid reveal">
-    <div class="client-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-      <div class="feature-title">Beauty Passport</div>
-      <div class="feature-desc">Clients store their colour formulas, style preferences, allergies, and service history, and choose to share it with your salon before an appointment. No clipboard, no "what did we do last time?"</div>
-    </div>
-    <div class="client-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><polyline points="3 12 7 12 9 6 13 18 15 12 21 12" stroke-width="1.3"/></svg></div>
-      <div class="feature-title">Health Profile</div>
-      <div class="feature-desc">Skin type, conditions, contraindications, patch tests — all entered by the client, ready for you to review before the client sits in the chair.</div>
-    </div>
-    <div class="client-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
-      <div class="feature-title">Skincare Routine Tracker</div>
-      <div class="feature-desc">Clients log their home products and ingredients, so you can review recent retinoid or acid use before you apply anything.</div>
-    </div>
-    <div class="client-card">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>
-      <div class="feature-title">Event Prep Planner</div>
-      <div class="feature-desc">Wedding, holiday, event — prep timelines with treatment scheduling so clients can plan ahead. Automated timelines are planned.</div>
-    </div>
-    <div class="client-card full-width">
-      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <div>
-        <div class="feature-title">Travel Passport</div>
-        <div class="feature-desc">Clients visiting from abroad share their beauty profile via QR code — client-recorded information that supports the consultation, translated to help across languages. The tourist in your chair is no longer a stranger.</div>
-      </div>
-    </div>
-  </div>
+<!-- THESIS -->
+<section class="hp-section hp-center">
+  <div class="container reveal">
+    <h2 class="hp-h2">A booking is not a <em>treatment.</em></h2>
+    <p class="hp-lead">SAY-OS gives salons bookings, records, stock, marketing and insights in one place, with a voice assistant for hands-free booking. Paired with the Beauty Passport, clients carry one portable record of allergies, medications, treatments and aftercare &mdash; so the professional knows what matters before treatment, and the client knows what matters after.</p>
   </div>
 </section>
 
-<!-- SECTION 4: THE INSURANCE ANGLE -->
-<section class="insurance-section">
-  <div class="insurance-inner reveal">
-    <div class="section-label" style="justify-content:center">Protection Built In</div>
-    <h2>
-      <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> doesn't just run your business.<br><em>It protects it.</em>
-    </h2>
-
-    <div class="insurance-points">
-      <div class="ins-point">
-        <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h4>Timestamped</h4>
-        <p>Every consultation recorded with date, time, and practitioner.</p>
+<!-- 2. VOICE -->
+<section class="hp-section">
+  <div class="container reveal">
+    <div class="feat-top">
+      <div class="feat-lead">
+        <div class="hp-eyebrow">Voice</div>
+        <h2 class="hp-h2">Your salon workflow.<br>Made simpler <em>by voice.</em></h2>
+        <p class="hp-lead">Talk to SAY-OS inside the app, in your own words. You stay in control of what happens next.</p>
+        <div class="feat-points stack">
+          <div class="pt"><h3>Create a booking</h3><p>Tell SAY-OS what you need, in plain language.</p></div>
+          <div class="pt"><h3>Check availability</h3><p>Ask about a slot without searching through the calendar.</p></div>
+        </div>
       </div>
-      <div class="ins-point">
-        <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <h4>Recorded</h4>
-        <p>Every contraindication and home product a client enters is kept on their record.</p>
+      <div class="hp-panel">
+        <div class="ptag">Example &middot; voice booking</div>
+        <div class="hp-bubble you">&ldquo;Book Chloe in for a cut and finish on Thursday at two.&rdquo;</div>
+        <div class="hp-bubble os">&ldquo;Thursday at 2:00 PM is free with you. Shall I book Chloe for a cut and finish?&rdquo;</div>
+        <div class="hp-bubble you">&ldquo;Yes, go ahead.&rdquo;</div>
+        <div class="hp-bubble os">&ldquo;Booked. Chloe &mdash; Thursday, 2:00 PM.&rdquo;</div>
       </div>
-      <div class="ins-point">
-        <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-        <h4>Documented</h4>
-        <p>Complete audit trail. If something goes wrong, you have the records.</p>
-      </div>
-    </div>
-
-    <p class="insurance-note">
-      Documented records can help you maintain a clear, timestamped account of the information collected and the checks recorded. SAY-OS is a trading name of SERVICESFORYOU LTD, registered with the ICO under reference ZC121398.
-    </p>
-  </div>
-</section>
-
-<!-- TRUST / CREDENTIALS STRIP — verifiable EEAT signals (wired 2026-07-02, thursday-trust)
-     ICO register + Companies House. Founder-credentials card added 2026-07-13
-     (thursday-trust): wording matches the founder-attr claim already live on this
-     page since launch — no new claim introduced.
-     Tokens v2.1. No emojis, no #FFFFFF, no #C8352E. Lucide inline SVG. -->
-<section class="eeat-strip" aria-label="Credentials and compliance">
-  <div class="eeat-inner">
-    <p class="eeat-eyebrow">Verified &amp; registered</p>
-    <div class="eeat-grid">
-
-      <div class="eeat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-        </svg>
-        <h4>ICO registered</h4>
-        <p>SAY-OS is a trading name of SERVICESFORYOU LTD, registered with the ICO under reference
-          <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank">ZC121398</a>,
-          verifiable on the public ICO register.</p>
-      </div>
-
-      <div class="eeat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/>
-        </svg>
-        <h4>UK registered company</h4>
-        <p>Operated by Servicesforyou Ltd, incorporated and filed at Companies House. A UK legal entity, not an offshore app.</p>
-      </div>
-
-      <div class="eeat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-        </svg>
-        <h4>Built on clinical credentials</h4>
-        <p>Founded on two decades in advanced beauty therapy, a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<style>
-.eeat-strip{padding:72px 48px;background:var(--velvet-black,#0F2818);border-top:1px solid rgba(201,169,97,0.12)}
-.eeat-inner{max-width:1040px;margin:0 auto;text-align:center}
-.eeat-eyebrow{font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A961;margin-bottom:40px}
-.eeat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1040px;margin:0 auto}
-.eeat-item{background:#183222;border:1px solid rgba(201,169,97,0.10);border-radius:14px;padding:32px 24px;text-align:left;transition:background .2s ease}
-.eeat-item:hover{background:#1E3828}
-.eeat-item svg{width:28px;height:28px;margin-bottom:16px}
-.eeat-item h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#EDE5D4;margin:0 0 8px}
-.eeat-item p{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;line-height:1.65;color:#D4C5A9;margin:0}
-.eeat-item a{color:#C9A961;text-decoration:underline;text-underline-offset:2px}
-@media(max-width:760px){.eeat-strip{padding:56px 24px}.eeat-grid{grid-template-columns:1fr;gap:16px}}
-</style>
-
-<!-- SECTION 5: VOICE -->
-<section class="voice-section">
-  <div class="voice-inner">
-    <div class="section-label">Voice</div>
-    <h2 class="section-heading" style="margin-bottom:20px">Voice, within your salon workflow.</h2>
-    <div class="voice-wave" aria-hidden="true">
-      <canvas class="voice-wave-canvas" id="voiceWave"></canvas>
-      <div class="voice-wave-static">
-        <svg viewBox="0 0 440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 Q27.5,11 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.62)" stroke-width="2"/><path d="M0,28 Q27.5,42 55,28 T110,28 T165,28 T220,28 T275,28 T330,28 T385,28 T440,28" fill="none" stroke="rgba(201,169,97,0.3)" stroke-width="1.5"/></svg>
-      </div>
-    </div>
-    <p style="font-size:15px;color:rgba(237,229,212,0.72);line-height:1.9;margin-bottom:28px">SAY includes a voice assistant you can talk to inside the app, in your own words. It is part of your salon workflow, and you stay in control of what happens next.</p>
-    <ul style="list-style:none;max-width:520px">
-      <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.05);font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Works inside the SAY app</li>
-      <li style="display:flex;gap:12px;padding:10px 0;font-size:14px;color:rgba(237,229,212,0.6)"><span style="color:var(--gold-accent);font-family:'Outfit',sans-serif;font-size:12px;margin-top:1px;flex-shrink:0">→</span> Designed to understand natural phrasing — talk in your own words</li>
-    </ul>
-  </div>
-</section>
-
-<!-- SECTION 6: FREE TIER -->
-<section class="free-section">
-  <div class="free-inner">
-    <div class="free-card reveal">
-      <h2>Start free.<br><em>Upgrade when you're ready.</em></h2>
-      <p>Dashboard, calendar, up to 50 clients and 1 team member — free to start. No credit card, no time limit. When you need voice control, recorded client information to review before treatments, and unlimited clients, move up to Standard.</p>
-
-      <div class="free-features">
-        <div class="free-feat"><strong>Free:</strong> Dashboard + Calendar + 50 clients + 1 team member</div>
-        <div class="free-feat"><strong>Standard:</strong> £79/mo — full platform, unlimited clients</div>
-        <div class="free-feat" style="opacity:0.75"><strong>Founding:</strong> £234 every 6 months, billed upfront (£39/mo) — renews at the same price while your subscription stays active. First 20 salons.</div>
-      </div>
-
-      <a href="https://app.say-salon.com/register" class="btn-primary" style="margin-top:8px">Start Free →</a>
-      <p style="margin-top:14px;font-size:13px"><a href="/pricing" style="color:var(--gold-accent);text-decoration:underline;text-underline-offset:3px">See full pricing →</a></p>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="reveal stat-card">
-      <div class="stat-val"><span class="wm-lock" role="img" aria-label="Voice-first">Voice<span class="wm-bar" aria-hidden="true"></span>first</span></div>
-      <div class="stat-label">Part of your salon workflow</div>
+<!-- 3. MARKETING -->
+<section class="hp-section alt">
+  <div class="container reveal">
+    <div class="feat-top">
+      <div class="feat-lead">
+        <div class="hp-eyebrow">Marketing</div>
+        <h2 class="hp-h2">From an idea to a campaign.<br>Inside your <em>salon workspace.</em></h2>
+        <p class="hp-lead">Create campaigns and generate captions without starting from a blank page. Marketing tools are part of the Standard plan.</p>
+        <p class="feat-qual">You decide what to offer and when. Automated one-tap outreach and routine-cycle reminder sending are coming soon.</p>
+      </div>
+      <div class="hp-panel">
+        <div class="ptag">Example &middot; generated caption</div>
+        <p style="font-family:'Outfit',sans-serif;font-size:16px;line-height:1.65;color:#D4C5A9;margin:0 0 14px;">Mid-week colour refresh? Our chairs are open Thursday and Friday. Book in for a gloss and a trim before the weekend &mdash; your roots will thank you.</p>
+        <div class="hp-row"><span class="k">Channel</span><span class="v">Instagram</span></div>
+        <div class="hp-row"><span class="k">Tone</span><span class="v">Warm &middot; concise</span></div>
+        <div class="hp-row"><span class="k">Status</span><span class="v">Draft &mdash; you review before publishing</span></div>
+      </div>
     </div>
-    <div class="reveal stat-card">
-      <div class="stat-val">14</div>
-      <div class="stat-label">Languages in Beauty Passport</div>
-    </div>
-    <div class="reveal stat-card">
-      <div class="stat-val">Free</div>
-      <div class="stat-label">Client app for your clients</div>
-    </div>
-    <div class="reveal stat-card">
-      <div class="stat-val">&pound;0</div>
-      <div class="stat-label">To start &mdash; 50 clients &amp; 1 team member</div>
+    <div class="feat-points two">
+      <div class="pt"><p>Connect your salon&rsquo;s own Instagram professional account to publish posts, reply to comments and see reach &mdash; you review everything before it goes out. Clients in your area can opt in to offers from salons near them, the first step towards local campaigns.</p></div>
+      <div class="pt"><p>See which clients may be due another visit from their recorded visit history. A client who has just had a wax needs a different message from someone due back in three weeks.</p></div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- OFFER + FORM -->
+<!-- 4. AI BUSINESS ADVICE -->
+<section class="hp-section">
+  <div class="container reveal">
+    <div class="feat-top">
+      <div class="feat-lead">
+        <div class="hp-eyebrow">AI business advice</div>
+        <h2 class="hp-h2">Advice that starts with <em>your figures.</em></h2>
+        <p class="hp-lead">What deserves your attention next &mdash; rebooking, inactive clients, stock or revenue? SAY-OS brings your recorded figures into its recommendations, helping you decide where to focus.</p>
+        <p class="feat-qual">Calculated figures and AI recommendations are shown separately. Their usefulness depends on how complete and accurate your records are.</p>
+      </div>
+      <div class="hp-panel">
+        <div class="ptag">Example &middot; this month (illustrative)</div>
+        <div class="hp-row"><span class="k">Recorded revenue (paid)</span><span class="v">&pound;6,480</span></div>
+        <div class="hp-row"><span class="k">Returning clients</span><span class="v">68%</span></div>
+        <div class="hp-row"><span class="k">Clients due back</span><span class="v">11</span></div>
+        <div class="hp-row"><span class="k">Low-stock items</span><span class="v">3</span></div>
+        <div class="hp-bubble os" style="margin-top:16px;max-width:100%;">Suggested focus: 11 clients are due back this month &mdash; a good week to plan your outreach.</div>
+      </div>
+    </div>
+    <div class="feat-points">
+      <div class="pt"><h3>Know what was paid</h3><p>Recorded revenue reflects payments marked as paid.</p></div>
+      <div class="pt"><h3>Understand repeat visits</h3><p>Review returning-client and rebooking figures.</p></div>
+      <div class="pt"><h3>Find your next action</h3><p>Consider suggestions informed by your booking, client, payment and stock records.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. DAILY OPERATIONS -->
+<section class="hp-section alt">
+  <div class="container reveal">
+    <div class="hp-eyebrow">Daily operations</div>
+    <h2 class="hp-h2">More than appointments.<br>Your business, <em>connected.</em></h2>
+    <div class="hp-cards four">
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></div>
+        <h3>Calendar &amp; team rota</h3><p>Appointments, availability and your team&rsquo;s working schedule.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.562Z"/></svg></div>
+        <h3>Rental spaces</h3><p>The spaces you rent out, managed alongside your salon.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
+        <h3>Stockroom</h3><p>Stock deducted at checkout, with low-stock alerts.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Client records</h3><p>Visit history, consultation notes and client-reliability insights.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. BEAUTY PASSPORT -->
+<section class="hp-section">
+  <div class="container reveal">
+    <div class="feat-top">
+      <div class="feat-lead">
+        <div class="hp-eyebrow">Beauty Passport</div>
+        <h2 class="hp-h2">Your next appointment.<br>With more of the <em>picture.</em></h2>
+        <p class="hp-lead">A returning client can bring something new: a skincare routine, a medication, an allergy or a treatment at another clinic. Their Beauty Passport gives them a place to maintain that information and choose which categories to share before an appointment. And your clients book straight into your calendar &mdash; no more phone calls, texts or DMs.</p>
+      </div>
+      <div class="hp-panel">
+        <div class="ptag">Example &middot; shared before an appointment</div>
+        <div class="hp-row"><span class="k">Beauty history</span><span class="v">Shared</span></div>
+        <div class="hp-row"><span class="k">Allergies &amp; conditions</span><span class="v">Shared</span></div>
+        <div class="hp-row"><span class="k">Medications</span><span class="v">Hidden by client</span></div>
+        <div class="hp-row"><span class="k">Home skincare</span><span class="v">Shared</span></div>
+        <div class="hp-row"><span class="k">Link</span><span class="v">Expires in 90 days &middot; revocable</span></div>
+      </div>
+    </div>
+    <p class="feat-qual">Sharing is client-controlled, with category choices and revocable links. Practitioners review shared information and confirm relevant changes during the consultation. For supported treatments booked in SAY-OS, available Safety Profile information can prompt advisory guidance &mdash; missing information or no flag is not treatment clearance.</p>
+    <div class="feat-points">
+      <div class="pt"><h3>Beauty history</h3><p>Recorded treatments, colour formulas and preferences.</p></div>
+      <div class="pt"><h3>Health and safety information</h3><p>Client-reported allergies, medications, conditions and patch-test information.</p></div>
+      <div class="pt"><h3>Home skincare</h3><p>Products and ingredients that may be relevant to the next treatment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ECOSYSTEM -->
+<section class="hp-section alt">
+  <div class="container reveal">
+    <div class="hp-eyebrow">Ecosystem</div>
+    <h2 class="hp-h2">One record. <em>Two sides.</em></h2>
+    <div class="hp-cards four">
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div>
+        <h3>Salon platform</h3><p>Bookings, records, stock, marketing and insights for your business.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 13a3 3 0 1 0-6 0"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="12" cy="8" r="2"/></svg></div>
+        <h3>Beauty Passport</h3><p>The client&rsquo;s own record, shared with the salons they choose.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg></div>
+        <h3>Hire</h3><p>Find professionals on SAY and send a hire request &mdash; included in the Standard plan.</p>
+      </div>
+      <div class="hp-card">
+        <div class="hp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Local offers <span style="font-family:'Outfit',sans-serif;font-weight:400;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-accent);white-space:nowrap;">&middot; coming soon</span></h3><p>Clients near your salon can already opt in to local offers. Campaign tools to reach them are next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="hp-section hp-values hp-center">
+  <div class="container reveal">
+    <h2 class="hp-values-title">Our core values</h2>
+    <div class="vrow">
+      <span class="v">Client safety</span>
+      <span class="vdiv" aria-hidden="true"></span>
+      <span class="v">Relationship over transaction</span>
+      <span class="vdiv" aria-hidden="true"></span>
+      <span class="v">Remembered, not assumed</span>
+      <span class="vdiv" aria-hidden="true"></span>
+      <span class="v">Professional judgement</span>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PRICING -->
+<section class="hp-section">
+  <div class="container reveal">
+    <div class="hp-eyebrow">Pricing</div>
+    <h2 class="hp-h2">Try it with your own <em>working day.</em></h2>
+    <p class="hp-lead">Start with your calendar. Add your clients. Create your first booking.</p>
+    <div class="hp-plans">
+      <div class="hp-plan">
+        <div class="pn">Free</div>
+        <div class="pp">&pound;0</div>
+        <p>25 clients &middot; 50 bookings per month &middot; 1 team member. No credit card. No time limit.</p>
+        <a href="https://app.say-salon.com/register/salon" class="hp-btn primary">Start free</a>
+      </div>
+      <div class="hp-plan feat">
+        <div class="pn">Standard</div>
+        <div class="pp">&pound;79<span style="font-size:15px;color:var(--text-muted);">/month</span></div>
+        <p>Voice tools and Standard features, with up to 500 clients, unlimited bookings and up to 5 active team members.</p>
+        <a href="https://app.say-salon.com/register/salon" class="hp-btn primary">Start free, upgrade when ready</a>
+      </div>
+    </div>
+    <a href="/pricing" class="hp-compare">Compare plans</a>
+    <div class="hp-founding">
+      <h3>Help shape what comes next.</h3>
+      <p>Founding pricing for the first 20 eligible salons: <strong style="color:var(--alabaster);font-weight:600;">&pound;234 every six months, billed upfront &mdash; equivalent to &pound;39/month.</strong> Renews at the same price while your subscription stays active.</p>
+      <div class="hp-cta"><a href="#join" class="hp-btn ghost">Register founding interest</a></div>
+      <p class="hp-note">Registering interest involves no payment or commitment. Founding pricing applies when an eligible salon subscribes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8b. FOUNDING FORM (preserves #signupForm handler) -->
 <section class="offer-section" id="join">
+  <div class="container">
   <div class="offer-card reveal">
     <div class="offer-left">
       <div class="offer-tag">Founding Member Access</div>
-      <h2 class="offer-title">
-        Join the first<br><em>20 founding members.</em>
-      </h2>
+      <h2 class="offer-title">Join the first<br><em>20 founding salons.</em></h2>
       <ul class="offer-perks">
-        <li>Founding pricing — £234 every 6 months (£39/month), locked at the same price for as long as you stay subscribed</li>
-        <li>Direct input into what we build — your feedback shapes the product</li>
-        <li>First access to every feature before public release</li>
-        <li>Your name recognised as a SAY-OS founding member</li>
-        <li>Priority onboarding and dedicated setup support</li>
+        <li>Founding pricing &mdash; &pound;234 every 6 months (&pound;39/month), at the same price for as long as you stay subscribed</li>
+        <li>Direct input into what we build &mdash; your feedback shapes the product</li>
+        <li>Early access to selected new features</li>
+        <li>Priority onboarding when you join</li>
       </ul>
-      <p style="font-size:13px;color:rgba(237,229,212,0.72);font-family:'Outfit',sans-serif;letter-spacing:0.5px">This isn't a waitlist. It's an invitation to help build the platform the beauty industry deserves.</p>
+      <p style="font-size:13px;color:rgba(237,229,212,0.72);font-family:'Outfit',sans-serif;letter-spacing:0.5px">Submitting this form registers your interest &mdash; there&rsquo;s no payment and no commitment. Founding pricing applies when an eligible salon subscribes.</p>
     </div>
 
     <div class="form-side">
       <form id="signupForm">
-        <div class="form-title">Claim your spot</div>
-        <div class="form-sub">20 spots · founding pricing locked in</div>
+        <div class="form-title">Register your interest</div>
+        <div class="form-sub">First 20 salons &middot; founding pricing when you subscribe</div>
 
         <div class="form-group">
           <label>First Name</label>
@@ -1582,9 +1566,9 @@ footer {
           <label>Clients per week</label>
           <select name="company_size" required>
             <option value="" disabled selected>How busy are you?</option>
-            <option value="1-10">1–10 clients</option>
-            <option value="11-20">11–20 clients</option>
-            <option value="21-30">21–30 clients</option>
+            <option value="1-10">1&ndash;10 clients</option>
+            <option value="11-20">11&ndash;20 clients</option>
+            <option value="21-30">21&ndash;30 clients</option>
             <option value="30+">30+ clients</option>
           </select>
         </div>
@@ -1592,80 +1576,68 @@ footer {
         <input type="hidden" name="source" value="landing-solo">
         <input type="hidden" name="company" value="Solo Operator">
 
-        <button type="submit" class="form-submit">Claim My Founding Spot →</button>
-        <div class="form-privacy">No credit card · No commitment · Founding pricing locked in</div>
+        <button type="submit" class="form-submit">Register Founding Interest &rarr;</button>
+        <div class="form-privacy">No credit card &middot; No commitment &middot; Founding pricing when you subscribe</div>
       </form>
 
       <div class="form-success" id="formSuccess">
-        <div class="success-icon">✦</div>
-        <div class="success-title">You're in.</div>
-        <div class="success-sub">Welcome to SAY-OS. Check your inbox — we'll be in touch within 24 hours with everything you need to know as a founding member.</div>
+        <div class="success-icon">&#10022;</div>
+        <div class="success-title">Thank you.</div>
+        <div class="success-sub">Your interest is registered. We&rsquo;ll follow up by email about getting started and the founding offer. Founding pricing applies when you subscribe as an eligible salon.</div>
       </div>
     </div>
   </div>
+  </div>
 </section>
 
-<!-- FROM THE BLOG -->
-<section style="padding:60px 48px;border-top:1px solid rgba(253,251,247,0.06);max-width:900px;margin:0 auto;">
+<!-- 9. FOUNDER & COMPANY -->
+<section class="hp-section alt hp-center">
+  <div class="container reveal">
+    <div class="hp-eyebrow">Founder &amp; company</div>
+    <h2 class="hp-h2">Built from experience in <em>the treatment room.</em></h2>
+    <p class="hp-quote">&ldquo;Running a salon means moving constantly between clients, bookings, stock and business decisions. I&rsquo;m building SAY-OS to bring those tasks together &mdash; and give practitioners more context before treatment.&rdquo;</p>
+    <div class="hp-attr">&mdash; Founder, <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span></div>
+    <p class="hp-company">Operated by SERVICESFORYOU LTD, a UK registered company. ICO registration: <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank" style="color:var(--gold-brushed);text-decoration:underline;text-underline-offset:2px;">ZC121398</a>.</p>
+  </div>
+</section>
+
+<!-- 10. COMPATIBILITY FAQ -->
+<section class="hp-section hp-center">
+  <div class="container reveal">
+    <div class="hp-eyebrow">Compatibility</div>
+    <p class="hp-faq-q">Can I use SAY-OS alongside another booking system?</p>
+    <p class="hp-lead">Yes. SAY-OS has its own calendar and bookings. It can be used alongside another system, but it does not sync with Treatwell or Fresha.</p>
+  </div>
+</section>
+
+<!-- 11. CLIENT INVITATION -->
+<section class="hp-section alt">
+  <div class="container hp-center reveal">
+    <div class="hp-eyebrow">Not a salon owner?</div>
+    <h2 class="hp-h2">Your beauty. <em>Remembered.</em></h2>
+    <p class="hp-lead">Keep your beauty history, routines and safety information in your free Beauty Passport. Choose which categories to share before your next appointment. Book directly to your salon&rsquo;s calendar &mdash; no more phone calls, texts or DMs &mdash; and manage every salon you visit in one place.</p>
+    <div class="hp-cta" style="justify-content:center"><a href="https://app.say-salon.com/register" class="hp-btn primary">Create your free Beauty Passport</a></div>
+  </div>
+</section>
+
+<!-- FROM THE BLOG (SEO internal links) -->
+<section class="hp-section" style="border-top:1px solid rgba(253,251,247,0.06);">
+  <div class="container">
   <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">From the blog</p>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fdfbf7;margin-bottom:24px;">Guides for salon owners and clients</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-    <a href="/blog/reduce-salon-no-shows" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Operations</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">How to reduce salon no-shows</p>
-    </a>
-    <a href="/blog/clients-who-rebook-themselves" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Operations</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">The clients who rebook themselves</p>
-    </a>
-    <a href="/blog/salon-contraindications-medication-uk" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Safety</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Contraindications UK salons must check</p>
-    </a>
-    <a href="/blog/beauty-passport-app" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Product</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Why you need a Beauty Passport</p>
-    </a>
-    <a href="/blog/beauty-safety-uk-2026" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Report</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Beauty Safety in the UK 2026</p>
-    </a>
-    <a href="/blog/salon-allergy-tracker" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;">
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Safety</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Why every salon needs an allergy tracker</p>
-    </a>
+    <a href="/blog/reduce-salon-no-shows" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;"><p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Operations</p><p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">How to reduce salon no-shows</p></a>
+    <a href="/blog/clients-who-rebook-themselves" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;"><p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Operations</p><p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">The clients who rebook themselves</p></a>
+    <a href="/blog/salon-contraindications-medication-uk" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;"><p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Safety</p><p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Contraindications UK salons must check</p></a>
+    <a href="/blog/beauty-passport-app" style="display:block;padding:20px;background:#0d2216;border:1px solid rgba(193,163,104,0.12);border-radius:10px;text-decoration:none;"><p style="font-family:'DM Mono',monospace;font-size:10px;color:#c1a368;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Product</p><p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fdfbf7;line-height:1.3;margin:0;">Why you need a Beauty Passport</p></a>
   </div>
   <p style="text-align:center;margin-top:20px;"><a href="/blog/" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#c1a368;text-decoration:underline;text-underline-offset:3px;">View all guides &rarr;</a></p>
-</section>
-
-<!-- CLIENT CTA -->
-<section style="padding:60px 48px;text-align:center;border-top:1px solid rgba(253,251,247,0.06);">
-  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(253,251,247,0.72);text-transform:uppercase;margin-bottom:16px;">Not a salon owner?</p>
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#fdfbf7;margin-bottom:12px;">Your beauty history should travel with you.</h2>
-  <p style="font-family:'DM Sans',sans-serif;font-size:16px;color:rgba(253,251,247,0.72);max-width:520px;margin:0 auto 28px;line-height:1.6;">Build your free Beauty Passport — allergies, routines, treatment history, and safety profile in one place. Share it with any salon via QR code.</p>
-  <a href="https://app.say-salon.com/register" style="display:inline-block;padding:16px 40px;background:#c1a368;color:#030a07;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:10px;">Start Free</a>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder-section">
-  <div class="founder-inner reveal">
-    <div class="founder-quote">
-      After two decades working in beauty, I know how much can change between appointments. A client may start a medication, develop an allergy or have a treatment elsewhere. I'm building <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> to bring relevant client information into the consultation, so practitioners have more context before treatment.
-    </div>
-    <div class="founder-attr">— Founder, <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> · Two decades in advanced beauty therapy, with a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management</div>
   </div>
-</section>
-
-<!-- TRUST STRIP -->
-<section class="trust-strip" aria-label="Trust and compliance">
-  <div class="trust-item"><a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ICO REGISTERED — ZC121398</a></div>
-  <div class="trust-item">STRUCTURED HANDLING OF CLIENT HEALTH INFORMATION</div>
-  <div class="trust-item">UK COMPANY — SERVICESFORYOU LTD, LONDON</div>
-  <div class="trust-item">FOUNDER-BUILT · TWO DECADES IN BEAUTY THERAPY</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <div class="container">
   <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
   <div class="footer-links">
     <a href="/pricing">Pricing</a>
@@ -1677,8 +1649,9 @@ footer {
     <a href="/privacy">Privacy Policy</a>
     <a href="/terms">Terms of Service</a>
   </div>
-  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
   <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+  </div>
 </footer>
 
 <script>
@@ -1850,13 +1823,24 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     var KEY = 'say_consent_analytics';
     var stored = null;
     try { stored = localStorage.getItem(KEY); } catch (e) {}
+    var banner = document.getElementById('say-consent-banner');
+    function syncHeight() {
+      if (banner && document.body.classList.contains('consent-open')) {
+        document.body.style.setProperty('--consent-h', banner.offsetHeight + 'px');
+      }
+    }
     if (stored !== 'granted' && stored !== 'denied') {
-      document.getElementById('say-consent-banner').style.display = 'block';
+      banner.style.display = 'block';
+      document.body.classList.add('consent-open');
+      syncHeight();
+      window.addEventListener('resize', syncHeight);
+      window.addEventListener('orientationchange', syncHeight);
     }
     window.sayConsentChoose = function (choice) {
       try { localStorage.setItem(KEY, choice); } catch (e) {}
       if (choice === 'granted' && window.sayLoadAnalytics) window.sayLoadAnalytics();
-      document.getElementById('say-consent-banner').style.display = 'none';
+      banner.style.display = 'none';
+      document.body.classList.remove('consent-open');
     };
   })();
 </script>
