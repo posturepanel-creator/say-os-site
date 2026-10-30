@@ -1255,6 +1255,7 @@ footer .container {
 .feat-top{display:grid;grid-template-columns:1fr 1fr;column-gap:64px;align-items:start}
 .feat-points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px;align-items:start}
 .feat-points.two{grid-template-columns:repeat(2,1fr)}
+.feat-points.stack{display:flex;flex-direction:column;gap:24px;margin-top:24px}
 .feat-points .pt h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
 .feat-points .pt p{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.6;color:#C7BBA3;margin:0}
 .feat-qual{font-family:'Outfit',sans-serif;font-weight:300;font-size:16px;line-height:1.65;color:#D4C5A9;margin-top:24px}
@@ -1318,6 +1319,10 @@ footer .container {
         <div class="hp-eyebrow">Voice</div>
         <h2 class="hp-h2">Your salon workflow.<br>Made simpler <em>by voice.</em></h2>
         <p class="hp-lead">Talk to SAY-OS inside the app, in your own words. You stay in control of what happens next.</p>
+        <div class="feat-points stack">
+          <div class="pt"><h3>Create a booking</h3><p>Tell SAY-OS what you need, in plain language.</p></div>
+          <div class="pt"><h3>Check availability</h3><p>Ask about a slot without searching through the calendar.</p></div>
+        </div>
       </div>
       <div class="hp-panel">
         <div class="ptag">Example &middot; voice booking</div>
@@ -1326,10 +1331,6 @@ footer .container {
         <div class="hp-bubble you">&ldquo;Yes, go ahead.&rdquo;</div>
         <div class="hp-bubble os">&ldquo;Booked. Chloe &mdash; Thursday, 2:00 PM.&rdquo;</div>
       </div>
-    </div>
-    <div class="feat-points two">
-      <div class="pt"><h3>Create a booking</h3><p>Tell SAY-OS what you need, in plain language.</p></div>
-      <div class="pt"><h3>Check availability</h3><p>Ask about a slot without searching through the calendar.</p></div>
     </div>
   </div>
 </section>
@@ -1420,7 +1421,6 @@ footer .container {
         <div class="hp-eyebrow">Beauty Passport</div>
         <h2 class="hp-h2">Your next appointment.<br>With more of the <em>picture.</em></h2>
         <p class="hp-lead">A returning client can bring something new: a skincare routine, a medication, an allergy or a treatment at another clinic. Their Beauty Passport gives them a place to maintain that information and choose which categories to share before an appointment. And your clients book straight into your calendar &mdash; no more phone calls, texts or DMs.</p>
-        <p class="feat-qual">Sharing is client-controlled, with category choices and revocable links. Practitioners review shared information and confirm relevant changes during the consultation. For supported treatments booked in SAY-OS, available Safety Profile information can prompt advisory guidance &mdash; missing information or no flag is not treatment clearance.</p>
       </div>
       <div class="hp-panel">
         <div class="ptag">Example &middot; shared before an appointment</div>
@@ -1431,6 +1431,7 @@ footer .container {
         <div class="hp-row"><span class="k">Link</span><span class="v">Expires in 90 days &middot; revocable</span></div>
       </div>
     </div>
+    <p class="feat-qual">Sharing is client-controlled, with category choices and revocable links. Practitioners review shared information and confirm relevant changes during the consultation. For supported treatments booked in SAY-OS, available Safety Profile information can prompt advisory guidance &mdash; missing information or no flag is not treatment clearance.</p>
     <div class="feat-points">
       <div class="pt"><h3>Beauty history</h3><p>Recorded treatments, colour formulas and preferences.</p></div>
       <div class="pt"><h3>Health and safety information</h3><p>Client-reported allergies, medications, conditions and patch-test information.</p></div>
