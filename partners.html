@@ -29,7 +29,15 @@
 .textlink{font-family:'Outfit',sans-serif;font-size:14px;letter-spacing:0.3px;color:var(--gold-brushed);text-decoration:underline;text-underline-offset:3px}
 .lead{font-family:'Outfit',sans-serif;font-weight:300;font-size:18px;line-height:1.65;color:#D4C5A9;max-width:62ch;margin:0 0 20px}
 .sec-head{margin-bottom:8px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.col-text{max-width:46ch}
+.ptlist{list-style:none;margin:28px 0 0;padding:0}
+.ptlist li{font-family:'Outfit',sans-serif;font-weight:500;font-size:16px;line-height:1.5;color:#EDE5D4;padding:12px 0;border-bottom:1px solid rgba(201,169,97,0.12)}
+.ptlist li:last-child{border-bottom:0}
+.lead-metric{padding:2px 0 14px;border-bottom:1px solid rgba(237,229,212,0.06);margin-bottom:6px}
+.lm-label{font-family:'Outfit',sans-serif;font-weight:500;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-brushed);margin-bottom:8px}
+.lm-value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:36px;line-height:1;color:#EDE5D4}
+.profiles-wrap{background:none;border:0;padding:0}
 .cards{display:grid;gap:18px;margin-top:28px}
 .cards.four{grid-template-columns:repeat(4,1fr)}
 .cards.three{grid-template-columns:repeat(3,1fr)}
@@ -38,11 +46,11 @@
 .card .num{font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;color:var(--gold-brushed);margin-bottom:10px}
 .ico{width:46px;height:46px;border-radius:50%;background:var(--velvet-light);border:1px solid rgba(201,169,97,0.18);display:flex;align-items:center;justify-content:center;color:var(--gold-brushed);margin-bottom:14px}
 .ico svg{width:22px;height:22px}
-.panel{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.14);border-radius:16px;padding:32px}
+.panel{background:var(--velvet-deep);border:1px solid rgba(201,169,97,0.14);border-radius:16px;padding:24px}
 .panel .ptag{font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-accent);margin-bottom:18px}
-.row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(237,229,212,0.06);font-family:'Outfit',sans-serif;font-size:14px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(237,229,212,0.06);font-family:'Outfit',sans-serif;font-size:14px}
 .row:last-child{border-bottom:0}
-.row .k{color:var(--text-muted)}
+.row .k{color:#D4C5A9}
 .row .v{color:var(--alabaster);font-weight:500}
 .qual{font-family:'Outfit',sans-serif;font-weight:300;font-size:14px;line-height:1.6;color:#96A097;margin-top:16px}
 .points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px;align-items:start}
@@ -51,18 +59,19 @@
 .profiles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .profile{background:var(--velvet-primary);border:1px solid var(--border);border-radius:14px;padding:18px}
 .profile .pn{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--alabaster)}
-.profile .pr{font-family:'Outfit',sans-serif;font-size:12px;color:var(--text-muted);margin:4px 0 10px}
+.profile .pr{font-family:'Outfit',sans-serif;font-size:12px;color:#D4C5A9;margin:4px 0 10px}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .tag{background:rgba(201,169,97,0.08);border:1px solid rgba(201,169,97,0.15);border-radius:100px;padding:4px 10px;font-family:'Outfit',sans-serif;font-size:11px;color:#D4C5A9}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .stat{background:var(--velvet-deep);border:1px solid var(--border);border-radius:20px;padding:28px;text-align:center}
 .stat .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;color:var(--gold-brushed);margin-bottom:8px}
 .stat .l{font-family:'Outfit',sans-serif;font-size:14px;line-height:1.5;color:#D4C5A9}
-.founding-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.founding-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .form-side{background:var(--velvet-deep);border:1px solid var(--border);border-radius:20px;padding:36px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
-.form-group input,.form-group select{width:100%;background:rgba(237,229,212,0.04);border:1px solid rgba(237,229,212,0.1);border-radius:10px;padding:12px 14px;color:var(--alabaster);font-family:'Outfit',sans-serif;font-size:14px;outline:none}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#D4C5A9;margin-bottom:8px}
+.form-group input,.form-group select{width:100%;min-height:48px;background:rgba(237,229,212,0.04);border:1px solid rgba(237,229,212,0.1);border-radius:10px;padding:12px 14px;color:var(--alabaster);font-family:'Outfit',sans-serif;font-size:14px;outline:none}
+.form-group input::placeholder{color:#96A097}
 .form-group input:focus,.form-group select:focus{border-color:rgba(201,169,97,0.4)}
 .form-group select option{background:var(--velvet-primary);color:var(--alabaster)}
 .form-submit{width:100%;background:var(--gold-brushed);color:#0F2818;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;padding:15px;border:none;border-radius:12px;cursor:pointer;margin-top:6px}
@@ -82,11 +91,13 @@
   .grid2,.founding-grid{grid-template-columns:1fr;gap:32px}
   .cards.four,.cards.three{grid-template-columns:1fr}
   .points,.points.four{grid-template-columns:1fr;gap:24px}
-  .profiles,.stats{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
   .hero-cta{flex-direction:column;align-items:stretch}
   .hero-cta .btn{width:100%;text-align:center}
   .form-side{padding:24px}
+  .col-text{max-width:none}
 }
+@media (max-width:480px){ .profiles{grid-template-columns:1fr} }
 </style>
 <script type="application/ld+json">
 {
@@ -228,14 +239,22 @@
 <section class="section">
   <div class="container reveal">
     <div class="grid2">
-      <div>
+      <div class="col-text">
         <div class="eyebrow">Owner dashboard</div>
         <h2 class="sec-head">Numbers you can act on.</h2>
         <p class="lead">Most booking software shows you revenue. SAY-OS shows you where you're losing it: which clients are about to lapse, which slots sit empty, what each stylist brings in.</p>
+        <ul class="ptlist">
+          <li>Every fee broken down — no surprises</li>
+          <li>Retention and rebooking rate per stylist</li>
+          <li>Clients due back this month, by name</li>
+        </ul>
       </div>
       <div class="panel">
         <div class="ptag">Example · Owner dashboard</div>
-        <div class="row"><span class="k">Monthly revenue</span><span class="v">£18,420</span></div>
+        <div class="lead-metric">
+          <div class="lm-label">Monthly revenue</div>
+          <div class="lm-value">£18,420</div>
+        </div>
         <div class="row"><span class="k">vs last month</span><span class="v">+£2,104</span></div>
         <div class="row"><span class="k">Missed bookings</span><span class="v">0</span></div>
         <div class="row"><span class="k">Clients due back</span><span class="v">7</span></div>
@@ -245,11 +264,6 @@
         <p class="qual">Illustrative example, not a forecast. Your dashboard shows your own figures.</p>
       </div>
     </div>
-    <div class="points">
-      <div class="pt"><p>Every fee broken down — no surprises</p></div>
-      <div class="pt"><p>Retention and rebooking rate per stylist</p></div>
-      <div class="pt"><p>Clients due back this month, by name</p></div>
-    </div>
   </div>
 </section>
 
@@ -257,12 +271,18 @@
 <section class="section" style="background:var(--velvet-black)">
   <div class="container reveal">
     <div class="grid2">
-      <div>
+      <div class="col-text">
         <div class="eyebrow">Hire</div>
         <h2 class="sec-head">Find your next hire without the admin.</h2>
         <p class="lead">SAY-OS connects you directly to beauty professionals on SAY — you see skills, experience level and availability, send a request, and the professional decides. Interview, trial day, hire — and they join your team in the app.</p>
+        <ul class="ptlist">
+          <li>Profiles with skills, experience level and availability</li>
+          <li>No placement fee, no agency percentage — included in the Standard plan</li>
+          <li>Full-time, part-time and freelance</li>
+          <li>Hired professionals join your SAY-OS team in one step</li>
+        </ul>
       </div>
-      <div class="panel">
+      <div class="profiles-wrap">
         <div class="ptag">Example profiles</div>
         <div class="profiles">
           <div class="profile">
@@ -288,12 +308,6 @@
         </div>
       </div>
     </div>
-    <div class="points four">
-      <div class="pt"><p>Profiles with skills, experience level and availability</p></div>
-      <div class="pt"><p>No placement fee, no agency percentage — included in the Standard plan</p></div>
-      <div class="pt"><p>Full-time, part-time and freelance</p></div>
-      <div class="pt"><p>Hired professionals join your SAY-OS team in one step</p></div>
-    </div>
   </div>
 </section>
 
@@ -313,10 +327,15 @@
 <section class="section" id="founding" style="background:var(--velvet-black)">
   <div class="container reveal">
     <div class="founding-grid">
-      <div>
+      <div class="col-text">
         <div class="eyebrow">Founding partners</div>
         <h2 class="sec-head">20 places.</h2>
-        <p class="lead">£234 every 6 months (£39/month), at the same price for as long as you stay subscribed. Priority onboarding and a direct line into what we build next.</p>
+        <p class="lead">£234 billed every six months (£39/month equivalent), at the same price for as long as you stay subscribed.</p>
+        <ul class="ptlist">
+          <li>Priority onboarding</li>
+          <li>A direct line into what we build next</li>
+          <li>Founding pricing applies when an eligible salon subscribes.</li>
+        </ul>
       </div>
       <div class="form-side">
         <form id="b2bForm">
@@ -355,7 +374,7 @@
             </select>
           </div>
           <button type="submit" class="form-submit">Register Founding Interest →</button>
-          <div class="form-note">No payment, no commitment. Founding pricing applies when an eligible salon subscribes.</div>
+          <div class="form-note">No payment, no commitment.</div>
         </form>
         <div class="form-success" id="b2bSuccess">
           <div class="st">Interest registered.</div>
