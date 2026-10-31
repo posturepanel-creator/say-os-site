@@ -51,7 +51,7 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --bg: #0F2818;
@@ -169,12 +169,14 @@ body{font-family:'Outfit',sans-serif;font-weight:400;background:var(--bg);color:
 </head>
 <body>
 
-<nav class="lp-nav">
-  <a href="https://say-salon.com" class="lp-nav__logo">
-    <img src="/logo.png" alt="SAY">
-    <span>SAY<span class="dot">.</span></span>
-  </a>
-  <a href="https://app.say-salon.com/register" class="lp-nav__cta app-link">Start Free</a>
+<nav>
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
+    <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+    <span class="say-wm" aria-hidden="true" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:#C9A961;">SAY<span class="say-wm__sep"></span><span style="font-weight:600;">OS</span></span>
+</a></div>
+  <a href="/pricing" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
+  <a href="/blog/" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
+  <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
 </nav>
 
 <!-- 1. HERO with phone mockup -->
@@ -319,16 +321,22 @@ body{font-family:'Outfit',sans-serif;font-weight:400;background:var(--bg);color:
   <p class="final-trust">A beauty record built to travel with you.</p>
 </section>
 
-<footer class="lp-footer">
-  <div class="lp-footer__logo">
-    <img src="/logo.png" alt="SAY">
-    <span>SAY</span>
+<footer>
+  <div class="container">
+  <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/partners">Salon Owners</a>
+    <a href="/salon-software-london/">London</a>
+    <a href="/education">Educators</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:contact@say-salon.com">Contact</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
   </div>
-  <div>
-    <a href="https://say-salon.com">say-salon.com</a> &middot; <a href="https://say-salon.com/privacy">Privacy</a> &middot; <a href="https://say-salon.com/terms">Terms</a>
-  </div>
-  <div>&copy; 2026 Servicesforyou Ltd. All rights reserved.</div>
   <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+  </div>
 </footer>
 
 <script>
