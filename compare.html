@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
 <title>Fresha vs Treatwell vs Phorest vs SAY-OS: Compared 2026</title>
 <meta name="description" content="An honest side-by-side of the main UK salon platforms — pricing, client safety records, how client health data is handled, and what each one does. Start free.">
 <meta property="og:type" content="website">
@@ -14,7 +15,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://say-salon.com/compare">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -89,20 +89,8 @@
 }
 </script>
 
+<link rel="stylesheet" href="/site.css">
 <style>
-:root {
-  --velvet-black: #030a07;
-  --velvet-deep: #061a12;
-  --velvet-primary: #0f2e20;
-  --velvet-light: #1a4d36;
-  --gold-brushed: #e6c985;
-  --gold-accent: #9e824c;
-  --gold-deep: #8c7335;
-  --alabaster: #fdfbf7;
-  --text-muted: rgba(253,251,247,0.5);
-  --shadow-premium: 0 50px 100px -20px rgba(15,46,32,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
-}
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -332,18 +320,20 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">
-    <img src="/logo.png" alt="SAY-OS">
-    <span class="say-wm" aria-hidden="true">SAY<span class="say-wm__sep"></span>OS</span>
-  </a>
-  <a href="https://app.say-salon.com/register" class="nav-cta">Start Free</a>
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
+    <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+    <span class="say-wm" aria-hidden="true" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:#C9A961;">SAY<span class="say-wm__sep"></span><span style="font-weight:600;">OS</span></span>
+</a></div>
+  <a href="/pricing" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
+  <a href="/blog/" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
+  <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-eyebrow">Salon Software Comparison · 2026</div>
-    <h1>How does <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span> compare<br>to <em>everything else?</em></h1>
+    <h1>How does SAY-OS compare<br>to <em>everything else?</em></h1>
     <p>Most salon software handles bookings. Some add marketing. None of them track your clients' safety, remember their allergies, or protect your business with structured, timestamped documentation.</p>
   </div>
 </section>
@@ -697,17 +687,22 @@ footer {
 
 <!-- FOOTER -->
 <footer>
+  <div class="container">
   <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
   <div class="footer-links">
-    <a href="/">Solo Professionals</a>
+    <a href="/pricing">Pricing</a>
     <a href="/partners">Salon Owners</a>
+    <a href="/salon-software-london/">London</a>
     <a href="/education">Educators</a>
-    <a href="/talent">Talent</a>
+    <a href="/talent">Professionals</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:contact@say-salon.com">Contact</a>
     <a href="/privacy">Privacy Policy</a>
     <a href="/terms">Terms of Service</a>
   </div>
-  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
   <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+  </div>
 </footer>
 
 <!-- Consent Banner -->

@@ -31,8 +31,9 @@
   <meta property="og:image" content="https://say-salon.com/blog/assets/say-og-default.jpg">
   <meta name="twitter:image" content="https://say-salon.com/blog/assets/say-og-default.jpg">
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="/site.css">
   <style>
-    .blog-index { max-width: 720px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .blog-index { max-width: 1180px; margin: 0 auto; padding: 2rem 24px 4rem; }
     .blog-index__header { padding: 4rem 0 2rem; border-bottom: 1px solid var(--border-subtle); margin-bottom: 2.5rem; }
     .blog-index__header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 2.4rem; color: var(--text-heading); margin-bottom: 0.5rem; }
     .blog-index__header p { color: var(--text-meta); font-size: 1rem; }
@@ -41,10 +42,10 @@
     .article-card:hover { border-color: var(--gold-cta); transform: translateY(-2px); }
     .article-card__category { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--gold-cta); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
     .article-card h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.35rem; color: var(--text-heading); line-height: 1.3; margin-bottom: 0.5rem; }
-    .article-card p { color: var(--text-meta); font-size: 0.88rem; line-height: 1.55; margin: 0; }
+    .article-card p { color: #D4C5A9; font-size: 0.88rem; line-height: 1.55; margin: 0; }
     .atom-index { list-style: none; margin: 0.5rem 0 0; padding: 0; columns: 2; column-gap: 2.5rem; }
     .atom-index li { break-inside: avoid; margin: 0 0 0.7rem; }
-    .atom-index a { color: var(--text-meta); text-decoration: none; font-size: 0.9rem; line-height: 1.4; display: inline-block; }
+    .atom-index a { color: #D4C5A9; text-decoration: none; font-size: 0.9rem; line-height: 1.4; display: inline-block; }
     .atom-index a:hover { color: var(--gold-cta); }
     @media (max-width: 640px) { .atom-index { columns: 1; } }
   </style>
@@ -53,9 +54,14 @@
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="https://say-salon.com" class="blog-nav__logo"><img src="/logo.png" alt="" height="34" style="height:34px;width:auto;border-radius:8px">SAY<span>.</span></a>
-  <a href="https://app.say-salon.com" class="blog-nav__cta">Get Free Access</a>
+<nav>
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
+    <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+    <span class="say-wm" aria-hidden="true" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:#C9A961;">SAY<span class="say-wm__sep"></span><span style="font-weight:600;">OS</span></span>
+</a></div>
+  <a href="/pricing" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
+  <a href="/blog/" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
+  <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
 </nav>
 
 <div class="blog-index">
@@ -293,9 +299,23 @@
 
 </div>
 
-<footer class="blog-footer">
-  <p>&copy; 2026 SAY-OS by Servicesforyou Ltd. &nbsp;|&nbsp; <a href="https://say-salon.com">say-salon.com</a> &nbsp;|&nbsp; <a href="https://app.say-salon.com">app.say-salon.com</a></p>
+<footer>
+  <div class="container">
+  <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/partners">Salon Owners</a>
+    <a href="/salon-software-london/">London</a>
+    <a href="/education">Educators</a>
+    <a href="/talent">Professionals</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:contact@say-salon.com">Contact</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+  </div>
   <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
+  </div>
 </footer>
 
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">

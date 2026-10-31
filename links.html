@@ -3,359 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAY-OS — Find Your Path</title>
-<meta name="description" content="SAY-OS — voice-first salon management for the beauty industry. Solo professionals, salon owners, educators, and talent — find your page.">
+<title>SAY-OS — one link for salons, professionals and clients</title>
+<meta name="description" content="SAY-OS: one workspace for salons, one profile for professionals, one record for clients. Find your page.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SAY-OS">
-<meta property="og:title" content="SAY-OS — Find Your Path">
-<meta property="og:description" content="Voice-first salon management for the beauty industry. Solo professionals, salon owners, educators, and talent.">
+<meta property="og:title" content="SAY-OS — one link for salons, professionals and clients">
+<meta property="og:description" content="One workspace for salons. One profile for professionals. One record for clients.">
 <meta property="og:url" content="https://say-salon.com/links">
 <meta property="og:image" content="https://say-salon.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://say-salon.com/links">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root {
-  --black: #030a07;
-  --deep: #061a12;
-  --forest: #0f2e20;
-  --forest-light: #1a4d36;
-  --gold: #e6c985;
-  --gold-dim: #9e824c;
-  --gold-deep: #7a6235;
-  --alabaster: #fdfbf7;
-  --muted: rgba(253,251,247,0.45);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { height: 100%; }
-
-body {
-  min-height: 100vh;
-  background: var(--black);
-  color: var(--alabaster);
-  font-family: 'DM Sans', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 24px;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Grain */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-/* Ambient glow */
-body::after {
-  content: '';
-  position: fixed;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  height: 500px;
-  background: radial-gradient(ellipse, rgba(26,77,54,0.35) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.wrap {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ── LOGO ── */
-.logo-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards 0.1s;
-}
-
-.logo-icon {
-  width: 72px;
-  height: 72px;
-  margin-bottom: 16px;
-}
-
-.logo-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 5px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.logo-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 3.5px;
-  color: var(--gold-dim);
-  text-transform: uppercase;
-}
-
-/* ── HEADLINE ── */
-.headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 5vw, 30px);
-  font-weight: 300;
-  line-height: 1.3;
-  text-align: center;
-  margin-bottom: 8px;
-  color: rgba(253,251,247,0.9);
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards 0.25s;
-}
-
-.headline em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.subline {
-  font-size: 13px;
-  color: var(--muted);
-  text-align: center;
-  margin-bottom: 44px;
-  font-family: 'DM Mono', monospace;
-  letter-spacing: 0.5px;
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards 0.35s;
-}
-
-/* ── LINKS ── */
-.links {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.link-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 20px 24px;
-  background: rgba(15,46,32,0.3);
-  border: 1px solid rgba(230,201,133,0.1);
-  border-radius: 14px;
-  text-decoration: none;
-  color: var(--alabaster);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  opacity: 0;
-}
-
-.link-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(230,201,133,0.04), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.link-card:hover {
-  border-color: rgba(230,201,133,0.3);
-  background: rgba(15,46,32,0.55);
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px -8px rgba(0,0,0,0.4), 0 0 0 1px rgba(230,201,133,0.08);
-}
-
-.link-card:hover::before { opacity: 1; }
-
-.link-card:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.45s; }
-.link-card:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.55s; }
-.link-card:nth-child(3) { animation: fadeUp 0.6s ease forwards 0.65s; }
-.link-card:nth-child(4) { animation: fadeUp 0.6s ease forwards 0.75s; }
-.link-card:nth-child(5) { animation: fadeUp 0.6s ease forwards 0.85s; }
-
-.link-emoji {
-  width: 48px;
-  height: 48px;
-  background: rgba(230,201,133,0.08);
-  border: 1px solid rgba(230,201,133,0.12);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  flex-shrink: 0;
-  transition: all 0.3s;
-}
-
-.link-card:hover .link-emoji {
-  background: rgba(230,201,133,0.14);
-  border-color: rgba(230,201,133,0.25);
-  transform: scale(1.05);
-}
-
-.link-text {
-  flex: 1;
-  min-width: 0;
-}
-
-.link-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-weight: 600;
-  color: var(--alabaster);
-  margin-bottom: 3px;
-  line-height: 1.2;
-}
-
-.link-desc {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.8px;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.link-arrow {
-  font-size: 16px;
-  color:rgba(230,201,133,0.72);
-  transition: all 0.3s;
-  flex-shrink: 0;
-}
-
-.link-card:hover .link-arrow {
-  color: var(--gold);
-  transform: translateX(3px);
-}
-
-/* Badge on founding spots */
-.link-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  pointer-events: none;
-}
-
-.badge-gold {
-  background: rgba(230,201,133,0.12);
-  border: 1px solid rgba(230,201,133,0.2);
-  color: var(--gold-dim);
-}
-
-.badge-green {
-  background: rgba(74,222,128,0.08);
-  border: 1px solid rgba(74,222,128,0.15);
-  color: #4ade80;
-}
-
-/* ── DIVIDER ── */
-.divider {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 28px 0 20px;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.9s;
-}
-
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(230,201,133,0.1);
-}
-
-.divider-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color:rgba(253,251,247,0.72);
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-/* ── SOCIAL ── */
-.socials {
-  display: flex;
-  gap: 16px;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 1s;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 16px;
-  border: 1px solid rgba(253,251,247,0.08);
-  border-radius: 8px;
-  text-decoration: none;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color:rgba(253,251,247,0.72);
-  transition: all 0.25s;
-}
-
-.social-link:hover {
-  border-color: rgba(230,201,133,0.2);
-  color: var(--gold-dim);
-  background: rgba(230,201,133,0.04);
-}
-
-/* ── FOOTER ── */
-.foot {
-  margin-top: 32px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color:rgba(253,251,247,0.72);
-  text-align: center;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 1.1s;
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── MOBILE ── */
-@media (max-width: 500px) {
-  body { padding: 36px 16px; }
-  .link-card { padding: 16px 18px; gap: 14px; }
-  .link-emoji { width: 42px; height: 42px; font-size: 19px; }
-  .link-title { font-size: 17px; }
-  .socials { flex-wrap: wrap; justify-content: center; }
-}
+/* links (link-in-bio) layout — built on /site.css tokens + components (no page tokens, no DM fonts, flat fills only) */
+.lw{max-width:560px;margin:0 auto;text-align:center}
+.lw .eyebrow{text-align:center}
+.lh{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;line-height:1.1;color:var(--alabaster);margin:0 0 14px}
+.lsub{font-family:'Outfit',sans-serif;font-weight:300;font-size:17px;line-height:1.6;color:#D4C5A9;margin:0 auto 36px;max-width:48ch}
+.linklist{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.linkcard{display:flex;align-items:center;gap:16px;text-align:left;background:var(--velvet-deep);border:1px solid var(--border);border-radius:20px;padding:20px 22px;text-decoration:none;transition:background .25s ease,border-color .25s ease}
+.linkcard:hover{background:#1E3828;border-color:rgba(201,169,97,0.3)}
+.linkcard .ic{width:46px;height:46px;border-radius:50%;background:var(--velvet-light);border:1px solid rgba(201,169,97,0.18);display:flex;align-items:center;justify-content:center;color:var(--gold-brushed);flex:none}
+.linkcard .ic svg{width:22px;height:22px}
+.linkcard .tx{flex:1;min-width:0}
+.linkcard .tt{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--alabaster);line-height:1.2}
+.linkcard .ds{font-family:'Outfit',sans-serif;font-weight:300;font-size:14px;color:#D4C5A9;margin-top:3px}
+.linkcard .ar{color:var(--gold-brushed);font-size:18px;flex:none}
 </style>
   <script>
   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -382,96 +56,93 @@ body::after {
   <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
+<nav>
+  <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
+    <img src="/logo.png" alt="SAY-OS" height="44" style="border-radius:10px;">
+    <span class="say-wm" aria-hidden="true" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:#C9A961;">SAY<span class="say-wm__sep"></span><span style="font-weight:600;">OS</span></span>
+</a></div>
+  <a href="/pricing" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Pricing</a>
+  <a href="/blog/" class="nav-hide-narrow" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(237,229,212,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Blog</a>
+  <a href="https://app.say-salon.com/register" class="nav-cta" style="white-space:nowrap;">Start Free</a>
+</nav>
 
-<div class="wrap">
+<section class="section hero-section">
+  <div class="container">
+    <div class="lw">
+      <h1 class="lh">The app that remembers everything for you.</h1>
+      <p class="lsub">One workspace for salons. One profile for professionals. One record for clients.</p>
 
-  <!-- LOGO -->
-  <div class="logo-block">
-    <img src="/logo.png" alt="SAY-OS" class="logo-icon" style="border-radius:14px">
-    <div class="logo-name"><span class="say-wm" aria-hidden="true">SAY<span class="say-wm__sep"></span>OS</span></div>
-    <div class="logo-tag">Your beauty. Remembered.</div>
-  </div>
+      <div class="eyebrow" style="font-size:14px;margin-bottom:16px">Where would you like to start?</div>
+      <div class="linklist">
+        <a href="/" class="linkcard">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></div>
+          <div class="tx">
+            <div class="tt">Salon &amp; clinic owners</div>
+            <div class="ds">Bookings, records, team, stock, marketing, hire.</div>
+          </div>
+          <div class="ar" aria-hidden="true">→</div>
+        </a>
 
-  <!-- HEADLINE -->
-  <div class="headline">
-    Run your salon.<br><em>Remember your clients.</em>
-  </div>
-  <div class="subline">Find your page below</div>
+        <a href="/talent" class="linkcard">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="tx">
+            <div class="tt">Professionals</div>
+            <div class="ds">Create your profile. Let salons find you.</div>
+          </div>
+          <div class="ar" aria-hidden="true">→</div>
+        </a>
 
-  <!-- LINKS -->
-  <div class="links">
+        <a href="/education" class="linkcard">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2 2 6 2s6-1 6-2v-5"/></svg></div>
+          <div class="tx">
+            <div class="tt">Academies</div>
+            <div class="ds">List your courses. Launch your graduates.</div>
+          </div>
+          <div class="ar" aria-hidden="true">→</div>
+        </a>
 
-    <a href="https://say-salon.com/" class="link-card">
-      <div class="link-badge badge-gold">20 spots</div>
-      <div class="link-emoji" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
-      <div class="link-text">
-        <div class="link-title">Solo Professionals</div>
-        <div class="link-desc">Voice-first · Client safety records · Complete operating system</div>
+        <a href="/pricing" class="linkcard">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+          <div class="tx">
+            <div class="tt">Pricing</div>
+            <div class="ds">Start free. Standard £79/month.</div>
+          </div>
+          <div class="ar" aria-hidden="true">→</div>
+        </a>
+
+        <a href="/blog/" class="linkcard">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <div class="tx">
+            <div class="tt">Blog</div>
+            <div class="ds">Treatment safety, contraindications, aftercare.</div>
+          </div>
+          <div class="ar" aria-hidden="true">→</div>
+        </a>
       </div>
-      <div class="link-arrow">→</div>
-    </a>
 
-    <a href="https://say-salon.com/partners" class="link-card">
-      <div class="link-badge badge-gold">20 spots</div>
-      <div class="link-emoji" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-      <div class="link-text">
-        <div class="link-title">Salon & Clinic Owners</div>
-        <div class="link-desc">Safety compliance · Client intelligence · Talent marketplace (coming soon)</div>
-      </div>
-      <div class="link-arrow">→</div>
-    </a>
-
-    <a href="https://say-salon.com/education" class="link-card">
-      <div class="link-badge badge-green">Free licence</div>
-      <div class="link-emoji" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2 2 6 2s6-1 6-2v-5"/></svg></div>
-      <div class="link-text">
-        <div class="link-title">Beauty Educators</div>
-        <div class="link-desc">Free institutional licence · 3 months Standard plan free for graduates</div>
-      </div>
-      <div class="link-arrow">→</div>
-    </a>
-
-    <a href="https://say-salon.com/talent" class="link-card">
-      <div class="link-badge badge-green">Coming soon</div>
-      <div class="link-emoji" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></div>
-      <div class="link-text">
-        <div class="link-title">Talent Marketplace</div>
-        <div class="link-desc">Get discovered · Work your way · No agency cut</div>
-      </div>
-      <div class="link-arrow">→</div>
-    </a>
-
-    <a href="https://say-salon.com/advanced-skin-readiness-check/" class="link-card">
-      <div class="link-badge badge-green">Free tool</div>
-      <div class="link-emoji" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-      <div class="link-text">
-        <div class="link-title">Advanced-Skin Readiness Check</div>
-        <div class="link-desc">60-second pre-arrival consultation self-check · No signup</div>
-      </div>
-      <div class="link-arrow">→</div>
-    </a>
-
+      <a href="https://app.say-salon.com/register/salon?utm_source=instagram&utm_medium=bio&utm_campaign=links" class="btn primary">Start free →</a>
+    </div>
   </div>
+</section>
 
-  <!-- DIVIDER -->
-  <div class="divider">
-    <div class="divider-text">Follow us</div>
+<footer>
+  <div class="container">
+  <div class="footer-logo"><span class="say-wm" role="img" aria-label="SAY-OS">SAY<span class="say-wm__sep" aria-hidden="true"></span>OS</span></div>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/partners">Salon Owners</a>
+    <a href="/salon-software-london/">London</a>
+    <a href="/education">Educators</a>
+    <a href="/talent">Professionals</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:contact@say-salon.com">Contact</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
   </div>
-
-  <!-- SOCIALS -->
-  <div class="socials">
-    <a href="https://instagram.com/say.salonai" class="social-link" target="_blank">
-      <span>◉</span> Instagram
-    </a>
-    <a href="https://threads.net/@say.salonai" class="social-link" target="_blank">
-      <span>◎</span> Threads
-    </a>
+  <p class="footer-grant" style="margin-top:16px"><a href="https://elevenlabs.io/startup-grants"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs" style="width:160px"></a></p>
+  <div class="footer-copy">© 2026 SAY-OS · say-salon.com</div>
   </div>
-
-  <!-- FOOT -->
-  <div class="foot">© 2026 SAY-OS · say-salon.com<br><a href="/privacy" style="color:inherit;text-decoration:none">Privacy Policy</a> · <a href="/terms" style="color:inherit;text-decoration:none">Terms of Service</a></div>
-
-</div>
+</footer>
 
 <!-- Consent Banner -->
 <div id="say-consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;padding:16px;">

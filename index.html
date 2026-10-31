@@ -44,79 +44,10 @@
   } catch (e) {}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root {
-  /* Locked design system v2.1 — velvet palette (matches app + blog) */
-  --velvet-black: #0F2818;   /* --surface-base */
-  --velvet-deep: #183222;    /* --surface-card */
-  --velvet-primary: #1E3828; /* --surface-card-hover */
-  --velvet-light: #24402E;   /* --surface-circle */
-  --gold-brushed: #C9A961;   /* --gold-cta, flat, no gradients */
-  --gold-accent: rgba(201,169,97,0.65); /* --text-eyebrow */
-  --gold-deep: rgba(201,169,97,0.5);
-  --alabaster: #EDE5D4;      /* --text-heading champagne */
-  --text-main: #1a1a1a;
-  --text-muted: #96A097;     /* --text-meta */
-  --shadow-premium: 0 50px 100px -20px rgba(15,40,24,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
-  --shadow-gold: 0 20px 50px -10px rgba(201,169,97,0.2);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--velvet-black);
-  color: var(--alabaster);
-  font-family: 'Outfit', sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-/* ─── NAV ─── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 20px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(15,40,24,0.95), transparent);
-  backdrop-filter: blur(8px);
-}
-.nav-logo a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-.nav-cta {
-  background: transparent;
-  border: 1px solid rgba(201,169,97,0.3);
-  color: var(--gold-brushed);
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  padding: 9px 22px;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-.nav-cta:hover {
-  background: rgba(201,169,97,0.1);
-  border-color: var(--gold-brushed);
-}
+/* Tokens, base, nav & footer moved to /site.css */
+body { padding-top: 0; } /* homepage hero sits behind the fixed nav by design */
 
 /* ─── HERO ─── */
 .hero {
@@ -1027,43 +958,7 @@ nav {
 }
 
 /* ─── FOOTER ─── */
-footer {
-  background: var(--velvet-black);
-  padding: 48px 0;
-  border-top: 1px solid rgba(237,229,212,0.06);
-}
-/* While the cookie banner is visible, clear space under the footer so nothing (incl. the ElevenLabs badge) sits beneath it. */
-body.consent-open footer { padding-bottom: calc(var(--consent-h, 300px) + 16px); }
-footer .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: var(--gold-brushed);
-}
-.footer-links { display: flex; gap: 32px; }
-.footer-links a {
-  font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color:rgba(237,229,212,0.72);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.footer-links a:hover { color: var(--gold-accent); }
-.footer-copy {
-  font-family: 'Outfit', sans-serif;
-  font-size: 10px;
-  letter-spacing: 1px;
-  color:rgba(237,229,212,0.72);
-}
+/* footer styles moved to /site.css */
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
@@ -1075,7 +970,6 @@ footer .container {
 
 /* ─── MOBILE ─── */
 @media (max-width: 768px) {
-  nav { padding: 16px 24px; }
   .hero { padding: 100px 24px 60px; }
   .compat-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
@@ -1089,10 +983,12 @@ footer .container {
   .free-features { flex-direction: column; gap: 12px; }
   .compat-section, .features-section, .offer-section, .voice-section, .client-section { padding: 60px 24px; }
   .segments-section, .founder-section, .insurance-section, .free-section { padding: 60px 24px; }
-  footer { padding: 32px 0 72px; }
-  footer .container { flex-direction: column; align-items: flex-start; }
-  .footer-links { flex-wrap: wrap; gap: 14px 20px; }
   .trust-strip { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+@media (max-width: 860px) {
+  /* Founding block: one card, edge-to-edge in the container (24px gutters); inner form is padding-only, not a second card. */
+  .offer-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; border-radius: 24px; }
+  .form-side { background: transparent; border: 0; border-radius: 0; padding: 0; }
 }
 </style>
 <script type="application/ld+json">
@@ -1196,7 +1092,6 @@ footer .container {
 
 <style>
 /* ── Unified homepage (v2) layout — scoped .hp-* ── */
-.container{max-width:1180px;margin:0 auto;padding:0 24px}
 .hp-section{padding:88px 0}
 .hp-section.alt{background:var(--velvet-black)}
 .hp-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-brushed);margin-bottom:16px}
@@ -1596,7 +1491,7 @@ footer .container {
     <div class="hp-eyebrow">Founder &amp; company</div>
     <h2 class="hp-h2">Built from experience in <em>the treatment room.</em></h2>
     <p class="hp-quote">&ldquo;Running a salon means moving constantly between clients, bookings, stock and business decisions. I&rsquo;m building SAY-OS to bring those tasks together &mdash; and give practitioners more context before treatment.&rdquo;</p>
-    <div class="hp-attr">&mdash; Founder, <span class="wm-lock" role="img" aria-label="SAY-OS">SAY<span class="wm-bar" aria-hidden="true"></span>OS</span></div>
+    <div class="hp-attr">&mdash; Founder, SAY-OS</div>
     <p class="hp-company">Operated by SERVICESFORYOU LTD, a UK registered company. ICO registration: <a href="https://ico.org.uk/ESDWebPages/Entry/ZC121398" rel="noopener" target="_blank" style="color:var(--gold-brushed);text-decoration:underline;text-underline-offset:2px;">ZC121398</a>.</p>
   </div>
 </section>
@@ -1644,6 +1539,7 @@ footer .container {
     <a href="/partners">Salon Owners</a>
     <a href="/salon-software-london/">London</a>
     <a href="/education">Educators</a>
+    <a href="/talent">Professionals</a>
     <a href="/blog/">Blog</a>
     <a href="mailto:contact@say-salon.com">Contact</a>
     <a href="/privacy">Privacy Policy</a>
