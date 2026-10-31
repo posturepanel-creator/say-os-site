@@ -185,6 +185,7 @@ const CLUSTERS = [
     "can-i-massage-a-client-with-dvt-or-history-of-blood-clots-uk",
     "can-i-wax-or-massage-a-client-with-varicose-veins-uk",
     "can-i-wax-or-do-microneedling-on-a-client-taking-blood-thinners-uk",
+    "can-i-treat-a-client-who-has-been-drinking-alcohol-uk",
     "can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk",
   ],
   // Contagious skin / bloodborne infections
@@ -226,6 +227,7 @@ const CLUSTERS = [
     "can-i-use-microcurrent-or-radiofrequency-on-a-client-with-a-pacemaker-uk",
     "can-i-massage-a-client-with-osteoporosis-uk",
     "can-i-massage-a-client-with-lymphoedema-or-after-lymph-node-removal-uk",
+    "can-i-treat-a-client-with-a-heart-condition-or-after-a-stroke-uk",
   ],
   // Pregnancy / consent / capacity / age
   [
