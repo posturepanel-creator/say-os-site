@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/site.css">
 <style>
 /* partners layout — built on /site.css tokens + components (no page tokens, no DM fonts, no gradients) */
-.hero{text-align:center;padding:52px 0 28px}
+.hero{text-align:center;padding:0 0 28px}
 .hero h1{font-family:'Cormorant Garamond',serif;line-height:1.1;margin:0 0 22px}
 .hero h1 .l1{display:block;font-weight:300;font-size:clamp(28px,4vw,44px);color:var(--alabaster)}
 .hero h1 .l2{display:block;font-weight:600;font-style:italic;color:var(--gold-brushed);font-size:clamp(32px,5vw,56px);text-wrap:balance}
@@ -29,11 +29,11 @@
 .textlink{font-family:'Outfit',sans-serif;font-size:14px;letter-spacing:0.3px;color:var(--gold-brushed);text-decoration:underline;text-underline-offset:3px}
 .lead{font-family:'Outfit',sans-serif;font-weight:300;font-size:18px;line-height:1.65;color:#D4C5A9;max-width:62ch;margin:0 0 20px}
 .sec-head{margin-bottom:8px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .cards{display:grid;gap:18px;margin-top:28px}
 .cards.four{grid-template-columns:repeat(4,1fr)}
 .cards.three{grid-template-columns:repeat(3,1fr)}
-.card h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--alabaster);margin:0 0 8px}
+.card h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;line-height:1.25;min-height:2.5em;color:var(--alabaster);margin:0 0 8px}
 .card p{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.62;color:#D4C5A9;margin:0}
 .card .num{font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;color:var(--gold-brushed);margin-bottom:10px}
 .ico{width:46px;height:46px;border-radius:50%;background:var(--velvet-light);border:1px solid rgba(201,169,97,0.18);display:flex;align-items:center;justify-content:center;color:var(--gold-brushed);margin-bottom:14px}
@@ -58,7 +58,7 @@
 .stat{background:var(--velvet-deep);border:1px solid var(--border);border-radius:20px;padding:28px;text-align:center}
 .stat .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;color:var(--gold-brushed);margin-bottom:8px}
 .stat .l{font-family:'Outfit',sans-serif;font-size:14px;line-height:1.5;color:#D4C5A9}
-.founding-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.founding-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .form-side{background:var(--velvet-deep);border:1px solid var(--border);border-radius:20px;padding:36px}
 .form-group{margin-bottom:16px}
 .form-group label{display:block;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
@@ -159,7 +159,7 @@
 </nav>
 
 <!-- 1. HERO -->
-<section class="section">
+<section class="section hero-section">
   <div class="container hero reveal">
     <div class="eyebrow" style="text-align:center">Founding Partner Programme · 20 places</div>
     <h1><span class="l1">Your salon runs.</span><span class="l2">You hold on to more clients.</span></h1>
