@@ -33,7 +33,11 @@ body {
   font-family: 'Outfit', sans-serif;
   line-height: 1.7;
   overflow-x: hidden;
+  /* Clear the fixed nav so the first section isn't covered. The homepage's
+     full-bleed hero opts out via body{padding-top:0} in its own styles. */
+  padding-top: 88px;
 }
+@media (max-width: 860px) { body { padding-top: 80px; } }
 body::before {
   content: '';
   position: fixed;
