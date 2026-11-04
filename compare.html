@@ -34,7 +34,7 @@
       "name": "Which salon software has client safety features?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SAY-OS is built around structured, recorded client information for practitioner review. It tracks contraindications across 5 categories (allergies, skin conditions, life stages, medications, recent procedures), records patch test dates, keeps a record of the products a client uses at home, and includes a Fitzpatrick skin type field. It is ICO registered (ZC121398), with structured handling of client information, including health information."
+        "text": "SAY-OS is built around structured, recorded client information for practitioner review. It checks 12 conditions and life stages — such as pregnancy, retinoids, isotretinoin and recent surgery — with retinol and isotretinoin (Accutane) timing guidance before waxing, peels and laser, records patch tests with an expiry date (the expiry status shows on the client's profile, with an in-app nudge before it runs out), checks the client's own skincare routine for ingredient clashes, keeps a record of the products a client uses at home, and includes a Fitzpatrick skin type (I–VI) from a short questionnaire with a pigmentation profile. A flag is a prompt to check with the client — no flag never means cleared, and the salon still does its own patch test. It is ICO registered (ZC121398), with structured handling of client information, including health information."
       }
     },
     {
@@ -66,7 +66,7 @@
       "name": "How does SAY-OS compare to Treatwell?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Treatwell is a marketplace that drives new client discovery through its consumer platform. SAY-OS is a business operating system with voice control, consultation records, and a client-controlled Beauty Passport. Treatwell resets client history after 12 months of inactivity — SAY-OS keeps every client's full history. SAY-OS has its own calendar and bookings and does not sync with Treatwell; you can still list on Treatwell for discovery."
+        "text": "Treatwell is a marketplace that drives new client discovery through its consumer platform. SAY-OS is a business operating system with voice control, consultation records, and a client-controlled Beauty Passport. If a client hasn't booked through Treatwell's marketplace in over 12 months, Treatwell charges its new-customer commission rate again (its 'lapsed' fee) when that client rebooks, to offset re-marketing them; SAY-OS keeps every client's full history and charges no commission. SAY-OS has its own calendar and bookings and does not sync with Treatwell; you can still list on Treatwell for discovery."
       }
     },
     {
@@ -317,30 +317,6 @@ footer {
   <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
-<!--
-  COMPARE-ACCURACY REVIEW — 2026-11-04 (branch fix/compare-accuracy)
-  Competitor corrections: Fresha & Phorest DO document patch-test recording
-  (sources [1][2] in #sources). Unsupported competitor "✗" on safety/allergy/
-  patch-test/Fitzpatrick/ICO/timeline rows changed to "Not assessed" (missing
-  documentation is not proof of absence). Blanket "none of them / not offered by
-  the compared set / Unlike Fresha, Treatwell, Phorest, Timely, Booksy, SalonIQ"
-  claims removed.
-
-  TO CONFIRM AGAINST THE APP before this page is published (Anca to verify in
-  SAY-OS-Production; wording currently on /compare unless noted):
-   - Patch-test EXPIRY + auto ALERTS (was "✓ Auto alerts"; now plain "✓ recording"). Page: /compare table + FAQ.
-   - Interaction / skincare-conflict ALERTS ("Skincare conflict checker ✓ †"). Page: /compare table + diff card 1.
-   - Fitzpatrick PIGMENTATION RISK SCORING (removed from FAQ; table now "Fitzpatrick skin type field ✓ †"). Page: /compare.
-   - SAFETY RECORD TIMELINE / timestamped documentation ("✓ †", "Timestamped" removed). Page: /compare table.
-   - Contraindication "5 CATEGORIES" breakdown (table now "✓ Categories", count dropped). Page: /compare + /pricing.
-   - Beauty Passport GUEST ACCESS (share without an account), QR + MULTI-LANGUAGE, and share-LINK EXPIRY. Page: /compare diff card 2, FAQ, + /beauty-passport.
-   - Booking FLAGS for missing/expired patch test or contraindication. Page: /compare.
-   - Care reminders by client routine cycle — already labelled "(planned)". Page: /compare.
-   - Treatwell "resets client history after 12 months" — competitor claim, not sourced here; left as pre-existing, flag for Anca.
-  Live/known-good (kept): voice-first booking (shipped), ICO ZC121398, free-tier
-  allowances (25 clients / 50 bookings a month / 1 team member), Standard £79/mo.
--->
-
 <!-- NAV -->
 <nav>
   <div class="nav-logo"><a href="/" style="display:flex;align-items:center;gap:8px;">
@@ -364,7 +340,7 @@ footer {
 <!-- ANSWER BLOCK - This is the AEO target. First 150 words, factual, self-contained. -->
 <div class="container">
   <div class="answer-block">
-    <p><strong>SAY-OS is a voice-first salon operating system</strong> with a free client SAY: Beauty Passport. It handles bookings, inventory, client records and consultation records, with voice-first booking at its core. SAY-OS records contraindications and the products a client uses at home, and is ICO registered (ZC121398), with structured handling of client health information. Other platforms document safety records too — Fresha and Phorest both document patch-test recording (see <a href="#sources">Sources</a>).</p>
+    <p><strong>SAY-OS is a voice-first salon operating system</strong> with a free client SAY: Beauty Passport. It handles bookings, inventory, client records and a timestamped consultation record the salon can download, with voice-first booking at its core. SAY-OS checks 12 conditions and life stages and records the products a client uses at home, and is ICO registered (ZC121398), with structured handling of client health information. Other platforms document safety records too — Fresha and Phorest both document patch-test recording (see <a href="#sources">Sources</a>).</p>
     <p>SAY-OS has its own calendar and bookings and does not sync with other systems. Clients book directly into the SAY calendar, fill in their Beauty Passport once, and (planned) can receive care reminders based on their own routine cycle. Start free with dashboard, calendar, and up to 25 clients and 50 bookings a month. Standard plan is £79/month.</p>
   </div>
 </div>
@@ -420,7 +396,7 @@ footer {
             <td>Client CRM / History</td>
             <td class="highlight"><span class="yes">✓</span></td>
             <td><span class="yes">✓</span></td>
-            <td><span class="partial">Resets after 12mo</span></td>
+            <td><span class="yes">✓</span></td>
             <td><span class="yes">✓</span></td>
             <td><span class="yes">✓</span></td>
             <td><span class="yes">✓</span></td>
@@ -463,7 +439,7 @@ footer {
           </tr>
           <tr>
             <td>Allergy / contraindication records</td>
-            <td class="highlight"><span class="yes">✓ Categories</span></td>
+            <td class="highlight"><span class="yes">✓ 12 conditions</span></td>
             <td><span class="no">Not assessed</span></td>
             <td><span class="no">Not assessed</span></td>
             <td><span class="no">Not assessed</span></td>
@@ -480,7 +456,7 @@ footer {
             <td><span class="no">Not assessed</span></td>
           </tr>
           <tr>
-            <td>Skincare conflict checker <a href="#tc" style="color:var(--gold-accent);text-decoration:none">†</a></td>
+            <td>Skincare routine clash check</td>
             <td class="highlight"><span class="yes">✓</span></td>
             <td><span class="no">Not assessed</span></td>
             <td><span class="no">Not assessed</span></td>
@@ -489,7 +465,7 @@ footer {
             <td><span class="no">Not assessed</span></td>
           </tr>
           <tr>
-            <td>Fitzpatrick skin type field <a href="#tc" style="color:var(--gold-accent);text-decoration:none">†</a></td>
+            <td>Fitzpatrick skin type (I–VI)</td>
             <td class="highlight"><span class="yes">✓</span></td>
             <td><span class="no">Not assessed</span></td>
             <td><span class="no">Not assessed</span></td>
@@ -507,7 +483,7 @@ footer {
             <td><span class="no">Not assessed</span></td>
           </tr>
           <tr>
-            <td>Safety record timeline <a href="#tc" style="color:var(--gold-accent);text-decoration:none">†</a></td>
+            <td>Treatment &amp; passport-access history</td>
             <td class="highlight"><span class="yes">✓</span></td>
             <td><span class="no">Not assessed</span></td>
             <td><span class="no">Not assessed</span></td>
@@ -517,7 +493,7 @@ footer {
           </tr>
           <tr>
             <td>Care Reminders (client cycle) — planned</td>
-            <td class="highlight"><span class="yes">✓</span></td>
+            <td class="highlight"><span class="partial">Planned</span></td>
             <td><span class="partial">Generic</span></td>
             <td><span class="no">✗</span></td>
             <td><span class="yes">✓</span></td>
@@ -583,7 +559,7 @@ footer {
       <p style="font-size:13px;line-height:1.8"><strong>Reviewed 4 November 2026.</strong> Competitor rows reflect each vendor's own public documentation on the date shown. <strong>"Not assessed"</strong> means we have not found public documentation either way — it does not mean the feature is absent. Vendor features change; check each provider's current help centre.</p>
       <p style="font-size:13px;line-height:1.8">[1] Fresha — Record client patch tests: <a href="https://www.fresha.com/help-center/knowledge-base/clients/55-record-client-patch-tests" rel="noopener" target="_blank">fresha.com/help-center…/55-record-client-patch-tests</a>. Documents recording a patch test (date plus Pending / Passed / Failed status), a six-month validity, and an online-booking prompt asking clients to confirm a valid patch test.</p>
       <p style="font-size:13px;line-height:1.8">[2] Phorest — Patch tests: <a href="https://support.phorest.com/hc/en-us/articles/360016362079" rel="noopener" target="_blank">support.phorest.com…/360016362079</a> and <a href="https://support.phorest.com/hc/en-us/articles/360017402360" rel="noopener" target="_blank">…/360017402360</a>. Document recording a patch test on the client record, a configurable Patch Test period (Manager → Settings → Online → Booking Rules), and booking-time patch-test warnings on desktop, online booking and the branded app (non-blocking).</p>
-      <p id="tc" style="font-size:13px;line-height:1.8;color:var(--text-muted)">† SAY-OS capability shown pending confirmation against the app. Several SAY-OS mechanisms — patch-test expiry and alerts, interaction / skincare-conflict alerts, the safety record timeline, Beauty Passport QR and guest access, share-link expiry, and booking flags — are being verified against the product before this page is published.</p>
+      <p style="font-size:13px;line-height:1.8">[3] Treatwell — Why does Treatwell charge a new customer commission rate after 12 months: <a href="https://help.treatwell.pro/en/articles/6068025-why-does-treatwell-charge-a-new-customer-commission-rate-after-12-months" rel="noopener" target="_blank">help.treatwell.pro…/6068025</a>. Treatwell states that if a client hasn't made an appointment in over 12 months and returns to the marketplace to book again, it charges its new-customer commission rate again (also called a "lapsed fee") to offset the cost of re-marketing that client; this applies only to clients booking through the marketplace. Reviewed 4 November 2026.</p>
       <p style="font-size:12px;line-height:1.7;color:var(--text-muted)">Authored with reference to two decades in advanced beauty therapy, a clinical rehabilitation background and a First-Class BSc (Hons) in Health &amp; Care Management.</p>
     </div>
   </div>
@@ -599,13 +575,13 @@ footer {
       <div class="diff-card">
         <div class="diff-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="diff-title">Client Safety Records</div>
-        <div class="diff-desc">Contraindication categories you can track in one place, patch-test date records, and a record of the products a client uses at home — with the client choosing what to share. Some platforms document their own safety records too; Fresha and Phorest both document patch-test recording (see Sources).</div>
+        <div class="diff-desc">Checks 12 conditions and life stages — such as pregnancy, retinoids, isotretinoin and recent surgery — with retinol and isotretinoin (Accutane) timing guidance before waxing, peels and laser, and a check of the client's own skincare routine for ingredient clashes. Record patch tests with an expiry date: the expiry status shows on the client's profile, with an in-app nudge before it runs out. A timestamped consultation record the salon can download. When clients book through SAY, the booking carries a safety flag for the salon to check. A flag is a prompt to check with the client — no flag never means cleared. The salon still does its own patch test. Fresha and Phorest both document patch-test recording too (see Sources).</div>
         <div class="diff-tag tag-only">SAY-OS focus</div>
       </div>
       <div class="diff-card">
         <div class="diff-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <div class="diff-title">Client Beauty Passport</div>
-        <div class="diff-desc">Clients own their beauty data — allergies, formulas, skin type, preferences. They share via QR code with any salon, in multiple languages. Replaces paper consultation cards.</div>
+        <div class="diff-desc">Clients own their beauty data — allergies, formulas, Fitzpatrick skin type (I–VI) from a short questionnaire with a pigmentation profile, and preferences. Any salon can open a client's shared passport — no SAY account needed — after confirming consent. Includes a QR code, shows in more than a dozen languages, and links expire after 90 days or whenever the client revokes them. Replaces paper consultation cards.</div>
         <div class="diff-tag tag-only">SAY-OS focus</div>
       </div>
       <div class="diff-card">
@@ -623,7 +599,7 @@ footer {
       <div class="diff-card">
         <div class="diff-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E6C985" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
         <div class="diff-title">Care, Not Chasing</div>
-        <div class="diff-desc">Planned — clients set their own routine cycles (nails every 3 weeks, roots every 5, facials every 6) and SAY-OS sends gentle reminders on their schedule.</div>
+        <div class="diff-desc">Planned — clients will set their own routine cycles (nails every 3 weeks, roots every 5, facials every 6) and SAY-OS will send gentle reminders on their schedule. Not available yet.</div>
         <div class="diff-tag tag-only">SAY-OS focus</div>
       </div>
       <div class="diff-card">
@@ -648,7 +624,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-q">Which salon software tracks client allergies and contraindications?</div>
-      <div class="faq-a">SAY-OS is built around structured, recorded client information for practitioner review. It tracks contraindications across 5 categories — allergies, skin conditions, life stages, medications, and recent procedures — so relevant information can be reviewed before an appointment. Patch test dates are recorded digitally. It keeps a record of the products a client uses at home. ICO registered (ZC121398), with structured handling of client information, including health information.</div>
+      <div class="faq-a">SAY-OS is built around structured, recorded client information for practitioner review. It checks 12 conditions and life stages — such as pregnancy, retinoids, isotretinoin and recent surgery — so relevant information can be reviewed before an appointment, with retinol and isotretinoin (Accutane) timing guidance before waxing, peels and laser. Patch tests are recorded with an expiry date, and the expiry status shows on the client's profile with an in-app nudge before it runs out. It keeps a record of the products a client uses at home and checks the client's own skincare routine for ingredient clashes. A flag is a prompt to check with the client — no flag never means cleared, and the salon still does its own patch test. ICO registered (ZC121398), with structured handling of client information, including health information.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is there a voice-controlled salon booking system?</div>
@@ -656,7 +632,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-q">What is a Beauty Passport?</div>
-      <div class="faq-a">A Beauty Passport is a free digital profile from SAY-OS where clients store their allergies, skin type, conditions, product routines, colour formulas, and style preferences. Clients share it with any salon via QR code, translated into multiple languages. It replaces paper consultation cards and gives salons client-recorded history before every appointment.</div>
+      <div class="faq-a">A Beauty Passport is a free digital profile from SAY-OS where clients store their allergies, Fitzpatrick skin type, conditions, product routines, colour formulas, and style preferences. Any salon can open a client's shared passport — no SAY account needed — after confirming consent, via a QR code, shown in more than a dozen languages; links expire after 90 days or whenever the client revokes them. It replaces paper consultation cards and gives salons client-recorded history before every appointment.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How does SAY-OS compare to Fresha?</div>
@@ -664,7 +640,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-q">How does SAY-OS compare to Treatwell?</div>
-      <div class="faq-a">Treatwell is a marketplace for client discovery. SAY-OS is a business operating system with voice control, consultation records, and a client-controlled Beauty Passport. Treatwell resets client history after 12 months of inactivity — SAY-OS keeps every client's full history. SAY-OS has its own calendar and bookings and does not sync with Treatwell; you can still list on Treatwell for discovery.</div>
+      <div class="faq-a">Treatwell is a marketplace for client discovery. SAY-OS is a business operating system with voice control, consultation records, and a client-controlled Beauty Passport. If a client hasn't made an appointment through Treatwell's marketplace in over 12 months, Treatwell charges its new-customer commission rate again (also called a "lapsed fee") when that client rebooks, to offset the cost of re-marketing them (<a href="#sources">see Sources</a>); SAY-OS keeps every client's full history and charges no commission. SAY-OS has its own calendar and bookings and does not sync with Treatwell; you can still list on Treatwell for discovery.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is there free salon management software?</div>
