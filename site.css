@@ -161,8 +161,10 @@ footer .container {
 .footer-copy { font-family: 'Outfit', sans-serif; font-size: 10px; letter-spacing: 1px; color: rgba(237,229,212,0.72); }
 
 /* ── Wordmark (crown "SAY·OS") ────────────────────────────────────────── */
-.say-wm, .wm-lock { display: inline-flex; align-items: center; gap: 0.24em; white-space: nowrap; vertical-align: baseline; }
-.say-wm__sep, .wm-bar { display: inline-block; flex: 0 0 auto; width: 0.42em; height: 0.08em; min-height: 2px; background: currentColor; border-radius: 2px; position: relative; top: 0.03em; }
+.say-wm, .wm-lock { display: inline-flex; align-items: center; gap: 0.18em; white-space: nowrap; vertical-align: middle; letter-spacing: 0; }
+/* Separator is a CSS bar (not a hyphen glyph) — a straight, horizontal dash,
+   vertically centred via flex align (no top nudge), identical in nav + footer. */
+.say-wm__sep, .wm-bar { display: inline-block; flex: 0 0 auto; align-self: center; width: 0.46em; height: 0.1em; min-height: 2px; background: currentColor; border-radius: 1px; position: static; top: auto; }
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
