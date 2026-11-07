@@ -23,6 +23,21 @@
   status = 301
   force = true
 
+# /compare renamed to /features (2026-11-06). Specific rules must precede the
+# generic /*.html catch-all so they win; /compare.html → /features directly
+# (avoids a /compare.html → /compare → /features double hop).
+[[redirects]]
+  from = "/compare"
+  to = "/features"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compare.html"
+  to = "/features"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*.html"
   to = "/:splat"

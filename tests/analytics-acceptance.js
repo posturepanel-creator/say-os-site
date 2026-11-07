@@ -105,7 +105,7 @@ async function run(){
   const P = {
     readiness: `${BASE}/readiness-check/index.html`,
     advanced:  `${BASE}/advanced-skin-readiness-check/index.html`,
-    compare:   `${BASE}/compare.html`,
+    compare:   `${BASE}/features.html`,
     pricing:   `${BASE}/pricing.html`,
     talent:    `${BASE}/talent.html`,
   };
