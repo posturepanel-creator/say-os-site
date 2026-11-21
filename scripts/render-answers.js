@@ -349,6 +349,7 @@ ${related.map((r) => `      <li><a href="${r.slug}">${escapeHtml(r.title)}</a></
   <link rel="stylesheet" href="blog.css">
   <link rel="stylesheet" href="/responsive.css">
   <script defer src="/oaiq.js?v=20260930"></script>
+  <script defer src="/forward-utm.js"></script>
   <!-- Google Preferred Sources button library — consent-gated via say_consent_analytics -->
   <script>
   (function(){

@@ -165,6 +165,7 @@ body{font-family:'Outfit',sans-serif;font-weight:400;background:var(--bg);color:
   })();
   </script>
   <script defer src="/oaiq.js?v=20260930"></script>
+  <script defer src="/forward-utm.js"></script>
   <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
@@ -349,20 +350,6 @@ function fireCTA(location) {
     gtag('event', 'cta_click', { location: location, page: 'aesthetics' });
   }
 }
-
-// Forward UTMs + gclid/fbclid from this page to all app.say-salon.com links
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  var keys = ['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'];
-  var forward = {};
-  keys.forEach(function(k) { if (params.get(k)) forward[k] = params.get(k); });
-  if (Object.keys(forward).length === 0) return;
-  var qs = new URLSearchParams(forward).toString();
-  document.querySelectorAll('a.app-link').forEach(function(a) {
-    var href = a.getAttribute('href');
-    a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + qs);
-  });
-})();
 </script>
 
 <!-- Consent Banner -->

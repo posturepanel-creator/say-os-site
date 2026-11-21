@@ -1075,6 +1075,7 @@ body { padding-top: 0; } /* homepage hero sits behind the fixed nav by design */
   })();
   </script>
   <script defer src="/oaiq.js?v=20260930"></script>
+  <script defer src="/forward-utm.js"></script>
   <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
@@ -1685,20 +1686,6 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   targets.forEach(function (el) { io.observe(el); });
-})();
-
-// Forward UTMs from current page URL to all app.say-salon.com links
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
-  var utms = {};
-  utmKeys.forEach(function(k) { if (params.get(k)) utms[k] = params.get(k); });
-  if (Object.keys(utms).length === 0) return;
-  var utmStr = new URLSearchParams(utms).toString();
-  document.querySelectorAll('a[href*="app.say-salon.com"]').forEach(function(a) {
-    var href = a.getAttribute('href');
-    a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + utmStr);
-  });
 })();
 </script>
 
